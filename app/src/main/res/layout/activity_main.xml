@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zp.xintianfei.ui.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/act_main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/act_main_lay_2" />
+
+    <LinearLayout
+        android:id="@+id/act_main_lay_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8px"
+            android:layout_above="@+id/act_main_lay_1"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_line" />
+
+        <LinearLayout
+            android:id="@+id/act_main_lay_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_line_2"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_recharge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_recharge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="    充值    "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_withdraw" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="    提现    "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_rule" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="    规则    "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_person"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_person" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="@string/main_text_4"
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/act_main_lay_main"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_10"
+        android:background="@drawable/bg_tag_main_2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="@dimen/space_15"
+            android:src="@drawable/bg_tag_main" />
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="20dp"
+            android:src="@drawable/text_dating" />
+    </LinearLayout>
+
+</RelativeLayout>

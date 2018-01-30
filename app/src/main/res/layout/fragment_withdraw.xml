@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fg_withdraw_lay_1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_pic_3" />
+
+    <LinearLayout
+        android:id="@+id/fg_withdraw_lay_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/banner" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_1"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_20">
+
+            <ImageView
+                android:id="@+id/fg_main_img_head"
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_3" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_20"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fg_withdraw_tx_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fragment_main_text_1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_18" />
+
+                    <TextView
+                        android:id="@+id/fg_tx_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/fg_withdraw_tx_4"
+                        android:layout_toRightOf="@+id/fg_withdraw_tx_3"
+                        android:text="@string/text_default"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_18" />
+
+                    <TextView
+                        android:id="@+id/fg_withdraw_tx_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space_30"
+                        android:layout_toLeftOf="@+id/fg_tx_id"
+                        android:text="@string/fragment_withdraw_text_1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <TextView
+                        android:id="@+id/fg_tx_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:text="@string/text_default"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_3"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fragment_withdraw_text_2"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <TextView
+                        android:id="@+id/fg_tx_sum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_default"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_3">
+
+                    <TextView
+                        android:id="@+id/fg_withdraw_tx_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fragment_withdraw_text_3"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <TextView
+                        android:id="@+id/fg_tx_fanshui_sum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/fg_withdraw_tx_1"
+                        android:text="@string/text_default"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <Button
+                        android:id="@+id/fg_withdraw_btn_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:background="@drawable/click_btn_round_orange_1"
+                        android:paddingBottom="@dimen/space_3"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingRight="@dimen/space_8"
+                        android:paddingTop="@dimen/space_3"
+                        android:text="@string/fragment_withdraw_text_5" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_3">
+
+                    <TextView
+                        android:id="@+id/fg_withdraw_tx_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/fragment_withdraw_text_4"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <TextView
+                        android:id="@+id/fg_tx_yongjin_sum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/fg_withdraw_tx_2"
+                        android:text="@string/text_default"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <Button
+                        android:id="@+id/fg_withdraw_btn_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:background="@drawable/click_btn_round_orange_1"
+                        android:paddingBottom="@dimen/space_3"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingRight="@dimen/space_8"
+                        android:paddingTop="@dimen/space_3"
+                        android:text="@string/fragment_withdraw_text_5" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fg_withdraw_lay_1"
+        android:orientation="vertical"
+        android:padding="@dimen/space_30">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent">
+
+            <EditText
+                android:id="@+id/fg_withdraw_edt_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginRight="@dimen/space_30"
+                android:layout_toLeftOf="@+id/fg_withdraw_btn_sure"
+                android:background="@drawable/shape_round_stroke_h_black_orange_1"
+                android:hint="@string/fragment_withdraw_text_6"
+                android:paddingBottom="@dimen/space_7"
+                android:paddingLeft="@dimen/space_15"
+                android:paddingRight="@dimen/space_15"
+                android:paddingTop="@dimen/space_7"
+                android:textColor="@color/white"
+                android:textColorHint="#999"
+                android:textSize="@dimen/text_size_14" />
+
+            <Button
+                android:id="@+id/fg_withdraw_btn_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/click_btn_round_orange_1"
+                android:paddingBottom="@dimen/space_7"
+                android:paddingLeft="@dimen/space_15"
+                android:paddingRight="@dimen/space_15"
+                android:paddingTop="@dimen/space_7"
+                android:text="@string/fragment_withdraw_text_10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fg_withdraw_edt_sum"
+                android:layout_marginTop="@dimen/space_10"
+                android:text="@string/fragment_withdraw_text_7"
+                android:textColor="@color/text_1" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_20">
+
+            <LinearLayout
+                android:id="@+id/fg_withdraw_btn_bading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_20"
+                android:layout_weight="1"
+                android:background="@drawable/click_btn_round_skyblue"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/space_7"
+                android:paddingLeft="@dimen/space_15"
+                android:paddingRight="@dimen/space_15"
+                android:paddingTop="@dimen/space_7">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/icon_bank" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:text="@string/fragment_withdraw_text_8"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fg_withdraw_btn_online"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/click_btn_round_orange_3"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_25"
+                android:paddingRight="@dimen/space_25"
+                android:paddingTop="@dimen/space_9">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_online_people" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:text="@string/fragment_withdraw_text_9"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_15" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

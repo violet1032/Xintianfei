@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">王者娱乐城</string>
+    <!-- 误操作提示 -->
+    <string name="account_not_empty">账号不能为空</string>
+    <string name="password_not_empty">密码不能为空</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="text_default">--</string>
+
+    <!-- login -->
+    <string name="login_text_1">请输入账号</string>
+    <string name="login_text_2">请输入密码</string>
+    <string name="login_text_3">账号或者密码错误</string>
+    <string name="login_text_4">忘记密码</string>
+    <string name="login_text_5">注册账号</string>
+    <string name="login_text_6">登录</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- main -->
+    <string name="main_text_1">     充值 </string>
+    <string name="main_text_2"> 提现 </string>
+    <string name="main_text_3"> 规则 </string>
+    <string name="main_text_4">个人中心</string>
+
+    <!-- main fragment_main -->
+    <string name="fragment_main_text_1">昵称：</string>
+    <string name="fragment_main_text_2">编号：</string>
+    <string name="fragment_main_text_3">点数：</string>
+
+    <!-- main fragment_withdraw -->
+    <string name="fragment_withdraw_text_1">ID：</string>
+    <string name="fragment_withdraw_text_2">剩余点数：</string>
+    <string name="fragment_withdraw_text_3">反水点数：</string>
+    <string name="fragment_withdraw_text_4">佣金点数：</string>
+    <string name="fragment_withdraw_text_5">兑换</string>
+    <string name="fragment_withdraw_text_6">请输入取款金额</string>
+    <string name="fragment_withdraw_text_7">大额请绑定银行卡</string>
+    <string name="fragment_withdraw_text_8">绑定银行卡</string>
+    <string name="fragment_withdraw_text_9">在线客服</string>
+    <string name="fragment_withdraw_text_10">确定</string>
+</resources>
