@@ -16,6 +16,7 @@
 package com.zp.xintianfei;
 
 import android.app.Application;
+import android.content.Context;
 
 import org.kymjs.kjframe.http.HttpConfig;
 
@@ -28,10 +29,16 @@ public class AppContext extends Application {
     public static int screenW;
     public static int screenH;
 
+    public static Context applicationContext;
+    public static AppContext appContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
         HttpConfig.CACHEPATH = AppConfig.httpCachePath;
         CrashHandler.create(this);
+
+        applicationContext = getApplicationContext();
+        appContext = this;
     }
 }

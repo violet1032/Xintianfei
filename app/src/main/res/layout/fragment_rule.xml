@@ -1,6 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</LinearLayout>
+    <include
+        android:id="@+id/fg_rule_banner"
+        layout="@layout/common_banner" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fg_rule_banner"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_pic_3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fg_rule_banner"
+        android:orientation="vertical"
+        android:padding="@dimen/space_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fg_rule_btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="  北京赛车  "
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+
+            <Button
+                android:id="@+id/fg_rule_btn_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="  香港赛马  "
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+
+            <Button
+                android:id="@+id/fg_rule_btn_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="  幸运飞艇  "
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fg_rule_btn_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="@string/fragment_rule_text_4"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+
+            <Button
+                android:id="@+id/fg_rule_btn_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="@string/fragment_rule_text_5"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+
+            <Button
+                android:id="@+id/fg_rule_btn_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="  江苏快三  "
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_5"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fg_rule_btn_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="  PC蛋蛋   "
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+
+            <Button
+                android:id="@+id/fg_rule_btn_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="加拿大28 "
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+
+            <Button
+                android:id="@+id/fg_rule_btn_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/shape_rounded_h_gray_2"
+                android:padding="@dimen/space_10"
+                android:text="@string/fragment_rule_text_9"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/text_size_15" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/fg_rule_lay_1"
+            layout="@layout/fragment_rule_bjsc"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_2"
+            layout="@layout/fragment_rule_xgsm"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_3"
+            layout="@layout/fragment_rule_xyft"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_4"
+            layout="@layout/fragment_rule_cqssc"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_5"
+            layout="@layout/fragment_rule_xglhc"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_6"
+            layout="@layout/fragment_rule_jsks"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_7"
+            layout="@layout/fragment_rule_pcdd"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_8"
+            layout="@layout/fragment_rule_jnd28"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_rule_lay_9"
+            layout="@layout/fragment_rule_qqlfc"
+            android:visibility="gone" />
+    </LinearLayout>
+</RelativeLayout>

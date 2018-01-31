@@ -3,4 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/fg_main_banner"
+        layout="@layout/common_banner" />
 </LinearLayout>

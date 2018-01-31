@@ -18,6 +18,8 @@
     
     <color name="window_background">#EBEBEB</color>
     <color name="main_gray">#9A9A9A</color>
+    <color name="gray">#808080</color>
+    <color name="gray_2">#cccccc</color>
 
     <color name="main_translucent_gray">#77808080</color>
     <color name="main_translucent_black_3">#7555</color>
@@ -34,6 +36,7 @@
     <color name="orange_2">#ffcfae83</color>
     <color name="orange_3">#eca271</color>
     <color name="orange_4">#c67f51</color>
+    <color name="orange_5">#eb5b36</color>
     <color name="skyblue_1">#ff57afd5</color>
     <color name="skyblue_2">#ff4394b7</color>
 </resources>

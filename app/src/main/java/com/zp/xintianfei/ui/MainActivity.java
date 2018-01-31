@@ -13,6 +13,8 @@ import com.zp.xintianfei.ui.fragment.RechargeFragment;
 import com.zp.xintianfei.ui.fragment.RuleFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawFragment;
 
+import org.kymjs.kjframe.ui.BindView;
+
 public class MainActivity extends BaseActivity {
 
     private int lastSelected = 1; // 底部之前选中
@@ -24,8 +26,19 @@ public class MainActivity extends BaseActivity {
     private RuleFragment ruleFragment = new RuleFragment();
     private PersonFragment personFragment = new PersonFragment();
 
-    private LinearLayout[] layBottoms = new LinearLayout[4];
-    private LinearLayout[] layBottomsSelect = new LinearLayout[4];
+    private LinearLayout[] layBottoms = new LinearLayout[5];
+    private LinearLayout[] layBottomsSelect = new LinearLayout[5];
+
+    @BindView(id = R.id.act_main_lay_recharge, click = true)
+    private LinearLayout layRecharge;
+    @BindView(id = R.id.act_main_lay_withdraw, click = true)
+    private LinearLayout layWithdraw;
+    @BindView(id = R.id.act_main_lay_main, click = true)
+    private LinearLayout layMain;
+    @BindView(id = R.id.act_main_lay_rule, click = true)
+    private LinearLayout layRule;
+    @BindView(id = R.id.act_main_lay_person, click = true)
+    private LinearLayout layPerson;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();
@@ -47,12 +60,6 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initWidget() {
         super.initWidget();
-
-        layBottoms[0] = (LinearLayout) findViewById(R.id.act_main_lay_recharge);
-        layBottoms[1] = (LinearLayout) findViewById(R.id.act_main_lay_withdraw);
-        layBottoms[2] = (LinearLayout) findViewById(R.id.act_main_lay_main);
-        layBottoms[3] = (LinearLayout) findViewById(R.id.act_main_lay_rule);
-        layBottoms[4] = (LinearLayout) findViewById(R.id.act_main_lay_person);
 
         setPosition(2);
     }
@@ -79,7 +86,7 @@ public class MainActivity extends BaseActivity {
                 // 规则
                 break;
             case R.id.act_main_lay_person:
-                setPosition(3);
+                setPosition(4);
                 // 个人中心
                 break;
         }

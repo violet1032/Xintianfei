@@ -4,14 +4,23 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.common.BaseFragment;
+
+import org.kymjs.kjframe.ui.BindView;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
  */
 public class MainFragment extends BaseFragment {
+
+    @BindView(id = R.id.umeng_banner_title)
+    private TextView title;
+    @BindView(id = R.id.umeng_banner_img_left, click = true)
+    private ImageView imgBack;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -22,6 +31,9 @@ public class MainFragment extends BaseFragment {
     @Override
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
+
+        title.setText("王者对决娱乐");
+        imgBack.setVisibility(View.INVISIBLE);
     }
 
     @Override

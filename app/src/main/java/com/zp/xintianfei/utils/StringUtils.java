@@ -3,8 +3,6 @@ package com.zp.xintianfei.utils;
 
 import android.util.Log;
 
-import com.xcinfo.stock.api.URLs;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -578,92 +576,4 @@ public class StringUtils extends org.kymjs.kjframe.utils.StringUtils {
             return null;
         }
     }
-
-    /**
-     * 获取图片完整Url地址
-     *
-     * @param url
-     * @param thumb
-     * @return
-     */
-    public static String getImgHttpUrl(String url, boolean thumb) {
-        if (!url.startsWith("http")) {
-            // 如果地址是已"/"开头 ，则把斜杠去掉
-            if (url.startsWith("/"))
-                url = url.substring(1);
-
-            // 如果已有swust-home/则去掉
-            if (url.indexOf("swust-home") >= 0)
-                url = url.replace("swust-home/", "");
-            url = URLs.APP_STORE_HOST + url;
-            if (thumb) {
-                // 获取图片名字
-                int s = 0;
-                while (url.indexOf("/", s + 1) > 0) {
-                    s = url.indexOf("/", s + 1);
-                }
-                String name = url.substring(s + 1);
-                String rename = "thumb_" + name;
-                url = url.replace(name, rename);
-            }
-        }
-        return url;
-    }
-
-//    /**
-//     * 获取新闻的分享地址
-//     *
-//     * @param newsid
-//     * @return
-//     */
-//    public static String getNewsSharedURL(int newsid) {
-//        return URLs.APP_STORE_HOST + "viewNews?newsid=" + newsid;
-//    }
-
-
-//    public static String newContentInit(String body) {
-//        // 去掉所有的class和style样式属性
-//        body = body.replaceAll("class.?=.?\"[a-z]*\"", "");
-//        body = body.replaceAll("style.?=.?\"[ ;a-z0-9:-]*\"", "");
-//
-//        // 添加web样式
-//        body = UIHelper.WEB_STYLE + body;
-//        return body;
-//    }
-
-//    /**
-//     * 获取性别文字信息
-//     *
-//     * @param genderEnum
-//     * @return
-//     */
-//    public static String getGender(GenderEnum genderEnum) {
-//        switch (genderEnum) {
-//            case FEMALE:
-//                return AppContext.appContext.getString(R.string.gender_female);
-//            case MALE:
-//                return AppContext.appContext.getString(R.string.gender_male);
-//            case UNKNOWN:
-//                return AppContext.appContext.getString(R.string.gender_unknow);
-//        }
-//        return "";
-//    }
-
-//    /**
-//     * 获取性别文字信息
-//     *
-//     * @param genderEnum
-//     * @return
-//     */
-//    public static String getGender(E_GENDER_TYPE genderEnum) {
-//        switch (genderEnum) {
-//            case female:
-//                return AppContext.appContext.getString(R.string.gender_female);
-//            case male:
-//                return AppContext.appContext.getString(R.string.gender_male);
-//            case unkonw:
-//                return AppContext.appContext.getString(R.string.gender_unknow);
-//        }
-//        return "";
-//    }
 }
