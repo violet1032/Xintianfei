@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/fg_person_banner"
+        layout="@layout/common_banner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_line_2"
+        android:orientation="vertical"
+        android:padding="@dimen/space_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/space_30"
+            android:paddingRight="@dimen/space_30">
+
+            <Button
+                android:id="@+id/fg_agent_btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/click_btn_round_skyblue"
+                android:padding="@dimen/space_4"
+                android:text="@string/fg_agent_text_2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14" />
+
+            <Button
+                android:id="@+id/fg_agent_btn_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/click_btn_round_skyblue"
+                android:padding="@dimen/space_4"
+                android:text="@string/fg_agent_text_3"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14" />
+
+            <Button
+                android:id="@+id/fg_agent_btn_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space_10"
+                android:layout_weight="1"
+                android:background="@drawable/click_btn_round_skyblue"
+                android:padding="@dimen/space_4"
+                android:text="@string/fg_agent_text_4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_14" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_5"
+            android:text="@string/fg_agent_text_5"
+            android:textColor="@color/orange_1"
+            android:textSize="@dimen/space_14" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_agent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/space_20"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fg_agent_text_6"
+                    android:textColor="@color/orange_1"
+                    android:textSize="@dimen/text_size_15" />
+
+                <TextView
+                    android:id="@+id/fg_agent_tv_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_default"
+                    android:textColor="@color/orange_1"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/fg_agent_img_qrcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/qrcode" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

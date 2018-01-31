@@ -244,13 +244,13 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/icon_transfer" />
+                    android:src="@drawable/icon_recharge" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_5"
-                    android:text="@string/fg_person_text_1"
+                    android:text="@string/fg_person_text_2"
                     android:textColor="@color/orange_1"
                     android:textSize="@dimen/text_size_16" />
             </LinearLayout>
@@ -280,13 +280,13 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/icon_transfer" />
+                    android:src="@drawable/icon_withdraw" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_5"
-                    android:text="@string/fg_person_text_1"
+                    android:text="@string/fg_person_text_3"
                     android:textColor="@color/orange_1"
                     android:textSize="@dimen/text_size_16" />
             </LinearLayout>

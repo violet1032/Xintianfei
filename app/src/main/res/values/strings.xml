@@ -75,4 +75,21 @@
     <string name="fg_person_text_7">提现记录</string>
     <string name="fg_person_text_8">充值记录</string>
     <string name="fg_person_text_9">代理中心</string>
+
+    <!-- main fragment recharge -->
+    <string name="fg_recharge_text_1">请输入充值ID</string>
+    <string name="fg_recharge_text_2">请输入充值金额</string>
+    <string name="fg_recharge_text_3">本平台最低上下分50起，大额5000以上请网银充值</string>
+    <string name="fg_recharge_text_4">微信扫描充值</string>
+    <string name="fg_recharge_text_5">支付宝充值</string>
+    <string name="fg_recharge_text_6">网银充值</string>
+
+    <!-- fragment agent -->
+    <string name="fg_agent_text_1">代理中心</string>
+    <string name="fg_agent_text_2">下级反水比例</string>
+    <string name="fg_agent_text_3">下级玩家</string>
+    <string name="fg_agent_text_4">查看流水</string>
+    <string name="fg_agent_text_5">长按图片保存您的推广图片</string>
+    <string name="fg_agent_text_6">ID：</string>
+    <string name="title_activity_game_bjsc">GameBJSCActivity</string>
 </resources>

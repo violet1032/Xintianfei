@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.ui.fragment.AgentFragment;
 import com.zp.xintianfei.ui.fragment.MainFragment;
 import com.zp.xintianfei.ui.fragment.PersonFragment;
 import com.zp.xintianfei.ui.fragment.RechargeFragment;
@@ -25,6 +26,7 @@ public class MainActivity extends BaseActivity {
     private MainFragment mainFragment = new MainFragment();
     private RuleFragment ruleFragment = new RuleFragment();
     private PersonFragment personFragment = new PersonFragment();
+    private AgentFragment agentFragment = new AgentFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -92,7 +94,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    private void setPosition(int curr) {
+    public void setPosition(int curr) {
         if (currSelected != curr) {
             currSelected = curr;
             // 将所有先变为常态
@@ -117,6 +119,10 @@ public class MainActivity extends BaseActivity {
                 case 4:
                     // 个人中心
                     changeFragment(R.id.act_main_content, personFragment);
+                    break;
+                case 5:
+                    // 代理中心
+                    changeFragment(R.id.act_main_content, agentFragment);
                     break;
             }
 
