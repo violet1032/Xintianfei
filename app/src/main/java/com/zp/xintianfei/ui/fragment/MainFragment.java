@@ -5,9 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.ui.GameBJSCActivity;
+import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -22,6 +25,11 @@ public class MainFragment extends BaseFragment {
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
 
+    @BindView(id = R.id.fg_main_lay_1, click = true)
+    private LinearLayout layBJSC;
+    @BindView(id = R.id.fg_main_lay_6, click = true)
+    private LinearLayout layXGLHC;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_main, null);
@@ -32,7 +40,7 @@ public class MainFragment extends BaseFragment {
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
 
-        title.setText("王者对决娱乐");
+        title.setText(R.string.main_title);
         imgBack.setVisibility(View.INVISIBLE);
     }
 
@@ -44,6 +52,15 @@ public class MainFragment extends BaseFragment {
     @Override
     protected void widgetClick(View v) {
         super.widgetClick(v);
+
+        switch (v.getId()) {
+            case R.id.fg_main_lay_1:
+                GameBJSCActivity.startActivity(getActivity());
+                break;
+            case R.id.fg_main_lay_6:
+                GameXGLHCActivity.startActivity(getActivity());
+                break;
+        }
     }
 
     @Override

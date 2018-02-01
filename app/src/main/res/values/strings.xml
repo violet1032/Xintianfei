@@ -27,6 +27,7 @@
     <string name="main_text_2"> 提现 </string>
     <string name="main_text_3"> 规则 </string>
     <string name="main_text_4">个人中心</string>
+    <string name="main_title">王者对决娱乐</string>
 
     <!-- main fragment_main -->
     <string name="fragment_main_text_1">昵称：</string>
@@ -92,4 +93,50 @@
     <string name="fg_agent_text_5">长按图片保存您的推广图片</string>
     <string name="fg_agent_text_6">ID：</string>
     <string name="title_activity_game_bjsc">GameBJSCActivity</string>
+
+    <!-- game -->
+    <string name="game_text_1">返回大厅</string>
+    <string name="game_text_2">充值</string>
+    <string name="game_text_3">提现</string>
+    <string name="game_text_4">更新新动画</string>
+    <string name="game_text_5">小窗</string>
+    <string name="game_text_6">在线客服</string>
+    <string name="game_text_7">编号：</string>
+    <string name="game_text_8">余点：</string>
+    <string name="game_text_9">在线：</string>
+    <string name="game_text_10">人</string>
+    <string name="game_text_11">彩种</string>
+    <string name="game_text_12">竞猜</string>
+    <string name="game_text_13">记录</string>
+    <string name="game_text_14">走势</string>
+    <string name="game_text_15">规则</string>
+    <string name="game_text_16">刷新</string>
+    <string name="game_text_17">车道/车号/金额</string>
+    <string name="game_text_18">快速下注</string>
+    <string name="game_text_19">发送</string>
+    <string name="title_activity_game_xglhc">GameXGLHCActivity</string>
+
+    <string name="game_xglhc_text_1">香港六合彩</string>
+    <string name="game_xglhc_text_2">第</string>
+    <string name="game_xglhc_text_3">期</string>
+    <string name="game_xglhc_text_4">开奖结果</string>
+    <string name="game_xglhc_text_5">鼠</string>
+    <string name="game_xglhc_text_6">牛</string>
+    <string name="game_xglhc_text_7">虎</string>
+    <string name="game_xglhc_text_8">兔</string>
+    <string name="game_xglhc_text_9">龙</string>
+    <string name="game_xglhc_text_10">蛇</string>
+    <string name="game_xglhc_text_11">马</string>
+    <string name="game_xglhc_text_12">羊</string>
+    <string name="game_xglhc_text_13">猴</string>
+    <string name="game_xglhc_text_14">鸡</string>
+    <string name="game_xglhc_text_15">狗</string>
+    <string name="game_xglhc_text_16">猪</string>
+    <string name="game_xglhc_text_17">特码</string>
+    <string name="game_xglhc_text_18">平码</string>
+    <string name="game_xglhc_text_19">尾数</string>
+    <string name="game_xglhc_text_20">特码生肖</string>
+    <string name="game_xglhc_text_21">特码波色</string>
+    <string name="game_xglhc_text_22">正特码</string>
+    <string name="game_xglhc_text_23">生肖连</string>
 </resources>

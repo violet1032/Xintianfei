@@ -33,6 +33,10 @@
             android:name=".ui.GameBJSCActivity"
             android:label="@string/title_activity_game_bjsc" >
         </activity>
+        <activity
+            android:name=".ui.GameXGLHCActivity"
+            android:label="@string/title_activity_game_xglhc" >
+        </activity>
     </application>
 
 </manifest>
