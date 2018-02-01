@@ -1,5 +1,7 @@
 package com.zp.xintianfei.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,6 +14,12 @@ public class LoginActivity extends BaseActivity {
 
     @BindView(id = R.id.act_login_btn_login, click = true)
     private Button btnLogin;
+
+    public static void startActivity(Context context) {
+        Intent intent = new Intent();
+        intent.setClass(context, LoginActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
     public void setRootView() {

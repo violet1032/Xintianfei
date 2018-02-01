@@ -139,4 +139,7 @@
     <string name="game_xglhc_text_21">特码波色</string>
     <string name="game_xglhc_text_22">正特码</string>
     <string name="game_xglhc_text_23">生肖连</string>
+    <string name="game_xglhc_text_24">封盘</string>
+    <string name="game_xglhc_text_25">开奖</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>
