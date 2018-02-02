@@ -4,12 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
@@ -33,6 +35,11 @@ public class PersonFragment extends BaseFragment {
     private RelativeLayout layWithdraw;
     @BindView(id = R.id.fg_person_lay_8, click = true)
     private LinearLayout layAgent;
+
+    @BindView(id = R.id.fg_person_btn_1, click = true)
+    private Button btnExchange1;
+    @BindView(id = R.id.fg_person_btn_2, click = true)
+    private Button btnExchange2;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -71,6 +78,12 @@ public class PersonFragment extends BaseFragment {
                 break;
             case R.id.fg_person_lay_8:
                 ((MainActivity) getActivity()).setPosition(5);
+                break;
+            case R.id.fg_person_btn_1:
+                ExchangeActivity.startActivity(getActivity(), 0);
+                break;
+            case R.id.fg_person_btn_2:
+                ExchangeActivity.startActivity(getActivity(), 1);
                 break;
         }
     }

@@ -142,4 +142,14 @@
     <string name="game_xglhc_text_24">封盘</string>
     <string name="game_xglhc_text_25">开奖</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_exchange">ExchangeActivity</string>
+
+    <!-- exchange -->
+    <string name="exchange_text_1">返回点数兑换</string>
+    <string name="exchange_text_2">请输入反水点数</string>
+    <string name="exchange_text_3">当前可兑换反水点数为：</string>
+    <string name="exchange_text_4">兑换比例</string>
+    <string name="exchange_text_5">佣金点数兑换</string>
+    <string name="exchange_text_6">请输入佣金点数</string>
+    <string name="exchange_text_7">当前可兑换佣金点数为：</string>
 </resources>
