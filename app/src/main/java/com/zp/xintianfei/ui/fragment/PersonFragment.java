@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
+import com.zp.xintianfei.ui.RechargeHistoryActivity;
+import com.zp.xintianfei.ui.WithdrawHistoryActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -35,6 +37,12 @@ public class PersonFragment extends BaseFragment {
     private RelativeLayout layWithdraw;
     @BindView(id = R.id.fg_person_lay_8, click = true)
     private LinearLayout layAgent;
+    @BindView(id = R.id.fg_person_lay_7, click = true)
+    private LinearLayout layRechargeHistory;
+    @BindView(id = R.id.fg_person_lay_6, click = true)
+    private LinearLayout layWithdrawHistory;
+    @BindView(id = R.id.fg_person_lay_3, click = true)
+    private LinearLayout layGambleHistory;
 
     @BindView(id = R.id.fg_person_btn_1, click = true)
     private Button btnExchange1;
@@ -77,13 +85,27 @@ public class PersonFragment extends BaseFragment {
                 ((MainActivity) getActivity()).setPosition(1);
                 break;
             case R.id.fg_person_lay_8:
+                // 代理中心
                 ((MainActivity) getActivity()).setPosition(5);
                 break;
             case R.id.fg_person_btn_1:
+                // 返水兑换
                 ExchangeActivity.startActivity(getActivity(), 0);
                 break;
             case R.id.fg_person_btn_2:
+                // 佣金兑换
                 ExchangeActivity.startActivity(getActivity(), 1);
+                break;
+            case R.id.fg_person_lay_7:
+                // 充值记录
+                RechargeHistoryActivity.startActivity(getActivity());
+                break;
+            case R.id.fg_person_lay_6:
+                // 提现记录
+                WithdrawHistoryActivity.startActivity(getActivity());
+                break;
+            case R.id.fg_person_lay_3:
+                // 投注记录
                 break;
         }
     }

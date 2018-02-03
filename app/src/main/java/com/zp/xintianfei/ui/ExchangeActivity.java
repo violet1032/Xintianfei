@@ -3,6 +3,7 @@ package com.zp.xintianfei.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,10 +18,14 @@ public class ExchangeActivity extends BaseActivity {
 
     @BindView(id = R.id.act_exchange_tv_sum)
     private TextView tvSum;
+    @BindView(id = R.id.act_exchange_tv_type)
+    private TextView tvSumTitle;
     @BindView(id = R.id.act_exchange_tv_title)
     private TextView tvTitle;
     @BindView(id = R.id.act_exchange_edt_sum)
     private EditText edtSum;
+    @BindView(id = R.id.act_exchange_btn_close, click = true)
+    private Button btnClose;
 
     public static void startActivity(Context context, int type) {
         Intent intent = new Intent();
@@ -49,12 +54,12 @@ public class ExchangeActivity extends BaseActivity {
         switch (type) {
             case 0:
                 tvTitle.setText(R.string.exchange_text_1);
-                tvSum.setText(R.string.exchange_text_3);
+                tvSumTitle.setText(R.string.exchange_text_3);
                 edtSum.setHint(R.string.exchange_text_2);
                 break;
             case 1:
                 tvTitle.setText(R.string.exchange_text_5);
-                tvSum.setText(R.string.exchange_text_7);
+                tvSumTitle.setText(R.string.exchange_text_7);
                 edtSum.setHint(R.string.exchange_text_6);
                 break;
         }
@@ -63,5 +68,10 @@ public class ExchangeActivity extends BaseActivity {
     @Override
     public void widgetClick(View v) {
         super.widgetClick(v);
+        switch (v.getId()) {
+            case R.id.act_exchange_btn_close:
+                finish();
+                break;
+        }
     }
 }

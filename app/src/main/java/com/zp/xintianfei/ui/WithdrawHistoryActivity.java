@@ -17,7 +17,7 @@ import org.kymjs.kjframe.ui.BindView;
 
 import java.math.BigDecimal;
 
-public class RechargeHistoryActivity extends BaseActivity {
+public class WithdrawHistoryActivity extends BaseActivity {
 
     @BindView(id = R.id.umeng_banner_title)
     private TextView title;
@@ -31,14 +31,14 @@ public class RechargeHistoryActivity extends BaseActivity {
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();
-        intent.setClass(context, RechargeHistoryActivity.class);
+        intent.setClass(context, WithdrawHistoryActivity.class);
         context.startActivity(intent);
     }
 
     @Override
     public void setRootView() {
         super.setRootView();
-        setContentView(R.layout.activity_recharge_history);
+        setContentView(R.layout.activity_withdraw_history);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class RechargeHistoryActivity extends BaseActivity {
     public void initWidget() {
         super.initWidget();
 
-        title.setText(R.string.recharge_history_text_1);
+        title.setText(R.string.withdraw_history_text_1);
 
         /*******/
         RechargeHistory rechargeHistory = new RechargeHistory();

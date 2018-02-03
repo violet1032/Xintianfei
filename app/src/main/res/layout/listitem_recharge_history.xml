@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/lt_recharge_history_img_1"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignRight="@+id/lt_recharge_history_lay_1"
+            android:background="@color/black_3" />
+
+        <LinearLayout
+            android:id="@+id/lt_recharge_history_lay_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lt_recharge_history_img_1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/black_3" />
+
+            <TextView
+                android:id="@+id/lt_recharge_history_tv_id"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_10"
+                android:text="10010" />
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/black_3" />
+
+            <TextView
+                android:id="@+id/lt_recharge_history_tv_time"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_10"
+                android:text="2018-01-08 09:00" />
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/black_3" />
+
+            <TextView
+                android:id="@+id/lt_recharge_history_tv_money"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_10"
+                android:text="10000.0" />
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/black_3" />
+
+            <TextView
+                android:id="@+id/lt_recharge_history_tv_status"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/space_10"
+                android:text="状态" />
+
+            <ImageView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/black_3" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignRight="@+id/lt_recharge_history_lay_1"
+            android:layout_below="@+id/lt_recharge_history_lay_1"
+            android:background="@color/black_3" />
+    </RelativeLayout>
+
+
+</RelativeLayout>
