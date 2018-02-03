@@ -1,0 +1,101 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shape_rounded_h_black_4"
+    android:orientation="vertical"
+    tools:context="com.zp.xintianfei.ui.ExchangeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_10">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/icon_close" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/act_exchange_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/exchange_text_1"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_20" />
+
+    <EditText
+        android:id="@+id/act_exchange_edt_sum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_40"
+        android:layout_marginRight="@dimen/space_40"
+        android:layout_marginTop="@dimen/space_20"
+        android:background="@drawable/shape_round_stroke_h_black_white"
+        android:hint="@string/exchange_text_2"
+        android:padding="@dimen/space_10"
+        android:textColor="@color/white" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/act_exchange_tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exchange_text_3"
+            android:textColor="@color/orange_1"
+            android:textSize="@dimen/text_size_17" />
+
+        <TextView
+            android:id="@+id/act_exchange_tv_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_default"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_17" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/exchange_text_4"
+            android:textColor="@color/orange_1"
+            android:textSize="@dimen/text_size_17" />
+
+        <TextView
+            android:id="@+id/act_exchange_tv_fee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_10"
+            android:text="@string/text_default"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_17" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/space_40"
+        android:layout_marginRight="@dimen/space_40"
+        android:layout_marginTop="@dimen/space_20"
+        android:background="@drawable/click_btn_round_orange_1"
+        android:padding="@dimen/space_10"
+        android:text="@string/fragment_withdraw_text_10"
+        android:textSize="@dimen/text_size_15" />
+</LinearLayout>

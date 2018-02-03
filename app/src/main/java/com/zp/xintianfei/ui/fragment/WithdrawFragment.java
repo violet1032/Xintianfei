@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -21,6 +23,11 @@ public class WithdrawFragment extends BaseFragment {
     private TextView title;
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
+
+    @BindView(id = R.id.fg_withdraw_btn_1, click = true)
+    private Button btnExchange1;
+    @BindView(id = R.id.fg_withdraw_btn_2, click = true)
+    private Button btnExchange2;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -44,6 +51,15 @@ public class WithdrawFragment extends BaseFragment {
     @Override
     protected void widgetClick(View v) {
         super.widgetClick(v);
+
+        switch (v.getId()) {
+            case R.id.fg_withdraw_btn_1:
+                ExchangeActivity.startActivity(getActivity(), 0);
+                break;
+            case R.id.fg_withdraw_btn_2:
+                ExchangeActivity.startActivity(getActivity(), 1);
+                break;
+        }
     }
 
     @Override
