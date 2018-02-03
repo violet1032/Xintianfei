@@ -142,4 +142,5 @@
     <string name="game_xglhc_text_24">封盘</string>
     <string name="game_xglhc_text_25">开奖</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_recharge_history">RechargeHistoryActivity</string>
 </resources>
