@@ -8,9 +8,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
-import com.zp.xintianfei.ui.adapter.RechargeHistoryAdapter;
-import com.zp.xintianfei.ui.bean.RechargeHistory;
-import com.zp.xintianfei.ui.bean.RechargeHistoryList;
+import com.zp.xintianfei.adapter.RechargeHistoryAdapter;
+import com.zp.xintianfei.bean.RechargeHistory;
+import com.zp.xintianfei.bean.RechargeHistoryList;
 import com.zp.xintianfei.ui.common.BaseActivity;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -38,7 +38,7 @@ public class WithdrawHistoryActivity extends BaseActivity {
     @Override
     public void setRootView() {
         super.setRootView();
-        setContentView(R.layout.activity_withdraw_history);
+        setContentView(R.layout.fragment_withdraw_history);
     }
 
     @Override

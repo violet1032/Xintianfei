@@ -101,12 +101,19 @@
     <orderEntry type="library" exported="" name="support-core-utils-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="support-vector-drawable-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="umeng_social_net" level="project" />
     <orderEntry type="library" exported="" name="support-v4-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="umeng_social_api" level="project" />
+    <orderEntry type="library" exported="" name="umeng_social_tool" level="project" />
+    <orderEntry type="library" exported="" name="appcompat-v7-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="SocialSDK_QQ_Full" level="project" />
+    <orderEntry type="library" exported="" name="open_sdk_r5781" level="project" />
+    <orderEntry type="library" exported="" name="SocialSDK_WeiXin_Full" level="project" />
+    <orderEntry type="library" exported="" name="wechat-sdk-android-with-mta-1.1.6" level="project" />
     <orderEntry type="library" exported="" name="support-compat-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-26.0.0-alpha1" level="project" />
     <orderEntry type="module" module-name="kjframe" exported="" />
   </component>
 </module>

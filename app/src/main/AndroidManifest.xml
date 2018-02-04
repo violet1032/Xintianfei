@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zp.xintianfei">
+    package="com.zp.xintianfei" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -10,16 +10,20 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.VIBRATE" />
-
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <application
         android:name=".AppContext"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".ui.SplashActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,23 +32,67 @@
         </activity>
         <activity
             android:name=".ui.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".ui.GameBJSCActivity"
-            android:label="@string/title_activity_game_bjsc"></activity>
+            android:label="@string/title_activity_game_bjsc" />
         <activity
             android:name=".ui.GameXGLHCActivity"
-            android:label="@string/title_activity_game_xglhc"></activity>
+            android:label="@string/title_activity_game_xglhc" />
         <activity
             android:name=".ui.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".ui.RechargeHistoryActivity"
-            android:label="@string/title_activity_recharge_history"></activity>
-        <activity android:name=".ui.WithdrawHistoryActivity"></activity>
+            android:label="@string/title_activity_recharge_history" />
+        <activity android:name=".ui.WithdrawHistoryActivity" />
         <activity
             android:name=".ui.ExchangeActivity"
-            android:theme="@style/CustomDialog"></activity>
+            android:theme="@style/CustomDialog" />
+        <activity
+            android:name=".ui.AgentCashActivity"
+            android:label="@string/title_activity_agent_cash" >
+        </activity>
+        <activity
+            android:name=".ui.AgentLowerActivity"
+            android:label="@string/title_activity_agent_lower" >
+        </activity>
+        <activity
+            android:name=".ui.AgentFeeActivity"
+            android:label="@string/title_activity_agent_fee" >
+        </activity>
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize"/>
+
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5a77125bf43e480daf000404" >
+        </meta-data>
     </application>
 
 </manifest>

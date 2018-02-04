@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.ExchangeActivity;
+import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -28,6 +30,9 @@ public class WithdrawFragment extends BaseFragment {
     private Button btnExchange1;
     @BindView(id = R.id.fg_withdraw_btn_2, click = true)
     private Button btnExchange2;
+
+    @BindView(id = R.id.fg_withdraw_btn_bading, click = true)
+    private LinearLayout layBadding;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -58,6 +63,9 @@ public class WithdrawFragment extends BaseFragment {
                 break;
             case R.id.fg_withdraw_btn_2:
                 ExchangeActivity.startActivity(getActivity(), 1);
+                break;
+            case R.id.fg_withdraw_btn_bading:
+                ((MainActivity)getActivity()).setPosition(9);
                 break;
         }
     }

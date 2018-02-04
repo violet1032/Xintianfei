@@ -1,0 +1,657 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    tools:context="com.zp.xintianfei.ui.gambleHistoryActivity">
+
+    <include layout="@layout/common_banner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/space_5"
+        android:background="@drawable/shape_rounded_h_black_5"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/space_10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_5">
+
+                <Button
+                    android:id="@+id/fg_gamble_history_btn_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_left"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/gamble_history_text_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15" />
+
+                <Button
+                    android:id="@+id/fg_gamble_history_btn_yeaterday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_right_black"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/gamble_history_text_3"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_6">
+
+                <Button
+                    android:id="@+id/fg_gamble_history_btn_todaygamble"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/gamble_history_text_4"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15" />
+
+                <Button
+                    android:id="@+id/fg_gamble_history_btn_todayzhangbian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_5"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round_black"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/gamble_history_text_5"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15" />
+
+                <Button
+                    android:id="@+id/fg_gamble_history_btn_todayfuli"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_6"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_round_black"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/gamble_history_text_6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/fg_gamble_history_lay_todaygamble"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/fg_gamble_history_lay_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/lt_gamble_history_img_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_1"
+                    android:background="@color/black_3" />
+
+                <LinearLayout
+                    android:id="@+id/lt_gamble_history_lay_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lt_gamble_history_img_1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_7" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_8" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_9" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_9" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_10" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/lt_gamble_history_img_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_1"
+                    android:layout_below="@+id/lt_gamble_history_lay_1"
+                    android:background="@color/black_3" />
+
+                <LinearLayout
+                    android:id="@+id/lt_gamble_history_lay_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lt_gamble_history_img_2"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/text_default"
+                        android:textColor="@color/red" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/text_default"
+                        android:textColor="@color/red" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/text_default"
+                        android:textColor="@color/red" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/text_default"
+                        android:textColor="@color/red" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/text_default"
+                        android:textColor="@color/red" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_1"
+                    android:layout_below="@+id/lt_gamble_history_lay_2"
+                    android:background="@color/black_3" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/fg_gamble_history_lay_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/fg_gamble_history_lay_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/space_5">
+
+                <ImageView
+                    android:id="@+id/lt_gamble_history_img_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_4"
+                    android:background="@color/black_3" />
+
+                <LinearLayout
+                    android:id="@+id/lt_gamble_history_lay_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lt_gamble_history_img_3"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_12" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="166dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_13" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/lt_gamble_history_img_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_4"
+                    android:layout_below="@+id/lt_gamble_history_lay_3"
+                    android:background="@color/black_3" />
+
+                <LinearLayout
+                    android:id="@+id/lt_gamble_history_lay_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lt_gamble_history_img_4"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_14" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_15" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_16" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_17" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_18" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="45dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_5"
+                        android:text="@string/gamble_history_text_19" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_4"
+                    android:layout_below="@+id/lt_gamble_history_lay_4"
+                    android:background="@color/black_3" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/act_gamble_history_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/fg_gamble_history_lay_2"
+                android:layout_alignRight="@+id/fg_gamble_history_lay_2"
+                android:layout_below="@+id/fg_gamble_history_lay_2"
+                android:divider="@color/transparent"
+                android:dividerHeight="0px"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none">
+
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fg_gamble_history_lay_todayzhangbian"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/fg_gamble_history_lay_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/lt_gamble_history_img_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_5"
+                    android:background="@color/black_3" />
+
+                <LinearLayout
+                    android:id="@+id/lt_gamble_history_lay_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lt_gamble_history_img_5"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_24" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_25" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_26" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_27" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_5"
+                    android:layout_below="@+id/lt_gamble_history_lay_5"
+                    android:background="@color/black_3" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/act_gamble_history_list_zhangbian"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/fg_gamble_history_lay_3"
+                android:layout_alignRight="@+id/fg_gamble_history_lay_3"
+                android:layout_below="@+id/fg_gamble_history_lay_3"
+                android:divider="@color/transparent"
+                android:dividerHeight="0px"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none">
+
+            </ListView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/fg_gamble_history_lay_todayfuli"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/fg_gamble_history_lay_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/lt_gamble_history_img_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_6"
+                    android:background="@color/black_3" />
+
+                <LinearLayout
+                    android:id="@+id/lt_gamble_history_lay_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/lt_gamble_history_img_6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_24" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_25" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/space_10"
+                        android:text="@string/gamble_history_text_26" />
+
+                    <ImageView
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/black_3" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_alignRight="@+id/lt_gamble_history_lay_6"
+                    android:layout_below="@+id/lt_gamble_history_lay_6"
+                    android:background="@color/black_3" />
+            </RelativeLayout>
+
+            <ListView
+                android:id="@+id/act_gamble_history_list_fuli"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/fg_gamble_history_lay_4"
+                android:layout_alignRight="@+id/fg_gamble_history_lay_4"
+                android:layout_below="@+id/fg_gamble_history_lay_4"
+                android:divider="@color/transparent"
+                android:dividerHeight="0px"
+                android:listSelector="@color/transparent"
+                android:scrollbars="none">
+
+            </ListView>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>

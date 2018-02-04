@@ -1,0 +1,122 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_5"
+    android:orientation="vertical"
+    tools:context="com.zp.xintianfei.ui.AgentLowerActivity">
+
+    <include layout="@layout/common_banner" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_10"
+        android:text="@string/agent_lower_text_1"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_15" />
+
+    <RelativeLayout
+        android:id="@+id/fg_agent_cash_lay_todayfuli"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/space_10">
+
+        <RelativeLayout
+            android:id="@+id/fg_agent_cash_lay_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/lt_agent_cash_img_6"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignRight="@+id/lt_agent_cash_lay_6"
+                android:background="@color/black_3" />
+
+            <LinearLayout
+                android:id="@+id/lt_agent_cash_lay_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lt_agent_cash_img_6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/agent_lower_text_2" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/agent_lower_text_3" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/agent_lower_text_4" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/agent_lower_text_5" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignRight="@+id/lt_agent_cash_lay_6"
+                android:layout_below="@+id/lt_agent_cash_lay_6"
+                android:background="@color/black_3" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/act_agent_lower_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/fg_agent_cash_lay_4"
+            android:layout_alignRight="@+id/fg_agent_cash_lay_4"
+            android:layout_below="@+id/fg_agent_cash_lay_4"
+            android:divider="@color/transparent"
+            android:dividerHeight="0px"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none">
+
+        </ListView>
+    </RelativeLayout>
+</LinearLayout>

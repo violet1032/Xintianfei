@@ -18,6 +18,10 @@ package com.zp.xintianfei;
 import android.app.Application;
 import android.content.Context;
 
+import com.umeng.socialize.Config;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
+
 import org.kymjs.kjframe.http.HttpConfig;
 
 /**
@@ -32,6 +36,8 @@ public class AppContext extends Application {
     public static Context applicationContext;
     public static AppContext appContext;
 
+    public static UMShareAPI umShareAPI;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -40,5 +46,12 @@ public class AppContext extends Application {
 
         applicationContext = getApplicationContext();
         appContext = this;
+
+        // 配置友盟
+        PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        Config.DEBUG = true;
+
+//        umShareAPI = UMShareAPI.get(this);
     }
 }

@@ -8,11 +8,15 @@ import android.widget.LinearLayout;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.common.BaseActivity;
 import com.zp.xintianfei.ui.fragment.AgentFragment;
+import com.zp.xintianfei.ui.fragment.BanddingFragment;
+import com.zp.xintianfei.ui.fragment.GambleHistoryFragment;
 import com.zp.xintianfei.ui.fragment.MainFragment;
 import com.zp.xintianfei.ui.fragment.PersonFragment;
 import com.zp.xintianfei.ui.fragment.RechargeFragment;
+import com.zp.xintianfei.ui.fragment.RechargeHistoryFragment;
 import com.zp.xintianfei.ui.fragment.RuleFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawFragment;
+import com.zp.xintianfei.ui.fragment.WithdrawHistoryFragment;
 
 import org.kymjs.kjframe.ui.BindView;
 
@@ -27,6 +31,10 @@ public class MainActivity extends BaseActivity {
     private RuleFragment ruleFragment = new RuleFragment();
     private PersonFragment personFragment = new PersonFragment();
     private AgentFragment agentFragment = new AgentFragment();
+    private RechargeHistoryFragment rechargeHistoryFragment = new RechargeHistoryFragment();
+    private WithdrawHistoryFragment withdrawHistoryFragment = new WithdrawHistoryFragment();
+    private GambleHistoryFragment gambleHistoryFragment = new GambleHistoryFragment();
+    private BanddingFragment banddingFragment = new BanddingFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -123,6 +131,22 @@ public class MainActivity extends BaseActivity {
                 case 5:
                     // 代理中心
                     changeFragment(R.id.act_main_content, agentFragment);
+                    break;
+                case 6:
+                    // 充值记录
+                    changeFragment(R.id.act_main_content, rechargeHistoryFragment);
+                    break;
+                case 7:
+                    // 提现记录
+                    changeFragment(R.id.act_main_content, withdrawHistoryFragment);
+                    break;
+                case 8:
+                    // 投注记录
+                    changeFragment(R.id.act_main_content, gambleHistoryFragment);
+                    break;
+                case 9:
+                    // 绑定银行卡
+                    changeFragment(R.id.act_main_content, banddingFragment);
                     break;
             }
 

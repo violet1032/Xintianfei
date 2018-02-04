@@ -1,0 +1,154 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_5"
+    android:orientation="vertical"
+    tools:context="com.zp.xintianfei.ui.AgentCashActivity">
+
+    <include layout="@layout/common_banner" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/space_20">
+
+        <EditText
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_round_stroke_h_transparent_black_3"
+            android:padding="@dimen/space_6"
+            android:textSize="@dimen/text_size_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_20"
+            android:text="@string/agent_cash_text_2"
+            android:textSize="@dimen/text_size_15" />
+
+        <EditText
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_weight="1"
+            android:background="@drawable/shape_round_stroke_h_transparent_black_3"
+            android:padding="@dimen/space_6"
+            android:textSize="@dimen/text_size_14" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/space_20"
+            android:layout_weight="1"
+            android:background="@drawable/click_btn_round"
+            android:paddingBottom="@dimen/space_5"
+            android:paddingTop="@dimen/space_5"
+            android:text="@string/agent_cash_text_3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_15" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/fg_agent_cash_lay_todayfuli"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/fg_agent_cash_lay_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/lt_agent_cash_img_6"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignRight="@+id/lt_agent_cash_lay_6"
+                android:background="@color/black_3" />
+
+            <LinearLayout
+                android:id="@+id/lt_agent_cash_lay_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lt_agent_cash_img_6"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/gamble_history_text_14" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/gamble_history_text_15" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/gamble_history_text_18" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+
+                <TextView
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/space_10"
+                    android:text="@string/agent_cash_text_4" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_3" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_alignRight="@+id/lt_agent_cash_lay_6"
+                android:layout_below="@+id/lt_agent_cash_lay_6"
+                android:background="@color/black_3" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/act_agent_cash_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@+id/fg_agent_cash_lay_4"
+            android:layout_alignRight="@+id/fg_agent_cash_lay_4"
+            android:layout_below="@+id/fg_agent_cash_lay_4"
+            android:divider="@color/transparent"
+            android:dividerHeight="0px"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none">
+
+        </ListView>
+    </RelativeLayout>
+</LinearLayout>

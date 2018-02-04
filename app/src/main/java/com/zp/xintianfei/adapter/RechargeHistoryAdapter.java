@@ -1,4 +1,4 @@
-package com.zp.xintianfei.ui.adapter;
+package com.zp.xintianfei.adapter;
 
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
-import com.zp.xintianfei.ui.bean.RechargeHistory;
+import com.zp.xintianfei.bean.RechargeHistory;
 
 import java.util.List;
 

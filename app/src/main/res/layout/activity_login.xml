@@ -29,6 +29,18 @@
             android:layout_height="wrap_content"
             android:text="@string/login_text_6"
             android:textColor="@color/white" />
+        <Button
+            android:id="@+id/act_login_btn_login_wexin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="微信"
+            android:textColor="@color/white" />
+        <Button
+            android:id="@+id/act_login_btn_login_qq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="QQ"
+            android:textColor="@color/white" />
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.zp.xintianfei.ui.bean;
+package com.zp.xintianfei.bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;

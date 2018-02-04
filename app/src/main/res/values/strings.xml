@@ -37,7 +37,7 @@
     <!-- main fragment_withdraw -->
     <string name="fragment_withdraw_text_1">ID：</string>
     <string name="fragment_withdraw_text_2">剩余点数：</string>
-    <string name="fragment_withdraw_text_3">反水点数：</string>
+    <string name="fragment_withdraw_text_3">返水点数：</string>
     <string name="fragment_withdraw_text_4">佣金点数：</string>
     <string name="fragment_withdraw_text_5">兑换</string>
     <string name="fragment_withdraw_text_6">请输入取款金额</string>
@@ -45,6 +45,7 @@
     <string name="fragment_withdraw_text_8">绑定银行卡</string>
     <string name="fragment_withdraw_text_9">在线客服</string>
     <string name="fragment_withdraw_text_10">确定</string>
+    <string name="sure">确定</string>
 
     <!-- main fragment rule -->
     <string name="fragment_rule_text_1">北京赛车</string>
@@ -87,7 +88,7 @@
 
     <!-- fragment agent -->
     <string name="fg_agent_text_1">代理中心</string>
-    <string name="fg_agent_text_2">下级反水比例</string>
+    <string name="fg_agent_text_2">下级返水比例</string>
     <string name="fg_agent_text_3">下级玩家</string>
     <string name="fg_agent_text_4">查看流水</string>
     <string name="fg_agent_text_5">长按图片保存您的推广图片</string>
@@ -154,4 +155,59 @@
 
     <string name="recharge_history_text_1">充值记录</string>
     <string name="withdraw_history_text_1">提现记录</string>
+
+    <!-- gamble history -->
+    <string name="gamble_history_text_1">投注记录</string>
+    <string name="gamble_history_text_2">今日</string>
+    <string name="gamble_history_text_3">昨日</string>
+    <string name="gamble_history_text_4">今日投注</string>
+    <string name="gamble_history_text_5">今日账变</string>
+    <string name="gamble_history_text_6">今日福利</string>
+    <string name="gamble_history_text_7">投注</string>
+    <string name="gamble_history_text_8">中奖</string>
+    <string name="gamble_history_text_9">盈利</string>
+    <string name="gamble_history_text_10">充值</string>
+    <string name="gamble_history_text_11">提现</string>
+    <string name="gamble_history_text_12">彩种选择</string>
+    <string name="gamble_history_text_13">全部彩种</string>
+    <string name="gamble_history_text_14">彩种</string>
+    <string name="gamble_history_text_15">期号</string>
+    <string name="gamble_history_text_16">玩法</string>
+    <string name="gamble_history_text_17">号码</string>
+    <string name="gamble_history_text_18">金额</string>
+    <string name="gamble_history_text_19">状态</string>
+    <string name="gamble_history_text_20">元</string>
+    <string name="gamble_history_text_21">昨日投注</string>
+    <string name="gamble_history_text_22">昨日账变</string>
+    <string name="gamble_history_text_23">昨日福利</string>
+    <string name="gamble_history_text_24">账变时间</string>
+    <string name="gamble_history_text_25">账变类型</string>
+    <string name="gamble_history_text_26">账变金额</string>
+    <string name="gamble_history_text_27">余额</string>
+    <string name="title_activity_agent_cash">AgentCashActivity</string>
+
+    <string name="agent_cash_text_1">代理流水</string>
+    <string name="agent_cash_text_2">到</string>
+    <string name="agent_cash_text_3">查询</string>
+    <string name="agent_cash_text_4">时间</string>
+    <string name="title_activity_agent_lower">AgentLowerActivity</string>
+
+    <string name="agent_lower_text_1">下级玩家</string>
+    <string name="agent_lower_text_2">ID</string>
+    <string name="agent_lower_text_3">昵称</string>
+    <string name="agent_lower_text_4">注册时间</string>
+    <string name="agent_lower_text_5">贡献流水</string>
+    <string name="title_activity_agent_fee">AgentFeeActivity</string>
+
+    <string name="agent_fee_text_1">下级玩家返水</string>
+    <string name="agent_fee_text_2">下级玩家返水比例设置</string>
+    <string name="agent_fee_text_3">返水比例范围：0-100(%)</string>
+
+    <string name="bandding_text_1">绑定银行卡</string>
+    <string name="bandding_text_2">请选择开户银行</string>
+    <string name="bandding_text_3">支行名称</string>
+    <string name="bandding_text_4">持卡人姓名</string>
+    <string name="bandding_text_5">银行卡号</string>
+    <string name="bandding_text_6">确认银行卡号</string>
+    <string name="bandding_text_7">绑定</string>
 </resources>

@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
-import com.zp.xintianfei.ui.RechargeHistoryActivity;
-import com.zp.xintianfei.ui.WithdrawHistoryActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -98,14 +96,15 @@ public class PersonFragment extends BaseFragment {
                 break;
             case R.id.fg_person_lay_7:
                 // 充值记录
-                RechargeHistoryActivity.startActivity(getActivity());
+                ((MainActivity) getActivity()).setPosition(6);
                 break;
             case R.id.fg_person_lay_6:
                 // 提现记录
-                WithdrawHistoryActivity.startActivity(getActivity());
+                ((MainActivity) getActivity()).setPosition(7);
                 break;
             case R.id.fg_person_lay_3:
                 // 投注记录
+                ((MainActivity) getActivity()).setPosition(8);
                 break;
         }
     }
