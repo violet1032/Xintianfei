@@ -17,11 +17,17 @@ package com.zp.xintianfei;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.util.DisplayMetrics;
 
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
-import com.umeng.socialize.UMShareAPI;
+import com.zp.xintianfei.api.FHttpClient;
+import com.zp.xintianfei.bean.User;
 
+import org.kymjs.kjframe.KJBitmap;
+import org.kymjs.kjframe.bitmap.BitmapConfig;
 import org.kymjs.kjframe.http.HttpConfig;
 
 /**
@@ -36,7 +42,17 @@ public class AppContext extends Application {
     public static Context applicationContext;
     public static AppContext appContext;
 
-    public static UMShareAPI umShareAPI;
+    // 获取网络图片对象
+    public static KJBitmap bitmap;
+
+    public static User user;
+
+    // http相关
+    public static FHttpClient http;
+    // 设备屏幕宽高
+    public static int screenHeight, screenWidth;
+    public static int versionCode;
+    public static String versionName;
 
     @Override
     public void onCreate() {
@@ -47,11 +63,34 @@ public class AppContext extends Application {
         applicationContext = getApplicationContext();
         appContext = this;
 
+        // 获取屏幕尺寸
+        DisplayMetrics metrics = getResources().getDisplayMetrics();
+        screenWidth = metrics.widthPixels;
+        screenHeight = metrics.heightPixels;
+        // 获取版本信息
+        try {
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(this.getPackageName(), 0);
+            versionName = packageInfo.versionName;
+            versionCode = packageInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        // http实例化
+        HttpConfig config = new HttpConfig();
+        HttpConfig.DEBUG = true;
+        HttpConfig.TIMEOUT = AppConfig.getInstance().getHttpTimeout();
+        config.cacheTime = AppConfig.getInstance().getHttpCacheTime();
+        http = new FHttpClient(config);
+        BitmapConfig bitmapConfig = new BitmapConfig();
+        bitmapConfig.cacheTime = AppConfig.getInstance().getBitmapCacheTime();
+        bitmap = new KJBitmap(bitmapConfig);
+
+        user = new User();
+
         // 配置友盟
         PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         Config.DEBUG = true;
-
-//        umShareAPI = UMShareAPI.get(this);
     }
 }

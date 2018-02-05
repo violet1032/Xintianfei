@@ -6,13 +6,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.api.ApiLottery;
+import com.zp.xintianfei.api.FHttpCallBack;
+import com.zp.xintianfei.bean.Result;
+import com.zp.xintianfei.bean.Rules;
 import com.zp.xintianfei.ui.common.BaseFragment;
+import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
@@ -24,12 +32,19 @@ public class RuleFragment extends BaseFragment {
 
     private Button[] layBtn = new Button[9];
 
-    private ScrollView[] views = new ScrollView[9];
+//    private ScrollView[] views = new ScrollView[9];
 
     @BindView(id = R.id.umeng_banner_title)
     private TextView title;
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
+
+    @BindView(id = R.id.fg_rule_tv_title)
+    private TextView tvRuleTitle;
+    @BindView(id = R.id.fg_rule_tv_content)
+    private TextView tvRuleContent;
+
+    private List<Rules> listRules = new ArrayList<>();
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -56,7 +71,6 @@ public class RuleFragment extends BaseFragment {
 
         for (int i = 0; i < layBtn.length; i++) {
             layBtn[i].setOnClickListener(new onclick_bottom(i));
-            views[i] = parentView.findViewById(R.id.fg_rule_lay_1 + i);
         }
 
         setPosition(0);
@@ -65,6 +79,8 @@ public class RuleFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
+
+        getRules();
     }
 
     @Override
@@ -94,16 +110,67 @@ public class RuleFragment extends BaseFragment {
         if (currSelected != curr) {
             currSelected = curr;
 
-            views[curr].setVisibility(View.VISIBLE);
+            boolean has = false;
+            for (Rules rules :
+                    listRules) {
+                if (rules.getCate() == curr + 1) {
+                    tvRuleTitle.setText(rules.getTitle() + "玩法介绍:");
+                    tvRuleContent.setText(rules.getContent());
+                    has = true;
+                }
+            }
+            if (!has) {
+                tvRuleTitle.setText("暂无玩法介绍");
+                tvRuleContent.setText("");
+            }
+
             layBtn[curr].setTextColor(getResources().getColor(R.color.white));
             layBtn[curr].setBackgroundResource(R.drawable.shape_rounded_h_orange_5);
             if (lastSelected >= 0) {
-                views[lastSelected].setVisibility(View.GONE);
                 layBtn[lastSelected].setTextColor(getResources().getColor(R.color.black_3));
                 layBtn[lastSelected].setBackgroundResource(R.drawable.shape_rounded_h_gray_2);
             }
 
             lastSelected = currSelected;
+        }
+    }
+
+    private void getRules() {
+        for (int i = 1; i <= 9; i++) {
+            FHttpCallBack callBack = new FHttpCallBack() {
+                @Override
+                public void onSuccess(Map<String, String> headers, byte[] t) {
+                    super.onSuccess(headers, t);
+                    String str = new String(t);
+                    Result result = new Result().parse(str);
+                    if (result.isOk()) {
+                        Rules rules = new Rules();
+                        rules.parse(str);
+
+                        listRules.add(rules);
+
+                        if (rules.getCate() == 1) {
+                            tvRuleTitle.setText(rules.getTitle() + "玩法介绍:");
+                            tvRuleContent.setText(rules.getContent());
+                        }
+                    } else {
+                        UIHelper.ToastMessage(result.getMsg());
+                    }
+                }
+
+                @Override
+                public void onFinish() {
+                    super.onFinish();
+                    UIHelper.stopLoadingDialog();
+                }
+
+                @Override
+                public void onPreStart() {
+                    super.onPreStart();
+                    UIHelper.showLoadingDialog(getActivity());
+                }
+            };
+            ApiLottery.getGameRule(i, callBack);
         }
     }
 }

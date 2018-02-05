@@ -4,6 +4,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+
 /**
  * <p>
  * 描述:
@@ -53,6 +55,17 @@ public class JsonUtils {
             e.printStackTrace();
         }
         return false;
+    }
+
+    public BigDecimal getBigDecimal(String str){
+        try {
+            if (jsonObject != null && jsonObject.has(str) && jsonObject.get(str) != null && !StringUtils.isEmpty(jsonObject.get(str).toString())) {
+                return new BigDecimal(jsonObject.getDouble(str));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return new BigDecimal(0);
     }
 
     public double getDouble(String str) {

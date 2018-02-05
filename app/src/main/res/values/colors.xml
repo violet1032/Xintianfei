@@ -44,4 +44,14 @@
     <color name="skyblue_1">#ff57afd5</color>
     <color name="skyblue_2">#ff4394b7</color>
     <color name="red">#ff0000</color>
+    <color name="color_1">#e883bc</color>
+    <color name="color_10">#cbb225</color>
+    <color name="color_2">#a083e8</color>
+    <color name="color_3">#7e7e7e</color>
+    <color name="color_4">#1e9273</color>
+    <color name="color_5">#6acfb6</color>
+    <color name="color_6">#cdc437</color>
+    <color name="color_7">#d28b01</color>
+    <color name="color_8">#06bfab</color>
+    <color name="color_9">#76a7df</color>
 </resources>

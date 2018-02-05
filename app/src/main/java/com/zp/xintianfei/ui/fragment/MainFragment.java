@@ -8,7 +8,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.api.ApiCommon;
 import com.zp.xintianfei.ui.GameBJSCActivity;
 import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
@@ -30,6 +32,16 @@ public class MainFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_lay_6, click = true)
     private LinearLayout layXGLHC;
 
+    @BindView(id = R.id.fg_tx_nickname)
+    private TextView tvNickname;
+    @BindView(id = R.id.fg_tx_id)
+    private TextView tvID;
+    @BindView(id = R.id.fg_tx_sum)
+    private TextView tvSum;
+
+    @BindView(id = R.id.fg_main_img_head)
+    private ImageView imgHead;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_main, null);
@@ -42,6 +54,12 @@ public class MainFragment extends BaseFragment {
 
         title.setText(R.string.main_title);
         imgBack.setVisibility(View.INVISIBLE);
+
+        tvNickname.setText(AppContext.user.getNickname());
+        tvID.setText(AppContext.user.getUid() + "");
+        tvSum.setText(AppContext.user.getMoney().toString());
+
+        ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
     }
 
     @Override

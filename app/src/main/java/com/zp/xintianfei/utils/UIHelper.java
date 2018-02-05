@@ -3,10 +3,8 @@ package com.zp.xintianfei.utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.text.Html;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -18,7 +16,6 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zp.xintianfei.AppContext;
@@ -30,13 +27,13 @@ import java.io.FileOutputStream;
 
 /**
  * 界面ui控件等工具类
- * <p/>
+ * <p>
  * description:
- * <p/>
+ * <p>
  * author:zipeng
- * <p/>
+ * <p>
  * createTime:2015/9/14 20:18
- * <p/>
+ * <p>
  * version:1.0
  */
 public class UIHelper {
@@ -112,9 +109,6 @@ public class UIHelper {
         return bp;
 
     }
-
-
-
 
 
     /**
@@ -390,30 +384,6 @@ public class UIHelper {
             e.printStackTrace();
         }
     }
-
-
-
-    static AssetManager mgr = AppContext.appContext.getAssets();//得到AssetManager
-    static Typeface tf = Typeface.createFromAsset(mgr, "STHeiti-Medium.ttf");//根据路径得到Typeface
-
-    /**
-     * 设置字体
-     *
-     * @param view
-     */
-    public static void setTextFont(View view) {
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i = 0; i < viewGroup.getChildCount(); i++) {
-                setTextFont(viewGroup.getChildAt(i));
-            }
-        } else if (view instanceof TextView) {
-            TextView tv = (TextView) view;
-            tv.setTypeface(tf);//设置字体
-        } else
-            return;
-    }
-
 
     /**
      * 隐藏软键盘

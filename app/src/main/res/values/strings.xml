@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">王者娱乐城</string>
+    <string name="app_name_en">wzylc</string>
     <!-- 误操作提示 -->
     <string name="account_not_empty">账号不能为空</string>
     <string name="password_not_empty">密码不能为空</string>
@@ -72,7 +73,7 @@
     <string name="fg_person_text_2">充值</string>
     <string name="fg_person_text_3">提现</string>
     <string name="fg_person_text_4">投注记录</string>
-    <string name="fg_person_text_5">在线客服</string>
+    <string name="fg_person_text_5">客服人员</string>
     <string name="fg_person_text_6">APP下载</string>
     <string name="fg_person_text_7">提现记录</string>
     <string name="fg_person_text_8">充值记录</string>

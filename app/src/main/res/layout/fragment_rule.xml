@@ -147,7 +147,39 @@
                 android:textSize="@dimen/text_size_15" />
         </LinearLayout>
 
-        <include
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fg_rule_tv_title"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:text="@string/fragment_rule_text_11"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_15" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:id="@+id/fg_rule_tv_content"
+                    android:text="@string/text_default"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!--<include
             android:id="@+id/fg_rule_lay_1"
             layout="@layout/fragment_rule_bjsc"
             android:visibility="gone" />
@@ -190,6 +222,6 @@
         <include
             android:id="@+id/fg_rule_lay_9"
             layout="@layout/fragment_rule_qqlfc"
-            android:visibility="gone" />
+            android:visibility="gone" />-->
     </LinearLayout>
 </RelativeLayout>

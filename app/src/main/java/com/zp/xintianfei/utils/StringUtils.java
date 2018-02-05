@@ -3,6 +3,8 @@ package com.zp.xintianfei.utils;
 
 import android.util.Log;
 
+import com.zp.xintianfei.api.URLs;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -575,5 +577,36 @@ public class StringUtils extends org.kymjs.kjframe.utils.StringUtils {
             Log.e("hidePhoneError", "隐藏的电话号码末尾位数大于电话号码位数总长度，请检查hidePhoneNumber()");
             return null;
         }
+    }
+
+    /**
+     * 获取图片完整Url地址
+     *
+     * @param url
+     * @param thumb
+     * @return
+     */
+    public static String getImgHttpUrl(String url, boolean thumb) {
+        if (!url.startsWith("http")) {
+            // 如果地址是已"/"开头 ，则把斜杠去掉
+            if (url.startsWith("/"))
+                url = url.substring(1);
+
+            // 如果已有swust-home/则去掉
+            if (url.indexOf("swust-home") >= 0)
+                url = url.replace("swust-home/", "");
+            url = URLs.APP_STORE_HOST + url;
+            if (thumb) {
+                // 获取图片名字
+                int s = 0;
+                while (url.indexOf("/", s + 1) > 0) {
+                    s = url.indexOf("/", s + 1);
+                }
+                String name = url.substring(s + 1);
+                String rename = "thumb_" + name;
+                url = url.replace(name, rename);
+            }
+        }
+        return url;
     }
 }
