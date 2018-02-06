@@ -43,6 +43,8 @@ public class PersonFragment extends BaseFragment {
     private LinearLayout layWithdrawHistory;
     @BindView(id = R.id.fg_person_lay_3, click = true)
     private LinearLayout layGambleHistory;
+    @BindView(id = R.id.fg_person_lay_4, click = true)
+    private LinearLayout layOnline;
 
     @BindView(id = R.id.fg_person_btn_1, click = true)
     private Button btnExchange1;
@@ -129,6 +131,10 @@ public class PersonFragment extends BaseFragment {
             case R.id.fg_person_lay_3:
                 // 投注记录
                 ((MainActivity) getActivity()).setPosition(8);
+                break;
+            case R.id.fg_person_lay_4:
+                // 客服人员
+                ((MainActivity) getActivity()).setPosition(10);
                 break;
         }
     }

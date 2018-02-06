@@ -32,10 +32,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
+                android:background="@drawable/shape_rounded_h_orange_5"
                 android:padding="@dimen/space_10"
                 android:text="  北京赛车  "
-                android:textColor="@color/black_3"
+                android:textColor="@color/white"
                 android:textSize="@dimen/text_size_15" />
 
             <Button
@@ -159,22 +159,13 @@
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/fg_rule_tv_title"
-                    android:layout_marginTop="@dimen/space_15"
-                    android:text="@string/fragment_rule_text_11"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_15" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_15"
+                <WebView
                     android:id="@+id/fg_rule_tv_content"
-                    android:text="@string/text_default"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_13" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_15"
+                    android:scrollbars="none"
+                    android:background="@color/transparent" />
 
             </LinearLayout>
         </ScrollView>

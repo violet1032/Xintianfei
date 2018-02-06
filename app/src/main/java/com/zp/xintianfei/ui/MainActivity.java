@@ -11,6 +11,9 @@ import com.zp.xintianfei.ui.fragment.AgentFragment;
 import com.zp.xintianfei.ui.fragment.BanddingFragment;
 import com.zp.xintianfei.ui.fragment.GambleHistoryFragment;
 import com.zp.xintianfei.ui.fragment.MainFragment;
+import com.zp.xintianfei.ui.fragment.OnlineFragment;
+import com.zp.xintianfei.ui.fragment.OnlineQQFragment;
+import com.zp.xintianfei.ui.fragment.OnlineWeixinFragment;
 import com.zp.xintianfei.ui.fragment.PersonFragment;
 import com.zp.xintianfei.ui.fragment.RechargeFragment;
 import com.zp.xintianfei.ui.fragment.RechargeHistoryFragment;
@@ -35,6 +38,9 @@ public class MainActivity extends BaseActivity {
     private WithdrawHistoryFragment withdrawHistoryFragment = new WithdrawHistoryFragment();
     private GambleHistoryFragment gambleHistoryFragment = new GambleHistoryFragment();
     private BanddingFragment banddingFragment = new BanddingFragment();
+    private OnlineFragment onlineFragment = new OnlineFragment();
+    private OnlineWeixinFragment onlineWeixinFragment = new OnlineWeixinFragment();
+    private OnlineQQFragment  onlineQQFragment = new OnlineQQFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -147,6 +153,18 @@ public class MainActivity extends BaseActivity {
                 case 9:
                     // 绑定银行卡
                     changeFragment(R.id.act_main_content, banddingFragment);
+                    break;
+                case 10:
+                    // 客服中心
+                    changeFragment(R.id.act_main_content, onlineFragment);
+                    break;
+                case 11:
+                    // 微信客服
+                    changeFragment(R.id.act_main_content, onlineWeixinFragment);
+                    break;
+                case 12:
+                    // QQ客服
+                    changeFragment(R.id.act_main_content, onlineQQFragment);
                     break;
             }
 

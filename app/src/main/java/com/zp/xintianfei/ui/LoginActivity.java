@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.umeng.socialize.UMAuthListener;
@@ -27,12 +27,10 @@ import java.util.Map;
 
 public class LoginActivity extends BaseActivity {
 
-    @BindView(id = R.id.act_login_btn_login, click = true)
-    private Button btnLogin;
-    @BindView(id = R.id.act_login_btn_login_wexin, click = true)
-    private Button btnLoginWexin;
-    @BindView(id = R.id.act_login_btn_login_qq, click = true)
-    private Button btnLoginQQ;
+    @BindView(id = R.id.act_login_lay_weixin, click = true)
+    private LinearLayout layLoginWexin;
+    @BindView(id = R.id.act_login_lay_qq, click = true)
+    private LinearLayout layLoginQQ;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();
@@ -57,11 +55,7 @@ public class LoginActivity extends BaseActivity {
         super.widgetClick(v);
 
         switch (v.getId()) {
-            case R.id.act_login_btn_login:
-                MainActivity.startActivity(this);
-                finish();
-                break;
-            case R.id.act_login_btn_login_wexin:
+            case R.id.act_login_lay_weixin:
                 if (StringUtils.isEmpty(AppConfig.getInstance().getLoginWxUnionid())) {
                     // 调用授权
                     UMAuthListener umAuthListener = new UMAuthListener() {
@@ -96,7 +90,7 @@ public class LoginActivity extends BaseActivity {
                     UMShareAPI.get(this).getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, umAuthListener);
                 }
                 break;
-            case R.id.act_login_btn_login_qq:
+            case R.id.act_login_lay_qq:
 //                if (StringUtils.isEmpty(AppConfig.getInstance().getLoginWxUnionid())) {
                 // 调用授权
                 UMAuthListener umAuthListenerQQ = new UMAuthListener() {

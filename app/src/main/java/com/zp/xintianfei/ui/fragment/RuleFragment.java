@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -39,10 +41,8 @@ public class RuleFragment extends BaseFragment {
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
 
-    @BindView(id = R.id.fg_rule_tv_title)
-    private TextView tvRuleTitle;
     @BindView(id = R.id.fg_rule_tv_content)
-    private TextView tvRuleContent;
+    private WebView tvRuleContent;
 
     private List<Rules> listRules = new ArrayList<>();
 
@@ -59,13 +59,13 @@ public class RuleFragment extends BaseFragment {
         title.setText("规则");
         imgBack.setVisibility(View.INVISIBLE);
 
-        layBtn[0] = parentView.findViewById(R.id.fg_rule_btn_1);
-        layBtn[1] = parentView.findViewById(R.id.fg_rule_btn_2);
+        layBtn[0] = parentView.findViewById(R.id.fg_rule_btn_4);
+        layBtn[1] = parentView.findViewById(R.id.fg_rule_btn_1);
         layBtn[2] = parentView.findViewById(R.id.fg_rule_btn_3);
-        layBtn[3] = parentView.findViewById(R.id.fg_rule_btn_4);
-        layBtn[4] = parentView.findViewById(R.id.fg_rule_btn_5);
+        layBtn[3] = parentView.findViewById(R.id.fg_rule_btn_7);
+        layBtn[4] = parentView.findViewById(R.id.fg_rule_btn_2);
         layBtn[5] = parentView.findViewById(R.id.fg_rule_btn_6);
-        layBtn[6] = parentView.findViewById(R.id.fg_rule_btn_7);
+        layBtn[6] = parentView.findViewById(R.id.fg_rule_btn_5);
         layBtn[7] = parentView.findViewById(R.id.fg_rule_btn_8);
         layBtn[8] = parentView.findViewById(R.id.fg_rule_btn_9);
 
@@ -73,7 +73,13 @@ public class RuleFragment extends BaseFragment {
             layBtn[i].setOnClickListener(new onclick_bottom(i));
         }
 
-        setPosition(0);
+        setPosition(1);
+
+        WebSettings webSettings = tvRuleContent.getSettings();
+        webSettings.setSupportZoom(false);
+        webSettings.setDefaultTextEncodingName("gbk");
+        tvRuleContent.setBackgroundColor(0);
+        tvRuleContent.getBackground().setAlpha(0);
     }
 
     @Override
@@ -114,14 +120,12 @@ public class RuleFragment extends BaseFragment {
             for (Rules rules :
                     listRules) {
                 if (rules.getCate() == curr + 1) {
-                    tvRuleTitle.setText(rules.getTitle() + "玩法介绍:");
-                    tvRuleContent.setText(rules.getContent());
+                    tvRuleContent.loadDataWithBaseURL(null, rules.getContent(), "text/html", "utf-8",null);
                     has = true;
                 }
             }
             if (!has) {
-                tvRuleTitle.setText("暂无玩法介绍");
-                tvRuleContent.setText("");
+                tvRuleContent.loadDataWithBaseURL(null, "<div class=\"mui-content rule_xs1\" style=\"margin: 10px 10px;color: #ffffff\"><h3>暂无玩法介绍</h3></div>", "text/html", "utf-8", null);
             }
 
             layBtn[curr].setTextColor(getResources().getColor(R.color.white));
@@ -149,9 +153,8 @@ public class RuleFragment extends BaseFragment {
 
                         listRules.add(rules);
 
-                        if (rules.getCate() == 1) {
-                            tvRuleTitle.setText(rules.getTitle() + "玩法介绍:");
-                            tvRuleContent.setText(rules.getContent());
+                        if (rules.getCate() == 2) {
+                            tvRuleContent.loadDataWithBaseURL(null, rules.getContent(), "text/html", "utf-8",null);
                         }
                     } else {
                         UIHelper.ToastMessage(result.getMsg());

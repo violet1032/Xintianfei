@@ -2,61 +2,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/space_15"
     tools:context="com.zp.xintianfei.ui.LoginActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_login" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation="vertical">
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_50"
+        android:orientation="vertical"
+        android:padding="@dimen/space_15">
 
-        <EditText
-            android:id="@+id/act_login_edt_username"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:id="@+id/act_login_lay_weixin"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:hint="@string/login_text_1" />
+            android:background="@drawable/click_btn_login"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/act_login_edt_passowrd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/login_text_2" />
-
-        <Button
-            android:id="@+id/act_login_btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/login_text_6"
-            android:textColor="@color/white" />
-        <Button
-            android:id="@+id/act_login_btn_login_wexin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="微信"
-            android:textColor="@color/white" />
-        <Button
-            android:id="@+id/act_login_btn_login_qq"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="QQ"
-            android:textColor="@color/white" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/login_text_4" />
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_6">
 
-            <TextView
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/weixin_yellow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:text="@string/login_text_7"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/act_login_lay_qq"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_30"
+            android:layout_marginTop="@dimen/space_10"
+            android:background="@drawable/click_btn_login"
+            android:orientation="vertical">
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="@string/login_text_5" />
-        </RelativeLayout>
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="@dimen/space_6">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/qq_yellow" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:text="@string/login_text_8"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_15" />
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
 

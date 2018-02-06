@@ -24,6 +24,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
+import android.view.View;
 
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
@@ -76,13 +77,15 @@ public class ImageUtils {
         if (bitmap == null || fileName == null || context == null)
             return;
 
-        FileOutputStream fos = context.openFileOutput(fileName,
-                Context.MODE_PRIVATE);
+        File file = new File(fileName);
+        FileOutputStream fos = new FileOutputStream(file);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         bitmap.compress(CompressFormat.JPEG, quality, stream);
         byte[] bytes = stream.toByteArray();
         fos.write(bytes);
         fos.close();
+
+        UIHelper.ToastMessage("保存成功");
     }
 
     /**
@@ -705,5 +708,18 @@ public class ImageUtils {
             return false;
         }
         return (b[0] == 0x42) && (b[1] == 0x4d);
+    }
+
+    /**
+     * 某些机型直接获取会为null,在这里处理一下防止国内某些机型返回null
+     */
+    public static Bitmap getViewBitmap(View view) {
+        if (view == null) {
+            return null;
+        }
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
     }
 }
