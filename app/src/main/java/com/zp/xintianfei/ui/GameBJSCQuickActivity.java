@@ -1,39 +1,57 @@
 package com.zp.xintianfei.ui;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.ui.fragment.GameBJSCQuickJCFragment;
 
-public class GameBJSCQuickActivity extends AppCompatActivity {
+import org.kymjs.kjframe.ui.BindView;
+
+public class GameBJSCQuickActivity extends BaseActivity {
+
+    @BindView(id = R.id.umeng_banner_title)
+    private TextView title;
+    @BindView(id = R.id.umeng_banner_img_left, click = true)
+    private ImageView imgBack;
+
+    private GameBJSCQuickJCFragment gameBJSCQuickJCFragment = new GameBJSCQuickJCFragment();
+
+    public static void startActivity(Context context) {
+        Intent intent = new Intent();
+        intent.setClass(context, GameBJSCQuickActivity.class);
+        context.startActivity(intent);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void setRootView() {
+        super.setRootView();
         setContentView(R.layout.activity_game_bjscquick);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_game_bjscquick, menu);
-        return true;
+    public void initData() {
+        super.initData();
+
+        changeFragment(R.id.act_game_bjsc_quick_framelayout, gameBJSCQuickJCFragment);
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public void initWidget() {
+        super.initWidget();
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    @Override
+    public void widgetClick(View v) {
+        super.widgetClick(v);
+        switch (v.getId()) {
+            case R.id.umeng_banner_img_left:
+                finish();
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }

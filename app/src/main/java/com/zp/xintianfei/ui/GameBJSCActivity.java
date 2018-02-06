@@ -24,17 +24,17 @@ public class GameBJSCActivity extends BaseActivity {
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
 
-    @BindView(id=R.id.act_game_bjsc_btn_cz,click = true)
+    @BindView(id = R.id.act_game_bjsc_btn_cz, click = true)
     private Button btnCZ;
-    @BindView(id=R.id.act_game_bjsc_btn_jc,click = true)
+    @BindView(id = R.id.act_game_bjsc_btn_jc, click = true)
     private Button btnJC;
-    @BindView(id=R.id.act_game_bjsc_btn_jl,click = true)
+    @BindView(id = R.id.act_game_bjsc_btn_jl, click = true)
     private Button btnJL;
-    @BindView(id=R.id.act_game_bjsc_btn_zs,click = true)
+    @BindView(id = R.id.act_game_bjsc_btn_zs, click = true)
     private Button btnZS;
-    @BindView(id=R.id.act_game_bjsc_btn_gz,click = true)
+    @BindView(id = R.id.act_game_bjsc_btn_gz, click = true)
     private Button btnGZ;
-    @BindView(id=R.id.act_game_bjsc_btn_sx,click = true)
+    @BindView(id = R.id.act_game_bjsc_btn_sx, click = true)
     private Button btnSX;
 
     private GameChatFragment gameChatFragment = new GameChatFragment();
@@ -42,6 +42,9 @@ public class GameBJSCActivity extends BaseActivity {
     private GameJLFragment gameJLFragment = new GameJLFragment();
     private GameZSFragment gameZSFragment = new GameZSFragment();
     private GameGZFragment gameGZFragment = new GameGZFragment();
+
+    @BindView(id = R.id.act_game_bjsc_btn_quick, click = true)
+    private TextView tvQuick;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();
@@ -74,26 +77,30 @@ public class GameBJSCActivity extends BaseActivity {
                 break;
             case R.id.act_game_bjsc_btn_cz:
                 // 彩种
-                changeFragment(R.id.act_game_bjsc_lay_content,gameCZFragment);
+                changeFragment(R.id.act_game_bjsc_lay_content, gameCZFragment);
                 break;
             case R.id.act_game_bjsc_btn_jc:
                 // 竞猜
-                changeFragment(R.id.act_game_bjsc_lay_content,gameChatFragment);
+                changeFragment(R.id.act_game_bjsc_lay_content, gameChatFragment);
                 break;
             case R.id.act_game_bjsc_btn_jl:
                 // 记录
-                changeFragment(R.id.act_game_bjsc_lay_content,gameJLFragment);
+                changeFragment(R.id.act_game_bjsc_lay_content, gameJLFragment);
                 break;
             case R.id.act_game_bjsc_btn_zs:
                 // 走势
-                changeFragment(R.id.act_game_bjsc_lay_content,gameZSFragment);
+                changeFragment(R.id.act_game_bjsc_lay_content, gameZSFragment);
                 break;
             case R.id.act_game_bjsc_btn_gz:
                 // 规则
-                changeFragment(R.id.act_game_bjsc_lay_content,gameGZFragment);
+                changeFragment(R.id.act_game_bjsc_lay_content, gameGZFragment);
                 break;
             case R.id.act_game_bjsc_btn_sx:
                 // 刷新
+                break;
+            case R.id.act_game_bjsc_btn_quick:
+                // 快速下注
+                GameBJSCQuickActivity.startActivity(this);
                 break;
         }
     }
