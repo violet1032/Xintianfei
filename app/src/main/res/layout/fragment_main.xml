@@ -136,7 +136,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -159,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -182,7 +182,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -212,7 +212,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -235,7 +235,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -258,7 +258,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -288,7 +288,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -311,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>
@@ -334,7 +334,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/space_5"
-                        android:text="已封盘"
+                        android:text="@string/text_default"
                         android:textColor="@color/text_2"
                         android:textSize="@dimen/space_14" />
                 </LinearLayout>

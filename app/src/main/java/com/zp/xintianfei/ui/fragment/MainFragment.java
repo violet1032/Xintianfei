@@ -11,11 +11,16 @@ import android.widget.TextView;
 import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
+import com.zp.xintianfei.api.ApiLottery;
+import com.zp.xintianfei.api.FHttpCallBack;
+import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.GameBJSCActivity;
 import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
+
+import java.util.Map;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
@@ -84,5 +89,20 @@ public class MainFragment extends BaseFragment {
     @Override
     public void onClick(View v) {
         super.onClick(v);
+    }
+
+    private void getGameStatus() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+
+                }
+            }
+        };
+        ApiLottery.getPlazaGameState(callBack);
     }
 }

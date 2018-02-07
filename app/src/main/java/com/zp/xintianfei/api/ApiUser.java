@@ -38,7 +38,16 @@ public class ApiUser {
         // 地址
         String url = URLs.LOGOUT;
 
-        AppContext.http.post(url, params, callBack, false, false);
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    public static void getOnlineNum(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        // 地址
+        String url = URLs.getOnlineNum;
+
+        AppContext.http.get(url, params, callBack, false, false);
     }
 
 }

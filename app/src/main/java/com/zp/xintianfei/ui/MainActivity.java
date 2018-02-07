@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity {
     private BanddingFragment banddingFragment = new BanddingFragment();
     private OnlineFragment onlineFragment = new OnlineFragment();
     private OnlineWeixinFragment onlineWeixinFragment = new OnlineWeixinFragment();
-    private OnlineQQFragment  onlineQQFragment = new OnlineQQFragment();
+    private OnlineQQFragment onlineQQFragment = new OnlineQQFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -60,6 +60,21 @@ public class MainActivity extends BaseActivity {
         Intent intent = new Intent();
         intent.setClass(context, MainActivity.class);
         context.startActivity(intent);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (resultCode == 1) {
+            setPosition(0);
+        } else if (resultCode == 2) {
+            setPosition(1);
+        } else if (resultCode == 3) {
+            setPosition(10);
+        } else if (resultCode == 4) {
+            setPosition(2);
+        }
     }
 
     @Override

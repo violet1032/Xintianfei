@@ -1,514 +1,427 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.zp.xintianfei.ui.GameBJSCQuickActivity">
 
     <include
         android:id="@+id/act_game_bjscquick_lay_banner"
         layout="@layout/common_banner" />
 
-    <LinearLayout
+    <WebView
+        android:id="@+id/act_game_bjsc_webview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/game_flash_height"></WebView>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/act_game_bjscquick_lay_bottom"
-        android:layout_below="@+id/act_game_bjscquick_lay_banner"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ddd"
-            android:orientation="horizontal"
-            android:padding="@dimen/space_5">
-
-            <ImageView
-                android:layout_width="@dimen/game_head_size"
-                android:layout_height="@dimen/game_head_size"
-                android:src="@drawable/bg_3" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_2"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/click_btn_game_skyblue"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        android:paddingBottom="@dimen/space_2"
-                        android:paddingLeft="@dimen/space_4"
-                        android:paddingRight="@dimen/space_4"
-                        android:paddingTop="@dimen/space_2">
-
-                        <ImageView
-                            android:layout_width="12dp"
-                            android:layout_height="12dp"
-                            android:src="@drawable/bg_tag_main_white" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/space_2"
-                            android:text="@string/game_text_1"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/space_12" />
-                    </LinearLayout>
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:background="@drawable/click_btn_game_skyblue"
-                        android:padding="@dimen/space_2"
-                        android:text="@string/game_text_2"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/space_12" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:background="@drawable/click_btn_game_skyblue"
-                        android:padding="@dimen/space_2"
-                        android:text="@string/game_text_3"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/space_12" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:background="@drawable/click_btn_game_skyblue"
-                        android:padding="@dimen/space_2"
-                        android:text="@string/game_text_4"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/space_12" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:background="@drawable/click_btn_game_skyblue"
-                        android:padding="@dimen/space_2"
-                        android:text="@string/game_text_5"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/space_12" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:background="@drawable/click_btn_game_skyblue"
-                        android:padding="@dimen/space_2"
-                        android:text="@string/game_text_6"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/space_12" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_2"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/game_text_7"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:id="@+id/act_game_bjsc_tv_code"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_default"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_15"
-                        android:text="@string/fragment_main_text_1"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:id="@+id/act_game_bjsc_tv_nickname"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_default"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_15"
-                        android:text="@string/game_text_8"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:id="@+id/act_game_bjsc_tv_sum"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_default"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/space_15"
-                        android:text="@string/game_text_9"
-                        android:textSize="@dimen/space_11" />
-
-                    <TextView
-                        android:id="@+id/act_game_bjsc_tv_online"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/text_default"
-                        android:textSize="@dimen/space_11" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
+        tools:context="com.zp.xintianfei.ui.GameBJSCQuickActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:background="#ddd"
+                android:orientation="horizontal"
                 android:padding="@dimen/space_5">
 
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_cz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_5"
-                    android:background="@drawable/btn_lottery_type"
-                    android:paddingBottom="@dimen/space_5"
-                    android:paddingLeft="@dimen/space_10"
-                    android:paddingRight="@dimen/space_10"
-                    android:paddingTop="@dimen/space_5"
-                    android:text="@string/game_text_11"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_jc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_5"
-                    android:background="@drawable/btn_jc"
-                    android:paddingBottom="@dimen/space_5"
-                    android:paddingLeft="@dimen/space_10"
-                    android:paddingRight="@dimen/space_10"
-                    android:paddingTop="@dimen/space_5"
-                    android:text="@string/game_text_12"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_jl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_5"
-                    android:background="@drawable/btn_record"
-                    android:paddingBottom="@dimen/space_5"
-                    android:paddingLeft="@dimen/space_10"
-                    android:paddingRight="@dimen/space_10"
-                    android:paddingTop="@dimen/space_5"
-                    android:text="@string/game_text_13"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_zs"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_5"
-                    android:background="@drawable/btn_history"
-                    android:paddingBottom="@dimen/space_5"
-                    android:paddingLeft="@dimen/space_10"
-                    android:paddingRight="@dimen/space_10"
-                    android:paddingTop="@dimen/space_5"
-                    android:text="@string/game_text_14"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_gz"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_5"
-                    android:background="@drawable/btn_rule"
-                    android:paddingBottom="@dimen/space_5"
-                    android:paddingLeft="@dimen/space_10"
-                    android:paddingRight="@dimen/space_10"
-                    android:paddingTop="@dimen/space_5"
-                    android:text="@string/game_text_15"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_sx"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/space_5"
-                    android:background="@drawable/btn_refresh"
-                    android:paddingBottom="@dimen/space_5"
-                    android:paddingLeft="@dimen/space_10"
-                    android:paddingRight="@dimen/space_10"
-                    android:paddingTop="@dimen/space_5"
-                    android:text="@string/game_text_16"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <FrameLayout
-                android:id="@+id/act_game_bjsc_quick_framelayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-            </FrameLayout>
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/act_game_bjscquick_lay_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/bg_line_2"
-        android:padding="@dimen/space_8">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <Button
-                android:layout_width="35dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/icon_bord" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/act_game_bjsc_quick_lay_clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/click_btn_red"
-                android:orientation="horizontal"
-                android:padding="@dimen/space_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/game_bjsc_quick_text_57"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_14" />
-
                 <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/space_5"
-                    android:src="@drawable/close_white" />
+                    android:layout_width="@dimen/game_head_size"
+                    android:layout_height="@dimen/game_head_size"
+                    android:src="@drawable/bg_3" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_2"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/act_game_bjsc_lay_back"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/click_btn_game_skyblue"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/space_2"
+                            android:paddingLeft="@dimen/space_2"
+                            android:paddingRight="@dimen/space_2"
+                            android:paddingTop="@dimen/space_2">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/game_text_1"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_11" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/act_game_bjsc_btn_recharge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_3"
+                            android:background="@drawable/click_btn_game_skyblue"
+                            android:padding="@dimen/space_2"
+                            android:text="@string/game_text_2"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_11" />
+
+                        <Button
+                            android:id="@+id/act_game_bjsc_btn_withdraw"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_5"
+                            android:background="@drawable/click_btn_game_skyblue"
+                            android:padding="@dimen/space_2"
+                            android:text="@string/game_text_3"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_11" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginLeft="@dimen/space_5"
+                            android:background="@drawable/click_btn_game_skyblue"
+                            android:padding="@dimen/space_2"
+                            android:text="@string/game_text_4"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_11" />
+
+                        <Button
+                            android:id="@+id/act_game_bjsc_btn_window"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_5"
+                            android:background="@drawable/click_btn_game_skyblue"
+                            android:padding="@dimen/space_2"
+                            android:text="@string/game_text_5"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_11" />
+
+                        <Button
+                            android:id="@+id/act_game_bjsc_btn_online"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_5"
+                            android:background="@drawable/click_btn_game_skyblue"
+                            android:padding="@dimen/space_2"
+                            android:text="@string/game_text_6"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_11" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_2"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/game_text_7"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:id="@+id/act_game_bjsc_tv_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_default"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_15"
+                            android:text="@string/fragment_main_text_1"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:id="@+id/act_game_bjsc_tv_nickname"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_default"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_15"
+                            android:text="@string/game_text_8"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:id="@+id/act_game_bjsc_tv_sum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_default"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/space_15"
+                            android:text="@string/game_text_9"
+                            android:textSize="@dimen/space_11" />
+
+                        <TextView
+                            android:id="@+id/act_game_bjsc_tv_online"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_default"
+                            android:textSize="@dimen/space_11" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_5">
+
+                    <Button
+                        android:id="@+id/act_game_bjsc_btn_cz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:background="@drawable/btn_lottery_type"
+                        android:paddingBottom="@dimen/space_5"
+                        android:paddingLeft="@dimen/space_10"
+                        android:paddingRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_5"
+                        android:text="@string/game_text_11"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/act_game_bjsc_btn_jc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:background="@drawable/btn_jc"
+                        android:paddingBottom="@dimen/space_5"
+                        android:paddingLeft="@dimen/space_10"
+                        android:paddingRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_5"
+                        android:text="@string/game_text_12"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/act_game_bjsc_btn_jl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:background="@drawable/btn_record"
+                        android:paddingBottom="@dimen/space_5"
+                        android:paddingLeft="@dimen/space_10"
+                        android:paddingRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_5"
+                        android:text="@string/game_text_13"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/act_game_bjsc_btn_zs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:background="@drawable/btn_history"
+                        android:paddingBottom="@dimen/space_5"
+                        android:paddingLeft="@dimen/space_10"
+                        android:paddingRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_5"
+                        android:text="@string/game_text_14"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/act_game_bjsc_btn_gz"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:background="@drawable/btn_rule"
+                        android:paddingBottom="@dimen/space_5"
+                        android:paddingLeft="@dimen/space_10"
+                        android:paddingRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_5"
+                        android:text="@string/game_text_15"
+                        android:textColor="@color/white" />
+
+                    <Button
+                        android:id="@+id/act_game_bjsc_btn_sx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:background="@drawable/btn_refresh"
+                        android:paddingBottom="@dimen/space_5"
+                        android:paddingLeft="@dimen/space_10"
+                        android:paddingRight="@dimen/space_10"
+                        android:paddingTop="@dimen/space_5"
+                        android:text="@string/game_text_16"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/act_game_bjsc_quick_framelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </FrameLayout>
+
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:id="@+id/act_game_bjscquick_lay_bottom"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_line_2"
+            android:padding="@dimen/space_8">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="@dimen/space_10">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/game_bjsc_quick_text_58"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_15" />
-
-                <TextView
-                    android:id="@+id/act_game_bjsc_quick_tv_total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/text_default"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_15" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-
-                    android:text="@string/game_bjsc_quick_text_59"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_15" />
-
+                <Button
+                    android:layout_width="35dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/icon_bord" />
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/act_game_bjsc_quick_lay_sure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/click_btn_red"
-                android:orientation="horizontal"
-                android:padding="@dimen/space_10">
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_quick_lay_clear"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:text="@string/game_bjsc_quick_text_60"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_14" />
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/click_btn_red"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_10">
 
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/space_5"
-                    android:src="@drawable/icon_duihao" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/game_bjsc_quick_text_57"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/space_5"
+                        android:src="@drawable/close_white" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/act_game_bjsc_quick_lay_more_dialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/act_game_bjscquick_lay_banner"
-        android:layout_marginRight="@dimen/space_20"
-        android:layout_marginTop="140dp"
-        android:orientation="horizontal"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_4"
-            android:background="@drawable/bg_more_dialog"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/act_game_bjsc_quick_btn_gyzx"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/space_5"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:background="@color/transparent"
-                android:paddingBottom="@dimen/space_4"
-                android:paddingLeft="@dimen/space_20"
-                android:paddingRight="@dimen/space_20"
-                android:paddingTop="@dimen/space_4"
-                android:text="@string/game_bjsc_quick_text_5"
-                android:textColor="@drawable/click_text_color_white"
-                android:textSize="@dimen/game_content_number_text_size" />
+                android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/gray" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_10">
 
-            <Button
-                android:id="@+id/act_game_bjsc_quick_btn_lhjc"
-                android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/game_bjsc_quick_text_58"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:id="@+id/act_game_bjsc_quick_tv_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/text_default"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+
+                        android:text="@string/game_bjsc_quick_text_59"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_15" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:background="@color/transparent"
-                android:paddingBottom="@dimen/space_4"
-                android:paddingLeft="@dimen/space_20"
-                android:paddingRight="@dimen/space_20"
-                android:paddingTop="@dimen/space_4"
-                android:text="@string/game_bjsc_quick_text_6"
-                android:textColor="@drawable/click_text_color_white"
-                android:textSize="@dimen/game_content_number_text_size" />
+                android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/gray" />
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_quick_lay_sure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/click_btn_red"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_10">
 
-            <Button
-                android:id="@+id/act_game_bjsc_quick_btn_gyhdxds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:paddingBottom="@dimen/space_4"
-                android:paddingLeft="@dimen/space_20"
-                android:paddingRight="@dimen/space_20"
-                android:paddingTop="@dimen/space_4"
-                android:text="@string/game_bjsc_quick_text_7"
-                android:textColor="@drawable/click_text_color_white"
-                android:textSize="@dimen/game_content_number_text_size" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/game_bjsc_quick_text_60"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_14" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="1px"
-                android:background="@color/gray" />
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/space_5"
+                        android:src="@drawable/icon_duihao" />
+                </LinearLayout>
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/act_game_bjsc_quick_btn_zhdxds"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:paddingBottom="@dimen/space_4"
-                android:paddingLeft="@dimen/space_20"
-                android:paddingRight="@dimen/space_20"
-                android:paddingTop="@dimen/space_4"
-                android:text="@string/game_bjsc_quick_text_8"
-                android:textColor="@drawable/click_text_color_white"
-                android:textSize="@dimen/game_content_number_text_size" />
 
         </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
 
-        <Button
-            android:id="@+id/act_game_bjsc_quick_btn_more_close"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="@dimen/space_5"
-            android:background="@drawable/close_black" />
-    </LinearLayout>
-</RelativeLayout>
+
