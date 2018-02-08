@@ -34,4 +34,21 @@ public class ApiLottery {
         AppContext.http.get(url, params, callBack, false, false);
 
     }
+
+    /**
+     * 获取下一期游戏时间状态
+     *
+     * @param cate
+     * @param callBack
+     */
+    public static void getGameNextInfo(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate",cate);
+        // 地址
+        String url = URLs.getGameNextInfo;
+
+        AppContext.http.get(url, params, callBack, false, false);
+
+    }
 }

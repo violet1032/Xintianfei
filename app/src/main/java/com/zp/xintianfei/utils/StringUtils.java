@@ -609,4 +609,22 @@ public class StringUtils extends org.kymjs.kjframe.utils.StringUtils {
         }
         return url;
     }
+
+    public static String getCountdown(int second) {
+        StringBuffer stringBuffer = new StringBuffer();
+        int hourse = second / 60 / 60;
+        if (hourse > 0)
+            stringBuffer.append(zeroFill(hourse) + ":");
+        int minites = (second - hourse * 60 * 60) / 60;
+        stringBuffer.append(zeroFill(minites) + ":");
+        int seconds = (second - hourse * 60 * 60 - minites * 60);
+        stringBuffer.append(zeroFill(seconds));
+        return stringBuffer.toString();
+    }
+
+    public static String zeroFill(int i) {
+        if (i < 10)
+            return "0" + i;
+        return i + "";
+    }
 }

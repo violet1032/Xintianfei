@@ -25,13 +25,32 @@ public class GameStatus implements Serializable {
     private long start_time;
     private long end_time;
 
-    public GameStatus parse(String str) {
+    public GameStatus parseJson(String str) {
         try {
             JsonUtils jsonUtils = new JsonUtils(str);
             if (jsonUtils != null) {
                 setCate(jsonUtils.getInt("cate"));
-                setIsrun(jsonUtils.getBoolean("isrun"));
-                setIsopen(jsonUtils.getBoolean("isopen"));
+                setIsrun(jsonUtils.getInt("isrun") == 1);
+                setIsopen(jsonUtils.getInt("isopen") == 1);
+                setCountdown(jsonUtils.getInt("countdown"));
+                setFtime(jsonUtils.getInt("ftime"));
+                setStart_time(jsonUtils.getLong("start_time") * 1000);
+                setEnd_time(jsonUtils.getLong("end_time") * 1000);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return this;
+    }
+
+    public GameStatus parse(String str) {
+        try {
+            JsonUtils j = new JsonUtils(str);
+            JsonUtils jsonUtils = j.getJSONUtils("info");
+            if (jsonUtils != null) {
+                setCate(jsonUtils.getInt("cate"));
+                setIsrun(jsonUtils.getInt("isrun") == 1);
+                setIsopen(jsonUtils.getInt("isopen") == 1);
                 setCountdown(jsonUtils.getInt("countdown"));
                 setFtime(jsonUtils.getInt("ftime"));
                 setStart_time(jsonUtils.getLong("start_time") * 1000);

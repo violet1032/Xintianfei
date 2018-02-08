@@ -1,6 +1,8 @@
 package com.zp.xintianfei.ui.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +15,20 @@ import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
 import com.zp.xintianfei.api.ApiLottery;
 import com.zp.xintianfei.api.FHttpCallBack;
+import com.zp.xintianfei.bean.GameStatus;
+import com.zp.xintianfei.bean.GameStatusList;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.GameBJSCActivity;
 import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
+import com.zp.xintianfei.utils.LogUtil;
+import com.zp.xintianfei.utils.StringUtils;
 
 import org.kymjs.kjframe.ui.BindView;
 
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
@@ -47,6 +55,15 @@ public class MainFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_img_head)
     private ImageView imgHead;
 
+    private TextView[] tvStatus = new TextView[9];
+
+    private Timer timer;
+    private TimerTask timerTask;
+
+    private Handler handler;
+
+    private GameStatusList gameStatusList;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_main, null);
@@ -65,11 +82,51 @@ public class MainFragment extends BaseFragment {
         tvSum.setText(AppContext.user.getMoney().toString());
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
+
+        for (int i = 0; i < 9; i++) {
+            tvStatus[i] = parentView.findViewById(R.id.fg_main_tx_1 + i * 2);
+        }
     }
 
     @Override
     protected void initData() {
         super.initData();
+
+        handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+                if (message.what == 1) {
+                    for (TextView tv :
+                            tvStatus) {
+//                        if (tv.getTag(R.id.tag_type) != null) {
+//                            if ((int) (tv.getTag(R.id.tag_type)) == 0) {
+//                                // 倒计时类型
+//                                if (tv.getTag(R.id.tag_countdown) != null) {
+//                                    int countdown = (int) tv.getTag(R.id.tag_countdown) - 1;
+//                                    if (countdown < 0) {
+//                                        // 变为封盘
+//                                    } else {
+//                                        tv.setText(StringUtils.getCountdown(countdown - 1));
+//                                        tv.setTag(R.id.tag_countdown, countdown - 1);
+//                                    }
+//                                }
+//                            } else if ((int) tv.getTag(R.id.tag_type) == 1) {
+//                                // 已关盘
+//                            } else if ((int) tv.getTag(R.id.tag_type) == 2) {
+//                                // 已封盘
+//                            }
+//                        }
+                        if (gameStatusList != null) {
+                            setStatus(gameStatusList.getMap().get(tv.getTag(R.id.tag_cate)), tv);
+                        }
+                    }
+
+                }
+                return false;
+            }
+        });
+
+        getGameStatus();
     }
 
     @Override
@@ -91,6 +148,9 @@ public class MainFragment extends BaseFragment {
         super.onClick(v);
     }
 
+    /**
+     * 获取游戏状态
+     */
     private void getGameStatus() {
         FHttpCallBack callBack = new FHttpCallBack() {
             @Override
@@ -99,10 +159,113 @@ public class MainFragment extends BaseFragment {
                 String str = new String(t);
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
+                    gameStatusList = new GameStatusList().parse(str);
+                    for (Integer key :
+                            gameStatusList.getMap().keySet()) {
+                        GameStatus gameStatus = gameStatusList.getMap().get(key);
+                        switch (gameStatus.getCate()) {
+                            case 1:
+                                // 时时彩
+                                setStatus(gameStatus, tvStatus[3]);
+                                break;
+                            case 2:
+                                // 赛车
+                                setStatus(gameStatus, tvStatus[0]);
+                                break;
+                            case 3:
+                                // 飞艇
+                                setStatus(gameStatus, tvStatus[2]);
+                                break;
+                            case 4:
+                                // PC蛋蛋
+                                setStatus(gameStatus, tvStatus[6]);
+                                break;
+                            case 5:
+                                // 赛马
+                                setStatus(gameStatus, tvStatus[1]);
+                                break;
+                            case 6:
+                                // 江苏快三
+                                setStatus(gameStatus, tvStatus[8]);
+                                break;
+                            case 8:
+                                // 加拿大28
+                                setStatus(gameStatus, tvStatus[7]);
+                                break;
+                            case 9:
+                                // qq两分彩
+                                setStatus(gameStatus, tvStatus[4]);
+                                break;
+                            case 10:
+                                // 六合彩
+                                setStatus(gameStatus, tvStatus[5]);
+                                break;
+                        }
+                    }
 
+                    // 开启定时器
+                    timer = new Timer();
+                    timerTask = new TimerTask() {
+                        @Override
+                        public void run() {
+                            handler.sendEmptyMessage(1);
+                        }
+                    };
+                    timer.schedule(timerTask, 1000, 1000);
                 }
             }
         };
         ApiLottery.getPlazaGameState(callBack);
+    }
+
+    private void setStatus(GameStatus gameStatus, TextView textView) {
+        if (!gameStatus.isrun()) {
+            // 已关盘
+            textView.setText(R.string.fragment_main_text_4);
+            textView.setTag(R.id.tag_cate, gameStatus.getCate());
+
+            // 判断是否到达开盘时间
+            if ((System.currentTimeMillis() - gameStatus.getStart_time()) / 1000 % 30 == 0) {
+                // 请求下一期数据
+                getNext(gameStatus.getCate(), textView);
+            }
+        } else if (!gameStatus.isopen()) {
+            // 已封盘
+            textView.setText(R.string.fragment_main_text_5);
+            textView.setTag(R.id.tag_cate, gameStatus.getCate());
+
+            // 判断是否应该请求下一期数据
+            gameStatus.setCountdown(gameStatus.getCountdown() - 1);
+            LogUtil.logError(MainFragment.class, "cate:" + gameStatus.getCate() + "请求下一期数据:" + (gameStatus.getFtime() + gameStatus.getCountdown()));
+            if (gameStatus.getFtime() + gameStatus.getCountdown() == 0) {
+                // 请求下一期
+                getNext(gameStatus.getCate(), textView);
+            }
+        } else {
+            textView.setText(StringUtils.getCountdown(gameStatus.getCountdown()));
+            textView.setTag(R.id.tag_cate, gameStatus.getCate());
+            gameStatus.setCountdown(gameStatus.getCountdown() - 1);
+
+            if (gameStatus.getCountdown() <= 0) {
+                gameStatus.setIsopen(false);
+            }
+        }
+    }
+
+    private void getNext(int cate, final TextView tv) {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    GameStatus gameStatus = new GameStatus().parse(str);
+                    gameStatusList.getMap().put(gameStatus.getCate(), gameStatus);
+                    setStatus(gameStatusList.getMap().get(gameStatus.getCate()), tv);
+                }
+            }
+        };
+        ApiLottery.getGameNextInfo(cate, callBack);
     }
 }

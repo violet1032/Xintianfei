@@ -210,6 +210,9 @@ public class GameBJSCActivity extends BaseActivity {
                     layBottomNormal.setVisibility(View.VISIBLE);
                 }
                 break;
+            case R.id.act_game_bjsc_quick_lay_clear:
+                gameBJSCJCFragment.clearGamble();
+                break;
         }
     }
 
@@ -232,5 +235,9 @@ public class GameBJSCActivity extends BaseActivity {
             }
         };
         ApiUser.getOnlineNum(callBack);
+    }
+
+    public void handleGamble(String tag){
+
     }
 }

@@ -36,6 +36,8 @@
     <string name="fragment_main_text_1">昵称：</string>
     <string name="fragment_main_text_2">编号：</string>
     <string name="fragment_main_text_3">点数：</string>
+    <string name="fragment_main_text_4">已关盘</string>
+    <string name="fragment_main_text_5">已封盘</string>
 
     <!-- main fragment_withdraw -->
     <string name="fragment_withdraw_text_1">ID：</string>
@@ -287,4 +289,7 @@
     <string name="game_bjsc_quick_text_59">注</string>
     <string name="game_bjsc_quick_text_60">确定下注</string>
     <string name="game_bjsc_quick_text_61">第五名PK第八名</string>
+    
+    <item type="id" name="tag_cate"></item>
+    <item type="id" name="tag_gamble_select"></item>
 </resources>

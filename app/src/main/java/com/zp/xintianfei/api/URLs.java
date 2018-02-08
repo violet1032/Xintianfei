@@ -18,6 +18,7 @@ public class URLs {
     public final static String getOnlineNum = APP_STORE_HOST + "getOnlineNum"; // 获取在线人数
 
     public final static String getPlazaGameState = APP_STORE_HOST + "getPlazaGameState"; // 获取游戏时间状态信息
+    public final static String getGameNextInfo = APP_STORE_HOST + "getGameNextInfo"; // 获取下一期游戏时间状态信息
 
     public final static String LOGOUT = APP_STORE_HOST + "api/user/logout"; // 退出登录
     public final static String REGIST = APP_STORE_HOST + "api/user/regist";//注册

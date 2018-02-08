@@ -55,6 +55,14 @@ public class GameBJSCJCFragment extends BaseFragment {
     @BindView(id = R.id.fg_bjsc_quick_jc_lay_quick)
     private LinearLayout layQuick;
 
+    private LinearLayout[] laysGambleCHJC = new LinearLayout[20];
+    private LinearLayout[] laysGambleDXDS = new LinearLayout[14];
+    private LinearLayout[] laysGambleGYHDXDS = new LinearLayout[4];
+    private LinearLayout[] laysGambleGYZX = new LinearLayout[2];
+    private LinearLayout[] laysGambleLHJC = new LinearLayout[7];
+    private LinearLayout[] laysGambleTMJC = new LinearLayout[17];
+    private LinearLayout[] laysGambleZHDXDS = new LinearLayout[4];
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_game_bjsc_quick_jc, null);
@@ -80,6 +88,35 @@ public class GameBJSCJCFragment extends BaseFragment {
         btnsContentNumber[5] = btnLHJC;
         btnsContentNumber[6] = btnGYHDXDS;
         btnsContentNumber[7] = btnZHDXDS;
+
+        for (int i = 0; i < laysGambleCHJC.length; i++) {
+            laysGambleCHJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_chjc_lay_1 + i);
+            laysGambleCHJC[i].setOnClickListener(new layGambleOnclick());
+        }
+        for (int i = 0; i < laysGambleDXDS.length; i++) {
+            laysGambleDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_dxds_lay_1 + i);
+            laysGambleDXDS[i].setOnClickListener(new layGambleOnclick());
+        }
+        for (int i = 0; i < laysGambleGYHDXDS.length; i++) {
+            laysGambleGYHDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_gyhdxds_lay_1 + i);
+            laysGambleGYHDXDS[i].setOnClickListener(new layGambleOnclick());
+        }
+        for (int i = 0; i < laysGambleGYZX.length; i++) {
+            laysGambleGYZX[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_gyzx_lay_1 + i);
+            laysGambleGYZX[i].setOnClickListener(new layGambleOnclick());
+        }
+        for (int i = 0; i < laysGambleLHJC.length; i++) {
+            laysGambleLHJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_lhjc_lay_1 + i);
+            laysGambleLHJC[i].setOnClickListener(new layGambleOnclick());
+        }
+        for (int i = 0; i < laysGambleTMJC.length; i++) {
+            laysGambleTMJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_tmjc_lay_1 + i);
+            laysGambleTMJC[i].setOnClickListener(new layGambleOnclick());
+        }
+        for (int i = 0; i < laysGambleZHDXDS.length; i++) {
+            laysGambleZHDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_zhdxds_lay_1 + i);
+            laysGambleZHDXDS[i].setOnClickListener(new layGambleOnclick());
+        }
 
         showContentnumber(0);
     }
@@ -196,5 +233,44 @@ public class GameBJSCJCFragment extends BaseFragment {
             return true;
         }
         return false;
+    }
+
+    private class layGambleOnclick implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            if (view.getTag(R.id.tag_gamble_select) == null || (boolean) view.getTag(R.id.tag_gamble_select) == false) {
+                // 没有选择
+                view.setBackgroundResource(R.drawable.btn_bg_stroke_red);
+                view.setTag(R.id.tag_gamble_select, true);
+            } else {
+                view.setBackgroundResource(R.drawable.btn_bg_stroke_black);
+                view.setTag(R.id.tag_gamble_select, false);
+            }
+        }
+    }
+
+    public void clearGamble(){
+        for (int i = 0; i < laysGambleCHJC.length; i++) {
+            laysGambleCHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+        for (int i = 0; i < laysGambleDXDS.length; i++) {
+            laysGambleDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+        for (int i = 0; i < laysGambleGYHDXDS.length; i++) {
+            laysGambleGYHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+        for (int i = 0; i < laysGambleGYZX.length; i++) {
+            laysGambleGYZX[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+        for (int i = 0; i < laysGambleLHJC.length; i++) {
+            laysGambleLHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+        for (int i = 0; i < laysGambleTMJC.length; i++) {
+            laysGambleTMJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+        for (int i = 0; i < laysGambleZHDXDS.length; i++) {
+            laysGambleZHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
     }
 }

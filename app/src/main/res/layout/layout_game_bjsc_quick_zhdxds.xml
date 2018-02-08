@@ -12,6 +12,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_zhdxds_lay_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -36,6 +37,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_zhdxds_lay_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -69,6 +71,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_zhdxds_lay_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -93,6 +96,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_zhdxds_lay_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"

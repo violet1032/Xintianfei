@@ -13,6 +13,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -37,6 +38,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -62,6 +64,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -87,6 +90,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -120,6 +124,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -144,6 +149,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -169,6 +175,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -194,6 +201,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -227,6 +235,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -251,6 +260,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -276,6 +286,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -301,6 +312,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -334,6 +346,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -358,6 +371,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -383,6 +397,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -408,6 +423,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -441,6 +457,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_tmjc_lay_17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

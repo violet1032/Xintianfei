@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_below="@+id/act_game_bjsc_quick_tv_content_title"
@@ -13,6 +12,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -30,6 +30,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -48,6 +49,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -66,6 +68,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -84,6 +87,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -110,6 +114,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -127,6 +132,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -145,6 +151,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -163,6 +170,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -181,6 +189,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -207,6 +216,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -231,6 +241,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -256,6 +267,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_13"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -281,6 +293,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_14"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -306,6 +319,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -339,6 +353,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_16"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -363,6 +378,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -388,6 +404,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -413,6 +430,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_19"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
@@ -438,6 +456,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_chjc_lay_20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_3"
