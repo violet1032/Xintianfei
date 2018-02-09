@@ -323,11 +323,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:src="@drawable/qrcode" />
         </LinearLayout>
 
@@ -340,8 +340,8 @@
             android:visibility="gone">
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:src="@drawable/qrcode" />
         </LinearLayout>
 
@@ -354,9 +354,23 @@
             android:visibility="gone">
 
             <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
                 android:src="@drawable/qrcode" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/fg_recharge_btn_sure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_30"
+        android:background="@drawable/click_btn_round_orange_1"
+        android:paddingBottom="@dimen/space_5"
+        android:paddingLeft="@dimen/space_30"
+        android:paddingRight="@dimen/space_30"
+        android:paddingTop="@dimen/space_5"
+        android:text="@string/sure" />
 </RelativeLayout>

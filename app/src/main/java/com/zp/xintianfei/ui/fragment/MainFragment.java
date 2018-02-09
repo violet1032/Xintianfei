@@ -236,7 +236,6 @@ public class MainFragment extends BaseFragment {
 
             // 判断是否应该请求下一期数据
             gameStatus.setCountdown(gameStatus.getCountdown() - 1);
-            LogUtil.logError(MainFragment.class, "cate:" + gameStatus.getCate() + "请求下一期数据:" + (gameStatus.getFtime() + gameStatus.getCountdown()));
             if (gameStatus.getFtime() + gameStatus.getCountdown() == 0) {
                 // 请求下一期
                 getNext(gameStatus.getCate(), textView);

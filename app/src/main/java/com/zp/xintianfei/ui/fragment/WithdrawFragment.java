@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,6 +36,8 @@ public class WithdrawFragment extends BaseFragment {
 
     @BindView(id = R.id.fg_withdraw_btn_bading, click = true)
     private LinearLayout layBadding;
+    @BindView(id = R.id.fg_withdraw_btn_online, click = true)
+    private LinearLayout layOnline;
 
     @BindView(id = R.id.fg_tx_nickname)
     private TextView tvNickname;
@@ -49,6 +52,11 @@ public class WithdrawFragment extends BaseFragment {
 
     @BindView(id = R.id.fg_main_img_head)
     private ImageView imgHead;
+
+    @BindView(id = R.id.fg_withdraw_edt_sum)
+    private EditText edtMoney;
+    @BindView(id = R.id.fg_withdraw_btn_sure, click = true)
+    private Button btnWithdraw;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -89,7 +97,13 @@ public class WithdrawFragment extends BaseFragment {
                 ExchangeActivity.startActivity(getActivity(), 1);
                 break;
             case R.id.fg_withdraw_btn_bading:
-                ((MainActivity)getActivity()).setPosition(9);
+                ((MainActivity) getActivity()).setPosition(9);
+                break;
+            case R.id.fg_withdraw_btn_online:
+                ((MainActivity) getActivity()).setPosition(10);
+                break;
+            case R.id.fg_withdraw_btn_sure:
+
                 break;
         }
     }
@@ -97,5 +111,9 @@ public class WithdrawFragment extends BaseFragment {
     @Override
     public void onClick(View v) {
         super.onClick(v);
+    }
+
+    private void withdraw(){
+
     }
 }

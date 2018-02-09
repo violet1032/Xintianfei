@@ -4,21 +4,21 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/fg_recharge_banner"
+        android:id="@+id/fg_bandding_banner"
         layout="@layout/common_banner" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fg_recharge_lay_1"
+        android:layout_below="@+id/fg_bandding_lay_1"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_pic_3" />
 
     <LinearLayout
-        android:id="@+id/fg_recharge_lay_1"
+        android:id="@+id/fg_bandding_lay_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fg_recharge_banner"
+        android:layout_below="@+id/fg_bandding_banner"
         android:orientation="vertical">
 
         <LinearLayout
@@ -186,7 +186,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fg_recharge_lay_1"
+        android:layout_below="@+id/fg_bandding_lay_1"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingLeft="@dimen/space_30"
@@ -201,23 +201,30 @@
             android:textColor="@color/orange_1"
             android:textSize="@dimen/text_size_15" />
 
-        <EditText
-            android:id="@+id/fg_recharge_select_bank"
+        <LinearLayout
+            android:id="@+id/fg_bandding_select_bank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
             android:background="@drawable/shape_rounded_h_white"
-            android:hint="@string/bandding_text_2"
             android:paddingBottom="@dimen/space_7"
             android:paddingLeft="@dimen/space_15"
             android:paddingRight="@dimen/space_15"
             android:paddingTop="@dimen/space_7"
             android:textColor="@color/white"
             android:textColorHint="#999"
-            android:textSize="@dimen/text_size_14" />
+            android:textSize="@dimen/text_size_14">
+
+            <TextView
+                android:id="@+id/fg_bandding_tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bandding_text_2"
+                android:textColor="@color/gray" />
+        </LinearLayout>
 
         <EditText
-            android:id="@+id/fg_recharge_edt_bankname"
+            android:id="@+id/fg_bandding_edt_bankname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
@@ -232,7 +239,7 @@
             android:textSize="@dimen/text_size_14" />
 
         <EditText
-            android:id="@+id/fg_recharge_edt_realname"
+            android:id="@+id/fg_bandding_edt_realname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
@@ -247,7 +254,7 @@
             android:textSize="@dimen/text_size_14" />
 
         <EditText
-            android:id="@+id/fg_recharge_edt_number"
+            android:id="@+id/fg_bandding_edt_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
@@ -262,7 +269,7 @@
             android:textSize="@dimen/text_size_14" />
 
         <EditText
-            android:id="@+id/fg_recharge_edt_renumber"
+            android:id="@+id/fg_bandding_edt_renumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
@@ -277,6 +284,7 @@
             android:textSize="@dimen/text_size_14" />
 
         <Button
+            android:id="@+id/fg_bandding_btn_bandding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"

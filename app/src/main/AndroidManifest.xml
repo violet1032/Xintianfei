@@ -63,6 +63,10 @@
             android:label="@string/title_activity_agent_fee" >
         </activity>
         <activity
+            android:name=".ui.dialog.SelectBankDialog"
+            android:theme="@style/CustomDialog" />
+
+        <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"

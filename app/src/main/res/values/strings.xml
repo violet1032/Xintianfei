@@ -84,7 +84,7 @@
     <string name="fg_person_text_9">代理中心</string>
 
     <!-- main fragment recharge -->
-    <string name="fg_recharge_text_1">请输入充值ID</string>
+    <string name="fg_recharge_text_1">请输入转账昵称</string>
     <string name="fg_recharge_text_2">请输入充值金额</string>
     <string name="fg_recharge_text_3">本平台最低上下分50起，大额5000以上请网银充值</string>
     <string name="fg_recharge_text_4">微信扫描充值</string>
