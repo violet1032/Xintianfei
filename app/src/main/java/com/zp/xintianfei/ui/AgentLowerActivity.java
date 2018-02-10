@@ -9,13 +9,18 @@ import android.widget.TextView;
 
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.adapter.AgentLowerHistoryAdapter;
+import com.zp.xintianfei.api.ApiUser;
+import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.AgentLowerHistory;
 import com.zp.xintianfei.bean.AgentLowerHistoryList;
+import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 /**
  *
@@ -76,5 +81,35 @@ public class AgentLowerActivity extends BaseActivity {
 
         agentLowerHistoryAdapter = new AgentLowerHistoryAdapter(lvAgentLower, agentLowerHistoryList.getList());
         lvAgentLower.setAdapter(agentLowerHistoryAdapter);
+    }
+
+    private void getData() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+
+
+                    finish();
+                } else
+                    UIHelper.ToastMessage(result.getMsg());
+            }
+
+            @Override
+            public void onPreStart() {
+                super.onPreStart();
+                UIHelper.showLoadingDialog(AgentLowerActivity.this);
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                UIHelper.stopLoadingDialog();
+            }
+        };
+        ApiUser.getTJMembers(callBack);
     }
 }

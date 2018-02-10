@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/dialog_select_withdraw_type_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/shape_rounded_h_white"
+        android:paddingBottom="@dimen/space_5"
+        android:paddingTop="@dimen/space_5"
+        android:scrollbars="none">
+
+    </ListView>
+</LinearLayout>

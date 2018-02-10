@@ -17,7 +17,7 @@
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/shape_round_stroke_h_transparent_black_3"
+            android:background="@drawable/shape_round_stroke_h_trnsparent"
             android:padding="@dimen/space_6"
             android:textSize="@dimen/text_size_14" />
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/space_20"
             android:layout_weight="1"
-            android:background="@drawable/shape_round_stroke_h_transparent_black_3"
+            android:background="@drawable/shape_round_stroke_h_trnsparent"
             android:padding="@dimen/space_6"
             android:textSize="@dimen/text_size_14" />
 

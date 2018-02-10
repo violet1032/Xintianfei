@@ -6,7 +6,7 @@
     <solid android:color="@color/black_3"/>
 
     <stroke android:color="@color/white"
-            android:width="2px"/>
+            android:width="1px"/>
     <!-- 圆角 -->
     <corners
         android:radius="@dimen/radius_xh"/>

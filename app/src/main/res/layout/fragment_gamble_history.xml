@@ -165,7 +165,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="@dimen/space_10"
-                        android:text="@string/gamble_history_text_9" />
+                        android:text="@string/gamble_history_text_10" />
 
                     <ImageView
                         android:layout_width="1px"
@@ -177,7 +177,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="@dimen/space_10"
-                        android:text="@string/gamble_history_text_10" />
+                        android:text="@string/gamble_history_text_11" />
 
                     <ImageView
                         android:layout_width="1px"
@@ -206,6 +206,7 @@
                         android:background="@color/black_3" />
 
                     <TextView
+                        android:id="@+id/fg_gamble_history_tv_tz"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -219,6 +220,7 @@
                         android:background="@color/black_3" />
 
                     <TextView
+                        android:id="@+id/fg_gamble_history_tv_zj"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -232,6 +234,7 @@
                         android:background="@color/black_3" />
 
                     <TextView
+                        android:id="@+id/fg_gamble_history_tv_yl"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -245,6 +248,7 @@
                         android:background="@color/black_3" />
 
                     <TextView
+                        android:id="@+id/fg_gamble_history_tv_cz"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"
@@ -258,6 +262,7 @@
                         android:background="@color/black_3" />
 
                     <TextView
+                        android:id="@+id/fg_gamble_history_tv_tx"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:gravity="center"

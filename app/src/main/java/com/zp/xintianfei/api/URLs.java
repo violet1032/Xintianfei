@@ -23,6 +23,15 @@ public class URLs {
     public final static String bindBank = APP_STORE_HOST + "bindBank"; // 绑定银行卡
     public final static String cz = APP_STORE_HOST + "cz"; // 充值
     public final static String tx = APP_STORE_HOST + "tx"; // 提现
+    public final static String exchangeYJ = APP_STORE_HOST + "exchangeYJ"; // 佣金兑换
+    public final static String exchangeFS = APP_STORE_HOST + "exchangeFS"; // 返水兑换
+    public final static String setFsRate = APP_STORE_HOST + "setFsRate"; // 设置返水比例
+    public final static String getTJMembers = APP_STORE_HOST + "getTJMembers"; // 获取下级玩家
+    public final static String getTJRecords = APP_STORE_HOST + "getTJRecords"; // 获取流水
+
+    public final static String xzRecord = APP_STORE_HOST + "xzRecord"; // 投注记录
+    public final static String czRecord = APP_STORE_HOST + "czRecord"; // 充值记录
+    public final static String txRecord = APP_STORE_HOST + "txRecord"; // 提现记录
 
     public final static String LOGOUT = APP_STORE_HOST + "api/user/logout"; // 退出登录
     public final static String REGIST = APP_STORE_HOST + "api/user/regist";//注册

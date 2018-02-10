@@ -23,11 +23,11 @@ public class GambleHistoryAdapter extends KJAdapter<GambleHistory> {
     public void convert(AdapterHolder helper, GambleHistory item, boolean isScrolling, int position) {
         super.convert(helper, item, isScrolling, position);
 
-        helper.setText(R.id.lt_gamble_history_tv_1, item.getType());
+        helper.setText(R.id.lt_gamble_history_tv_1, item.getStrCate());
         helper.setText(R.id.lt_gamble_history_tv_2, item.getStage());
-        helper.setText(R.id.lt_gamble_history_tv_3, item.getGameType());
+        helper.setText(R.id.lt_gamble_history_tv_3, item.getStrType());
         helper.setText(R.id.lt_gamble_history_tv_4, item.getNumber());
         helper.setText(R.id.lt_gamble_history_tv_5, item.getMoney() + "元");
-        helper.setText(R.id.lt_gamble_history_tv_6, item.getStatus());
+        helper.setText(R.id.lt_gamble_history_tv_6, item.getStrStatus());
     }
 }

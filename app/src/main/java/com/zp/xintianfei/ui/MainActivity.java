@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.xcinfo.album.ui.ChooseDialog;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.common.BaseActivity;
 import com.zp.xintianfei.ui.fragment.AgentFragment;
+import com.zp.xintianfei.ui.fragment.BanddingAlipayFragment;
 import com.zp.xintianfei.ui.fragment.BanddingFragment;
+import com.zp.xintianfei.ui.fragment.BanddingWeixinFragment;
 import com.zp.xintianfei.ui.fragment.GambleHistoryFragment;
 import com.zp.xintianfei.ui.fragment.MainFragment;
 import com.zp.xintianfei.ui.fragment.OnlineFragment;
@@ -20,8 +23,11 @@ import com.zp.xintianfei.ui.fragment.RechargeHistoryFragment;
 import com.zp.xintianfei.ui.fragment.RuleFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawHistoryFragment;
+import com.zp.xintianfei.utils.StringUtils;
 
 import org.kymjs.kjframe.ui.BindView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
 
@@ -41,6 +47,8 @@ public class MainActivity extends BaseActivity {
     private OnlineFragment onlineFragment = new OnlineFragment();
     private OnlineWeixinFragment onlineWeixinFragment = new OnlineWeixinFragment();
     private OnlineQQFragment onlineQQFragment = new OnlineQQFragment();
+    private BanddingWeixinFragment banddingWeixinFragment = new BanddingWeixinFragment();
+    private BanddingAlipayFragment banddingAlipayFragment = new BanddingAlipayFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -55,6 +63,8 @@ public class MainActivity extends BaseActivity {
     private LinearLayout layRule;
     @BindView(id = R.id.act_main_lay_person, click = true)
     private LinearLayout layPerson;
+
+    public static int imgUploadType = 0;//0:微信，1：支付宝
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();
@@ -74,6 +84,24 @@ public class MainActivity extends BaseActivity {
             setPosition(10);
         } else if (resultCode == 4) {
             setPosition(2);
+        }
+        if (resultCode == RESULT_OK) {
+            if (data != null) {
+                if (!StringUtils.isEmpty(data.getAction())) {
+                    if (data.getAction().equals(ChooseDialog.ACTION_SELECTED_PICS)) {
+                        // 图片上传
+                        ArrayList<String> uris = (ArrayList<String>) data.getSerializableExtra(ChooseDialog.PUT_INTENT);
+                        for (String str :
+                                uris) {
+                            // 遍历图片上传
+                            if (imgUploadType == 0)
+                                banddingWeixinFragment.imgUpLoad(str);
+                            else
+                                banddingAlipayFragment.imgUpLoad(str);
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -180,6 +208,14 @@ public class MainActivity extends BaseActivity {
                 case 12:
                     // QQ客服
                     changeFragment(R.id.act_main_content, onlineQQFragment);
+                    break;
+                case 13:
+                    // 绑定微信
+                    changeFragment(R.id.act_main_content, banddingWeixinFragment);
+                    break;
+                case 14:
+                    // 绑定支付宝
+                    changeFragment(R.id.act_main_content, banddingAlipayFragment);
                     break;
             }
 

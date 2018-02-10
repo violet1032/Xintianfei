@@ -9,46 +9,38 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.xcinfo.album.ui.ChooseDialog;
 import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
-import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
-import com.zp.xintianfei.bean.Bank;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
-import com.zp.xintianfei.ui.dialog.SelectWithdrawTypeDialog;
+import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
  */
-public class WithdrawFragment extends BaseFragment {
+public class BanddingWeixinFragment extends BaseFragment {
 
     @BindView(id = R.id.umeng_banner_title)
     private TextView title;
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
 
-    @BindView(id = R.id.fg_withdraw_btn_1, click = true)
+    @BindView(id = R.id.fg_recharge_btn_1, click = true)
     private Button btnExchange1;
-    @BindView(id = R.id.fg_withdraw_btn_2, click = true)
+    @BindView(id = R.id.fg_recharge_btn_2, click = true)
     private Button btnExchange2;
-
-    @BindView(id = R.id.fg_withdraw_btn_bading, click = true)
-    private LinearLayout layBadding;
-    @BindView(id = R.id.fg_withdraw_btn_online, click = true)
-    private LinearLayout layOnline;
 
     @BindView(id = R.id.fg_tx_nickname)
     private TextView tvNickname;
@@ -64,36 +56,25 @@ public class WithdrawFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_img_head)
     private ImageView imgHead;
 
-    @BindView(id = R.id.fg_withdraw_edt_sum)
-    private EditText edtMoney;
-    @BindView(id = R.id.fg_withdraw_btn_sure, click = true)
-    private Button btnWithdraw;
-
-    @BindView(id = R.id.fg_withdraw_lay_weixin, click = true)
-    private LinearLayout layOnlineWeixin;
-    @BindView(id = R.id.fg_withdraw_lay_qq, click = true)
-    private LinearLayout layOnlineQQ;
-    @BindView(id = R.id.fg_withdraw_lay_customer, click = true)
-    private LinearLayout layOnlineCustomer;
-
-    @BindView(id = R.id.fg_withdraw_btn_bading_weixin, click = true)
-    private LinearLayout layBandingWeixin;
-    @BindView(id = R.id.fg_withdraw_btn_bading_alipay, click = true)
-    private LinearLayout layBandingAlipay;
-    @BindView(id = R.id.fg_withdraw_btn_bading, click = true)
-    private LinearLayout layBandingCard;
-
-    @BindView(id = R.id.fg_withdraw_select_type, click = true)
-    private LinearLayout laySelectType;
+    @BindView(id = R.id.fg_bandding_weixin_tv_file)
+    private TextView tvFile;
 
     private Handler handler;
-    @BindView(id = R.id.fg_bandding_tv_name)
-    private TextView tvName;
-    private int bankId;
+
+    @BindView(id = R.id.fg_bandding_weixin_edt_nickname)
+    private EditText edtNickname;
+    @BindView(id = R.id.fg_bandding_weixin_btn_bandding, click = true)
+    private Button btnBadding;
+    @BindView(id = R.id.fg_bandding_weixin_btn_scan, click = true)
+    private Button btnScan;
+    @BindView(id = R.id.fg_bandding_weixin_btn_upload, click = true)
+    private Button btnUpload;
+
+    private int bankId = 0;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
-        View view = View.inflate(getActivity(), R.layout.fragment_withdraw, null);
+        View view = View.inflate(getActivity(), R.layout.fragment_bandding_weixin, null);
         return view;
     }
 
@@ -101,8 +82,7 @@ public class WithdrawFragment extends BaseFragment {
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
 
-        title.setText("提现");
-        imgBack.setVisibility(View.INVISIBLE);
+        title.setText(R.string.fragment_withdraw_text_14);
 
         tvNickname.setText(AppContext.user.getNickname());
         tvID.setText(AppContext.user.getUid() + "");
@@ -122,9 +102,6 @@ public class WithdrawFragment extends BaseFragment {
             public boolean handleMessage(Message message) {
 
                 if (message.what == 1) {
-                    Bank bank = (Bank) message.obj;
-                    tvName.setText(bank.getName());
-                    bankId = bank.getId();
                 }
 
                 return false;
@@ -137,59 +114,46 @@ public class WithdrawFragment extends BaseFragment {
         super.widgetClick(v);
 
         switch (v.getId()) {
-            case R.id.fg_withdraw_btn_1:
+            case R.id.fg_recharge_btn_1:
                 ExchangeActivity.startActivity(getActivity(), 0);
                 break;
-            case R.id.fg_withdraw_btn_2:
+            case R.id.fg_recharge_btn_2:
                 ExchangeActivity.startActivity(getActivity(), 1);
                 break;
-            case R.id.fg_withdraw_btn_sure:
-                withdraw();
+            case R.id.umeng_banner_img_left:
+                ((MainActivity) getActivity()).setPosition(1);
                 break;
-            case R.id.fg_withdraw_lay_weixin:
-                ((MainActivity) getActivity()).setPosition(11);
+            case R.id.fg_bandding_weixin_btn_bandding:
+                badding();
                 break;
-            case R.id.fg_withdraw_lay_qq:
-                ((MainActivity) getActivity()).setPosition(12);
+            case R.id.fg_bandding_weixin_btn_scan:
+                // 浏览
+                ((MainActivity)getActivity()).imgUploadType = 0;
+                ChooseDialog.startActivity(getActivity(), 1, false);
                 break;
-            case R.id.fg_withdraw_lay_customer:
-                break;
-            case R.id.fg_withdraw_btn_bading:
-                ((MainActivity) getActivity()).setPosition(9);
-                break;
-            case R.id.fg_withdraw_btn_bading_weixin:
-                ((MainActivity) getActivity()).setPosition(13);
-                break;
-            case R.id.fg_withdraw_btn_bading_alipay:
-                ((MainActivity) getActivity()).setPosition(14);
-                break;
-            case R.id.fg_withdraw_select_type:
-                SelectWithdrawTypeDialog.startActivity(getActivity(), handler);
+            case R.id.fg_bandding_weixin_btn_upload:
+                // 上传
                 break;
         }
     }
+
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
     }
 
-    private void withdraw() {
-        BigDecimal bigDecimal = null;
-        try {
-            bigDecimal = new BigDecimal(edtMoney.getText().toString().trim());
-        } catch (Exception e) {
-            UIHelper.ToastMessage("请输入正确的金额");
+    private void badding() {
+        String nickName = edtNickname.getText().toString().trim();
+        String filename = tvFile.getText().toString().trim();
+
+
+        if (StringUtils.isEmpty(nickName)) {
+            UIHelper.ToastMessage("请输入微信昵称");
             return;
         }
-
-        if (bigDecimal == null) {
-            UIHelper.ToastMessage("请输入正确的金额");
-            return;
-        }
-
-        if (bankId == 0) {
-            UIHelper.ToastMessage("请选择提现类别");
+        if (StringUtils.isEmpty(filename)) {
+            UIHelper.ToastMessage("请上传收款二维码");
             return;
         }
 
@@ -200,10 +164,11 @@ public class WithdrawFragment extends BaseFragment {
                 String str = new String(t);
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
+                    UIHelper.ToastMessage("绑定成功");
+                    ((MainActivity) getActivity()).setPosition(1);
+                } else {
                     UIHelper.ToastMessage(result.getMsg());
-                    edtMoney.setText("");
-                } else
-                    UIHelper.ToastMessage(result.getMsg());
+                }
             }
 
             @Override
@@ -218,6 +183,42 @@ public class WithdrawFragment extends BaseFragment {
                 UIHelper.stopLoadingDialog();
             }
         };
-        ApiUser.tx(bankId, bigDecimal, callBack);
+//        ApiUser.bindBank(bankId, number, realName, bankName, callBack);
+    }
+
+    /**
+     * 图片上传
+     */
+    public void imgUpLoad(final String uri) {
+//        FHttpCallBack callBack = new FHttpCallBack() {
+//            @Override
+//            public void onSuccess(String t) {
+//                super.onSuccess(t);
+//                // 调用上传图片接口成功
+//
+//                Result result = new Result();
+//                result.parse(t);
+//                if (result.isOk()) {
+//                    // 上传成功
+//                } else
+//                    UIHelper.ToastMessage(result.getMsg());
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                super.onFinish();
+//                UIHelper.stopLoadingDialog();
+//            }
+//
+//            @Override
+//            public void onPreStart() {
+//                super.onPreStart();
+//                UIHelper.showLoadingDialog(getActivity());
+//            }
+//        };
+//        ApiCommon.uploadPicture(new File(uri), callBack);
+        UIHelper.ToastMessage("上传成功");
+        String fileName = StringUtils.pathToFileName(uri);
+        tvFile.setText(fileName);
     }
 }

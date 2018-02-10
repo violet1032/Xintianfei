@@ -1,5 +1,10 @@
 package com.zp.xintianfei.bean;
 
+import com.zp.xintianfei.utils.JsonUtils;
+import com.zp.xintianfei.utils.StringUtils;
+
+import org.json.JSONException;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -19,6 +24,15 @@ public class RechargeHistory implements Serializable {
     private String time;
     private String status;
     private BigDecimal money;
+
+    public RechargeHistory parse(String json) throws JSONException {
+        JsonUtils jsonUtils = new JsonUtils(json);
+        setId(jsonUtils.getInt("id"));
+        setMoney(jsonUtils.getBigDecimal("money"));
+        setTime(StringUtils.date_fromat_change(jsonUtils.getLong("create_at") * 1000));
+        setStatus(E_RECHARGE_STATUE_TYPE.getIndex(jsonUtils.getInt("state")).name);
+        return this;
+    }
 
     public int getId() {
         return id;

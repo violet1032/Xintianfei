@@ -13,13 +13,13 @@ import java.util.Locale;
 
 /**
  * 字符串辅助类
- * <p/>
+ * <p>
  * description:继承kj框架中的StringUtils,自定义在此扩展
- * <p/>
+ * <p>
  * author:zipeng
- * <p/>
+ * <p>
  * createTime:2015/9/14 20:37
- * <p/>
+ * <p>
  * version:1.0
  */
 public class StringUtils extends org.kymjs.kjframe.utils.StringUtils {
@@ -626,5 +626,16 @@ public class StringUtils extends org.kymjs.kjframe.utils.StringUtils {
         if (i < 10)
             return "0" + i;
         return i + "";
+    }
+
+    public static String pathToFileName(String path) {
+        if (!StringUtils.isEmpty(path)) {
+            int start = 0;
+            while (path.indexOf("/", start + 1) > 0) {
+                start = path.indexOf("/", start + 1);
+            }
+            return path.substring(start + 1, path.length());
+        }
+        return "";
     }
 }

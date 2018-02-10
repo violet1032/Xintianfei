@@ -61,13 +61,13 @@ public class LoginActivity extends BaseActivity {
                     UMAuthListener umAuthListener = new UMAuthListener() {
                         @Override
                         public void onStart(SHARE_MEDIA share_media) {
-                            Toast.makeText(LoginActivity.this, "开始授权", Toast.LENGTH_LONG).show();
+                            UIHelper.showLoadingDialog(LoginActivity.this);
                         }
 
                         @Override
                         public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
                             Toast.makeText(LoginActivity.this, "成功了", Toast.LENGTH_LONG).show();
-
+                            UIHelper.stopLoadingDialog();
                             for (String key : map.keySet()) {
                                 Log.e("loginactivity", "微信授权返回key:" + key + " content:" + map.get(key));
 
@@ -79,12 +79,12 @@ public class LoginActivity extends BaseActivity {
 
                         @Override
                         public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
-
+                            UIHelper.stopLoadingDialog();
                         }
 
                         @Override
                         public void onCancel(SHARE_MEDIA share_media, int i) {
-
+                            UIHelper.stopLoadingDialog();
                         }
                     };
                     UMShareAPI.get(this).getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, umAuthListener);
@@ -96,6 +96,7 @@ public class LoginActivity extends BaseActivity {
                 UMAuthListener umAuthListenerQQ = new UMAuthListener() {
                     @Override
                     public void onStart(SHARE_MEDIA share_media) {
+                        UIHelper.showLoadingDialog(LoginActivity.this);
                     }
 
                     @Override
@@ -104,7 +105,7 @@ public class LoginActivity extends BaseActivity {
 //                        for (String key : map.keySet()) {
 //                            Log.e("loginactivity", "QQ授权返回key:" + key + " content:" + map.get(key));
 //                        }
-
+                        UIHelper.stopLoadingDialog();
                         String openid = map.get("openid");
                         String headimgurl = map.get("profile_image_url");
                         String nickname = map.get("name");
@@ -113,12 +114,12 @@ public class LoginActivity extends BaseActivity {
 
                     @Override
                     public void onError(SHARE_MEDIA share_media, int i, Throwable throwable) {
-
+                        UIHelper.stopLoadingDialog();
                     }
 
                     @Override
                     public void onCancel(SHARE_MEDIA share_media, int i) {
-
+                        UIHelper.stopLoadingDialog();
                     }
                 };
                 UMShareAPI.get(this).getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListenerQQ);
@@ -166,7 +167,6 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onPreStart() {
                 super.onPreStart();
-                UIHelper.showLoadingDialog(LoginActivity.this);
             }
 
             @Override

@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * <p/>
+ * <p>
  * 描述:
- * <p/>
+ * <p>
  * 作者:Administrator
- * <p/>
+ * <p>
  * 时间:2018/2/3 12:47
- * <p/>
+ * <p>
  * 版本:
  */
 public class GambleFuliHistory implements Serializable {
@@ -19,6 +19,10 @@ public class GambleFuliHistory implements Serializable {
     private String type;
     private String time;
     private BigDecimal money;
+
+    public GambleFuliHistory parse(String str) {
+        return this;
+    }
 
     public int getId() {
         return id;

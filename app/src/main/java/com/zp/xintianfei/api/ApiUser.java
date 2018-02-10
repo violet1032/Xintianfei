@@ -93,7 +93,58 @@ public class ApiUser {
         params.put("bankid", bankid);
         params.put("uid", AppContext.user.getUid());
         // 地址
-        String url = URLs.cz;
+        String url = URLs.tx;
+
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    public static void exchangeYJ(int money, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("money", money);
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.exchangeYJ;
+
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void exchangeFS(int money, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("money", money);
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.exchangeFS;
+
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void setFsRate(int value, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("value", value);
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.setFsRate;
+
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getTJMembers(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getTJMembers;
+
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getTJRecords(int from,int to, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("from", from);
+        params.put("to", to);
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getTJRecords;
 
         AppContext.http.get(url, params, callBack, false, false);
     }

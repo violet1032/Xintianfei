@@ -6,8 +6,7 @@
     android:orientation="vertical"
     tools:context="com.zp.xintianfei.ui.AgentFeeActivity">
 
-    <include
-        layout="@layout/common_banner"/>
+    <include layout="@layout/common_banner" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -18,12 +17,13 @@
         android:textSize="@dimen/text_size_18" />
 
     <EditText
+        android:id="@+id/act_agent_fee_edt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/space_50"
         android:layout_marginRight="@dimen/space_50"
         android:layout_marginTop="@dimen/space_20"
-        android:background="@drawable/shape_round_stroke_h_transparent_black_3"
+        android:background="@drawable/shape_round_stroke_h_trnsparent"
         android:padding="@dimen/space_10"
         android:textSize="@dimen/space_18" />
 
@@ -38,6 +38,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/act_agent_fee_btn"
         android:layout_marginLeft="@dimen/space_50"
         android:layout_marginRight="@dimen/space_50"
         android:layout_marginTop="@dimen/space_20"

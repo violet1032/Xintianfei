@@ -18,6 +18,11 @@ public class AgentLowerHistoryList implements Serializable {
 
     private List<AgentLowerHistory> list = new ArrayList<>();
 
+    public AgentLowerHistoryList parse(String str){
+        
+        return this;
+    }
+
     public List<AgentLowerHistory> getList() {
         return list;
     }

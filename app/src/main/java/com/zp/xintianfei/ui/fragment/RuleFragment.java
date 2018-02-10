@@ -78,6 +78,8 @@ public class RuleFragment extends BaseFragment {
         WebSettings webSettings = tvRuleContent.getSettings();
         webSettings.setSupportZoom(false);
         webSettings.setDefaultTextEncodingName("gbk");
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
+        webSettings.setJavaScriptEnabled(true);
         tvRuleContent.setBackgroundColor(0);
         tvRuleContent.getBackground().setAlpha(0);
     }

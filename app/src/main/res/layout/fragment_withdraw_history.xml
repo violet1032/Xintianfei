@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/space_10"
-            android:text="@string/recharge_history_text_1"
+            android:text="@string/withdraw_history_text_1"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_15" />
 

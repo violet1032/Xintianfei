@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">王者娱乐城</string>
+    <string name="app_name_cn">王者娱乐城</string>
     <string name="app_name_en">wzylc</string>
     <!-- 误操作提示 -->
     <string name="account_not_empty">账号不能为空</string>
@@ -45,11 +45,15 @@
     <string name="fragment_withdraw_text_3">返水点数：</string>
     <string name="fragment_withdraw_text_4">佣金点数：</string>
     <string name="fragment_withdraw_text_5">兑换</string>
-    <string name="fragment_withdraw_text_6">请输入取款金额</string>
+    <string name="fragment_withdraw_text_6">请输入提现金额</string>
     <string name="fragment_withdraw_text_7">大额请绑定银行卡</string>
     <string name="fragment_withdraw_text_8">绑定银行卡</string>
     <string name="fragment_withdraw_text_9">在线客服</string>
     <string name="fragment_withdraw_text_10">确定</string>
+    <string name="fragment_withdraw_text_11">请选择体现方式</string>
+    <string name="fragment_withdraw_text_12">绑定银行卡</string>
+    <string name="fragment_withdraw_text_13">绑定支付宝</string>
+    <string name="fragment_withdraw_text_14">绑定微信</string>
     <string name="sure">确定</string>
 
     <!-- main fragment rule -->
@@ -157,6 +161,8 @@
     <string name="exchange_text_5">佣金点数兑换</string>
     <string name="exchange_text_6">请输入佣金点数</string>
     <string name="exchange_text_7">当前可兑换佣金点数为：</string>
+    <string name="exchange_text_8">1000:5</string>
+    <string name="exchange_text_9">1000:5</string>
 
     <string name="recharge_history_text_1">充值记录</string>
     <string name="withdraw_history_text_1">提现记录</string>
@@ -215,6 +221,13 @@
     <string name="bandding_text_5">银行卡号</string>
     <string name="bandding_text_6">确认银行卡号</string>
     <string name="bandding_text_7">绑定</string>
+    <string name="bandding_text_8">微信昵称</string>
+    <string name="bandding_text_9">浏览</string>
+    <string name="bandding_text_10">上传</string>
+    <string name="bandding_text_11">请上传微信二维码收款图片</string>
+    <string name="bandding_text_12">昵称</string>
+    <string name="bandding_text_13">账号</string>
+    <string name="bandding_text_14">请上传支付宝二维码收款图片</string>
 
     <string name="online_text_1">客服中心</string>
     <string name="online_text_2">微信客服</string>

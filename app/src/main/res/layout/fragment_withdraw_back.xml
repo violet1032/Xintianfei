@@ -21,6 +21,12 @@
         android:layout_below="@+id/fg_withdraw_banner"
         android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/banner" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -190,40 +196,9 @@
         android:orientation="vertical"
         android:padding="@dimen/space_30">
 
-        <LinearLayout
-            android:id="@+id/fg_withdraw_select_type"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:background="@drawable/shape_rounded_h_white"
-            android:paddingBottom="@dimen/space_7"
-            android:paddingLeft="@dimen/space_15"
-            android:paddingRight="@dimen/space_15"
-            android:paddingTop="@dimen/space_7"
-            android:textColor="@color/white"
-            android:textColorHint="#999"
-            android:textSize="@dimen/text_size_14">
-
-            <TextView
-                android:id="@+id/fg_bandding_tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fragment_withdraw_text_11"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/text_size_13" />
-
-            <ImageView
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/space_5"
-                android:src="@drawable/arrow_down_gray" />
-        </LinearLayout>
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
             android:background="@color/transparent">
 
             <EditText
@@ -241,7 +216,7 @@
                 android:paddingTop="@dimen/space_7"
                 android:textColor="@color/white"
                 android:textColorHint="#999"
-                android:textSize="@dimen/text_size_13" />
+                android:textSize="@dimen/text_size_14" />
 
             <Button
                 android:id="@+id/fg_withdraw_btn_sure"
@@ -273,183 +248,54 @@
                 android:id="@+id/fg_withdraw_btn_bading"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space_20"
                 android:layout_weight="1"
-                android:background="@drawable/click_btn_round_h_black_5"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="@dimen/space_7">
+                android:background="@drawable/click_btn_round_skyblue"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/space_7"
+                android:paddingLeft="@dimen/space_15"
+                android:paddingRight="@dimen/space_15"
+                android:paddingTop="@dimen/space_7">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/icon_card_black" />
+                    android:src="@drawable/icon_bank" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
                     android:text="@string/fragment_withdraw_text_8"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/space_13" />
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_15" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/fg_withdraw_btn_bading_alipay"
+                android:id="@+id/fg_withdraw_btn_online"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
                 android:layout_weight="1"
-                android:background="@drawable/click_btn_round_h_black_5"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="@dimen/space_7">
+                android:background="@drawable/click_btn_round_orange_3"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/space_10"
+                android:paddingLeft="@dimen/space_25"
+                android:paddingRight="@dimen/space_25"
+                android:paddingTop="@dimen/space_9">
 
                 <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/icon_alipay_black" />
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/icon_online_people" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/fragment_withdraw_text_13"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/space_13" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fg_withdraw_btn_bading_weixin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/click_btn_round_h_black_5"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:padding="@dimen/space_7">
-
-                <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/icon_wixin_black" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fragment_withdraw_text_14"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/space_13" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_20"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:id="@+id/fg_withdraw_lay_customer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/click_btn_bg_skyblue"
-                android:orientation="vertical"
-                android:padding="@dimen/space_10">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/icon_bg_customer_white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:text="@string/online_text_4"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_13" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/fg_withdraw_lay_qq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_5"
-                android:layout_weight="1"
-                android:background="@drawable/click_btn_bg_green"
-                android:orientation="vertical"
-                android:padding="@dimen/space_10">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/icon_bg_qq_white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:text="@string/online_text_3"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_13" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fg_withdraw_lay_weixin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_5"
-                android:layout_weight="1"
-                android:background="@drawable/click_btn_bg_orange"
-                android:orientation="vertical"
-                android:padding="@dimen/space_10">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_gravity="center_vertical"
-                        android:src="@drawable/icon_bg_weixin_white" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:text="@string/online_text_2"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_13" />
-                </LinearLayout>
-
-
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:text="@string/fragment_withdraw_text_9"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/space_15" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

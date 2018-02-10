@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.AgentCashActivity;
 import com.zp.xintianfei.ui.AgentFeeActivity;
@@ -34,6 +35,9 @@ public class AgentFragment extends BaseFragment {
     @BindView(id = R.id.fg_agent_btn_1, click = true)
     private Button btnFee;
 
+    @BindView(id=R.id.fg_agent_tv_id)
+    private TextView tvId;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_agent, null);
@@ -45,6 +49,8 @@ public class AgentFragment extends BaseFragment {
         super.initWidget(parentView);
 
         title.setText("代理中心");
+
+        tvId.setText(AppContext.user.getUid()+"");
     }
 
     @Override
