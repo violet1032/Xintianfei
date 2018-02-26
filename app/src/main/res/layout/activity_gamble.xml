@@ -1,0 +1,17 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.zp.xintianfei.ui.GambleActivity">
+
+    <include
+        layout="@layout/common_banner"/>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:id="@+id/act_gamble_web"
+        android:layout_height="match_parent">
+
+    </WebView>
+</LinearLayout>

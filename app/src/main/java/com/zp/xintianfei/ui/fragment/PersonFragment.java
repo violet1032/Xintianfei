@@ -1,5 +1,7 @@
 package com.zp.xintianfei.ui.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,6 +47,8 @@ public class PersonFragment extends BaseFragment {
     private LinearLayout layGambleHistory;
     @BindView(id = R.id.fg_person_lay_4, click = true)
     private LinearLayout layOnline;
+    @BindView(id = R.id.fg_person_lay_5, click = true)
+    private LinearLayout layDownload;
 
     @BindView(id = R.id.fg_person_btn_1, click = true)
     private Button btnExchange1;
@@ -135,6 +139,14 @@ public class PersonFragment extends BaseFragment {
             case R.id.fg_person_lay_4:
                 // 客服人员
                 ((MainActivity) getActivity()).setPosition(10);
+                break;
+            case R.id.fg_person_lay_5:
+                // app下载
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse(AppContext.downLoadUrl);
+                intent.setData(content_url);
+                startActivity(intent);
                 break;
         }
     }

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
@@ -18,7 +17,6 @@ import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
 import com.zp.xintianfei.utils.LogUtil;
-import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -56,7 +54,7 @@ public class LoginActivity extends BaseActivity {
 
         switch (v.getId()) {
             case R.id.act_login_lay_weixin:
-                if (StringUtils.isEmpty(AppConfig.getInstance().getLoginWxUnionid())) {
+//                if (StringUtils.isEmpty(AppConfig.getInstance().getLoginWxUnionid())) {
                     // 调用授权
                     UMAuthListener umAuthListener = new UMAuthListener() {
                         @Override
@@ -66,15 +64,20 @@ public class LoginActivity extends BaseActivity {
 
                         @Override
                         public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
-                            Toast.makeText(LoginActivity.this, "成功了", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(LoginActivity.this, "成功了", Toast.LENGTH_LONG).show();
                             UIHelper.stopLoadingDialog();
                             for (String key : map.keySet()) {
                                 Log.e("loginactivity", "微信授权返回key:" + key + " content:" + map.get(key));
-
                             }
                             // 登录
-                            appLogin("o0sHx0OfhmesT5WAA", "o0sHx0OfhmesT5WAA",
-                                    "安卓测试", "http://img1.imgtn.bdimg.com/it/u=1889601151,2922519040&fm=27&gp=0.jpg");
+//                            appLogin("o0sHx0OfhmesT5WAA", "o0sHx0OfhmesT5WAA",
+//                                    "安卓测试", "http://img1.imgtn.bdimg.com/it/u=1889601151,2922519040&fm=27&gp=0.jpg");
+                            UIHelper.stopLoadingDialog();
+                            String openid = map.get("openid");
+                            String unionid = map.get("unionid");
+                            String headimgurl = map.get("profile_image_url");
+                            String nickname = map.get("name");
+                            appLogin(unionid, openid, nickname, headimgurl);
                         }
 
                         @Override
@@ -88,7 +91,7 @@ public class LoginActivity extends BaseActivity {
                         }
                     };
                     UMShareAPI.get(this).getPlatformInfo(LoginActivity.this, SHARE_MEDIA.WEIXIN, umAuthListener);
-                }
+//                }
                 break;
             case R.id.act_login_lay_qq:
 //                if (StringUtils.isEmpty(AppConfig.getInstance().getLoginWxUnionid())) {
@@ -102,9 +105,9 @@ public class LoginActivity extends BaseActivity {
                     @Override
                     public void onComplete(SHARE_MEDIA share_media, int i, Map<String, String> map) {
                         // 登录
-//                        for (String key : map.keySet()) {
-//                            Log.e("loginactivity", "QQ授权返回key:" + key + " content:" + map.get(key));
-//                        }
+                        for (String key : map.keySet()) {
+                            Log.e("loginactivity", "QQ授权返回key:" + key + " content:" + map.get(key));
+                        }
                         UIHelper.stopLoadingDialog();
                         String openid = map.get("openid");
                         String headimgurl = map.get("profile_image_url");

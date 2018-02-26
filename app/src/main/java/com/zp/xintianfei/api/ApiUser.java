@@ -2,7 +2,9 @@ package com.zp.xintianfei.api;
 
 
 import com.zp.xintianfei.AppContext;
+import com.zp.xintianfei.utils.StringUtils;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
@@ -86,6 +88,7 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack, false, false);
     }
+
     public static void tx(int bankid, BigDecimal money, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
@@ -108,6 +111,7 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack, false, false);
     }
+
     public static void exchangeFS(int money, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
@@ -118,6 +122,7 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack, false, false);
     }
+
     public static void setFsRate(int value, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
@@ -128,6 +133,7 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack, false, false);
     }
+
     public static void getTJMembers(FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
@@ -137,15 +143,47 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack, false, false);
     }
-    public static void getTJRecords(int from,int to, FHttpCallBack callBack) {
+
+    public static void getTJRecords(long from, long to, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
-        params.put("from", from);
-        params.put("to", to);
+        if (from > 0)
+            params.put("from", from / 1000);
+        if (to > 0)
+            params.put("to", to / 1000);
         params.put("uid", AppContext.user.getUid());
         // 地址
         String url = URLs.getTJRecords;
 
         AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    public static void bindAlipay(String username,String account,String path,FHttpCallBack callBack){
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("zfb_username", username);
+        params.put("zfb_account", account);
+        File file = null;
+        if(!StringUtils.isEmpty(path))
+            file = new File(path);
+        // 地址
+        String url = URLs.bindAlipay;
+
+        AppContext.http.postFile(url, params, file, callBack);
+    }
+
+    public static void bindWeiXin(String username,String path,FHttpCallBack callBack){
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("wx_username", username);
+        File file = null;
+        if(!StringUtils.isEmpty(path))
+            file = new File(path);
+        // 地址
+        String url = URLs.bindWeiXin;
+
+        AppContext.http.postFile(url,params,file,callBack);
     }
 }

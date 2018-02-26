@@ -11,6 +11,7 @@ import org.kymjs.kjframe.http.HttpConfig;
 import org.kymjs.kjframe.http.HttpParams;
 import org.kymjs.kjframe.http.Request;
 
+import java.io.File;
 import java.util.Map;
 
 /**
@@ -52,11 +53,38 @@ public class FHttpClient extends KJHttp {
         params.putHeaders("Cookie", cookie);
         if (AppConfig.DEBUG)
             Log.e(TAG, "http请求cookie:" + cookie);
-//            }
-//        } else {
-//            setCookie = false;
-//        }
-//        }
+        return super.post(url, params, callback);
+    }
+
+    public Request<byte[]> postFile(String url, Map<String, Object> httpParams, File file, HttpCallBack
+            callback) {
+
+        if (!login) {
+            FHttpCallBack.url = url;
+            FHttpCallBack.callBack = callback;
+            FHttpCallBack.map = httpParams;
+        }
+
+        HttpParams params = new HttpParams();
+        params.put("", "");
+        for (String key :
+                httpParams.keySet()) {
+            if (httpParams.get(key) != null)
+                params.put(key, httpParams.get(key).toString());
+            else if (AppConfig.DEBUG)
+                UIHelper.ToastMessage(key + "参数为空");
+        }
+//        if (file != null)
+//            params.put("file", file);
+
+        String cookie = "JSESSIONID=" + AppConfig.getInstance().getmPre().getString("cookie", null);
+        if (AppConfig.DEBUG) {
+            Log.e(TAG, "http请求参数:" + params.getUrlParams());
+            Log.e(TAG, "http请求地址:" + url);
+        }
+        params.putHeaders("Cookie", cookie);
+        if (AppConfig.DEBUG)
+            Log.e(TAG, "http请求cookie:" + cookie);
         return super.post(url, params, callback);
     }
 

@@ -26,6 +26,6 @@ public class AgentCashHistoryAdapter extends KJAdapter<AgentCashHistory> {
         helper.setText(R.id.lt_agent_cash_tv_1, item.getType());
         helper.setText(R.id.lt_agent_cash_tv_2, item.getStage());
         helper.setText(R.id.lt_agent_cash_tv_3, item.getMoney() + "元");
-        helper.setText(R.id.lt_agent_cash_tv_4, item.getTime() + "元");
+        helper.setText(R.id.lt_agent_cash_tv_4, item.getTime());
     }
 }

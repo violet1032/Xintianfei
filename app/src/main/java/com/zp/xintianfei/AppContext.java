@@ -54,6 +54,8 @@ public class AppContext extends Application {
     public static int versionCode;
     public static String versionName;
 
+    public static String downLoadUrl;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -89,8 +91,9 @@ public class AppContext extends Application {
         user = new User();
 
         // 配置友盟
-        PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
-        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        PlatformConfig.setWeixin("wx60ad3c3c49c77ed8", "c1254aec048bc287404a82e560b15fac");
+        PlatformConfig.setQQZone("101463498", "b1c5b154d39958000334a33aaf88289e"); // 正式版
+//        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba"); // 测试版
         Config.DEBUG = true;
     }
 }

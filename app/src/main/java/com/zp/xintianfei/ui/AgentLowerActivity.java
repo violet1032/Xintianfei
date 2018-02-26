@@ -11,15 +11,14 @@ import com.zp.xintianfei.R;
 import com.zp.xintianfei.adapter.AgentLowerHistoryAdapter;
 import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
-import com.zp.xintianfei.bean.AgentLowerHistory;
 import com.zp.xintianfei.bean.AgentLowerHistoryList;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
 import com.zp.xintianfei.utils.UIHelper;
 
+import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
-import java.math.BigDecimal;
 import java.util.Map;
 
 /**
@@ -70,17 +69,18 @@ public class AgentLowerActivity extends BaseActivity {
 
         title.setText(R.string.agent_lower_text_1);
 
-        /******/
-        AgentLowerHistory agentLowerHistory = new AgentLowerHistory();
-        agentLowerHistory.setMoney(new BigDecimal(1000));
-        agentLowerHistory.setId(100213);
-        agentLowerHistory.setTime("2018.01.04");
-        agentLowerHistory.setNickname("社会牛哥");
-        agentLowerHistoryList.getList().add(agentLowerHistory);
-        /******/
-
-        agentLowerHistoryAdapter = new AgentLowerHistoryAdapter(lvAgentLower, agentLowerHistoryList.getList());
-        lvAgentLower.setAdapter(agentLowerHistoryAdapter);
+//        /******/
+//        AgentLowerHistory agentLowerHistory = new AgentLowerHistory();
+//        agentLowerHistory.setMoney(new BigDecimal(1000));
+//        agentLowerHistory.setId(100213);
+//        agentLowerHistory.setTime("2018.01.04");
+//        agentLowerHistory.setNickname("社会牛哥");
+//        agentLowerHistoryList.getList().add(agentLowerHistory);
+//        /******/
+//
+//        agentLowerHistoryAdapter = new AgentLowerHistoryAdapter(lvAgentLower, agentLowerHistoryList.getList());
+//        lvAgentLower.setAdapter(agentLowerHistoryAdapter);
+        getData();
     }
 
     private void getData() {
@@ -91,9 +91,14 @@ public class AgentLowerActivity extends BaseActivity {
                 String str = new String(t);
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
-
-
-                    finish();
+                    try {
+                        agentLowerHistoryList.parse(str);
+                        agentLowerHistoryAdapter = new AgentLowerHistoryAdapter(lvAgentLower, agentLowerHistoryList.getList());
+                        lvAgentLower.setAdapter(agentLowerHistoryAdapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("数据解析错误");
+                    }
                 } else
                     UIHelper.ToastMessage(result.getMsg());
             }

@@ -15,6 +15,7 @@ import com.xcinfo.album.ui.ChooseDialog;
 import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
+import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
@@ -74,6 +75,8 @@ public class BanddingAlipayFragment extends BaseFragment {
 
     private int bankId = 0;
 
+    private String uri;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_bandding_alipay, null);
@@ -130,7 +133,7 @@ public class BanddingAlipayFragment extends BaseFragment {
                 break;
             case R.id.fg_bandding_alipay_btn_scan:
                 // 浏览
-                ((MainActivity)getActivity()).imgUploadType = 1;
+                ((MainActivity) getActivity()).imgUploadType = 1;
                 ChooseDialog.startActivity(getActivity(), 1, false);
                 break;
             case R.id.fg_bandding_alipay_btn_upload:
@@ -158,10 +161,10 @@ public class BanddingAlipayFragment extends BaseFragment {
             UIHelper.ToastMessage("请输入支付宝账号");
             return;
         }
-        if (StringUtils.isEmpty(filename)) {
-            UIHelper.ToastMessage("请上传收款二维码");
-            return;
-        }
+//        if (StringUtils.isEmpty(filename)) {
+//            UIHelper.ToastMessage("请上传收款二维码");
+//            return;
+//        }
 
         FHttpCallBack callBack = new FHttpCallBack() {
             @Override
@@ -189,41 +192,14 @@ public class BanddingAlipayFragment extends BaseFragment {
                 UIHelper.stopLoadingDialog();
             }
         };
-//        ApiUser.bindBank(bankId, number, realName, bankName, callBack);
+        ApiUser.bindAlipay(nickName, account, uri, callBack);
     }
 
     /**
      * 图片上传
      */
     public void imgUpLoad(final String uri) {
-//        FHttpCallBack callBack = new FHttpCallBack() {
-//            @Override
-//            public void onSuccess(String t) {
-//                super.onSuccess(t);
-//                // 调用上传图片接口成功
-//
-//                Result result = new Result();
-//                result.parse(t);
-//                if (result.isOk()) {
-//                    // 上传成功
-//                } else
-//                    UIHelper.ToastMessage(result.getMsg());
-//            }
-//
-//            @Override
-//            public void onFinish() {
-//                super.onFinish();
-//                UIHelper.stopLoadingDialog();
-//            }
-//
-//            @Override
-//            public void onPreStart() {
-//                super.onPreStart();
-//                UIHelper.showLoadingDialog(getActivity());
-//            }
-//        };
-//        ApiCommon.uploadPicture(new File(uri), callBack);
-        UIHelper.ToastMessage("上传成功");
+        this.uri = uri;
         String fileName = StringUtils.pathToFileName(uri);
         tvFile.setText(fileName);
     }

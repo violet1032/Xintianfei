@@ -1,5 +1,10 @@
 package com.zp.xintianfei.bean;
 
+import com.zp.xintianfei.utils.JsonUtils;
+import com.zp.xintianfei.utils.StringUtils;
+
+import org.json.JSONException;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -19,6 +24,15 @@ public class AgentLowerHistory implements Serializable {
     private String nickname;
     private BigDecimal money;
     private String time;
+
+    public AgentLowerHistory parse(String json) throws JSONException {
+        JsonUtils jsonUtils = new JsonUtils(json);
+        setId(jsonUtils.getInt("id"));
+        setNickname(jsonUtils.getString("nickname"));
+        setMoney(jsonUtils.getBigDecimal("money"));
+        setTime(StringUtils.date_fromat_change(jsonUtils.getLong("create_at")*1000));
+        return this;
+    }
 
     public int getId() {
         return id;

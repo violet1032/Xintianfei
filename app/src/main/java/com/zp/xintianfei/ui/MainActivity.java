@@ -6,7 +6,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.xcinfo.album.ui.ChooseDialog;
+import com.zp.xintianfei.AppConfig;
+import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.api.ApiLottery;
+import com.zp.xintianfei.api.FHttpCallBack;
+import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
 import com.zp.xintianfei.ui.fragment.AgentFragment;
 import com.zp.xintianfei.ui.fragment.BanddingAlipayFragment;
@@ -23,11 +28,17 @@ import com.zp.xintianfei.ui.fragment.RechargeHistoryFragment;
 import com.zp.xintianfei.ui.fragment.RuleFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawHistoryFragment;
+import com.zp.xintianfei.utils.JsonUtils;
 import com.zp.xintianfei.utils.StringUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.kymjs.kjframe.ui.BindView;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 public class MainActivity extends BaseActivity {
 
@@ -114,6 +125,9 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initData() {
         super.initData();
+
+        getLotteryWei();
+        getPlazaGameList();
     }
 
     @Override
@@ -221,5 +235,103 @@ public class MainActivity extends BaseActivity {
 
             lastSelected = currSelected;
         }
+    }
+
+    private void getLotteryWei() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils j = new JsonUtils(str);
+                        JsonUtils jsonUtils = j.getJSONUtils("info");
+                        JSONArray jsonArray = jsonUtils.getJSONArray("ssc");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            AppConfig.getInstance().putWei(1, i + 1, jsonArray.getString(i));
+                        }
+
+                        JSONArray jsonArray2 = jsonUtils.getJSONArray("car");
+                        for (int i = 0; i < jsonArray2.length(); i++) {
+                            AppConfig.getInstance().putWei(2, i + 1, jsonArray2.getString(i));
+                        }
+
+                        JSONArray jsonArray3 = jsonUtils.getJSONArray("airship");
+                        for (int i = 0; i < jsonArray3.length(); i++) {
+                            AppConfig.getInstance().putWei(3, i + 1, jsonArray3.getString(i));
+                        }
+
+                        JSONArray jsonArray4 = jsonUtils.getJSONArray("eight");
+                        for (int i = 0; i < jsonArray4.length(); i++) {
+                            AppConfig.getInstance().putWei(4, i + 1, jsonArray4.getString(i));
+                        }
+
+                        JSONArray jsonArray5 = jsonUtils.getJSONArray("horse");
+                        for (int i = 0; i < jsonArray5.length(); i++) {
+                            AppConfig.getInstance().putWei(5, i + 1, jsonArray5.getString(i));
+                        }
+
+                        JSONArray jsonArray6 = jsonUtils.getJSONArray("fast");
+                        for (int i = 0; i < jsonArray6.length(); i++) {
+                            AppConfig.getInstance().putWei(6, i + 1, jsonArray6.getString(i));
+                        }
+
+                        JSONArray jsonArray7 = jsonUtils.getJSONArray("tencent");
+                        for (int i = 0; i < jsonArray7.length(); i++) {
+                            AppConfig.getInstance().putWei(7, i + 1, jsonArray7.getString(i));
+                        }
+
+                        JSONArray jsonArray8 = jsonUtils.getJSONArray("singapore");
+                        for (int i = 0; i < jsonArray8.length(); i++) {
+                            AppConfig.getInstance().putWei(8, i + 1, jsonArray8.getString(i));
+                        }
+
+                        JSONArray jsonArray9 = jsonUtils.getJSONArray("branch");
+                        for (int i = 0; i < jsonArray9.length(); i++) {
+                            AppConfig.getInstance().putWei(9, i + 1, jsonArray9.getString(i));
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        ApiLottery.getLotteryWei(callBack);
+    }
+
+    private void getPlazaGameList() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils j = new JsonUtils(str);
+                        JSONObject jsonObject = j.getJSONObject("info");
+                        Iterator<String> keys = jsonObject.keys();
+                        while (keys.hasNext()) {
+                            String key = keys.next();
+                            JsonUtils jsonUtils2 = new JsonUtils(jsonObject.getString(key));
+                            int cate = jsonUtils2.getInt("cate");
+                            if(cate == 0){
+                                String name = jsonUtils2.getString("name");
+                                if(!StringUtils.isEmpty(name) && name.equals("android"))
+                                    AppContext.downLoadUrl = jsonUtils2.getString("url");
+                            }else{
+                                String url = jsonUtils2.getString("url");
+                                AppConfig.getInstance().putGameList(cate, url);
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        ApiLottery.getPlazaGameList(callBack);
     }
 }

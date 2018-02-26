@@ -21,6 +21,8 @@ public class URLs {
     public final static String getGameNextInfo = APP_STORE_HOST + "getGameNextInfo"; // 获取下一期游戏时间状态信息
     public final static String getBankList = APP_STORE_HOST + "getBankList"; // 获取银行列表
     public final static String bindBank = APP_STORE_HOST + "bindBank"; // 绑定银行卡
+    public final static String bindWeiXin = APP_STORE_HOST + "bindWeiXin"; // 绑定微信
+    public final static String bindAlipay = APP_STORE_HOST + "bindAlipay"; // 绑定支付宝
     public final static String cz = APP_STORE_HOST + "cz"; // 充值
     public final static String tx = APP_STORE_HOST + "tx"; // 提现
     public final static String exchangeYJ = APP_STORE_HOST + "exchangeYJ"; // 佣金兑换
@@ -32,6 +34,8 @@ public class URLs {
     public final static String xzRecord = APP_STORE_HOST + "xzRecord"; // 投注记录
     public final static String czRecord = APP_STORE_HOST + "czRecord"; // 充值记录
     public final static String txRecord = APP_STORE_HOST + "txRecord"; // 提现记录
+    public final static String getLotteryWei = APP_STORE_HOST + "getLotteryWei"; // 获取位
+    public final static String getPlazaGameList = APP_STORE_HOST + "getPlazaGameList"; // 获取游戏列表
 
     public final static String LOGOUT = APP_STORE_HOST + "api/user/logout"; // 退出登录
     public final static String REGIST = APP_STORE_HOST + "api/user/regist";//注册

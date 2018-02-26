@@ -30,6 +30,7 @@ public class User implements Serializable {
     private BigDecimal yongjin;
     private String fs_rate;
     private E_GENDER_TYPE genderType;
+    private String token;
 
     public User parse(String jsonData) {
         try {
@@ -45,10 +46,19 @@ public class User implements Serializable {
             setFanshui(jsonUtils1.getBigDecimal("fanshui"));
             setYongjin(jsonUtils1.getBigDecimal("yongjin"));
             setFs_rate(jsonUtils1.getString("fs_rate"));
+            setToken(jsonUtils1.getString("token"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return this;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public int getUid() {

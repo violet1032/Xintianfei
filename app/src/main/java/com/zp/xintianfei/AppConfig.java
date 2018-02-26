@@ -31,6 +31,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
@@ -85,6 +87,9 @@ public class AppConfig {
 
 
     private final static String APP_CONFIG = "config";
+
+    public static Map<String, String> wei = new HashMap<>();
+    public static Map<Integer, String> gameList = new HashMap<>();
 
     /**
      * 图片保存地址
@@ -480,14 +485,34 @@ public class AppConfig {
     public void setLoginWxOpenid(String value) {
         mPreSet(LOGIN_WX_OPENID, value);
     }
+
     public void setLoginWxHeadimgurl(String value) {
         mPreSet(LOGIN_WX_HEADIMGURL, value);
     }
 
-    public void setLoginType(String value){
-        mPreSet(LOGIN_TYPE,value);
+    public void setLoginType(String value) {
+        mPreSet(LOGIN_TYPE, value);
     }
-    public String getLoginType(){
-        return mPre.getString(LOGIN_TYPE,"");
+
+    public String getLoginType() {
+        return mPre.getString(LOGIN_TYPE, "");
+    }
+
+    public void putWei(int cate, int wei, String value) {
+        String str = cate + "_" + wei;
+        this.wei.put(str, value);
+    }
+
+    public String getWei(int cate, int wei) {
+        String str = cate + "_" + wei;
+        return this.wei.get(str);
+    }
+
+    public void putGameList(int cate, String url) {
+        gameList.put(cate, url);
+    }
+
+    public String getGameList(int cate) {
+        return gameList.get(cate);
     }
 }

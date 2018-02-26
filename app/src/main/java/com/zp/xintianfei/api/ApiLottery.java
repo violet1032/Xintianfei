@@ -82,4 +82,21 @@ public class ApiLottery {
         String url = URLs.txRecord;
         AppContext.http.get(url, params, callBack, false, false);
     }
+
+    public static void getLotteryWei(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        // 地址
+        String url = URLs.getLotteryWei;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    public static void getPlazaGameList(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid",AppContext.user.getUid());
+        // 地址
+        String url = URLs.getPlazaGameList;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
 }

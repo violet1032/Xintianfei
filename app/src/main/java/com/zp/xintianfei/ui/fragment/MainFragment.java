@@ -15,13 +15,12 @@ import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
 import com.zp.xintianfei.api.ApiLottery;
 import com.zp.xintianfei.api.FHttpCallBack;
+import com.zp.xintianfei.bean.E_LOTTERY_TYPE;
 import com.zp.xintianfei.bean.GameStatus;
 import com.zp.xintianfei.bean.GameStatusList;
 import com.zp.xintianfei.bean.Result;
-import com.zp.xintianfei.ui.GameBJSCActivity;
-import com.zp.xintianfei.ui.GameXGLHCActivity;
+import com.zp.xintianfei.ui.GambleActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
-import com.zp.xintianfei.utils.LogUtil;
 import com.zp.xintianfei.utils.StringUtils;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -42,8 +41,22 @@ public class MainFragment extends BaseFragment {
 
     @BindView(id = R.id.fg_main_lay_1, click = true)
     private LinearLayout layBJSC;
+    @BindView(id = R.id.fg_main_lay_2, click = true)
+    private LinearLayout layXGSM;
+    @BindView(id = R.id.fg_main_lay_3, click = true)
+    private LinearLayout layXYFT;
+    @BindView(id = R.id.fg_main_lay_4, click = true)
+    private LinearLayout layCQSSC;
+    @BindView(id = R.id.fg_main_lay_5, click = true)
+    private LinearLayout layQQLFC;
     @BindView(id = R.id.fg_main_lay_6, click = true)
     private LinearLayout layXGLHC;
+    @BindView(id = R.id.fg_main_lay_7, click = true)
+    private LinearLayout layPCDD;
+    @BindView(id = R.id.fg_main_lay_8, click = true)
+    private LinearLayout layJND28;
+    @BindView(id = R.id.fg_main_lay_9, click = true)
+    private LinearLayout layJSKS;
 
     @BindView(id = R.id.fg_tx_nickname)
     private TextView tvNickname;
@@ -135,10 +148,33 @@ public class MainFragment extends BaseFragment {
 
         switch (v.getId()) {
             case R.id.fg_main_lay_1:
-                GameBJSCActivity.startActivity(getActivity());
+//                GameBJSCActivity.startActivity(getActivity());
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
+                break;
+            case R.id.fg_main_lay_2:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.xgsm.value);
+                break;
+            case R.id.fg_main_lay_3:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.xyft.value);
+                break;
+            case R.id.fg_main_lay_4:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.cqssc.value);
+                break;
+            case R.id.fg_main_lay_5:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.qqlfc.value);
                 break;
             case R.id.fg_main_lay_6:
-                GameXGLHCActivity.startActivity(getActivity());
+//                GameXGLHCActivity.startActivity(getActivity());
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.lhc.value);
+                break;
+            case R.id.fg_main_lay_7:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.pcdd.value);
+                break;
+            case R.id.fg_main_lay_8:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.jnd28.value);
+                break;
+            case R.id.fg_main_lay_9:
+                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.jsks.value);
                 break;
         }
     }

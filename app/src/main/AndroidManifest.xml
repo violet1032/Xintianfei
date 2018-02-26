@@ -68,7 +68,9 @@
         <activity
             android:name=".ui.dialog.SelectWithdrawTypeDialog"
             android:theme="@style/CustomDialog" />
-
+        <activity
+            android:name=".ui.dialog.DataTimePicker"
+            android:theme="@style/CustomDialog" />
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
@@ -99,6 +101,10 @@
             android:value="5a77125bf43e480daf000404" >
         </meta-data>
 
+        <activity
+            android:name=".ui.GambleActivity"
+            android:label="@string/title_activity_gamble" >
+        </activity>
     </application>
 
 </manifest>

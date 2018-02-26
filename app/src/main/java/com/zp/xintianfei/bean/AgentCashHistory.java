@@ -1,5 +1,10 @@
 package com.zp.xintianfei.bean;
 
+import com.zp.xintianfei.utils.JsonUtils;
+import com.zp.xintianfei.utils.StringUtils;
+
+import org.json.JSONException;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -20,6 +25,15 @@ public class AgentCashHistory implements Serializable {
     private String stage;
     private BigDecimal money;
     private String time;
+
+    public AgentCashHistory parse(String json) throws JSONException {
+        JsonUtils jsonUtils = new JsonUtils(json);
+        setStage(jsonUtils.getString("stage"));
+        setMoney(jsonUtils.getBigDecimal("money"));
+        setType(E_LOTTERY_TYPE.getIndex(jsonUtils.getInt("cate")).name);
+        setTime(StringUtils.date_fromat_change(jsonUtils.getLong("atime") * 1000));
+        return this;
+    }
 
     public int getId() {
         return id;

@@ -50,7 +50,7 @@
     <string name="fragment_withdraw_text_8">绑定银行卡</string>
     <string name="fragment_withdraw_text_9">在线客服</string>
     <string name="fragment_withdraw_text_10">确定</string>
-    <string name="fragment_withdraw_text_11">请选择体现方式</string>
+    <string name="fragment_withdraw_text_11">请选择提现方式</string>
     <string name="fragment_withdraw_text_12">绑定银行卡</string>
     <string name="fragment_withdraw_text_13">绑定支付宝</string>
     <string name="fragment_withdraw_text_14">绑定微信</string>
@@ -305,4 +305,5 @@
     
     <item type="id" name="tag_cate"></item>
     <item type="id" name="tag_gamble_select"></item>
+    <string name="title_activity_gamble">GambleActivity</string>
 </resources>
