@@ -90,7 +90,7 @@
     <!-- main fragment recharge -->
     <string name="fg_recharge_text_1">请输入转账昵称</string>
     <string name="fg_recharge_text_2">请输入充值金额</string>
-    <string name="fg_recharge_text_3">本平台最低上下分50起，大额5000以上请网银充值</string>
+    <string name="fg_recharge_text_3">充值范围为：</string>
     <string name="fg_recharge_text_4">微信扫描充值</string>
     <string name="fg_recharge_text_5">支付宝充值</string>
     <string name="fg_recharge_text_6">网银充值</string>
@@ -216,7 +216,7 @@
 
     <string name="bandding_text_1">绑定银行卡</string>
     <string name="bandding_text_2">请选择开户银行</string>
-    <string name="bandding_text_3">支行名称</string>
+    <string name="bandding_text_3">银行名称</string>
     <string name="bandding_text_4">持卡人姓名</string>
     <string name="bandding_text_5">银行卡号</string>
     <string name="bandding_text_6">确认银行卡号</string>
@@ -306,4 +306,10 @@
     <item type="id" name="tag_cate"></item>
     <item type="id" name="tag_gamble_select"></item>
     <string name="title_activity_gamble">GambleActivity</string>
+    
+    <string name="transfer_text_1">转账</string>
+    <string name="transfer_text_2">转出</string>
+    <string name="transfer_text_3">转入</string>
+    <string name="transfer_text_4">请输入转账金额</string>
+    <string name="transfer_text_5">点击选择</string>
 </resources>

@@ -122,7 +122,7 @@ public class RuleFragment extends BaseFragment {
             for (Rules rules :
                     listRules) {
                 if (rules.getCate() == curr + 1) {
-                    tvRuleContent.loadDataWithBaseURL(null, rules.getContent(), "text/html", "utf-8",null);
+                    tvRuleContent.loadDataWithBaseURL(null, UIHelper.WEB_STYLE + rules.getContent(), "text/html", "utf-8", null);
                     has = true;
                 }
             }
@@ -156,7 +156,7 @@ public class RuleFragment extends BaseFragment {
                         listRules.add(rules);
 
                         if (rules.getCate() == 2) {
-                            tvRuleContent.loadDataWithBaseURL(null, rules.getContent(), "text/html", "utf-8",null);
+                            tvRuleContent.loadDataWithBaseURL(null, UIHelper.WEB_STYLE + rules.getContent(), "text/html", "utf-8", null);
                         }
                     } else {
                         UIHelper.ToastMessage(result.getMsg());

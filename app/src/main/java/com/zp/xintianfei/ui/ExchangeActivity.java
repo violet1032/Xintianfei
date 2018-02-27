@@ -107,6 +107,9 @@ public class ExchangeActivity extends BaseActivity {
                 Result result = new Result().parse(str);
                 if(result.isOk()){
                     UIHelper.ToastMessage(result.getMsg());
+
+                    // 马上获取一次用户信息
+                    AppContext.appContext.updateUserInfo();
                     finish();
                 }else
                     UIHelper.ToastMessage(result.getMsg());

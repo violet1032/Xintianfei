@@ -72,6 +72,9 @@
             android:name=".ui.dialog.DataTimePicker"
             android:theme="@style/CustomDialog" />
         <activity
+            android:name=".ui.dialog.TransferSelectDialog"
+            android:theme="@style/CustomDialog" />
+        <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"

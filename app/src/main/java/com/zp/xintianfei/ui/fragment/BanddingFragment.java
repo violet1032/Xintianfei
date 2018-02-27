@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.zp.xintianfei.AppContext;
@@ -22,7 +21,6 @@ import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
-import com.zp.xintianfei.ui.dialog.SelectBankDialog;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
@@ -59,8 +57,8 @@ public class BanddingFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_img_head)
     private ImageView imgHead;
 
-    @BindView(id = R.id.fg_bandding_select_bank, click = true)
-    private LinearLayout laySelectBank;
+//    @BindView(id = R.id.fg_bandding_select_bank, click = true)
+//    private LinearLayout laySelectBank;
     @BindView(id = R.id.fg_bandding_tv_name)
     private TextView tvName;
 
@@ -133,10 +131,10 @@ public class BanddingFragment extends BaseFragment {
             case R.id.umeng_banner_img_left:
                 ((MainActivity) getActivity()).setPosition(1);
                 break;
-            case R.id.fg_bandding_select_bank:
-                // 选择银行
-                SelectBankDialog.startActivity(getActivity(), handler);
-                break;
+//            case R.id.fg_bandding_select_bank:
+//                // 选择银行
+//                SelectBankDialog.startActivity(getActivity(), handler);
+//                break;
             case R.id.fg_bandding_btn_bandding:
                 badding();
                 break;
@@ -155,13 +153,13 @@ public class BanddingFragment extends BaseFragment {
         String renumber = edtReNumber.getText().toString().trim();
 
 
-        if (bankId == 0) {
-            UIHelper.ToastMessage("请选择银行类型");
-            return;
-        }
+//        if (bankId == 0) {
+//            UIHelper.ToastMessage("请选择银行类型");
+//            return;
+//        }
 
         if (StringUtils.isEmpty(bankName)) {
-            UIHelper.ToastMessage("请输入支行名称");
+            UIHelper.ToastMessage("请输入银行名称");
             return;
         }
         if (StringUtils.isEmpty(realName)) {

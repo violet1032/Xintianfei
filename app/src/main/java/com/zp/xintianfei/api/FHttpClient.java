@@ -74,8 +74,8 @@ public class FHttpClient extends KJHttp {
             else if (AppConfig.DEBUG)
                 UIHelper.ToastMessage(key + "参数为空");
         }
-//        if (file != null)
-//            params.put("file", file);
+        if (file != null)
+            params.put("file", file);
 
         String cookie = "JSESSIONID=" + AppConfig.getInstance().getmPre().getString("cookie", null);
         if (AppConfig.DEBUG) {

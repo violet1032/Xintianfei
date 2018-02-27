@@ -29,6 +29,8 @@ import org.kymjs.kjframe.ui.BindView;
 
 import java.math.BigDecimal;
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
@@ -125,11 +127,24 @@ public class WithdrawFragment extends BaseFragment {
                     Bank bank = (Bank) message.obj;
                     tvName.setText(bank.getName());
                     bankId = bank.getId();
+                }else if (message.what == 101) {
+                    tvSum.setText(AppContext.user.getMoney().toString());
+                    tvSumFanshui.setText(AppContext.user.getFanshui().toString());
+                    tvSumYongjin.setText(AppContext.user.getYongjin().toString());
                 }
 
                 return false;
             }
         });
+
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.sendEmptyMessage(101);
+            }
+        };
+        timer.schedule(timerTask, 1000, 1000);
     }
 
     @Override
@@ -219,5 +234,11 @@ public class WithdrawFragment extends BaseFragment {
             }
         };
         ApiUser.tx(bankId, bigDecimal, callBack);
+    }
+
+    public void changeSum(){
+        tvSum.setText(AppContext.user.getMoney().toString());
+        tvSumFanshui.setText(AppContext.user.getFanshui().toString());
+        tvSumYongjin.setText(AppContext.user.getYongjin().toString());
     }
 }

@@ -23,15 +23,24 @@ import android.util.DisplayMetrics;
 
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
+import com.zp.xintianfei.api.ApiUser;
+import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.api.FHttpClient;
+import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.bean.User;
+import com.zp.xintianfei.utils.JsonUtils;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.kymjs.kjframe.KJBitmap;
 import org.kymjs.kjframe.bitmap.BitmapConfig;
 import org.kymjs.kjframe.http.HttpConfig;
 
+import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
- * 
  * @author kymjs (https://www.kymjs.com/)
  * @since 2015-3
  */
@@ -92,8 +101,62 @@ public class AppContext extends Application {
 
         // 配置友盟
         PlatformConfig.setWeixin("wx60ad3c3c49c77ed8", "c1254aec048bc287404a82e560b15fac");
-        PlatformConfig.setQQZone("101463498", "b1c5b154d39958000334a33aaf88289e"); // 正式版
-//        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba"); // 测试版
+//        PlatformConfig.setQQZone("101463498", "b1c5b154d39958000334a33aaf88289e"); // 正式版
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba"); // 测试版
         Config.DEBUG = true;
+
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                updateUserInfo();
+            }
+        };
+        timer.schedule(timerTask, 3000, 3000);
+
+
+        getSystemConfig();
+    }
+
+    public void updateUserInfo() {
+        if (user.getUid() > 0) {
+            FHttpCallBack callBack = new FHttpCallBack() {
+                @Override
+                public void onSuccess(Map<String, String> headers, byte[] t) {
+                    super.onSuccess(headers, t);
+                    String str = new String(t);
+                    Result result = new Result().parse(str);
+                    if (result.isOk()) {
+                        AppContext.user.parse(str);
+                    }
+                }
+            };
+            ApiUser.getMemberInfo(callBack);
+        }
+    }
+
+    private void getSystemConfig() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    // 解析参数
+                    try {
+                        JsonUtils j = new JsonUtils(str);
+                        JSONArray jsonArray = j.getJSONArray("info");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JsonUtils jsonUtils = new JsonUtils(jsonArray.getString(i));
+                            AppConfig.getInstance().mPreSet(jsonUtils.getString("name"), jsonUtils.getString("value"));
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        ApiUser.getSystemConfig(callBack);
     }
 }

@@ -201,7 +201,7 @@
             android:textColor="@color/orange_1"
             android:textSize="@dimen/text_size_15" />
 
-        <LinearLayout
+        <!--<LinearLayout
             android:id="@+id/fg_bandding_select_bank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -221,7 +221,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bandding_text_2"
                 android:textColor="@color/gray" />
-        </LinearLayout>
+        </LinearLayout>-->
 
         <EditText
             android:id="@+id/fg_bandding_edt_bankname"

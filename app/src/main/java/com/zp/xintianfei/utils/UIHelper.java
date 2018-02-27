@@ -48,9 +48,7 @@ public class UIHelper {
             + "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/shThemeDefault.css\">"
             + "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/shCore.css\">"
             + "<script type=\"text/javascript\">SyntaxHighlighter.all();</script>";
-    public final static String WEB_STYLE = linkCss
-            + "<style>* {font-size:13px;line-height:23px;color:#999;font-family:STXihei;} a {color:#3E62A6;} img {max-width:310px;} "
-            + "img.alignleft {float:left;max-width:120px;margin:0 10px 5px 0;border:1px solid #ccc;background:#ffeeeeee;padding:2px;} </style>";
+    public final static String WEB_STYLE = "<style>* {color:#aaa} </style>";
 
 
     /**

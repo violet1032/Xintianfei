@@ -252,7 +252,7 @@
                     android:textColor="@color/white" />
             </RelativeLayout>
 
-            <Button
+            <!--<Button
                 android:id="@+id/fg_bandding_weixin_btn_upload"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -264,7 +264,7 @@
                 android:paddingRight="@dimen/space_10"
                 android:paddingTop="@dimen/space_7"
                 android:text="@string/bandding_text_10"
-                android:textColor="@color/white" />
+                android:textColor="@color/white" />-->
         </RelativeLayout>
 
         <TextView

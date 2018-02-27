@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p/>
+ * <p>
  * 描述:
- * <p/>
+ * <p>
  * 作者:Administrator
- * <p/>
+ * <p>
  * 时间:2018/2/5 15:09
- * <p/>
+ * <p>
  * 版本:
  */
 public class ApiUser {
@@ -158,14 +158,14 @@ public class ApiUser {
         AppContext.http.get(url, params, callBack, false, false);
     }
 
-    public static void bindAlipay(String username,String account,String path,FHttpCallBack callBack){
+    public static void bindAlipay(String username, String account, String path, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
         params.put("uid", AppContext.user.getUid());
         params.put("zfb_username", username);
         params.put("zfb_account", account);
         File file = null;
-        if(!StringUtils.isEmpty(path))
+        if (!StringUtils.isEmpty(path))
             file = new File(path);
         // 地址
         String url = URLs.bindAlipay;
@@ -173,17 +173,89 @@ public class ApiUser {
         AppContext.http.postFile(url, params, file, callBack);
     }
 
-    public static void bindWeiXin(String username,String path,FHttpCallBack callBack){
+    public static void bindWeiXin(String username, String path, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
         params.put("uid", AppContext.user.getUid());
         params.put("wx_username", username);
         File file = null;
-        if(!StringUtils.isEmpty(path))
+        if (!StringUtils.isEmpty(path))
             file = new File(path);
         // 地址
         String url = URLs.bindWeiXin;
 
-        AppContext.http.postFile(url,params,file,callBack);
+        AppContext.http.postFile(url, params, file, callBack);
+    }
+
+    public static void getMemberInfo(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getMemberInfo;
+
+        AppContext.http.get(url, params, callBack);
+    }
+
+    public static void getSystemConfig(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        // 地址
+        String url = URLs.getSystemConfig;
+
+        AppContext.http.get(url, params, callBack);
+    }
+
+    public static void getMemberBank(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getMemberBank;
+
+        AppContext.http.get(url, params, callBack);
+    }
+
+    public static void getMemberWeiXin(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getMemberWeiXin;
+
+        AppContext.http.get(url, params, callBack);
+    }
+
+    public static void getMemberAlipay(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getMemberAlipay;
+
+        AppContext.http.get(url, params, callBack);
+    }
+
+    public static void getMemberMoney(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getMemberMoney;
+
+        AppContext.http.get(url, params, callBack);
+    }
+
+    public static void zz(int transfer_out, int transfer_in, BigDecimal money, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("transfer_out", transfer_out);
+        params.put("transfer_in", transfer_in);
+        params.put("money", money);
+        // 地址
+        String url = URLs.zz;
+
+        AppContext.http.get(url, params, callBack);
     }
 }

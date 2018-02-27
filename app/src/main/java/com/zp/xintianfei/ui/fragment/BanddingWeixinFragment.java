@@ -68,8 +68,8 @@ public class BanddingWeixinFragment extends BaseFragment {
     private Button btnBadding;
     @BindView(id = R.id.fg_bandding_weixin_btn_scan, click = true)
     private Button btnScan;
-    @BindView(id = R.id.fg_bandding_weixin_btn_upload, click = true)
-    private Button btnUpload;
+//    @BindView(id = R.id.fg_bandding_weixin_btn_upload, click = true)
+//    private Button btnUpload;
 
     private int bankId = 0;
 
@@ -134,9 +134,9 @@ public class BanddingWeixinFragment extends BaseFragment {
                 ((MainActivity) getActivity()).imgUploadType = 0;
                 ChooseDialog.startActivity(getActivity(), 1, false);
                 break;
-            case R.id.fg_bandding_weixin_btn_upload:
-                // 上传
-                break;
+//            case R.id.fg_bandding_weixin_btn_upload:
+//                // 上传
+//                break;
         }
     }
 

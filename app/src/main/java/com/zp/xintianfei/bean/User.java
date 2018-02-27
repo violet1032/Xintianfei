@@ -42,9 +42,9 @@ public class User implements Serializable {
             setTid(jsonUtils1.getInt("tid"));
             setOpenid(jsonUtils1.getString("openid"));
             setAvatar(jsonUtils1.getString("head"));
-            setMoney(jsonUtils1.getBigDecimal("money"));
-            setFanshui(jsonUtils1.getBigDecimal("fanshui"));
-            setYongjin(jsonUtils1.getBigDecimal("yongjin"));
+            setMoney(jsonUtils1.getBigDecimal("money").divide(new BigDecimal(100)));
+            setFanshui(jsonUtils1.getBigDecimal("fanshui").divide(new BigDecimal(100)));
+            setYongjin(jsonUtils1.getBigDecimal("yongjin").divide(new BigDecimal(100)));
             setFs_rate(jsonUtils1.getString("fs_rate"));
             setToken(jsonUtils1.getString("token"));
         } catch (JSONException e) {

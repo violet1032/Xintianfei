@@ -4,21 +4,21 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/fg_recharge_banner"
+        android:id="@+id/fg_withdraw_banner"
         layout="@layout/common_banner" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fg_recharge_lay_1"
+        android:layout_below="@+id/fg_withdraw_lay_1"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_pic_3" />
 
     <LinearLayout
-        android:id="@+id/fg_recharge_lay_1"
+        android:id="@+id/fg_withdraw_lay_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fg_recharge_banner"
+        android:layout_below="@+id/fg_withdraw_banner"
         android:orientation="vertical">
 
         <LinearLayout
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/fg_recharge_tx_3"
+                        android:id="@+id/fg_withdraw_tx_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fragment_main_text_1"
@@ -57,14 +57,14 @@
                         android:id="@+id/fg_tx_nickname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/fg_recharge_tx_4"
-                        android:layout_toRightOf="@+id/fg_recharge_tx_3"
+                        android:layout_toLeftOf="@+id/fg_withdraw_tx_4"
+                        android:layout_toRightOf="@+id/fg_withdraw_tx_3"
                         android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_18" />
 
                     <TextView
-                        android:id="@+id/fg_recharge_tx_4"
+                        android:id="@+id/fg_withdraw_tx_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/space_30"
@@ -112,7 +112,7 @@
                     android:layout_marginTop="@dimen/space_3">
 
                     <TextView
-                        android:id="@+id/fg_recharge_tx_1"
+                        android:id="@+id/fg_withdraw_tx_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fragment_withdraw_text_3"
@@ -123,13 +123,13 @@
                         android:id="@+id/fg_tx_fanshui_sum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/fg_recharge_tx_1"
+                        android:layout_toRightOf="@+id/fg_withdraw_tx_1"
                         android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
 
                     <Button
-                        android:id="@+id/fg_recharge_btn_1"
+                        android:id="@+id/fg_withdraw_btn_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -149,7 +149,7 @@
                     android:layout_marginTop="@dimen/space_3">
 
                     <TextView
-                        android:id="@+id/fg_recharge_tx_2"
+                        android:id="@+id/fg_withdraw_tx_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fragment_withdraw_text_4"
@@ -160,13 +160,13 @@
                         android:id="@+id/fg_tx_yongjin_sum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/fg_recharge_tx_2"
+                        android:layout_toRightOf="@+id/fg_withdraw_tx_2"
                         android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
 
                     <Button
-                        android:id="@+id/fg_recharge_btn_2"
+                        android:id="@+id/fg_withdraw_btn_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -186,189 +186,84 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fg_recharge_lay_1"
-        android:gravity="center_horizontal"
+        android:layout_below="@+id/fg_withdraw_lay_1"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/space_30"
-        android:paddingRight="@dimen/space_30"
-        android:paddingTop="@dimen/space_10">
-
-        <EditText
-            android:id="@+id/fg_recharge_edt_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/shape_round_stroke_h_black_orange_1"
-            android:hint="@string/fg_recharge_text_1"
-            android:paddingBottom="@dimen/space_7"
-            android:paddingLeft="@dimen/space_15"
-            android:paddingRight="@dimen/space_15"
-            android:paddingTop="@dimen/space_7"
-            android:textColor="@color/white"
-            android:textColorHint="#999"
-            android:textSize="@dimen/text_size_14" />
-
-        <EditText
-            android:id="@+id/fg_recharge_edt_sum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:background="@drawable/shape_round_stroke_h_black_orange_1"
-            android:hint="@string/fg_recharge_text_2"
-            android:paddingBottom="@dimen/space_7"
-            android:paddingLeft="@dimen/space_15"
-            android:paddingRight="@dimen/space_15"
-            android:paddingTop="@dimen/space_7"
-            android:textColor="@color/white"
-            android:textColorHint="#999"
-            android:textSize="@dimen/text_size_14" />
+        android:padding="@dimen/space_30">
 
         <TextView
-            android:id="@+id/fg_recharge_tx_bound"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:text="@string/fg_recharge_text_3"
+            android:text="@string/transfer_text_2"
             android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_15" />
 
         <LinearLayout
+            android:id="@+id/fg_transfer_lay_out"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
-            android:orientation="horizontal">
+            android:background="@drawable/shape_rounded_h_white"
+            android:paddingBottom="@dimen/space_6"
+            android:paddingLeft="@dimen/space_15"
+            android:paddingRight="@dimen/space_15"
+            android:paddingTop="@dimen/space_6">
 
-            <LinearLayout
-                android:id="@+id/fg_recharge_lay_wechat"
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_black_3"
-                android:orientation="horizontal"
-                android:paddingBottom="@dimen/space_6"
-                android:paddingLeft="@dimen/space_6"
-                android:paddingRight="@dimen/space_6"
-                android:paddingTop="@dimen/space_6">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="●"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fg_recharge_text_4"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_13" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fg_recharge_lay_alipay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_5"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_black_3"
-                android:orientation="horizontal"
-                android:paddingBottom="@dimen/space_6"
-                android:paddingLeft="@dimen/space_6"
-                android:paddingRight="@dimen/space_6"
-                android:paddingTop="@dimen/space_6">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="●"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fg_recharge_text_5"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_13" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/fg_recharge_lay_card"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_5"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_black_3"
-                android:orientation="horizontal"
-                android:paddingBottom="@dimen/space_6"
-                android:paddingLeft="@dimen/space_6"
-                android:paddingRight="@dimen/space_6"
-                android:paddingTop="@dimen/space_6">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="●"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/fg_recharge_text_6"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/text_size_13" />
-            </LinearLayout>
+                android:text="@string/transfer_text_5"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/fg_recharge_lay_wechat_content"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
-            android:orientation="vertical"
-            android:visibility="visible">
-
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"/>
-        </LinearLayout>
+            android:text="@string/transfer_text_3"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_size_15" />
 
         <LinearLayout
-            android:id="@+id/fg_recharge_lay_alipay_content"
-            android:layout_width="wrap_content"
+            android:id="@+id/fg_transfer_lay_in"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:background="@drawable/shape_rounded_h_white"
+            android:paddingBottom="@dimen/space_6"
+            android:paddingLeft="@dimen/space_15"
+            android:paddingRight="@dimen/space_15"
+            android:paddingTop="@dimen/space_6">
 
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/transfer_text_5"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/text_size_16" />
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/fg_recharge_lay_card_content"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/fg_transfer_edt_sum"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/space_10"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:background="@drawable/shape_round_stroke_h_black_white"
+            android:hint="@string/transfer_text_4"
+            android:padding="@dimen/space_10"
+            android:textColor="@color/white"
+            android:textSize="@dimen/space_15" />
 
-            <ImageView
-                android:layout_width="130dp"
-                android:layout_height="130dp"/>
-        </LinearLayout>
+        <Button
+            android:id="@+id/fg_transfer_btn_sure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_15"
+            android:background="@drawable/click_btn_round_green_1"
+            android:padding="@dimen/space_10"
+            android:text="@string/sure"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_15" />
+
     </LinearLayout>
-
-    <Button
-        android:id="@+id/fg_recharge_btn_sure"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="@dimen/space_20"
-        android:background="@drawable/click_btn_round_orange_1"
-        android:paddingBottom="@dimen/space_5"
-        android:paddingLeft="@dimen/space_30"
-        android:paddingRight="@dimen/space_30"
-        android:paddingTop="@dimen/space_5"
-        android:text="@string/sure" />
 </RelativeLayout>

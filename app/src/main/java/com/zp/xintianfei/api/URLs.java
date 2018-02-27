@@ -16,6 +16,13 @@ public class URLs {
 
     public final static String LOGIN = APP_STORE_HOST + "appLogin"; // 微信qq登录
     public final static String getOnlineNum = APP_STORE_HOST + "getOnlineNum"; // 获取在线人数
+    public final static String getMemberInfo = APP_STORE_HOST + "getMemberInfo"; // 获取用户信息
+    public final static String getSystemConfig = APP_STORE_HOST + "getSystemConfig"; // 获取系统配置参数
+    public final static String getMemberAlipay = APP_STORE_HOST + "getMemberAlipay"; // 获取用户绑定的支付宝
+    public final static String getMemberWeiXin = APP_STORE_HOST + "getMemberWeiXin"; // 获取用户绑定的微信
+    public final static String getMemberBank = APP_STORE_HOST + "getMemberBank"; // 获取用户绑定的银行
+    public final static String zz = APP_STORE_HOST + "zz"; // 转账
+    public final static String getMemberMoney = APP_STORE_HOST + "getMemberMoney"; // 获取转账对象
 
     public final static String getPlazaGameState = APP_STORE_HOST + "getPlazaGameState"; // 获取游戏时间状态信息
     public final static String getGameNextInfo = APP_STORE_HOST + "getGameNextInfo"; // 获取下一期游戏时间状态信息

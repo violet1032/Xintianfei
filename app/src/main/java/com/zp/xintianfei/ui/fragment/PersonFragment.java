@@ -3,6 +3,8 @@ package com.zp.xintianfei.ui.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +22,9 @@ import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Administrator on 2018/1/30 0030.
@@ -69,6 +74,8 @@ public class PersonFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_img_head)
     private ImageView imgHead;
 
+    private Handler handler;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_person, null);
@@ -94,6 +101,29 @@ public class PersonFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
+
+        handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+
+                if (message.what == 101) {
+                    tvSum.setText(AppContext.user.getMoney().toString());
+                    tvSumFanshui.setText(AppContext.user.getFanshui().toString());
+                    tvSumYongjin.setText(AppContext.user.getYongjin().toString());
+                }
+
+                return false;
+            }
+        });
+
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                handler.sendEmptyMessage(101);
+            }
+        };
+        timer.schedule(timerTask, 1000, 1000);
     }
 
     @Override
@@ -103,6 +133,7 @@ public class PersonFragment extends BaseFragment {
         switch (v.getId()) {
             case R.id.fg_person_lay_9:
                 // 转账
+                ((MainActivity) getActivity()).setPosition(15);
                 break;
             case R.id.fg_person_lay_10:
                 // 充值
@@ -154,5 +185,11 @@ public class PersonFragment extends BaseFragment {
     @Override
     public void onClick(View v) {
         super.onClick(v);
+    }
+
+    public void changeSum(){
+        tvSum.setText(AppContext.user.getMoney().toString());
+        tvSumFanshui.setText(AppContext.user.getFanshui().toString());
+        tvSumYongjin.setText(AppContext.user.getYongjin().toString());
     }
 }

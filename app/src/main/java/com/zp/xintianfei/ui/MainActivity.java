@@ -26,6 +26,7 @@ import com.zp.xintianfei.ui.fragment.PersonFragment;
 import com.zp.xintianfei.ui.fragment.RechargeFragment;
 import com.zp.xintianfei.ui.fragment.RechargeHistoryFragment;
 import com.zp.xintianfei.ui.fragment.RuleFragment;
+import com.zp.xintianfei.ui.fragment.TransferFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawHistoryFragment;
 import com.zp.xintianfei.utils.JsonUtils;
@@ -60,6 +61,7 @@ public class MainActivity extends BaseActivity {
     private OnlineQQFragment onlineQQFragment = new OnlineQQFragment();
     private BanddingWeixinFragment banddingWeixinFragment = new BanddingWeixinFragment();
     private BanddingAlipayFragment banddingAlipayFragment = new BanddingAlipayFragment();
+    private TransferFragment transferFragment = new TransferFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -231,6 +233,10 @@ public class MainActivity extends BaseActivity {
                     // 绑定支付宝
                     changeFragment(R.id.act_main_content, banddingAlipayFragment);
                     break;
+                case 15:
+                    // 转账
+                    changeFragment(R.id.act_main_content, transferFragment);
+                    break;
             }
 
             lastSelected = currSelected;
@@ -317,11 +323,11 @@ public class MainActivity extends BaseActivity {
                             String key = keys.next();
                             JsonUtils jsonUtils2 = new JsonUtils(jsonObject.getString(key));
                             int cate = jsonUtils2.getInt("cate");
-                            if(cate == 0){
+                            if (cate == 0) {
                                 String name = jsonUtils2.getString("name");
-                                if(!StringUtils.isEmpty(name) && name.equals("android"))
+                                if (!StringUtils.isEmpty(name) && name.equals("android"))
                                     AppContext.downLoadUrl = jsonUtils2.getString("url");
-                            }else{
+                            } else {
                                 String url = jsonUtils2.getString("url");
                                 AppConfig.getInstance().putGameList(cate, url);
                             }

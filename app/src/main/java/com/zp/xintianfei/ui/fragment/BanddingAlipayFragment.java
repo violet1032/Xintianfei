@@ -21,9 +21,12 @@ import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
+import com.zp.xintianfei.utils.JsonUtils;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
 import java.util.Map;
@@ -57,6 +60,9 @@ public class BanddingAlipayFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_img_head)
     private ImageView imgHead;
 
+    @BindView(id = R.id.fg_bandding_alipay_img)
+    private ImageView imgQrcode;
+
     @BindView(id = R.id.fg_bandding_alipay_tv_file)
     private TextView tvFile;
 
@@ -70,8 +76,8 @@ public class BanddingAlipayFragment extends BaseFragment {
     private Button btnBadding;
     @BindView(id = R.id.fg_bandding_alipay_btn_scan, click = true)
     private Button btnScan;
-    @BindView(id = R.id.fg_bandding_alipay_btn_upload, click = true)
-    private Button btnUpload;
+//    @BindView(id = R.id.fg_bandding_alipay_btn_upload, click = true)
+//    private Button btnUpload;
 
     private int bankId = 0;
 
@@ -96,6 +102,8 @@ public class BanddingAlipayFragment extends BaseFragment {
         tvSumYongjin.setText(AppContext.user.getYongjin().toString());
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
+
+        getMemberAlipay();
     }
 
     @Override
@@ -136,9 +144,9 @@ public class BanddingAlipayFragment extends BaseFragment {
                 ((MainActivity) getActivity()).imgUploadType = 1;
                 ChooseDialog.startActivity(getActivity(), 1, false);
                 break;
-            case R.id.fg_bandding_alipay_btn_upload:
-                // 上传
-                break;
+//            case R.id.fg_bandding_alipay_btn_upload:
+//                // 上传
+//                break;
         }
     }
 
@@ -202,5 +210,45 @@ public class BanddingAlipayFragment extends BaseFragment {
         this.uri = uri;
         String fileName = StringUtils.pathToFileName(uri);
         tvFile.setText(fileName);
+    }
+
+    /**
+     * 获取绑定的支付宝
+     */
+    private void getMemberAlipay() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils jsonUtils = new JsonUtils(str);
+
+                        JSONArray jsonArray = jsonUtils.getJSONArray("info");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JsonUtils jsonUtils1 = new JsonUtils(jsonArray.getString(i));
+                            String zfb_username = jsonUtils1.getString("zfb_username");
+                            String zfb_account = jsonUtils1.getString("zfb_account");
+                            String imgUrl = jsonUtils1.getString("zfb_url");
+
+                            if(!StringUtils.isEmpty(zfb_username)){
+                                btnBadding.setText("更新");
+                                edtNickname.setText(zfb_username);
+                                edtAccount.setText(zfb_account);
+                                imgQrcode.setVisibility(View.VISIBLE);
+                                ApiCommon.getNetBitmap(imgUrl, imgQrcode, false);
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("解析错误");
+                    }
+                } else
+                    UIHelper.ToastMessage(result.getMsg());
+            }
+        };
+        ApiUser.getMemberAlipay(callBack);
     }
 }

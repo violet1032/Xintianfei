@@ -134,12 +134,25 @@ public class MainFragment extends BaseFragment {
                         }
                     }
 
+                } else if (message.what == 101) {
+                    // 更新余额
+                    tvSum.setText(AppContext.user.getMoney().toString());
                 }
                 return false;
             }
         });
 
         getGameStatus();
+
+        // 定时刷新余额
+        Timer timer1 = new Timer();
+        TimerTask timerTask1 = new TimerTask() {
+            @Override
+            public void run() {
+                handler.sendEmptyMessage(101);
+            }
+        };
+        timer1.schedule(timerTask1, 1000, 1000);
     }
 
     @Override
@@ -152,29 +165,29 @@ public class MainFragment extends BaseFragment {
                 GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
                 break;
             case R.id.fg_main_lay_2:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.xgsm.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
                 break;
             case R.id.fg_main_lay_3:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.xyft.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
                 break;
             case R.id.fg_main_lay_4:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.cqssc.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
                 break;
             case R.id.fg_main_lay_5:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.qqlfc.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
                 break;
             case R.id.fg_main_lay_6:
 //                GameXGLHCActivity.startActivity(getActivity());
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.lhc.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.lhc.value);
                 break;
             case R.id.fg_main_lay_7:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.pcdd.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
                 break;
             case R.id.fg_main_lay_8:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.jnd28.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
                 break;
             case R.id.fg_main_lay_9:
-                GambleActivity.startActivity(getActivity(),E_LOTTERY_TYPE.jsks.value);
+                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
                 break;
         }
     }
@@ -302,5 +315,9 @@ public class MainFragment extends BaseFragment {
             }
         };
         ApiLottery.getGameNextInfo(cate, callBack);
+    }
+
+    public void changeSum(){
+        tvSum.setText(AppContext.user.getMoney().toString());
     }
 }
