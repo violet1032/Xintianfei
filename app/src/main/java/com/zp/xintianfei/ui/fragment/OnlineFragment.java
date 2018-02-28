@@ -1,5 +1,7 @@
 package com.zp.xintianfei.ui.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.zp.xintianfei.AppConfig;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
@@ -64,6 +67,11 @@ public class OnlineFragment extends BaseFragment {
                 ((MainActivity) getActivity()).setPosition(12);
                 break;
             case R.id.fg_online_lay_customer:
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse(AppConfig.getInstance().getmPre().getString("online_service", ""));
+                intent.setData(content_url);
+                startActivity(intent);
                 break;
         }
     }

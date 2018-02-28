@@ -23,6 +23,8 @@ public class URLs {
     public final static String getMemberBank = APP_STORE_HOST + "getMemberBank"; // 获取用户绑定的银行
     public final static String zz = APP_STORE_HOST + "zz"; // 转账
     public final static String getMemberMoney = APP_STORE_HOST + "getMemberMoney"; // 获取转账对象
+    public final static String getAgentQRCode = APP_STORE_HOST + "getAgentQRCode"; // 获取会员的推广二维码
+    public final static String getAppVersion = APP_STORE_HOST + "getAppVersion"; // 获取版本
 
     public final static String getPlazaGameState = APP_STORE_HOST + "getPlazaGameState"; // 获取游戏时间状态信息
     public final static String getGameNextInfo = APP_STORE_HOST + "getGameNextInfo"; // 获取下一期游戏时间状态信息

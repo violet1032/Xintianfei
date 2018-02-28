@@ -258,4 +258,22 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack);
     }
+    public static void getAgentQRCode(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getAgentQRCode;
+
+        AppContext.http.get(url, params, callBack);
+    }
+    public static void getAppVersion(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("type", 0);
+        // 地址
+        String url = URLs.getAppVersion;
+
+        AppContext.http.get(url, params, callBack);
+    }
 }

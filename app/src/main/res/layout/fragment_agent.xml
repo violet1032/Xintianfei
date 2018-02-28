@@ -105,9 +105,9 @@
 
             <ImageView
                 android:id="@+id/fg_agent_img_qrcode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/qrcode" />
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:scaleType="fitXY"/>
         </LinearLayout>
 
     </RelativeLayout>

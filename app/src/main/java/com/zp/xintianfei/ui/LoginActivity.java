@@ -16,9 +16,12 @@ import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.ui.dialog.VersionUpdateDialog;
+import com.zp.xintianfei.utils.JsonUtils;
 import com.zp.xintianfei.utils.LogUtil;
 import com.zp.xintianfei.utils.UIHelper;
 
+import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
 import java.util.Map;
@@ -130,6 +133,8 @@ public class LoginActivity extends BaseActivity {
 
                 break;
         }
+
+
     }
 
     @Override
@@ -157,6 +162,11 @@ public class LoginActivity extends BaseActivity {
     @Override
     public void initWidget() {
         super.initWidget();
+
+        layLoginWexin.setEnabled(false);
+        layLoginQQ.setEnabled(false);
+
+        getAppVersion();
     }
 
     private void appLogin(String unionid, String openid, String nickname, String headimgurl) {
@@ -203,5 +213,47 @@ public class LoginActivity extends BaseActivity {
             }
         };
         ApiUser.appLogin(unionid, openid, nickname, headimgurl, callBack);
+    }
+
+    private void getAppVersion() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils j = new JsonUtils(str);
+                        JsonUtils jsonUtils = j.getJSONUtils("info");
+                        String content = jsonUtils.getString("content");
+                        String version = jsonUtils.getString("version");
+
+                        // 比较版本
+                        if (version.compareTo(AppContext.versionName) > 0) {
+                            // 如果有新版本
+                            VersionUpdateDialog.startActivity(LoginActivity.this, version, content);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                UIHelper.stopLoadingDialog();
+                layLoginWexin.setEnabled(true);
+                layLoginQQ.setEnabled(true);
+            }
+
+            @Override
+            public void onPreStart() {
+                super.onPreStart();
+                UIHelper.showLoadingDialog(LoginActivity.this);
+            }
+        };
+        ApiUser.getAppVersion(callBack);
     }
 }

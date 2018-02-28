@@ -312,4 +312,11 @@
     <string name="transfer_text_3">转入</string>
     <string name="transfer_text_4">请输入转账金额</string>
     <string name="transfer_text_5">点击选择</string>
+
+    <string name="version_text_1">版本更新</string>
+    <string name="version_text_2">最新版本：</string>
+    <string name="version_text_3">更新内容：</string>
+    <string name="version_text_4">前往更新</string>
+    <string name="version_text_5">退出</string>
+
 </resources>

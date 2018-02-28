@@ -21,9 +21,12 @@ import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
+import com.zp.xintianfei.utils.JsonUtils;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
 import java.util.Map;
@@ -115,6 +118,8 @@ public class BanddingFragment extends BaseFragment {
                 return false;
             }
         });
+
+        getMemberBank();
     }
 
     @Override
@@ -202,5 +207,43 @@ public class BanddingFragment extends BaseFragment {
             }
         };
         ApiUser.bindBank(bankId, number, realName, bankName, callBack);
+    }
+
+    /**
+     * 获取绑定的微信
+     */
+    private void getMemberBank() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils jsonUtils = new JsonUtils(str);
+
+                        JSONArray jsonArray = jsonUtils.getJSONArray("info");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JsonUtils jsonUtils1 = new JsonUtils(jsonArray.getString(i));
+                            String countname = jsonUtils1.getString("countname");
+
+                            if(!StringUtils.isEmpty(countname)){
+                                btnBadding.setText("更新");
+                                edtBankname.setText(jsonUtils1.getString("countname"));
+                                edtNumber.setText(jsonUtils1.getString("account"));
+                                edtReNumber.setText(jsonUtils1.getString("account"));
+                                edtRealname.setText(jsonUtils1.getString("username"));
+                            }
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("解析错误");
+                    }
+                } else
+                    UIHelper.ToastMessage(result.getMsg());
+            }
+        };
+        ApiUser.getMemberBank(callBack);
     }
 }
