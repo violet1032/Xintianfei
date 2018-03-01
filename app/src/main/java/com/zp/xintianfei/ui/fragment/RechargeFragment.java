@@ -21,11 +21,13 @@ import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
+import com.zp.xintianfei.utils.ImageUtils;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Map;
 import java.util.Timer;
@@ -120,14 +122,60 @@ public class RechargeFragment extends BaseFragment {
                 + "-" + AppConfig.getInstance().getmPre().getString("pay_max_weixin", "0"));
 
         // 加载二维码图片
-        ImageView imgWeixin = (ImageView) layWechatContent.getChildAt(0);
+        final ImageView imgWeixin = (ImageView) layWechatContent.getChildAt(0);
         ApiCommon.getNetBitmap(AppConfig.getInstance().getmPre().getString("weixinpay_qrcode", ""), imgWeixin, false);
-        ImageView imgAlipay = (ImageView) layAlipayContent.getChildAt(0);
+        final ImageView imgAlipay = (ImageView) layAlipayContent.getChildAt(0);
         ApiCommon.getNetBitmap(AppConfig.getInstance().getmPre().getString("alipay_qrcode", ""), imgAlipay, false);
-        ImageView imgCard = (ImageView) layCardContent.getChildAt(0);
+        final ImageView imgCard = (ImageView) layCardContent.getChildAt(0);
         ApiCommon.getNetBitmap(AppConfig.getInstance().getmPre().getString("bank_qrcode", ""), imgCard, false);
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
+
+        imgWeixin.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (!AppContext.appContext.isGrantExternalRW(getActivity())) {
+                    return false;
+                }
+
+                try {
+                    ImageUtils.saveImage(getActivity(), AppConfig.getSaveImagePath() + "weixin_" + System.currentTimeMillis() + ".png", ImageUtils.getViewBitmap(imgWeixin));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
+        });
+        imgAlipay.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (!AppContext.appContext.isGrantExternalRW(getActivity())) {
+                    return false;
+                }
+
+                try {
+                    ImageUtils.saveImage(getActivity(), AppConfig.getSaveImagePath() + "alipay_" + System.currentTimeMillis() + ".png", ImageUtils.getViewBitmap(imgAlipay));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
+        });
+        imgCard.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                if (!AppContext.appContext.isGrantExternalRW(getActivity())) {
+                    return false;
+                }
+
+                try {
+                    ImageUtils.saveImage(getActivity(), AppConfig.getSaveImagePath() + "card_" + System.currentTimeMillis() + ".png", ImageUtils.getViewBitmap(imgCard));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
+        });
     }
 
     @Override

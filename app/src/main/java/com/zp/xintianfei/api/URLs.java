@@ -24,6 +24,7 @@ public class URLs {
     public final static String zz = APP_STORE_HOST + "zz"; // 转账
     public final static String getMemberMoney = APP_STORE_HOST + "getMemberMoney"; // 获取转账对象
     public final static String getAgentQRCode = APP_STORE_HOST + "getAgentQRCode"; // 获取会员的推广二维码
+    public final static String getAgentPicture = APP_STORE_HOST + "getAgentPicture"; // 获取会员的推广图片
     public final static String getAppVersion = APP_STORE_HOST + "getAppVersion"; // 获取版本
 
     public final static String getPlazaGameState = APP_STORE_HOST + "getPlazaGameState"; // 获取游戏时间状态信息

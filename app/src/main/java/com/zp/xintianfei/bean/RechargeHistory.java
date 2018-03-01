@@ -28,7 +28,7 @@ public class RechargeHistory implements Serializable {
     public RechargeHistory parse(String json) throws JSONException {
         JsonUtils jsonUtils = new JsonUtils(json);
         setId(jsonUtils.getInt("id"));
-        setMoney(jsonUtils.getBigDecimal("money"));
+        setMoney(jsonUtils.getBigDecimal("money").divide(new BigDecimal(100)));
         setTime(StringUtils.date_fromat_change(jsonUtils.getLong("create_at") * 1000));
         setStatus(E_RECHARGE_STATUE_TYPE.getIndex(jsonUtils.getInt("state")).name);
         return this;

@@ -40,7 +40,7 @@ public class GambleHistoryAdapter extends KJAdapter<GambleHistory> {
         }
         stringBuffer.append(item.getNumber());
         helper.setText(R.id.lt_gamble_history_tv_4, stringBuffer.toString());
-        helper.setText(R.id.lt_gamble_history_tv_5, item.getMoney() + "元");
+        helper.setText(R.id.lt_gamble_history_tv_5, item.getMoney()+"");
         helper.setText(R.id.lt_gamble_history_tv_6, item.getStrStatus());
     }
 }

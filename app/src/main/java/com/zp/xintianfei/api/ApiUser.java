@@ -276,4 +276,13 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack);
     }
+    public static void getAgentPicture(FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        // 地址
+        String url = URLs.getAgentPicture;
+
+        AppContext.http.get(url, params, callBack);
+    }
 }

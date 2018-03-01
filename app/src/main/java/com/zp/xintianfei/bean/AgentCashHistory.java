@@ -29,7 +29,7 @@ public class AgentCashHistory implements Serializable {
     public AgentCashHistory parse(String json) throws JSONException {
         JsonUtils jsonUtils = new JsonUtils(json);
         setStage(jsonUtils.getString("stage"));
-        setMoney(jsonUtils.getBigDecimal("money"));
+        setMoney(jsonUtils.getBigDecimal("money").divide(new BigDecimal(100)));
         setType(E_LOTTERY_TYPE.getIndex(jsonUtils.getInt("cate")).name);
         setTime(StringUtils.date_fromat_change(jsonUtils.getLong("atime") * 1000));
         return this;

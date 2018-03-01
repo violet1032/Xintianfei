@@ -47,13 +47,13 @@ public class GambleHistory implements Serializable {
         setNumber(jsonUtils.getString("number"));
         setWei(jsonUtils.getInt("wei"));
         setCate(jsonUtils.getInt("cate"));
-        setMoney(new BigDecimal(jsonUtils.getString("money")));
+        setMoney(new BigDecimal(jsonUtils.getString("money")).divide(new BigDecimal(100)));
         setStatus(jsonUtils.getInt("state"));
         setResult(jsonUtils.getInt("code"));
         setCreate_at(jsonUtils.getString("create_at"));
         setUpdate_at(jsonUtils.getString("update_at"));
         setOpen_at(jsonUtils.getString("open_at"));
-        setWin(new BigDecimal(jsonUtils.getString("win")));
+        setWin(new BigDecimal(jsonUtils.getString("win")).divide(new BigDecimal(100)));
         setRate(jsonUtils.getString("rate"));
         setStrCate(E_LOTTERY_TYPE.getIndex(getCate()).name);
         setStrType(E_GAME_TYPE.getIndex(getCate(), getType()).name);

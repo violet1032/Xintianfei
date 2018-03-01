@@ -37,8 +37,8 @@ public class GambleZhangbianHistory implements Serializable {
         setStrType(jsonUtils.getString("info"));
         setCate(jsonUtils.getInt("cate"));
         setStrCate(E_LOTTERY_TYPE.getIndex(getCate()).name);
-        setMoney(jsonUtils.getBigDecimal("coin"));
-        setBalance(jsonUtils.getBigDecimal("balance"));
+        setMoney(jsonUtils.getBigDecimal("coin").divide(new BigDecimal(100)));
+        setBalance(jsonUtils.getBigDecimal("balance").divide(new BigDecimal(100)));
         setStage(jsonUtils.getString("stage"));
         LogUtil.logError(GambleZhangbianHistory.class,"create_at:"+(jsonUtils.getLong("create_at") * 1000));
         setTime(StringUtils.date_fromat_change(jsonUtils.getLong("create_at") * 1000));

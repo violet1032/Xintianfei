@@ -47,11 +47,8 @@ public class AgentFragment extends BaseFragment {
     @BindView(id = R.id.fg_agent_btn_1, click = true)
     private Button btnFee;
 
-    @BindView(id = R.id.fg_agent_tv_id)
-    private TextView tvId;
-
-    @BindView(id = R.id.fg_agent_img_qrcode)
-    private ImageView imgQrcode;
+    @BindView(id = R.id.fg_agent_img)
+    private ImageView imgAgent;
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -65,13 +62,16 @@ public class AgentFragment extends BaseFragment {
 
         title.setText("代理中心");
 
-        tvId.setText(AppContext.user.getUid() + "");
 
-        imgQrcode.setOnLongClickListener(new View.OnLongClickListener() {
+        imgAgent.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                if (!AppContext.appContext.isGrantExternalRW(getActivity())) {
+                    return false;
+                }
+
                 try {
-                    ImageUtils.saveImage(getActivity(), AppConfig.getSaveImagePath() + "agent_" + System.currentTimeMillis() + ".png", ImageUtils.getViewBitmap(imgQrcode));
+                    ImageUtils.saveImage(getActivity(), AppConfig.getSaveImagePath() + "agent_" + System.currentTimeMillis() + ".png", ImageUtils.getViewBitmap(imgAgent));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -79,7 +79,7 @@ public class AgentFragment extends BaseFragment {
             }
         });
 
-        getAgentQRCode();
+        getAgentPicture();
     }
 
     @Override
@@ -114,7 +114,7 @@ public class AgentFragment extends BaseFragment {
         super.onClick(v);
     }
 
-    public void getAgentQRCode() {
+    public void getAgentPicture() {
         FHttpCallBack callBack = new FHttpCallBack() {
             @Override
             public void onSuccess(Map<String, String> headers, byte[] t) {
@@ -125,7 +125,7 @@ public class AgentFragment extends BaseFragment {
                     try {
                         JsonUtils jsonUtils = new JsonUtils(str);
                         String url = jsonUtils.getString("info");
-                        ApiCommon.getNetBitmap(url, imgQrcode, false);
+                        ApiCommon.getNetBitmap(url, imgAgent, false);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         UIHelper.ToastMessage("数据解析错误");
@@ -133,7 +133,19 @@ public class AgentFragment extends BaseFragment {
                 } else
                     UIHelper.ToastMessage(result.getMsg());
             }
+
+            @Override
+            public void onPreStart() {
+                super.onPreStart();
+                UIHelper.showLoadingDialog(getActivity());
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                UIHelper.stopLoadingDialog();
+            }
         };
-        ApiUser.getAgentQRCode(callBack);
+        ApiUser.getAgentPicture(callBack);
     }
 }

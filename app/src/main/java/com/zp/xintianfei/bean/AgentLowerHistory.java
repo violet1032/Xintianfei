@@ -29,7 +29,7 @@ public class AgentLowerHistory implements Serializable {
         JsonUtils jsonUtils = new JsonUtils(json);
         setId(jsonUtils.getInt("id"));
         setNickname(jsonUtils.getString("nickname"));
-        setMoney(jsonUtils.getBigDecimal("money"));
+        setMoney(jsonUtils.getBigDecimal("money").divide(new BigDecimal(100)));
         setTime(StringUtils.date_fromat_change(jsonUtils.getLong("create_at")*1000));
         return this;
     }

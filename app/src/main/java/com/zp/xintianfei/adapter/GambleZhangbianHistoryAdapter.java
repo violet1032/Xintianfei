@@ -25,7 +25,7 @@ public class GambleZhangbianHistoryAdapter extends KJAdapter<GambleZhangbianHist
 
         helper.setText(R.id.lt_gamble_history_zhangbian_tv_1, item.getTime());
         helper.setText(R.id.lt_gamble_history_zhangbian_tv_2, item.getStrType());
-        helper.setText(R.id.lt_gamble_history_zhangbian_tv_3, item.getMoney() + "元");
-        helper.setText(R.id.lt_gamble_history_zhangbian_tv_4, item.getBalance() + "元");
+        helper.setText(R.id.lt_gamble_history_zhangbian_tv_3, item.getMoney() + "");
+        helper.setText(R.id.lt_gamble_history_zhangbian_tv_4, item.getBalance() + "");
     }
 }

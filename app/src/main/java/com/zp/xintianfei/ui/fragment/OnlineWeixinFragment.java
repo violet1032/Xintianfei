@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zp.xintianfei.AppConfig;
+import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
 import com.zp.xintianfei.ui.MainActivity;
@@ -55,6 +56,10 @@ public class OnlineWeixinFragment extends BaseFragment {
         imgQrcode.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                if(!AppContext.appContext.isGrantExternalRW(getActivity())){
+                    return false;
+                }
+
                 try {
                     ImageUtils.saveImage(getActivity(), AppConfig.getSaveImagePath() + "weixin_" + System.currentTimeMillis() + ".png", ImageUtils.getViewBitmap(imgQrcode));
                 } catch (IOException e) {

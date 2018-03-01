@@ -68,7 +68,13 @@
             android:textSize="@dimen/space_14" />
     </LinearLayout>
 
-    <RelativeLayout
+    <ImageView
+        android:id="@+id/fg_agent_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <!--<RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_agent">
@@ -110,6 +116,6 @@
                 android:scaleType="fitXY"/>
         </LinearLayout>
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </LinearLayout>

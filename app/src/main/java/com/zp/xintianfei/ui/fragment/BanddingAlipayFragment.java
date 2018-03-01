@@ -141,6 +141,11 @@ public class BanddingAlipayFragment extends BaseFragment {
                 break;
             case R.id.fg_bandding_alipay_btn_scan:
                 // 浏览
+
+                if(!AppContext.appContext.isGrantExternalRW(getActivity())){
+                    break;
+                }
+
                 ((MainActivity) getActivity()).imgUploadType = 1;
                 ChooseDialog.startActivity(getActivity(), 1, false);
                 break;

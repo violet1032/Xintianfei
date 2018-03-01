@@ -25,7 +25,7 @@ public class AgentLowerHistoryAdapter extends KJAdapter<AgentLowerHistory> {
 
         helper.setText(R.id.lt_agent_cash_tv_1, item.getId() + "");
         helper.setText(R.id.lt_agent_cash_tv_2, item.getNickname());
-        helper.setText(R.id.lt_agent_cash_tv_4, item.getMoney() + "元");
+        helper.setText(R.id.lt_agent_cash_tv_4, item.getMoney()+"");
         helper.setText(R.id.lt_agent_cash_tv_3, item.getTime());
     }
 }
