@@ -124,6 +124,20 @@
     <string name="game_text_17">车道/车号/金额</string>
     <string name="game_text_18">快速下注</string>
     <string name="game_text_19">发送</string>
+    <string name="game_text_20">会员：</string>
+    <string name="game_text_21">代理：</string>
+    <string name="game_text_22">编号：</string>
+    <string name="game_text_23">历史</string>
+    <string name="game_text_24">彩种</string>
+    <string name="game_text_25">当日结算</string>
+    <string name="game_text_26">总流水</string>
+    <string name="game_text_27">总盈亏</string>
+    <string name="game_text_28">期号</string>
+    <string name="game_text_29">玩法</string>
+    <string name="game_text_30">下注</string>
+    <string name="game_text_31">点数</string>
+    <string name="game_text_32">结果</string>
+    <string name="game_text_33">操作</string>
     <string name="title_activity_game_xglhc">GameXGLHCActivity</string>
 
     <string name="game_xglhc_text_1">香港六合彩</string>

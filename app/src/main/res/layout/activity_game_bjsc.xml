@@ -26,6 +26,7 @@
 
             <ImageView
                 android:layout_width="@dimen/game_head_size"
+                android:id="@+id/act_game_bjsc_img_head"
                 android:layout_height="@dimen/game_head_size"
                 android:src="@drawable/bg_3" />
 
@@ -307,6 +308,7 @@
 
             <EditText
                 android:layout_width="wrap_content"
+                android:id="@+id/act_game_bjsc_edt_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/space_10"
@@ -325,7 +327,7 @@
                 android:layout_alignParentRight="true"
                 android:background="@drawable/shape_rounded_h_orange_6">
 
-                <TextView
+                <!--<TextView
                     android:id="@+id/act_game_bjsc_btn_quick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -339,11 +341,12 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/space_5"
                     android:layout_marginTop="@dimen/space_5"
-                    android:background="@color/orange_4" />
+                    android:background="@color/orange_4" />-->
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/act_game_bjsc_btn_gamble"
                     android:padding="@dimen/space_10"
                     android:text="@string/game_text_19"
                     android:textColor="@drawable/click_text_color_white"

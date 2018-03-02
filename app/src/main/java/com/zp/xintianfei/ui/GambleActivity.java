@@ -2,6 +2,7 @@ package com.zp.xintianfei.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -70,6 +71,26 @@ public class GambleActivity extends BaseActivity {
         webView.setWebViewClient(new webviewClient());
 
         webSettings.setDisplayZoomControls(false);
+
+        int screenDensity = getResources().getDisplayMetrics().densityDpi;
+        WebSettings.ZoomDensity zoomDensity = WebSettings.ZoomDensity.MEDIUM;
+        switch (screenDensity)
+        {
+            case DisplayMetrics.DENSITY_LOW:
+                zoomDensity = WebSettings.ZoomDensity.CLOSE;
+                break;
+            case DisplayMetrics.DENSITY_MEDIUM:
+                zoomDensity = WebSettings.ZoomDensity.MEDIUM;
+                break;
+            case DisplayMetrics.DENSITY_HIGH:
+            case DisplayMetrics.DENSITY_XHIGH:
+            case DisplayMetrics.DENSITY_XXHIGH:
+            default:
+                zoomDensity = WebSettings.ZoomDensity.FAR;
+                break;
+
+        }
+        webSettings.setDefaultZoom(zoomDensity);
 
         if (!StringUtils.isEmpty(url)) {
             webView.loadUrl(url + "?token=" + AppContext.user.getToken());

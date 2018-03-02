@@ -5,15 +5,16 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/fg_game_chat_lay_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/layout_chat_left">
+        <!--<include layout="@layout/layout_chat_left">
 
         </include>
 
-        <include layout="@layout/layout_chat_right" />
+        <include layout="@layout/layout_chat_right" />-->
 
     </LinearLayout>
 </ScrollView>

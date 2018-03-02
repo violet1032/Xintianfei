@@ -5,11 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.api.ApiCommon;
+import com.zp.xintianfei.bean.Chat;
 import com.zp.xintianfei.ui.common.BaseFragment;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -63,6 +66,13 @@ public class GameBJSCJCFragment extends BaseFragment {
     private LinearLayout[] laysGambleTMJC = new LinearLayout[17];
     private LinearLayout[] laysGambleZHDXDS = new LinearLayout[4];
 
+
+    @BindView(id = R.id.fg_game_chat_lay_content)
+    private LinearLayout layChatContent;
+
+    private LayoutInflater inflater;
+    private ViewGroup viewGroup;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_game_bjsc_quick_jc, null);
@@ -72,6 +82,9 @@ public class GameBJSCJCFragment extends BaseFragment {
     @Override
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
+        inflater = LayoutInflater.from(getContext());
+        viewGroup = parentView.findViewById(R.id.fg_game_chat_lay_content);
+
         laysContentNumber[0] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_chjc);
         laysContentNumber[1] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_dxds);
         laysContentNumber[2] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_tmjc);
@@ -250,7 +263,7 @@ public class GameBJSCJCFragment extends BaseFragment {
         }
     }
 
-    public void clearGamble(){
+    public void clearGamble() {
         for (int i = 0; i < laysGambleCHJC.length; i++) {
             laysGambleCHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
         }
@@ -271,6 +284,27 @@ public class GameBJSCJCFragment extends BaseFragment {
         }
         for (int i = 0; i < laysGambleZHDXDS.length; i++) {
             laysGambleZHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+        }
+    }
+
+    public void addChatHistory(Chat chat) {
+        if (chat.is_admin()) {
+            // 管理员，添加右边
+        } else {
+            // 添加左边
+            RelativeLayout relativeLayout = (RelativeLayout) inflater.inflate(R.layout.layout_chat_left, viewGroup, false);
+            ImageView imgHead = relativeLayout.findViewById(R.id.lout_chat_left_img_head);
+            TextView name = relativeLayout.findViewById(R.id.lout_chat_left_tv_name);
+            TextView time = relativeLayout.findViewById(R.id.lout_chat_left_tv_time);
+            TextView content = relativeLayout.findViewById(R.id.lout_chat_left_tv_content);
+
+            ApiCommon.getNetBitmap(chat.getHead(), imgHead, false);
+            name.setText(chat.getUser_name());
+            time.setText(chat.getTimestr());
+            content.setText(chat.getContent());
+
+            // 加在第一个
+            layChatContent.addView(relativeLayout,0);
         }
     }
 }

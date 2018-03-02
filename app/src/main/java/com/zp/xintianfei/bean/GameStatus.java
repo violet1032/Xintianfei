@@ -24,6 +24,7 @@ public class GameStatus implements Serializable {
     private int ftime;
     private long start_time;
     private long end_time;
+    private String stage;
 
     public GameStatus parseJson(String str) {
         try {
@@ -36,6 +37,7 @@ public class GameStatus implements Serializable {
                 setFtime(jsonUtils.getInt("ftime"));
                 setStart_time(jsonUtils.getLong("start_time") * 1000);
                 setEnd_time(jsonUtils.getLong("end_time") * 1000);
+                setStage(jsonUtils.getString("stage"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -55,6 +57,7 @@ public class GameStatus implements Serializable {
                 setFtime(jsonUtils.getInt("ftime"));
                 setStart_time(jsonUtils.getLong("start_time") * 1000);
                 setEnd_time(jsonUtils.getLong("end_time") * 1000);
+                setStage(jsonUtils.getString("stage"));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -116,5 +119,13 @@ public class GameStatus implements Serializable {
 
     public void setEnd_time(long end_time) {
         this.end_time = end_time;
+    }
+
+    public String getStage() {
+        return stage;
+    }
+
+    public void setStage(String stage) {
+        this.stage = stage;
     }
 }

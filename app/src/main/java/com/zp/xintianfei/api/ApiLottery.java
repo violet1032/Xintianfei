@@ -6,13 +6,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * <p>
+ * <p/>
  * 描述:
- * <p>
+ * <p/>
  * 作者:Administrator
- * <p>
+ * <p/>
  * 时间:2018/2/5 18:43
- * <p>
+ * <p/>
  * 版本:
  */
 public class ApiLottery {
@@ -94,9 +94,60 @@ public class ApiLottery {
     public static void getPlazaGameList(FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();
-        params.put("uid",AppContext.user.getUid());
+        params.put("uid", AppContext.user.getUid());
         // 地址
         String url = URLs.getPlazaGameList;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    /**
+     * 获取动画路径
+     *
+     * @param cate
+     * @param callBack
+     */
+    public static void getAnimateUrl(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getAnimateUrl;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    /**
+     * 获取聊天记录
+     *
+     * @param cate
+     * @param last_record_id
+     * @param callBack
+     */
+    public static void getChatMsgs(int cate, int last_record_id, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate", cate);
+        params.put("last_record_id", last_record_id);
+        // 地址
+        String url = URLs.getChatMsgs;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+
+    /**
+     * 下注
+     * @param cate
+     * @param stage
+     * @param content
+     * @param callBack
+     */
+    public static void gameBet(int cate, String stage,String content, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("cate", cate);
+        params.put("stage", stage);
+        params.put("content", content);
+        // 地址
+        String url = URLs.gameBet;
         AppContext.http.get(url, params, callBack, false, false);
     }
 }

@@ -78,6 +78,9 @@
             android:name=".ui.dialog.VersionUpdateDialog"
             android:theme="@style/CustomDialog" />
         <activity
+            android:name=".ui.dialog.LotterySelectDialog"
+            android:theme="@style/CustomDialog" />
+        <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"

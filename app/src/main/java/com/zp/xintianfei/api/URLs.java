@@ -48,12 +48,14 @@ public class URLs {
     public final static String getPlazaGameList = APP_STORE_HOST + "getPlazaGameList"; // 获取游戏列表
 
     public final static String LOGOUT = APP_STORE_HOST + "api/user/logout"; // 退出登录
-    public final static String REGIST = APP_STORE_HOST + "api/user/regist";//注册
     public final static String IMG_UPLOAD = APP_STORE_HOST + "file/upload/avatarUploa";// 图片上传
 
     public final static String getGameRule = APP_STORE_HOST + "getGameRule";// 获取规则
-    public final static String FORGET_CHANGE = APP_STORE_HOST + "api/user/forgetPswChange";// 忘记密码 修改密码
-    public final static String CHANGE_PSW = APP_STORE_HOST + "api/user/changePassword";// 正常修改密码
+
+    public final static String getAnimateUrl = APP_STORE_HOST + "getAnimateUrl"; // 获取动画路径
+    public final static String getChatMsgs = APP_STORE_HOST + "getChatMsgs"; // 获取聊天记录
+    public final static String gameBet = APP_STORE_HOST + "gameBet"; // 下注
+
 
     //-----部分暂未发出来的接口-----
 

@@ -20,6 +20,8 @@ import com.zp.xintianfei.bean.GameStatus;
 import com.zp.xintianfei.bean.GameStatusList;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.GambleActivity;
+import com.zp.xintianfei.ui.GameBJSCActivity;
+import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 import com.zp.xintianfei.utils.StringUtils;
 
@@ -161,8 +163,8 @@ public class MainFragment extends BaseFragment {
 
         switch (v.getId()) {
             case R.id.fg_main_lay_1:
-//                GameBJSCActivity.startActivity(getActivity());
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.bjsc.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
                 break;
             case R.id.fg_main_lay_2:
                 GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
@@ -177,8 +179,8 @@ public class MainFragment extends BaseFragment {
                 GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
                 break;
             case R.id.fg_main_lay_6:
-//                GameXGLHCActivity.startActivity(getActivity());
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.lhc.value);
+                GameXGLHCActivity.startActivity(getActivity());
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.lhc.value);
                 break;
             case R.id.fg_main_lay_7:
                 GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
