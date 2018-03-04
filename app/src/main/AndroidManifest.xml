@@ -59,6 +59,9 @@
             android:label="@string/title_activity_agent_lower" >
         </activity>
         <activity
+            android:name=".ui.TrendsActivity">
+        </activity>
+        <activity
             android:name=".ui.AgentFeeActivity"
             android:label="@string/title_activity_agent_fee" >
         </activity>

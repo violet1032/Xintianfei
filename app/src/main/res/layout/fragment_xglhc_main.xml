@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_pic_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/space_20">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_lay_tm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/main_icon_size"
+                        android:layout_height="@dimen/main_icon_size"
+                        android:src="@drawable/text_tm" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@string/game_xglhc_text_17"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_lay_pm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/main_icon_size"
+                        android:layout_height="@dimen/main_icon_size"
+                        android:src="@drawable/text_pingma" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@string/game_xglhc_text_18"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_lay_ws"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/main_icon_size"
+                        android:layout_height="@dimen/main_icon_size"
+                        android:src="@drawable/text_weishu" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@string/game_xglhc_text_19"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_20"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_lay_tmsx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/main_icon_size"
+                        android:layout_height="@dimen/main_icon_size"
+                        android:src="@drawable/text_tmsx" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@string/game_xglhc_text_20"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_lay_tmbs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/main_icon_size"
+                        android:layout_height="@dimen/main_icon_size"
+                        android:src="@drawable/text_tmbs" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@string/game_xglhc_text_21"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/act_game_bjsc_lay_ztm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/main_icon_size"
+                        android:layout_height="@dimen/main_icon_size"
+                        android:src="@drawable/text_ztm" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space_5"
+                        android:text="@string/game_xglhc_text_22"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_13" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_game_bjsc_lay_sxl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/space_20"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="55dp"
+                    android:src="@drawable/text_sxl" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="@string/game_xglhc_text_23"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

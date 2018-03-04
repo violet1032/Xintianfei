@@ -150,4 +150,58 @@ public class ApiLottery {
         String url = URLs.gameBet;
         AppContext.http.get(url, params, callBack, false, false);
     }
+
+    public static void getRecordToday(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getRecordToday;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getRecordYesterday(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getRecordYesterday;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getRecordBeforeYesterday(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getRecordBeforeYesterday;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getRecordAll(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getRecordAll;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void withdraw(int id, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("id", id);
+        // 地址
+        String url = URLs.withdraw;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getTrendsURL(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getTrendsURL;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
 }

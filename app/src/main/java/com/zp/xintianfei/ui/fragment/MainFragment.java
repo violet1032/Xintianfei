@@ -19,7 +19,6 @@ import com.zp.xintianfei.bean.E_LOTTERY_TYPE;
 import com.zp.xintianfei.bean.GameStatus;
 import com.zp.xintianfei.bean.GameStatusList;
 import com.zp.xintianfei.bean.Result;
-import com.zp.xintianfei.ui.GambleActivity;
 import com.zp.xintianfei.ui.GameBJSCActivity;
 import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
@@ -167,29 +166,36 @@ public class MainFragment extends BaseFragment {
 //                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
                 break;
             case R.id.fg_main_lay_2:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.xgsm.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
                 break;
             case R.id.fg_main_lay_3:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.xyft.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
                 break;
             case R.id.fg_main_lay_4:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.cqssc.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
                 break;
             case R.id.fg_main_lay_5:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.qqlfc.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
                 break;
             case R.id.fg_main_lay_6:
                 GameXGLHCActivity.startActivity(getActivity());
 //                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.lhc.value);
                 break;
             case R.id.fg_main_lay_7:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.pcdd.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
                 break;
             case R.id.fg_main_lay_8:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.jnd28.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
                 break;
             case R.id.fg_main_lay_9:
-                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
+                GameBJSCActivity.startActivity(getActivity(),E_LOTTERY_TYPE.jsks.value);
+//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
                 break;
         }
     }

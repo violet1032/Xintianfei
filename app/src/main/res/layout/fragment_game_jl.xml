@@ -129,19 +129,156 @@
                 android:textColor="@color/white" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/fg_game_jl_list_lottery"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        </ListView>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray" />
 
-        <ListView
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/purple_1"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/game_text_24"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/purple_1"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/game_text_25"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/purple_1"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/game_text_26"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/purple_1"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/game_text_27"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12" />
+
+                <ImageView
+                    android:layout_width="1px"
+                    android:layout_height="match_parent"
+                    android:background="@color/gray" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fg_game_jl_tv_cate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray_3"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/text_default"
+                    android:textSize="@dimen/text_size_12" />
+
+                <TextView
+                    android:id="@+id/fg_game_jl_tv_js"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray_3"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/text_default"
+                    android:textSize="@dimen/text_size_12" />
+
+                <TextView
+                    android:id="@+id/fg_game_jl_tv_ls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray_3"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/text_default"
+                    android:textSize="@dimen/text_size_12" />
+
+                <TextView
+                    android:id="@+id/fg_game_jl_tv_yk"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray_3"
+                    android:gravity="center_horizontal"
+                    android:padding="@dimen/space_5"
+                    android:text="@string/text_default"
+                    android:textSize="@dimen/text_size_12" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.zp.xintianfei.widget.ListviewScroll
             android:id="@+id/fg_game_jl_list_gamble"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:dividerHeight="0px"
+            android:divider="@color/transparent"
             android:layout_marginTop="@dimen/space_10">
 
-        </ListView>
+        </com.zp.xintianfei.widget.ListviewScroll>
     </LinearLayout>
 </ScrollView>

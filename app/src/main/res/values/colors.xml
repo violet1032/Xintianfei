@@ -20,6 +20,7 @@
     <color name="main_gray">#9A9A9A</color>
     <color name="gray">#808080</color>
     <color name="gray_2">#cccccc</color>
+    <color name="gray_3">#e2e7ea</color>
     <color name="black">#000000</color>
 
     <color name="main_translucent_gray">#77808080</color>
@@ -58,4 +59,5 @@
     <color name="yellow">#f0cf0e</color>
     <color name="green_1">#c6c575</color>
     <color name="green_2">#97964a</color>
+    <color name="purple_1">#babade</color>
 </resources>

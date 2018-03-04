@@ -80,6 +80,8 @@ public class GameBJSCActivity extends BaseActivity {
     private Button btnWindow;
     @BindView(id = R.id.act_game_bjsc_btn_online, click = true)
     private Button btnOnline;
+    @BindView(id = R.id.act_game_bjsc_btn_refresh_animetion, click = true)
+    private Button btnRefresh;
 
 //    @BindView(id = R.id.act_game_bjsc_btn_quick, click = true)
 //    private TextView tvQuick;
@@ -166,6 +168,9 @@ public class GameBJSCActivity extends BaseActivity {
 
         cate = getIntent().getIntExtra("cate", 0);
 
+        gameJLFragment.setCate(cate);
+        gameGZFragment.setCate(cate);
+
         title.setText(R.string.main_title);
 
         changeFragment(R.id.act_game_bjsc_lay_content, gameBJSCJCFragment);
@@ -185,8 +190,14 @@ public class GameBJSCActivity extends BaseActivity {
         webView.setWebViewClient(new webviewClient());
         webSettings.setLoadWithOverviewMode(true);
 
-        // 获取动画路径
-        getAnimateUrl();
+        // 获取动画路径,只有qq两分彩和六合彩没有动画
+        if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
+            btnWindow.setVisibility(View.GONE);
+            webView.setVisibility(View.GONE);
+            btnRefresh.setVisibility(View.GONE);
+        } else {
+            getAnimateUrl();
+        }
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
 
@@ -198,6 +209,11 @@ public class GameBJSCActivity extends BaseActivity {
                     changeChatList();
                 } else if (message.what == 2)
                     tvSum.setText(AppContext.user.getMoney().toString());
+                else if (message.what == 3) {
+                    int c = message.arg1;
+                    startActivity(GameBJSCActivity.this, c);
+                    finish();
+                }
                 return false;
             }
         });
@@ -234,7 +250,7 @@ public class GameBJSCActivity extends BaseActivity {
             case R.id.act_game_bjsc_btn_cz:
                 // 彩种
 //                changeFragment(R.id.act_game_bjsc_lay_content, gameCZFragment);
-                LotterySelectDialog.startActivity(GameBJSCActivity.this,handler);
+                LotterySelectDialog.startActivity(GameBJSCActivity.this, handler);
                 break;
             case R.id.act_game_bjsc_btn_jc:
                 // 竞猜
@@ -246,7 +262,8 @@ public class GameBJSCActivity extends BaseActivity {
                 break;
             case R.id.act_game_bjsc_btn_zs:
                 // 走势
-                changeFragment(R.id.act_game_bjsc_lay_content, gameZSFragment);
+//                changeFragment(R.id.act_game_bjsc_lay_content, gameZSFragment);
+                TrendsActivity.startActivity(this, cate);
                 break;
             case R.id.act_game_bjsc_btn_gz:
                 // 规则
@@ -254,6 +271,9 @@ public class GameBJSCActivity extends BaseActivity {
                 break;
             case R.id.act_game_bjsc_btn_sx:
                 // 刷新
+                getAnimateUrl();
+                getChatMsgs();
+                getNext();
                 break;
 //            case R.id.act_game_bjsc_btn_quick:
 //                // 快速下注
@@ -282,8 +302,10 @@ public class GameBJSCActivity extends BaseActivity {
                 // 隐藏动画
                 if (webView.getVisibility() == View.VISIBLE) {
                     webView.setVisibility(View.GONE);
+                    btnWindow.setText("大窗");
                 } else if (webView.getVisibility() == View.GONE) {
                     webView.setVisibility(View.VISIBLE);
+                    btnWindow.setText("小窗");
                 }
                 break;
             case R.id.act_game_bjsc_btn_online:
@@ -306,6 +328,10 @@ public class GameBJSCActivity extends BaseActivity {
             case R.id.act_game_bjsc_btn_gamble:
                 // 下注
                 gamble();
+                break;
+            case R.id.act_game_bjsc_btn_refresh_animetion:
+                // 刷新动画
+                webView.loadUrl(animateUrl);
                 break;
         }
     }
@@ -336,41 +362,39 @@ public class GameBJSCActivity extends BaseActivity {
     }
 
     public void getAnimateUrl() {
-        if (cate == E_LOTTERY_TYPE.bjsc.value || cate == E_LOTTERY_TYPE.xgsm.value || cate == E_LOTTERY_TYPE.xyft.value) {
-            FHttpCallBack callBack = new FHttpCallBack() {
-                @Override
-                public void onSuccess(Map<String, String> headers, byte[] t) {
-                    super.onSuccess(headers, t);
-                    String str = new String(t);
-                    Result result = new Result().parse(str);
-                    if (result.isOk()) {
-                        try {
-                            JsonUtils jsonUtils = new JsonUtils(str);
-                            animateUrl = jsonUtils.getString("info");
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils jsonUtils = new JsonUtils(str);
+                        animateUrl = jsonUtils.getString("info");
 
-                            webView.loadUrl(animateUrl);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            UIHelper.ToastMessage("数据解析错误");
-                        }
-                    } else
-                        UIHelper.ToastMessage(result.getMsg());
-                }
+                        webView.loadUrl(animateUrl);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("数据解析错误");
+                    }
+                } else
+                    UIHelper.ToastMessage(result.getMsg());
+            }
 
-                @Override
-                public void onPreStart() {
-                    super.onPreStart();
-                    UIHelper.showLoadingDialog(GameBJSCActivity.this);
-                }
+            @Override
+            public void onPreStart() {
+                super.onPreStart();
+                UIHelper.showLoadingDialog(GameBJSCActivity.this);
+            }
 
-                @Override
-                public void onFinish() {
-                    super.onFinish();
-                    UIHelper.stopLoadingDialog();
-                }
-            };
-            ApiLottery.getAnimateUrl(cate, callBack);
-        }
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                UIHelper.stopLoadingDialog();
+            }
+        };
+        ApiLottery.getAnimateUrl(cate, callBack);
     }
 
     private class webviewClient extends WebViewClient {
@@ -488,4 +512,5 @@ public class GameBJSCActivity extends BaseActivity {
         };
         ApiLottery.getGameNextInfo(cate, callBack);
     }
+
 }

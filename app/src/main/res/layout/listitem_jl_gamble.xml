@@ -24,12 +24,12 @@
         <TextView
             android:id="@+id/listitem_jl_lottery_tv_stage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:padding="@dimen/space_5"
             android:text="@string/text_default"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12" />
 
         <ImageView
             android:id="@+id/listitem_jl_lottery_img_3"
@@ -40,12 +40,12 @@
         <TextView
             android:id="@+id/listitem_jl_lottery_tv_game"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:padding="@dimen/space_5"
             android:text="@string/text_default"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12" />
 
         <ImageView
             android:id="@+id/listitem_jl_lottery_img_4"
@@ -56,12 +56,12 @@
         <TextView
             android:id="@+id/listitem_jl_lottery_tv_gamble"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:padding="@dimen/space_5"
             android:text="@string/text_default"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12" />
 
         <ImageView
             android:id="@+id/listitem_jl_lottery_img_5"
@@ -72,12 +72,12 @@
         <TextView
             android:id="@+id/listitem_jl_lottery_tv_sum"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:padding="@dimen/space_5"
             android:text="@string/text_default"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12" />
 
         <ImageView
             android:id="@+id/listitem_jl_lottery_img_6"
@@ -88,12 +88,12 @@
         <TextView
             android:id="@+id/listitem_jl_lottery_tv_result"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:padding="@dimen/space_5"
             android:text="@string/text_default"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12" />
 
         <ImageView
             android:id="@+id/listitem_jl_lottery_img_7"
@@ -104,12 +104,42 @@
         <TextView
             android:id="@+id/listitem_jl_lottery_tv_opretion"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
             android:padding="@dimen/space_5"
             android:text="@string/text_default"
-            android:textSize="@dimen/text_size_13" />
+            android:textSize="@dimen/text_size_12"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/listitem_jl_lottery_lay_opretion"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/space_5">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/listitem_jl_lottery_btn_opretion"
+                    android:layout_width="40dp"
+                    android:layout_height="23dp"
+                    android:background="@drawable/click_btn_round_orange_3"
+                    android:paddingBottom="@dimen/space_3"
+                    android:paddingLeft="@dimen/space_6"
+                    android:paddingRight="@dimen/space_6"
+                    android:paddingTop="@dimen/space_3"
+                    android:text="@string/game_text_34"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_12" />
+            </LinearLayout>
+
+
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/listitem_jl_lottery_img_8"

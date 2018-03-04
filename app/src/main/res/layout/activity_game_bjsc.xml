@@ -25,8 +25,8 @@
             android:padding="@dimen/space_5">
 
             <ImageView
-                android:layout_width="@dimen/game_head_size"
                 android:id="@+id/act_game_bjsc_img_head"
+                android:layout_width="@dimen/game_head_size"
                 android:layout_height="@dimen/game_head_size"
                 android:src="@drawable/bg_3" />
 
@@ -34,6 +34,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_2"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -84,6 +86,7 @@
                         android:textSize="@dimen/text_size_11" />
 
                     <Button
+                        android:id="@+id/act_game_bjsc_btn_refresh_animetion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/space_3"
@@ -307,8 +310,8 @@
                 android:background="@drawable/icon_bord_black" />
 
             <EditText
-                android:layout_width="wrap_content"
                 android:id="@+id/act_game_bjsc_edt_content"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/space_10"
@@ -344,9 +347,9 @@
                     android:background="@color/orange_4" />-->
 
                 <TextView
+                    android:id="@+id/act_game_bjsc_btn_gamble"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/act_game_bjsc_btn_gamble"
                     android:padding="@dimen/space_10"
                     android:text="@string/game_text_19"
                     android:textColor="@drawable/click_text_color_white"

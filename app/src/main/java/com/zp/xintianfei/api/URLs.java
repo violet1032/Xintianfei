@@ -55,6 +55,12 @@ public class URLs {
     public final static String getAnimateUrl = APP_STORE_HOST + "getAnimateUrl"; // 获取动画路径
     public final static String getChatMsgs = APP_STORE_HOST + "getChatMsgs"; // 获取聊天记录
     public final static String gameBet = APP_STORE_HOST + "gameBet"; // 下注
+    public final static String getRecordToday = APP_STORE_HOST + "getRecordToday"; // 获取今天彩种记录
+    public final static String getRecordYesterday = APP_STORE_HOST + "getRecordYesterday"; // 获取昨天彩种记录
+    public final static String getRecordBeforeYesterday = APP_STORE_HOST + "getRecordBeforeYesterday"; // 获取前天彩种记录
+    public final static String getRecordAll = APP_STORE_HOST + "getRecordAll"; // 获取所有彩种记录
+    public final static String withdraw = APP_STORE_HOST + "withdraw"; // 撤单
+    public final static String getTrendsURL = APP_STORE_HOST + "getTrendsURL"; // 获取走势图页面地址
 
 
     //-----部分暂未发出来的接口-----

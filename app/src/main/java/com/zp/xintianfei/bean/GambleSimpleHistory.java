@@ -8,16 +8,16 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * <p/>
+ * <p>
  * 描述:
- * <p/>
+ * <p>
  * 作者:Administrator
- * <p/>
+ * <p>
  * 时间:2018/2/3 12:47
- * <p/>
+ * <p>
  * 版本:
  */
-public class GambleHistory implements Serializable {
+public class GambleSimpleHistory implements Serializable {
 
     private int id;
     private String stage;
@@ -39,7 +39,7 @@ public class GambleHistory implements Serializable {
     private String strResult;
     private String strStatus;
 
-    public GambleHistory parse(String str) throws JSONException {
+    public GambleSimpleHistory parse(String str) throws JSONException {
         JsonUtils jsonUtils = new JsonUtils(str);
         setId(jsonUtils.getInt("id"));
         setStage(jsonUtils.getString("stage"));

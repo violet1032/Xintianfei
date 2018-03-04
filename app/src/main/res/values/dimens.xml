@@ -13,6 +13,9 @@
     <dimen name="game_number_box_width">32dp</dimen>
     <dimen name="game_add_size">10dp</dimen>
 
+    <dimen name="lhc_row_height">27dp</dimen>
+    <dimen name="lhc_row_edit_width">60dp</dimen>
+
     <!-- 标题栏高度 -->
     <dimen name="banner_height">42dp</dimen>
 

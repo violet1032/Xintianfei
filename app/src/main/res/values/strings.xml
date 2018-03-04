@@ -138,6 +138,7 @@
     <string name="game_text_31">点数</string>
     <string name="game_text_32">结果</string>
     <string name="game_text_33">操作</string>
+    <string name="game_text_34">撤单</string>
     <string name="title_activity_game_xglhc">GameXGLHCActivity</string>
 
     <string name="game_xglhc_text_1">香港六合彩</string>
@@ -332,5 +333,21 @@
     <string name="version_text_3">更新内容：</string>
     <string name="version_text_4">前往更新</string>
     <string name="version_text_5">退出</string>
+
+    <string name="xglhc_text_1">投注记录</string>
+    <string name="xglhc_text_2">投注规则</string>
+    <string name="xglhc_text_3">历史开奖</string>
+    <string name="xglhc_text_4">快捷金额：</string>
+    <string name="xglhc_text_5">清空</string>
+    <string name="xglhc_text_6">特码（01-24）</string>
+    <string name="xglhc_text_7">特码（25-49）</string>
+    <string name="xglhc_text_8">号码</string>
+    <string name="xglhc_text_9">生肖</string>
+    <string name="xglhc_text_10">赔率</string>
+    <string name="xglhc_text_11">金额</string>
+    <string name="xglhc_text_12">波色</string>
+    <string name="xglhc_text_13">红波</string>
+    <string name="xglhc_text_14">绿波</string>
+    <string name="xglhc_text_15">蓝波</string>
 
 </resources>
