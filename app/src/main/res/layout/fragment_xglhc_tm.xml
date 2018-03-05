@@ -48,7 +48,8 @@
                 android:id="@+id/fg_xglhc_tm_lay_2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:scrollbars="none">
+                android:scrollbars="none"
+                android:visibility="visible">
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -239,7 +240,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_13"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -309,7 +310,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_02"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -366,7 +367,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_14"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -436,7 +437,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_03"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -493,7 +494,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_15"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -563,7 +564,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_04"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -620,7 +621,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_16"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -690,7 +691,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_05"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -747,7 +748,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_17"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -874,7 +875,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_18"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -944,7 +945,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_06"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1001,7 +1002,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_19"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1071,7 +1072,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_07"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1128,7 +1129,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_20"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1198,7 +1199,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_08"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1255,7 +1256,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_21"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1325,7 +1326,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_09"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1382,7 +1383,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_22"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1452,7 +1453,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_10"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1509,7 +1510,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_23"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1579,7 +1580,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_12"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1636,7 +1637,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_24"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1827,7 +1828,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_25"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1884,7 +1885,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_37"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -1954,7 +1955,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_26"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2011,7 +2012,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_38"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2081,7 +2082,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_27"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2138,7 +2139,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_39"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2208,7 +2209,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_28"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2265,7 +2266,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_40"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2335,7 +2336,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_29"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2392,7 +2393,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_41"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2462,7 +2463,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_30"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2519,7 +2520,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_42"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2589,7 +2590,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_31"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2646,7 +2647,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_43"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2716,7 +2717,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_32"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2773,7 +2774,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_44"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2843,7 +2844,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_33"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2900,7 +2901,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_45"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -2970,7 +2971,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_34"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -3027,7 +3028,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_46"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -3097,7 +3098,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_35"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -3154,7 +3155,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_47"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -3224,7 +3225,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_36"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -3281,7 +3282,7 @@
                             android:background="@color/gray_3"
                             android:gravity="center"
                             android:padding="@dimen/space_5"
-                            android:src="@drawable/number_01"
+                            android:src="@drawable/number_48"
                             android:text="@string/xglhc_text_8" />
 
                         <TextView
@@ -3292,6 +3293,124 @@
                             android:gravity="center"
                             android:padding="@dimen/space_5"
                             android:text="@string/game_xglhc_text_15"
+                            android:textSize="@dimen/text_size_13" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:text="@string/text_default"
+                            android:textSize="@dimen/text_size_13" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textSize="@dimen/text_size_13">
+
+                            <EditText
+                                android:layout_width="@dimen/lhc_row_edit_width"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/shape_rounded_h_white"
+                                android:padding="@dimen/space_3"
+                                android:textSize="@dimen/text_size_13" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="3dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_size_13" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/lhc_row_height"
+                        android:layout_marginTop="1px">
+
+                        <TextView
+                            android:layout_width="3dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_size_13" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:text="@string/xglhc_text_8" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textSize="@dimen/text_size_13" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textSize="@dimen/text_size_13" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:textSize="@dimen/text_size_13">
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="3dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_size_13" />
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:src="@drawable/number_49"
+                            android:text="@string/xglhc_text_8" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="1px"
+                            android:background="@color/gray_3"
+                            android:gravity="center"
+                            android:padding="@dimen/space_5"
+                            android:text="@string/game_xglhc_text_14"
                             android:textSize="@dimen/text_size_13" />
 
                         <TextView

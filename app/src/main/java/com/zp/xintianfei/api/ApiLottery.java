@@ -204,4 +204,12 @@ public class ApiLottery {
         String url = URLs.getTrendsURL;
         AppContext.http.get(url, params, callBack, false, false);
     }
+    public static void getGameLastInfo(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getGameLastInfo;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
 }

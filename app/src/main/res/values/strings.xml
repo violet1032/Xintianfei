@@ -349,5 +349,22 @@
     <string name="xglhc_text_13">红波</string>
     <string name="xglhc_text_14">绿波</string>
     <string name="xglhc_text_15">蓝波</string>
+    <string name="xglhc_text_16">正1特</string>
+    <string name="xglhc_text_17">正2特</string>
+    <string name="xglhc_text_18">正3特</string>
+    <string name="xglhc_text_19">正4特</string>
+    <string name="xglhc_text_20">正5特</string>
+    <string name="xglhc_text_21">正6特</string>
+    <string name="xglhc_text_22">0尾</string>
+    <string name="xglhc_text_23">1尾</string>
+    <string name="xglhc_text_24">2尾</string>
+    <string name="xglhc_text_25">3尾</string>
+    <string name="xglhc_text_26">4尾</string>
+    <string name="xglhc_text_27">5尾</string>
+    <string name="xglhc_text_28">6尾</string>
+    <string name="xglhc_text_29">7尾</string>
+    <string name="xglhc_text_30">8尾</string>
+    <string name="xglhc_text_31">9尾</string>
+    <string name="xglhc_text_32">二连肖</string>
 
 </resources>
