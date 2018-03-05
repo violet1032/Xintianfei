@@ -60,12 +60,12 @@ public class XGLHCSXLFragment extends BaseFragment {
 
     private void setPosition(int curr) {
         if (last >= 0) {
-            lays[last].setBackgroundResource(R.drawable.shape_round_stroke_h_transparent_gray);
+            ((LinearLayout)lays[last].getParent()).setBackgroundResource(R.drawable.shape_round_stroke_h_transparent_gray);
             ((ImageView) (lays[last].getChildAt(0))).setImageResource(R.drawable.point_gray);
             ((TextView) (lays[last].getChildAt(1))).setTextColor(getResources().getColor(R.color.gray));
         }
 
-        lays[curr].setBackgroundResource(R.drawable.shape_round_stroke_h_transparent_orange_2);
+        ((LinearLayout)lays[curr].getParent()).setBackgroundResource(R.drawable.shape_round_stroke_h_transparent_orange_2);
         ((ImageView) (lays[curr].getChildAt(0))).setImageResource(R.drawable.point_yellow);
         ((TextView) (lays[curr].getChildAt(1))).setTextColor(getResources().getColor(R.color.orange_2));
 

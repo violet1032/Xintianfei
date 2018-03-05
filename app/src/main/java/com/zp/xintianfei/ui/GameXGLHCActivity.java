@@ -22,6 +22,7 @@ import com.zp.xintianfei.ui.fragment.XGLHCTMSXFragment;
 import com.zp.xintianfei.ui.fragment.XGLHCWSFragment;
 import com.zp.xintianfei.ui.fragment.XGLHCZTMFragment;
 import com.zp.xintianfei.utils.JsonUtils;
+import com.zp.xintianfei.utils.LogUtil;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
@@ -77,19 +78,19 @@ public class GameXGLHCActivity extends BaseActivity {
     private ImageView imgNum6;
     @BindView(id = R.id.act_game_xglhc_img_num7)
     private ImageView imgNum7;
-    @BindView(id = R.id.act_game_xglhc_img_num1)
+    @BindView(id = R.id.act_game_xglhc_tv_num1)
     private TextView tvNum1;
-    @BindView(id = R.id.act_game_xglhc_img_num2)
+    @BindView(id = R.id.act_game_xglhc_tv_num2)
     private TextView tvNum2;
-    @BindView(id = R.id.act_game_xglhc_img_num3)
+    @BindView(id = R.id.act_game_xglhc_tv_num3)
     private TextView tvNum3;
-    @BindView(id = R.id.act_game_xglhc_img_num4)
+    @BindView(id = R.id.act_game_xglhc_tv_num4)
     private TextView tvNum4;
-    @BindView(id = R.id.act_game_xglhc_img_num5)
+    @BindView(id = R.id.act_game_xglhc_tv_num5)
     private TextView tvNum5;
-    @BindView(id = R.id.act_game_xglhc_img_num6)
+    @BindView(id = R.id.act_game_xglhc_tv_num6)
     private TextView tvNum6;
-    @BindView(id = R.id.act_game_xglhc_img_num7)
+    @BindView(id = R.id.act_game_xglhc_tv_num7)
     private TextView tvNum7;
 
     private ImageView[] imgs = new ImageView[7];
@@ -206,13 +207,18 @@ public class GameXGLHCActivity extends BaseActivity {
                         String number = jsonUtils.getString("number");
                         tvLastStage.setText(lastStage);
 
-                        if (StringUtils.isEmpty(number)) {
+                        if (!StringUtils.isEmpty(number)) {
                             String[] numbers = number.split(",");
+
+                            LogUtil.logError(GameXGLHCActivity.class,"numbers.length:"+numbers.length);
 
                             for (int i = 0; i < numbers.length; i++) {
                                 int n = Integer.parseInt(numbers[i]);
-                                imgNum1.setImageResource(R.drawable.number_01 + (n - 1));
-                                tvNum1.setText(E_NUMBER.getIndex(n).name);
+                                imgs[i].setImageResource(R.drawable.number_01 + (n - 1));
+                                LogUtil.logError(GameXGLHCActivity.class, "i:" + i);
+                                LogUtil.logError(GameXGLHCActivity.class, "n:" + n);
+                                LogUtil.logError(GameXGLHCActivity.class, "E_NUMBER.getIndex(n).name:" +E_NUMBER.getIndex(n).name);
+                                tvs[i].setText(E_NUMBER.getIndex(n).name);
                             }
                         }
                     } catch (JSONException e) {
