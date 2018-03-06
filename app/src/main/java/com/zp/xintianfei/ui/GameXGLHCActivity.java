@@ -2,7 +2,9 @@ package com.zp.xintianfei.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiLottery;
 import com.zp.xintianfei.api.FHttpCallBack;
+import com.zp.xintianfei.bean.E_LOTTERY_TYPE;
 import com.zp.xintianfei.bean.E_NUMBER;
 import com.zp.xintianfei.bean.GameStatus;
 import com.zp.xintianfei.bean.Result;
@@ -26,9 +29,11 @@ import com.zp.xintianfei.utils.LogUtil;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class GameXGLHCActivity extends BaseActivity {
@@ -53,7 +58,9 @@ public class GameXGLHCActivity extends BaseActivity {
 
     private boolean isRun;
     private boolean isOpen;
-    private String stage;
+    public String stage;
+
+    private Map<Integer, Float> odds = new HashMap<>();
 
     @BindView(id = R.id.act_game_xglhc_tv_stage_2)
     private TextView tvNextStage;
@@ -96,10 +103,21 @@ public class GameXGLHCActivity extends BaseActivity {
     private ImageView[] imgs = new ImageView[7];
     private TextView[] tvs = new TextView[7];
 
-    public static void startActivity(Context context) {
+    @BindView(id=R.id.fg_xglhc_tm_btn_record,click = true)
+    private Button btnRecord;
+    @BindView(id=R.id.fg_xglhc_tm_btn_rule,click = true)
+    private Button btnRule;
+    @BindView(id=R.id.fg_xglhc_tm_btn_result,click = true)
+    private Button btnResult;
+
+    private static Handler handler;
+
+    public static void startActivity(Context context,Handler handler) {
         Intent intent = new Intent();
         intent.setClass(context, GameXGLHCActivity.class);
         context.startActivity(intent);
+
+        GameXGLHCActivity.handler = handler;
     }
 
     @Override
@@ -115,6 +133,8 @@ public class GameXGLHCActivity extends BaseActivity {
         getGameNextInfo();
 
         getGameLastInfo();
+
+        getOdds();
     }
 
     @Override
@@ -152,8 +172,20 @@ public class GameXGLHCActivity extends BaseActivity {
                     finish();
                 else {
                     changeFragment(R.id.act_game_xglhc_content, mainFragment);
+                    type = 0;
                     lay.setVisibility(View.GONE);
                 }
+                break;
+            case R.id.fg_xglhc_tm_btn_record:
+                handler.sendEmptyMessage(8);
+                finish();
+                break;
+            case R.id.fg_xglhc_tm_btn_rule:
+                handler.sendEmptyMessage(3);
+                finish();
+                break;
+            case R.id.fg_xglhc_tm_btn_result:
+                TrendsActivity.startActivity(GameXGLHCActivity.this, E_LOTTERY_TYPE.lhc.value);
                 break;
         }
     }
@@ -210,14 +242,14 @@ public class GameXGLHCActivity extends BaseActivity {
                         if (!StringUtils.isEmpty(number)) {
                             String[] numbers = number.split(",");
 
-                            LogUtil.logError(GameXGLHCActivity.class,"numbers.length:"+numbers.length);
+                            LogUtil.logError(GameXGLHCActivity.class, "numbers.length:" + numbers.length);
 
                             for (int i = 0; i < numbers.length; i++) {
                                 int n = Integer.parseInt(numbers[i]);
                                 imgs[i].setImageResource(R.drawable.number_01 + (n - 1));
                                 LogUtil.logError(GameXGLHCActivity.class, "i:" + i);
                                 LogUtil.logError(GameXGLHCActivity.class, "n:" + n);
-                                LogUtil.logError(GameXGLHCActivity.class, "E_NUMBER.getIndex(n).name:" +E_NUMBER.getIndex(n).name);
+                                LogUtil.logError(GameXGLHCActivity.class, "E_NUMBER.getIndex(n).name:" + E_NUMBER.getIndex(n).name);
                                 tvs[i].setText(E_NUMBER.getIndex(n).name);
                             }
                         }
@@ -333,5 +365,38 @@ public class GameXGLHCActivity extends BaseActivity {
             }
         };
         ApiLottery.getGameNextInfo(cate, callBack);
+    }
+
+    private void getOdds() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils j = new JsonUtils(str);
+                        JSONArray jsonArray = j.getJSONArray("info");
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JsonUtils jsonUtils = new JsonUtils(jsonArray.getString(i));
+                            odds.put(jsonUtils.getInt("id"), (float) jsonUtils.getDouble("rate"));
+                        }
+
+                        xglhctmFragment.setOdds(odds);
+                        xglhctmsxFragment.setOdds(odds);
+                        xglhctmbsFragment.setOdds(odds);
+                        xglhcztmFragment.setOdds(odds);
+                        xglhcwsFragment.setOdds(odds);
+                        xglhcsxlFragment.setOdds(odds);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("赔率数据解析错误");
+                    }
+
+                }
+            }
+        };
+        ApiLottery.getOdds(10, callBack);
     }
 }

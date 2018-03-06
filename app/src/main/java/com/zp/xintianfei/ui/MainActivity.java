@@ -2,6 +2,7 @@ package com.zp.xintianfei.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -78,6 +79,8 @@ public class MainActivity extends BaseActivity {
     private LinearLayout layPerson;
 
     public static int imgUploadType = 0;//0:微信，1：支付宝
+
+    public Handler handler;
 
     public static void startActivity(Context context) {
         Intent intent = new Intent();

@@ -35,9 +35,9 @@
             <ScrollView
                 android:id="@+id/fg_xglhc_tm_lay_2"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@color/gray_3"
-                android:scrollbars="none"
-                android:layout_height="match_parent">
+                android:scrollbars="none">
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -134,6 +134,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_ws_row_1"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height">
 
@@ -177,6 +178,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -224,6 +226,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -239,6 +242,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_ws_row_2"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -284,6 +288,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -331,6 +336,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -346,6 +352,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_ws_row_3"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -392,6 +399,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -440,6 +448,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -455,6 +464,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_ws_row_4"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -500,6 +510,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -547,6 +558,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -562,9 +574,10 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_ws_row_5"
                         android:layout_width="match_parent"
-                        android:layout_marginBottom="1px"
                         android:layout_height="@dimen/lhc_row_height"
+                        android:layout_marginBottom="1px"
                         android:layout_marginTop="1px">
 
                         <TextView
@@ -608,6 +621,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -655,6 +669,7 @@
                                 android:layout_width="@dimen/lhc_row_edit_width"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -698,16 +713,19 @@
 
             <EditText
                 android:layout_width="wrap_content"
+                android:id="@+id/fg_xglhc_ws_edt_all"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_5"
                 android:layout_weight="6"
                 android:background="@drawable/shape_round_stroke_h_white_black"
+                android:inputType="number"
                 android:padding="@dimen/space_5"
                 android:textSize="@dimen/text_size_13" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/fg_xglhc_ws_btn_gamble"
                 android:layout_marginLeft="@dimen/space_5"
                 android:layout_weight="1"
                 android:background="@drawable/click_btn_round_orange_3"
@@ -719,6 +737,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/fg_xglhc_ws_btn_clear"
                 android:layout_marginLeft="@dimen/space_5"
                 android:layout_weight="1"
                 android:background="@drawable/click_btn_round_h_white"

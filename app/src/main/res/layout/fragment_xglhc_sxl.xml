@@ -80,7 +80,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/space_2"
-                            android:text="@string/xglhc_text_32"
+                            android:text="@string/xglhc_text_33"
                             android:textColor="@color/gray"
                             android:textSize="@dimen/text_size_12" />
                     </LinearLayout>
@@ -113,7 +113,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/space_2"
-                            android:text="@string/xglhc_text_32"
+                            android:text="@string/xglhc_text_34"
                             android:textColor="@color/gray"
                             android:textSize="@dimen/text_size_12" />
                     </LinearLayout>
@@ -146,7 +146,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="@dimen/space_2"
-                            android:text="@string/xglhc_text_32"
+                            android:text="@string/xglhc_text_35"
                             android:textColor="@color/gray"
                             android:textSize="@dimen/text_size_12" />
                     </LinearLayout>
@@ -275,6 +275,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_sxl_row_1"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height">
 
@@ -314,12 +315,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -361,12 +360,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -380,6 +377,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_sxl_row_2"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -421,12 +419,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -468,12 +464,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -487,6 +481,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_sxl_row_3"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -529,12 +524,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -577,12 +570,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -596,6 +587,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_sxl_row_4"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -637,12 +629,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -684,12 +674,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -703,6 +691,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_sxl_row_5"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -744,12 +733,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -791,12 +778,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -810,6 +795,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_sxl_row_6"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginBottom="1px"
@@ -853,12 +839,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -900,12 +884,10 @@
                             android:padding="@dimen/space_5"
                             android:textSize="@dimen/text_size_13">
 
-                            <EditText
-                                android:layout_width="@dimen/lhc_row_edit_width"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/shape_rounded_h_white"
-                                android:padding="@dimen/space_3"
-                                android:textSize="@dimen/text_size_13" />
+                            <CheckBox
+                                style="@style/MyCheckboxStyle"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp" />
 
                         </LinearLayout>
 
@@ -948,8 +930,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_5"
+                android:id="@+id/fg_xglhc_sxl_edt_all"
                 android:layout_weight="6"
                 android:background="@drawable/shape_round_stroke_h_white_black"
+                android:inputType="number"
                 android:padding="@dimen/space_5"
                 android:textSize="@dimen/text_size_13" />
 
@@ -957,6 +941,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_5"
+                android:id="@+id/fg_xglhc_sxl_btn_gamble"
                 android:layout_weight="1"
                 android:background="@drawable/click_btn_round_orange_3"
                 android:padding="@dimen/space_5"
@@ -967,6 +952,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/fg_xglhc_sxl_btn_clear"
                 android:layout_marginLeft="@dimen/space_5"
                 android:layout_weight="1"
                 android:background="@drawable/click_btn_round_h_white"

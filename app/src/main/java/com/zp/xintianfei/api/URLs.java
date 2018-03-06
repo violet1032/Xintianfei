@@ -62,6 +62,8 @@ public class URLs {
     public final static String withdraw = APP_STORE_HOST + "withdraw"; // 撤单
     public final static String getTrendsURL = APP_STORE_HOST + "getTrendsURL"; // 获取走势图页面地址
     public final static String getGameLastInfo = APP_STORE_HOST + "getGameLastInfo"; // 获取最后一期信息
+    public final static String getOdds = APP_STORE_HOST + "getOdds"; // 获取赔率
+    public final static String gameBetSix = APP_STORE_HOST + "gameBetSix"; // 六合彩下注
 
 
     //-----部分暂未发出来的接口-----

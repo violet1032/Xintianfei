@@ -2,6 +2,8 @@ package com.zp.xintianfei.api;
 
 import com.zp.xintianfei.AppContext;
 
+import java.math.BigDecimal;
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -210,6 +212,27 @@ public class ApiLottery {
         params.put("cate", cate);
         // 地址
         String url = URLs.getGameLastInfo;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void getOdds(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.getOdds;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
+    public static void gameBetSix(int cate,String stage,int type,BigDecimal money,String number,int wei, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate", cate);
+        params.put("stage", stage);
+        params.put("type", type);
+        params.put("money", money);
+        params.put("number", URLEncoder.encode(number));
+        params.put("wei", wei);
+        // 地址
+        String url = URLs.gameBetSix;
         AppContext.http.get(url, params, callBack, false, false);
     }
 }

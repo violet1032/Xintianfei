@@ -81,6 +81,9 @@
             android:name=".ui.dialog.VersionUpdateDialog"
             android:theme="@style/CustomDialog" />
         <activity
+            android:name=".ui.dialog.GambleCompleteDialog"
+            android:theme="@style/CustomDialog" />
+        <activity
             android:name=".ui.dialog.LotterySelectDialog"
             android:theme="@style/CustomDialog" />
         <activity

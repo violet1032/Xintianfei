@@ -366,5 +366,13 @@
     <string name="xglhc_text_30">8尾</string>
     <string name="xglhc_text_31">9尾</string>
     <string name="xglhc_text_32">二连肖</string>
+    <string name="xglhc_text_33">三连肖</string>
+    <string name="xglhc_text_34">四连肖</string>
+    <string name="xglhc_text_35">五连肖</string>
+
+    <string name="gamble_complete_text_1">确认投注</string>
+    <string name="gamble_complete_text_2">已选择投注项：</string>
+    <string name="gamble_complete_text_3">总金额</string>
+    <string name="gamble_complete_text_4">是否确认下注</string>
 
 </resources>

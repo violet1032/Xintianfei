@@ -97,6 +97,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_tmbs_row_1"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height">
 
@@ -152,6 +153,7 @@
                                 android:layout_marginLeft="@dimen/space_60"
                                 android:layout_marginRight="@dimen/space_60"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -168,6 +170,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_tmbs_row_2"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginTop="1px">
@@ -224,6 +227,7 @@
                                 android:layout_marginLeft="@dimen/space_60"
                                 android:layout_marginRight="@dimen/space_60"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -240,6 +244,7 @@
                     </TableRow>
 
                     <TableRow
+                        android:id="@+id/fg_xglhc_tmbs_row_3"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/lhc_row_height"
                         android:layout_marginBottom="1px"
@@ -297,6 +302,7 @@
                                 android:layout_marginLeft="@dimen/space_60"
                                 android:layout_marginRight="@dimen/space_60"
                                 android:background="@drawable/shape_rounded_h_white"
+                                android:inputType="number"
                                 android:padding="@dimen/space_3"
                                 android:textSize="@dimen/text_size_13" />
 
@@ -340,15 +346,18 @@
                 android:textSize="@dimen/text_size_13" />
 
             <EditText
+                android:id="@+id/fg_xglhc_tmbs_edt_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_5"
                 android:layout_weight="6"
                 android:background="@drawable/shape_round_stroke_h_white_black"
+                android:inputType="number"
                 android:padding="@dimen/space_5"
                 android:textSize="@dimen/text_size_13" />
 
             <Button
+                android:id="@+id/fg_xglhc_tmbs_btn_gamble"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_5"
@@ -360,6 +369,7 @@
                 android:textSize="@dimen/text_size_13" />
 
             <Button
+                android:id="@+id/fg_xglhc_tmbs_btn_clear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/space_5"
