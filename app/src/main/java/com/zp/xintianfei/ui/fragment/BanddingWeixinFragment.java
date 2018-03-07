@@ -139,6 +139,10 @@ public class BanddingWeixinFragment extends BaseFragment {
                 break;
             case R.id.fg_bandding_weixin_btn_scan:
                 // 浏览
+                if (imgQrcode.getVisibility() == View.VISIBLE) {
+                    UIHelper.ToastMessage("已上传图片");
+                    break;
+                }
 
                 if(!AppContext.appContext.isGrantExternalRW(getActivity())){
                     break;
@@ -181,7 +185,8 @@ public class BanddingWeixinFragment extends BaseFragment {
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
                     UIHelper.ToastMessage("绑定成功");
-                    ((MainActivity) getActivity()).setPosition(1);
+                    getMemberWeiXin();
+//                    ((MainActivity) getActivity()).setPosition(1);
                 } else {
                     UIHelper.ToastMessage(result.getMsg());
                 }

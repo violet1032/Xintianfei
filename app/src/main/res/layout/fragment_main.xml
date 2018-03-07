@@ -4,21 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include
-        android:id="@+id/fg_main_banner"
-        layout="@layout/common_banner" />
+
+    <LinearLayout
+        android:id="@+id/fg_main_lay_11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <com.zp.xintianfei.widget.MarqueeTextView
+            android:id="@+id/fg_main_tv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/space_5"
+            android:background="@drawable/bg_top"
+            android:ellipsize="marquee"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="@dimen/space_5"
+            android:singleLine="true"
+            android:textColor="@color/orange_2" />
+    </LinearLayout>
+
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fg_main_banner"
+        android:layout_below="@+id/fg_main_lay_11"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_pic_1" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fg_main_banner"
+        android:layout_below="@+id/fg_main_lay_11"
         android:orientation="vertical">
 
         <LinearLayout

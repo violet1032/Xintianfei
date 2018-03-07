@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.zp.xintianfei.R;
@@ -38,10 +39,17 @@ import java.util.Map;
 
 public class GameXGLHCActivity extends BaseActivity {
 
+    @BindView(id=R.id.act_game_xglhc_title)
+    private RelativeLayout layTitle;
     @BindView(id = R.id.umeng_banner_title)
     private TextView title;
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
+
+    @BindView(id=R.id.act_main_lay_2)
+    private LinearLayout layBottom1;
+    @BindView(id=R.id.act_main_lay_main)
+    private LinearLayout layBottom2;
 
     @BindView(id = R.id.act_game_xglhc_lay)
     private LinearLayout lay;
@@ -112,6 +120,17 @@ public class GameXGLHCActivity extends BaseActivity {
 
     private static Handler handler;
 
+    @BindView(id = R.id.act_main_lay_recharge, click = true)
+    private LinearLayout layRecharge;
+    @BindView(id = R.id.act_main_lay_withdraw, click = true)
+    private LinearLayout layWithdraw;
+    @BindView(id = R.id.act_main_lay_main, click = true)
+    private LinearLayout layMain;
+    @BindView(id = R.id.act_main_lay_rule, click = true)
+    private LinearLayout layRule;
+    @BindView(id = R.id.act_main_lay_person, click = true)
+    private LinearLayout layPerson;
+
     public static void startActivity(Context context,Handler handler) {
         Intent intent = new Intent();
         intent.setClass(context, GameXGLHCActivity.class);
@@ -174,6 +193,9 @@ public class GameXGLHCActivity extends BaseActivity {
                     changeFragment(R.id.act_game_xglhc_content, mainFragment);
                     type = 0;
                     lay.setVisibility(View.GONE);
+                    layTitle.setVisibility(View.GONE);
+                    layBottom1.setVisibility(View.VISIBLE);
+                    layBottom2.setVisibility(View.VISIBLE);
                 }
                 break;
             case R.id.fg_xglhc_tm_btn_record:
@@ -187,12 +209,40 @@ public class GameXGLHCActivity extends BaseActivity {
             case R.id.fg_xglhc_tm_btn_result:
                 TrendsActivity.startActivity(GameXGLHCActivity.this, E_LOTTERY_TYPE.lhc.value);
                 break;
+            case R.id.act_main_lay_recharge:
+                // 充值
+                GameXGLHCActivity.handler.sendEmptyMessage(40);
+                finish();
+                break;
+            case R.id.act_main_lay_withdraw:
+                // 提现
+                GameXGLHCActivity.handler.sendEmptyMessage(41);
+                finish();
+                break;
+            case R.id.act_main_lay_main:
+                // 大厅
+                GameXGLHCActivity.handler.sendEmptyMessage(42);
+                finish();
+                break;
+            case R.id.act_main_lay_rule:
+                // 规则
+                GameXGLHCActivity.handler.sendEmptyMessage(43);
+                finish();
+                break;
+            case R.id.act_main_lay_person:
+                // 个人中心
+                GameXGLHCActivity.handler.sendEmptyMessage(44);
+                finish();
+                break;
         }
     }
 
     public void setType(int type) {
         this.type = type;
+        layTitle.setVisibility(View.VISIBLE);
         lay.setVisibility(View.VISIBLE);
+        layBottom1.setVisibility(View.GONE);
+        layBottom2.setVisibility(View.GONE);
         switch (type) {
             case 1:
                 // 特码

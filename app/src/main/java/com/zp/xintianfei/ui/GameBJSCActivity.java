@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.zp.xintianfei.AppContext;
@@ -46,11 +48,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameBJSCActivity extends BaseActivity {
-    @BindView(id = R.id.umeng_banner_title)
-    private TextView title;
-    @BindView(id = R.id.umeng_banner_img_left, click = true)
-    private ImageView imgBack;
-
     @BindView(id = R.id.act_game_bjsc_btn_cz, click = true)
     private Button btnCZ;
     @BindView(id = R.id.act_game_bjsc_btn_jc, click = true)
@@ -80,8 +77,17 @@ public class GameBJSCActivity extends BaseActivity {
     private Button btnWindow;
     @BindView(id = R.id.act_game_bjsc_btn_online, click = true)
     private Button btnOnline;
-    @BindView(id = R.id.act_game_bjsc_btn_refresh_animetion, click = true)
-    private Button btnRefresh;
+    @BindView(id = R.id.act_game_bjsc_btn_keyboard, click = true)
+    private Button btnKeyboard;
+
+    @BindView(id = R.id.act_game_bjsc_lay_keyboard_jsks)
+    private LinearLayout layKeyboardJSKS;
+    @BindView(id = R.id.act_game_bjsc_lay_keyboard_pcdd)
+    private LinearLayout layKeyboardPCDD;
+    @BindView(id = R.id.act_game_bjsc_lay_keyboard_qqlfc)
+    private LinearLayout layKeyboardQQLFC;
+    @BindView(id = R.id.act_game_bjsc_lay_keyboard_bjsc)
+    private LinearLayout layKeyboardBJSC;
 
 //    @BindView(id = R.id.act_game_bjsc_btn_quick, click = true)
 //    private TextView tvQuick;
@@ -130,6 +136,10 @@ public class GameBJSCActivity extends BaseActivity {
     private boolean isRun;
     private boolean isOpen;
 
+    private boolean isTrends = false;
+    private boolean smallWindow = false;
+    private String trendsUrl;
+
     public static void startActivity(Activity context, int cate) {
         Intent intent = new Intent();
         intent.setClass(context, GameBJSCActivity.class);
@@ -171,8 +181,6 @@ public class GameBJSCActivity extends BaseActivity {
         gameJLFragment.setCate(cate);
         gameGZFragment.setCate(cate);
 
-        title.setText(R.string.main_title);
-
         changeFragment(R.id.act_game_bjsc_lay_content, gameBJSCJCFragment);
 
         tvId.setText(AppContext.user.getUid() + "");
@@ -192,9 +200,9 @@ public class GameBJSCActivity extends BaseActivity {
 
         // 获取动画路径,只有qq两分彩和六合彩没有动画
         if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
-            btnWindow.setVisibility(View.GONE);
-            webView.setVisibility(View.GONE);
-            btnRefresh.setVisibility(View.GONE);
+//            btnWindow.setVisibility(View.GONE);
+//            webView.setVisibility(View.GONE);
+            btnZS.setVisibility(View.GONE);
         } else {
             getAnimateUrl();
         }
@@ -237,6 +245,59 @@ public class GameBJSCActivity extends BaseActivity {
 
         // 获取下一期的投注信息
         getNext();
+
+        getTrendsURL();
+
+        // 绑定键盘
+        keyboardOnclick();
+    }
+
+    private void keyboardOnclick() {
+        LinearLayout lay = null;
+        E_LOTTERY_TYPE e_lottery_type = E_LOTTERY_TYPE.getIndex(cate);
+        switch (e_lottery_type) {
+            case bjsc:
+            case xgsm:
+            case xyft:
+                lay = layKeyboardBJSC;
+                break;
+            case cqssc:
+            case qqlfc:
+                lay = layKeyboardQQLFC;
+                break;
+            case lhc:
+                break;
+            case jnd28:
+            case pcdd:
+                lay = layKeyboardPCDD;
+                break;
+            case jsks:
+                lay = layKeyboardJSKS;
+                break;
+        }
+        if (lay != null) {
+            TableRow tableRow11 = lay.findViewById(R.id.keyboard_bjsc_row_1);
+            TableRow tableRow22 = lay.findViewById(R.id.keyboard_bjsc_row_2);
+            TableRow tableRow33 = lay.findViewById(R.id.keyboard_bjsc_row_3);
+            TableRow tableRow44 = lay.findViewById(R.id.keyboard_bjsc_row_4);
+            TableRow tableRow55 = lay.findViewById(R.id.keyboard_bjsc_row_5);
+            for (int i = 0; i < tableRow11.getChildCount(); i++) {
+                tableRow11.getChildAt(i).setOnClickListener(new keyboardOnClick());
+            }
+            for (int i = 0; i < tableRow22.getChildCount(); i++) {
+                tableRow22.getChildAt(i).setOnClickListener(new keyboardOnClick());
+            }
+            for (int i = 0; i < tableRow33.getChildCount(); i++) {
+                tableRow33.getChildAt(i).setOnClickListener(new keyboardOnClick());
+            }
+            for (int i = 0; i < tableRow44.getChildCount(); i++) {
+                tableRow44.getChildAt(i).setOnClickListener(new keyboardOnClick());
+            }
+            if (tableRow55 != null)
+                for (int i = 0; i < tableRow55.getChildCount(); i++) {
+                    tableRow55.getChildAt(i).setOnClickListener(new keyboardOnClick());
+                }
+        }
     }
 
     @Override
@@ -244,9 +305,6 @@ public class GameBJSCActivity extends BaseActivity {
         super.widgetClick(v);
 
         switch (v.getId()) {
-            case R.id.umeng_banner_img_left:
-                finish();
-                break;
             case R.id.act_game_bjsc_btn_cz:
                 // 彩种
 //                changeFragment(R.id.act_game_bjsc_lay_content, gameCZFragment);
@@ -263,7 +321,20 @@ public class GameBJSCActivity extends BaseActivity {
             case R.id.act_game_bjsc_btn_zs:
                 // 走势
 //                changeFragment(R.id.act_game_bjsc_lay_content, gameZSFragment);
-                TrendsActivity.startActivity(this, cate);
+//                TrendsActivity.startActivity(this, cate);
+                if (isTrends) {
+                    isTrends = false;
+                    if (!StringUtils.isEmpty(animateUrl)) {
+                        btnZS.setText("走势");
+                        webView.loadUrl(animateUrl);
+                    }
+                } else {
+                    isTrends = true;
+                    if (!StringUtils.isEmpty(trendsUrl)) {
+                        btnZS.setText("动画");
+                        webView.loadUrl(trendsUrl);
+                    }
+                }
                 break;
             case R.id.act_game_bjsc_btn_gz:
                 // 规则
@@ -272,8 +343,8 @@ public class GameBJSCActivity extends BaseActivity {
             case R.id.act_game_bjsc_btn_sx:
                 // 刷新
                 getAnimateUrl();
-                getChatMsgs();
-                getNext();
+//                getChatMsgs();
+//                getNext();
                 break;
 //            case R.id.act_game_bjsc_btn_quick:
 //                // 快速下注
@@ -300,12 +371,18 @@ public class GameBJSCActivity extends BaseActivity {
                 break;
             case R.id.act_game_bjsc_btn_window:
                 // 隐藏动画
-                if (webView.getVisibility() == View.VISIBLE) {
-                    webView.setVisibility(View.GONE);
-                    btnWindow.setText("大窗");
-                } else if (webView.getVisibility() == View.GONE) {
-                    webView.setVisibility(View.VISIBLE);
+                if (smallWindow) {
+                    smallWindow = false;
+                    ViewGroup.LayoutParams layoutParams = webView.getLayoutParams();
+                    layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.game_flash_height);
+                    webView.setLayoutParams(layoutParams);
                     btnWindow.setText("小窗");
+                } else {
+                    smallWindow = true;
+                    ViewGroup.LayoutParams layoutParams = webView.getLayoutParams();
+                    layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.banner_height);
+                    webView.setLayoutParams(layoutParams);
+                    btnWindow.setText("大窗");
                 }
                 break;
             case R.id.act_game_bjsc_btn_online:
@@ -329,9 +406,41 @@ public class GameBJSCActivity extends BaseActivity {
                 // 下注
                 gamble();
                 break;
-            case R.id.act_game_bjsc_btn_refresh_animetion:
-                // 刷新动画
-                webView.loadUrl(animateUrl);
+            case R.id.act_game_bjsc_btn_keyboard:
+                // 键盘
+                E_LOTTERY_TYPE e_lottery_type = E_LOTTERY_TYPE.getIndex(cate);
+                switch (e_lottery_type) {
+                    case bjsc:
+                    case xgsm:
+                    case xyft:
+                        if (layKeyboardBJSC.getVisibility() == View.GONE)
+                            layKeyboardBJSC.setVisibility(View.VISIBLE);
+                        else
+                            layKeyboardBJSC.setVisibility(View.GONE);
+                        break;
+                    case cqssc:
+                    case qqlfc:
+                        if (layKeyboardQQLFC.getVisibility() == View.GONE)
+                            layKeyboardQQLFC.setVisibility(View.VISIBLE);
+                        else
+                            layKeyboardQQLFC.setVisibility(View.GONE);
+                        break;
+                    case lhc:
+                        break;
+                    case jnd28:
+                    case pcdd:
+                        if (layKeyboardPCDD.getVisibility() == View.GONE)
+                            layKeyboardPCDD.setVisibility(View.VISIBLE);
+                        else
+                            layKeyboardPCDD.setVisibility(View.GONE);
+                        break;
+                    case jsks:
+                        if (layKeyboardJSKS.getVisibility() == View.GONE)
+                            layKeyboardJSKS.setVisibility(View.VISIBLE);
+                        else
+                            layKeyboardJSKS.setVisibility(View.GONE);
+                        break;
+                }
                 break;
         }
     }
@@ -513,4 +622,85 @@ public class GameBJSCActivity extends BaseActivity {
         ApiLottery.getGameNextInfo(cate, callBack);
     }
 
+    private void getTrendsURL() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils jsonUtils = new JsonUtils(str);
+                        trendsUrl = jsonUtils.getString("info");
+
+                        if (cate == E_LOTTERY_TYPE.qqlfc.value)
+                            webView.loadUrl(trendsUrl);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("数据解析错误");
+                    }
+                } else
+                    UIHelper.ToastMessage(result.getMsg());
+            }
+        };
+        ApiLottery.getTrendsURL(cate, callBack);
+    }
+
+    private class keyboardOnClick implements View.OnClickListener {
+
+        @Override
+        public void onClick(View view) {
+            TextView textView = (TextView) view;
+            String str = textView.getText().toString().trim();
+            if (!StringUtils.isEmpty(str)) {
+                if (str.equals("清")) {
+                    edtContent.setText("");
+                } else if (str.equals("关闭")) {
+                    E_LOTTERY_TYPE e_lottery_type = E_LOTTERY_TYPE.getIndex(cate);
+                    switch (e_lottery_type) {
+                        case bjsc:
+                        case xgsm:
+                        case xyft:
+                            if (layKeyboardBJSC.getVisibility() == View.GONE)
+                                layKeyboardBJSC.setVisibility(View.VISIBLE);
+                            else
+                                layKeyboardBJSC.setVisibility(View.GONE);
+                            break;
+                        case cqssc:
+                        case qqlfc:
+                            if (layKeyboardQQLFC.getVisibility() == View.GONE)
+                                layKeyboardQQLFC.setVisibility(View.VISIBLE);
+                            else
+                                layKeyboardQQLFC.setVisibility(View.GONE);
+                            break;
+                        case lhc:
+                            break;
+                        case jnd28:
+                        case pcdd:
+                            if (layKeyboardPCDD.getVisibility() == View.GONE)
+                                layKeyboardPCDD.setVisibility(View.VISIBLE);
+                            else
+                                layKeyboardPCDD.setVisibility(View.GONE);
+                            break;
+                        case jsks:
+                            if (layKeyboardJSKS.getVisibility() == View.GONE)
+                                layKeyboardJSKS.setVisibility(View.VISIBLE);
+                            else
+                                layKeyboardJSKS.setVisibility(View.GONE);
+                            break;
+                    }
+                } else if (str.equals("发送")) {
+                    gamble();
+                } else if (str.equals("←")) {
+                    String s = edtContent.getText().toString();
+                    if (s.length() > 0) {
+                        edtContent.setText(s.substring(0, s.length() - 1));
+                    }
+                } else {
+                    edtContent.setText(edtContent.getText() + str);
+                }
+            }
+        }
+    }
 }

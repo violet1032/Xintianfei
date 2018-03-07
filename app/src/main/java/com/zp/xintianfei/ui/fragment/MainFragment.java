@@ -14,6 +14,7 @@ import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
 import com.zp.xintianfei.api.ApiLottery;
+import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.E_LOTTERY_TYPE;
 import com.zp.xintianfei.bean.GameStatus;
@@ -24,6 +25,8 @@ import com.zp.xintianfei.ui.GameXGLHCActivity;
 import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 import com.zp.xintianfei.utils.StringUtils;
+import com.zp.xintianfei.utils.UIHelper;
+import com.zp.xintianfei.widget.MarqueeTextView;
 
 import org.kymjs.kjframe.ui.BindView;
 
@@ -35,11 +38,6 @@ import java.util.TimerTask;
  * Created by Administrator on 2018/1/30 0030.
  */
 public class MainFragment extends BaseFragment {
-
-    @BindView(id = R.id.umeng_banner_title)
-    private TextView title;
-    @BindView(id = R.id.umeng_banner_img_left, click = true)
-    private ImageView imgBack;
 
     @BindView(id = R.id.fg_main_lay_1, click = true)
     private LinearLayout layBJSC;
@@ -79,6 +77,9 @@ public class MainFragment extends BaseFragment {
 
     private GameStatusList gameStatusList;
 
+    @BindView(id = R.id.fg_main_tv_msg)
+    private MarqueeTextView tvNotice;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_main, null);
@@ -88,9 +89,6 @@ public class MainFragment extends BaseFragment {
     @Override
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
-
-        title.setText(R.string.main_title);
-        imgBack.setVisibility(View.INVISIBLE);
 
         tvNickname.setText(AppContext.user.getNickname());
         tvID.setText(AppContext.user.getUid() + "");
@@ -147,7 +145,7 @@ public class MainFragment extends BaseFragment {
                             ((MainActivity) getActivity()).setPosition(8);
                         }
                     };
-                    timer.schedule(timerTask, 500);
+                    timer.schedule(timerTask, 200);
                 } else if (message.what == 3) {
                     Timer timer = new Timer();
                     TimerTask timerTask = new TimerTask() {
@@ -156,13 +154,60 @@ public class MainFragment extends BaseFragment {
                             ((MainActivity) getActivity()).setPosition(3);
                         }
                     };
-                    timer.schedule(timerTask,500);
+                    timer.schedule(timerTask, 200);
+                } else if (message.what == 40) {
+                    Timer timer = new Timer();
+                    TimerTask timerTask = new TimerTask() {
+                        @Override
+                        public void run() {
+                            ((MainActivity) getActivity()).setPosition(0);
+                        }
+                    };
+                    timer.schedule(timerTask, 200);
+                } else if (message.what == 41) {
+                    Timer timer = new Timer();
+                    TimerTask timerTask = new TimerTask() {
+                        @Override
+                        public void run() {
+                            ((MainActivity) getActivity()).setPosition(1);
+                        }
+                    };
+                    timer.schedule(timerTask, 200);
+                } else if (message.what == 42) {
+                    Timer timer = new Timer();
+                    TimerTask timerTask = new TimerTask() {
+                        @Override
+                        public void run() {
+                            ((MainActivity) getActivity()).setPosition(2);
+                        }
+                    };
+                    timer.schedule(timerTask, 200);
+                } else if (message.what == 43) {
+                    Timer timer = new Timer();
+                    TimerTask timerTask = new TimerTask() {
+                        @Override
+                        public void run() {
+                            ((MainActivity) getActivity()).setPosition(3);
+                        }
+                    };
+                    timer.schedule(timerTask, 200);
+                } else if (message.what == 44) {
+                    Timer timer = new Timer();
+                    TimerTask timerTask = new TimerTask() {
+                        @Override
+                        public void run() {
+                            ((MainActivity) getActivity()).setPosition(4);
+                        }
+                    };
+                    timer.schedule(timerTask, 200);
                 }
                 return false;
             }
         });
 
         getGameStatus();
+
+        getNotice();
 
         // 定时刷新余额
         Timer timer1 = new Timer();
@@ -181,40 +226,77 @@ public class MainFragment extends BaseFragment {
 
         switch (v.getId()) {
             case R.id.fg_main_lay_1:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
+                String tv = ((TextView)layBJSC.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
+                }
                 break;
             case R.id.fg_main_lay_2:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
+                tv = ((TextView)layXGSM.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
+                }
                 break;
             case R.id.fg_main_lay_3:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
+                tv = ((TextView)layXYFT.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
+                }
                 break;
             case R.id.fg_main_lay_4:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
+                tv = ((TextView)layCQSSC.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
+                }
                 break;
             case R.id.fg_main_lay_5:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
+                tv = ((TextView)layQQLFC.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
+                }
                 break;
             case R.id.fg_main_lay_6:
-                GameXGLHCActivity.startActivity(getActivity(), handler);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.lhc.value);
+                tv = ((TextView)layXGLHC.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameXGLHCActivity.startActivity(getActivity(), handler);
+                }
+//                GameXGLHCActivity.startActivity(getActivity(), handler);
                 break;
             case R.id.fg_main_lay_7:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
+                tv = ((TextView)layPCDD.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
+                }
                 break;
             case R.id.fg_main_lay_8:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
+                tv = ((TextView)layJND28.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                     GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
+                }
                 break;
             case R.id.fg_main_lay_9:
-                GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
-//                GambleActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
+                tv = ((TextView)layJSKS.getChildAt(1)).getText().toString().trim();
+                if(tv.equals("已关盘")){
+                    UIHelper.ToastMessage("彩种已关盘");
+                }else{
+                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
+                }
                 break;
         }
     }
@@ -346,5 +428,20 @@ public class MainFragment extends BaseFragment {
 
     public void changeSum() {
         tvSum.setText(AppContext.user.getMoney().toString());
+    }
+
+    public void getNotice() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    tvNotice.setText(result.getMsg());
+                }
+            }
+        };
+        ApiUser.getNotice(callBack);
     }
 }

@@ -375,4 +375,44 @@
     <string name="gamble_complete_text_3">总金额</string>
     <string name="gamble_complete_text_4">是否确认下注</string>
 
+    <string name="keyboard_text_1">大</string>
+    <string name="keyboard_text_2">小</string>
+    <string name="keyboard_text_3">单</string>
+    <string name="keyboard_text_4">双</string>
+    <string name="keyboard_text_5">/</string>
+    <string name="keyboard_text_6">和</string>
+    <string name="keyboard_text_7">连</string>
+    <string name="keyboard_text_8">查</string>
+    <string name="keyboard_text_9">回</string>
+    <string name="keyboard_text_10">上</string>
+    <string name="keyboard_text_11">下</string>
+    <string name="keyboard_text_12">分</string>
+    <string name="keyboard_text_13">清</string>
+    <string name="keyboard_text_14">关闭</string>
+    <string name="keyboard_text_15">发送</string>
+    <string name="keyboard_text_16">草</string>
+    <string name="keyboard_text_17">操</string>
+    <string name="keyboard_text_18">点</string>
+    <string name="keyboard_text_19">买</string>
+    <string name="keyboard_text_20">极大</string>
+    <string name="keyboard_text_21">前</string>
+    <string name="keyboard_text_22">中</string>
+    <string name="keyboard_text_23">后</string>
+    <string name="keyboard_text_24">连</string>
+    <string name="keyboard_text_25">极小</string>
+    <string name="keyboard_text_26">豹子</string>
+    <string name="keyboard_text_27">顺子</string>
+    <string name="keyboard_text_28">对子</string>
+    <string name="keyboard_text_29">总</string>
+    <string name="keyboard_text_30">龙</string>
+    <string name="keyboard_text_31">虎</string>
+    <string name="keyboard_text_32">和</string>
+    <string name="keyboard_text_33">杂</string>
+    <string name="keyboard_text_34">豹</string>
+    <string name="keyboard_text_35">顺</string>
+    <string name="keyboard_text_36">对</string>
+    <string name="keyboard_text_37">半</string>
+    <string name="keyboard_text_38">庄</string>
+    <string name="keyboard_text_39">闲</string>
+
 </resources>

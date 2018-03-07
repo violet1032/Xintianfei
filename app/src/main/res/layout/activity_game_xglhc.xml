@@ -9,7 +9,12 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include layout="@layout/common_banner" />
+        <include
+            android:id="@+id/act_game_xglhc_title"
+            layout="@layout/common_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,219 +75,98 @@
                         android:textSize="@dimen/text_size_14" />
                 </LinearLayout>
 
-                <LinearLayout
+                <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_marginLeft="@dimen/space_5">
 
-                    <LinearLayout
+                    <TableRow
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content">
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
+                                android:id="@+id/act_game_xglhc_img_num1"
                                 android:layout_width="@dimen/game_number_size"
                                 android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
-                                android:id="@+id/act_game_xglhc_img_num1"/>
+                                android:layout_centerInParent="true" />
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
+                                android:id="@+id/act_game_xglhc_img_num2"
                                 android:layout_width="@dimen/game_number_size"
                                 android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
-                                android:id="@+id/act_game_xglhc_img_num2"/>
+                                android:layout_centerInParent="true" />
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
-                                android:layout_width="@dimen/game_number_size"
-                                android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
                                 android:id="@+id/act_game_xglhc_img_num3"
-                                 />
+                                android:layout_width="@dimen/game_number_size"
+                                android:layout_height="@dimen/game_number_size"
+                                android:layout_centerInParent="true" />
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
-                                android:layout_width="@dimen/game_number_size"
-                                android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
                                 android:id="@+id/act_game_xglhc_img_num4"
-                                 />
+                                android:layout_width="@dimen/game_number_size"
+                                android:layout_height="@dimen/game_number_size"
+                                android:layout_centerInParent="true" />
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
-                                android:layout_width="@dimen/game_number_size"
-                                android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
                                 android:id="@+id/act_game_xglhc_img_num5"
-                                 />
+                                android:layout_width="@dimen/game_number_size"
+                                android:layout_height="@dimen/game_number_size"
+                                android:layout_centerInParent="true" />
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
-                                android:layout_width="@dimen/game_number_size"
-                                android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
                                 android:id="@+id/act_game_xglhc_img_num6"
-                                 />
-                        </RelativeLayout>
-
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <ImageView
-                                android:layout_width="@dimen/game_add_size"
-                                android:layout_height="@dimen/game_add_size"
-                                android:layout_centerInParent="true"
-                                android:src="@drawable/icon_add" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <ImageView
                                 android:layout_width="@dimen/game_number_size"
                                 android:layout_height="@dimen/game_number_size"
-                                android:layout_centerInParent="true"
-                                android:id="@+id/act_game_xglhc_img_num7"
-                                 />
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:text="@string/text_default"
-                                android:textColor="@color/orange_2"
-                                android:id="@+id/act_game_xglhc_tv_num1"
-                                android:textSize="@dimen/text_size_15" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:text="@string/text_default"
-                                android:id="@+id/act_game_xglhc_tv_num2"
-                                android:textColor="@color/orange_2"
-                                android:textSize="@dimen/text_size_15" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:text="@string/text_default"
-                                android:id="@+id/act_game_xglhc_tv_num3"
-                                android:textColor="@color/orange_2"
-                                android:textSize="@dimen/text_size_15" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:text="@string/text_default"
-                                android:id="@+id/act_game_xglhc_tv_num4"
-                                android:textColor="@color/orange_2"
-                                android:textSize="@dimen/text_size_15" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:text="@string/text_default"
-                                android:textColor="@color/orange_2"
-                                android:id="@+id/act_game_xglhc_tv_num5"
-                                android:textSize="@dimen/text_size_15" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
-                            android:layout_height="@dimen/game_number_box_size"
-                            android:background="@drawable/shape_box_orange_2">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerInParent="true"
-                                android:text="@string/text_default"
-                                android:id="@+id/act_game_xglhc_tv_num6"
-                                android:textColor="@color/orange_2"
-                                android:textSize="@dimen/text_size_15" />
+                                android:layout_centerInParent="true" />
                         </RelativeLayout>
 
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <ImageView
@@ -293,23 +177,150 @@
                         </RelativeLayout>
 
                         <RelativeLayout
-                            android:layout_width="@dimen/game_number_box_width"
+                            android:layout_width="wrap_content"
                             android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <ImageView
+                                android:id="@+id/act_game_xglhc_img_num7"
+                                android:layout_width="@dimen/game_number_size"
+                                android:layout_height="@dimen/game_number_size"
+                                android:layout_centerInParent="true" />
+                        </RelativeLayout>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
                             android:background="@drawable/shape_box_orange_2">
 
                             <TextView
+                                android:id="@+id/act_game_xglhc_tv_num1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:text="@string/text_default"
-                                android:id="@+id/act_game_xglhc_tv_num7"
+                                android:textColor="@color/orange_2"
+                                android:textSize="@dimen/text_size_15" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <TextView
+                                android:id="@+id/act_game_xglhc_tv_num2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/text_default"
+                                android:textColor="@color/orange_2"
+                                android:textSize="@dimen/text_size_15" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <TextView
+                                android:id="@+id/act_game_xglhc_tv_num3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/text_default"
+                                android:textColor="@color/orange_2"
+                                android:textSize="@dimen/text_size_15" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <TextView
+                                android:id="@+id/act_game_xglhc_tv_num4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/text_default"
+                                android:textColor="@color/orange_2"
+                                android:textSize="@dimen/text_size_15" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <TextView
+                                android:id="@+id/act_game_xglhc_tv_num5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/text_default"
+                                android:textColor="@color/orange_2"
+                                android:textSize="@dimen/text_size_15" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <TextView
+                                android:id="@+id/act_game_xglhc_tv_num6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/text_default"
                                 android:textColor="@color/orange_2"
                                 android:textSize="@dimen/text_size_15" />
                         </RelativeLayout>
 
 
-                    </LinearLayout>
-                </LinearLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <ImageView
+                                android:layout_width="@dimen/game_add_size"
+                                android:layout_height="@dimen/game_add_size"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/icon_add" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/game_number_box_size"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_box_orange_2">
+
+                            <TextView
+                                android:id="@+id/act_game_xglhc_tv_num7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/text_default"
+                                android:textColor="@color/orange_2"
+                                android:textSize="@dimen/text_size_15" />
+                        </RelativeLayout>
+                    </TableRow>
+                </TableLayout>
             </LinearLayout>
 
             <ImageView
@@ -443,10 +454,10 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/act_game_xglhc_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_line_2"
-            android:id="@+id/act_game_xglhc_lay"
             android:orientation="horizontal"
             android:padding="@dimen/space_15">
 
@@ -496,10 +507,163 @@
         </LinearLayout>
 
         <FrameLayout
-            android:layout_width="match_parent"
             android:id="@+id/act_game_xglhc_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         </FrameLayout>
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/act_main_lay_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8px"
+            android:layout_above="@+id/act_main_lay_1"
+            android:background="@color/orange_1"
+            android:scaleType="fitXY" />
+
+        <LinearLayout
+            android:id="@+id/act_main_lay_1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_line_2"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_recharge"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_recharge" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="    充值    "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_withdraw"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_withdraw" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="    提现    "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="             "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_rule"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_rule" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="    规则    "
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/act_main_lay_person"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/bottom_icon_size"
+                    android:layout_height="@dimen/bottom_icon_size"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:src="@drawable/icon_person" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_5"
+                    android:text="@string/main_text_4"
+                    android:textColor="@color/text_1" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/act_main_lay_main"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/space_6"
+        android:background="@drawable/bg_tag_main_2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="@dimen/space_15"
+            android:src="@drawable/bg_tag_main" />
+
+        <ImageView
+            android:layout_width="27dp"
+            android:layout_height="20dp"
+            android:src="@drawable/text_dating" />
+    </LinearLayout>
+
+
 </RelativeLayout>

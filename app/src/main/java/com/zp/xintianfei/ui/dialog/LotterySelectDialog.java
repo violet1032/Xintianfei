@@ -9,10 +9,19 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.zp.xintianfei.R;
+import com.zp.xintianfei.api.ApiLottery;
+import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.E_LOTTERY_TYPE;
+import com.zp.xintianfei.bean.GameStatus;
+import com.zp.xintianfei.bean.GameStatusList;
+import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p/>
@@ -72,6 +81,8 @@ public class LotterySelectDialog extends BaseActivity {
     @Override
     public void initWidget() {
         super.initWidget();
+
+        getGameStatus();
     }
 
     @Override
@@ -86,50 +97,117 @@ public class LotterySelectDialog extends BaseActivity {
                 finish();
                 break;
             case R.id.dialog_lottery_select_lay_1:
-                message.arg1 = E_LOTTERY_TYPE.bjsc.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.bjsc.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.bjsc.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.bjsc.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_2:
-                message.arg1 = E_LOTTERY_TYPE.xgsm.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.xgsm.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.xgsm.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.xgsm.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_3:
-                message.arg1 = E_LOTTERY_TYPE.xyft.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.xyft.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.xyft.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.xyft.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_4:
-                message.arg1 = E_LOTTERY_TYPE.cqssc.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.cqssc.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.cqssc.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.cqssc.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_5:
-                message.arg1 = E_LOTTERY_TYPE.qqlfc.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.qqlfc.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.qqlfc.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.qqlfc.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_6:
-                message.arg1 = E_LOTTERY_TYPE.lhc.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.lhc.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.lhc.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.lhc.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_7:
-                message.arg1 = E_LOTTERY_TYPE.pcdd.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.pcdd.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.pcdd.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.pcdd.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_8:
-                message.arg1 = E_LOTTERY_TYPE.jnd28.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.jnd28.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.jnd28.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.jnd28.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
             case R.id.dialog_lottery_select_lay_9:
-                message.arg1 = E_LOTTERY_TYPE.jsks.value;
-                gamehandler.sendMessage(message);
-                finish();
+                if (mapHasnotrun.get(E_LOTTERY_TYPE.bjsc.value) != null && mapHasnotrun.get(E_LOTTERY_TYPE.jsks.value))
+                    UIHelper.ToastMessage("彩种已关盘");
+                else {
+                    message.arg1 = E_LOTTERY_TYPE.jsks.value;
+                    gamehandler.sendMessage(message);
+                    finish();
+                }
                 break;
+        }
+    }
+
+    private GameStatusList gameStatusList;
+
+    private void getGameStatus() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    gameStatusList = new GameStatusList().parse(str);
+                    for (Integer key :
+                            gameStatusList.getMap().keySet()) {
+                        GameStatus gameStatus = gameStatusList.getMap().get(key);
+                        setStatus(gameStatus);
+                    }
+                }
+            }
+        };
+        ApiLottery.getPlazaGameState(callBack);
+    }
+
+    private Map<Integer, Boolean> mapHasnotrun = new HashMap<>();
+
+    private void setStatus(GameStatus gameStatus) {
+        if (!gameStatus.isrun()) {
+            // 已关盘
+            mapHasnotrun.put(gameStatus.getCate(), true);
         }
     }
 }

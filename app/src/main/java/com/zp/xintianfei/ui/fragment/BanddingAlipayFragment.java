@@ -141,8 +141,12 @@ public class BanddingAlipayFragment extends BaseFragment {
                 break;
             case R.id.fg_bandding_alipay_btn_scan:
                 // 浏览
+                if (imgQrcode.getVisibility() == View.VISIBLE) {
+                    UIHelper.ToastMessage("已上传图片");
+                    break;
+                }
 
-                if(!AppContext.appContext.isGrantExternalRW(getActivity())){
+                if (!AppContext.appContext.isGrantExternalRW(getActivity())) {
                     break;
                 }
 
@@ -187,7 +191,8 @@ public class BanddingAlipayFragment extends BaseFragment {
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
                     UIHelper.ToastMessage("绑定成功");
-                    ((MainActivity) getActivity()).setPosition(1);
+                    getMemberAlipay();
+//                    ((MainActivity) getActivity()).setPosition(1);
                 } else {
                     UIHelper.ToastMessage(result.getMsg());
                 }
@@ -238,7 +243,7 @@ public class BanddingAlipayFragment extends BaseFragment {
                             String zfb_account = jsonUtils1.getString("zfb_account");
                             String imgUrl = jsonUtils1.getString("zfb_url");
 
-                            if(!StringUtils.isEmpty(zfb_username)){
+                            if (!StringUtils.isEmpty(zfb_username)) {
                                 btnBadding.setText("更新");
                                 edtNickname.setText(zfb_username);
                                 edtAccount.setText(zfb_account);

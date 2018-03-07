@@ -10,8 +10,6 @@
         android:layout_above="@+id/act_game_bjsc_lay_bottom"
         android:orientation="vertical">
 
-        <include layout="@layout/common_banner" />
-
         <WebView
             android:id="@+id/act_game_bjsc_webview"
             android:layout_width="match_parent"
@@ -85,7 +83,7 @@
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_11" />
 
-                    <Button
+                    <!--<Button
                         android:id="@+id/act_game_bjsc_btn_refresh_animetion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -94,7 +92,7 @@
                         android:padding="@dimen/space_2"
                         android:text="@string/game_text_4"
                         android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_11" />
+                        android:textSize="@dimen/text_size_11" />-->
 
                     <Button
                         android:id="@+id/act_game_bjsc_btn_window"
@@ -288,6 +286,38 @@
         android:layout_height="1px"
         android:layout_above="@+id/act_game_bjsc_lay_bottom"
         android:background="@color/black_3" />
+
+    <include
+        layout="@layout/layout_keyboard_jsks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/act_game_bjsc_lay_keyboard_jsks"
+        android:visibility="gone"
+        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+
+    <include
+        layout="@layout/layout_keyboard_pcdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/act_game_bjsc_lay_keyboard_pcdd"
+        android:visibility="gone"
+        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+
+    <include
+        layout="@layout/layout_keyboard_qqlfc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/act_game_bjsc_lay_keyboard_qqlfc"
+        android:visibility="gone"
+        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+    <include
+        layout="@layout/layout_keyboard_bjsc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/act_game_bjsc_lay_keyboard_bjsc"
+        android:visibility="gone"
+        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+
 
     <RelativeLayout
         android:id="@+id/act_game_bjsc_lay_bottom"

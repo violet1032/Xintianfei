@@ -285,4 +285,13 @@ public class ApiUser {
 
         AppContext.http.get(url, params, callBack);
     }
+
+    public static void getNotice(FHttpCallBack callBack){
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        // 地址
+        String url = URLs.getNotice;
+
+        AppContext.http.get(url, params, callBack);
+    }
 }
