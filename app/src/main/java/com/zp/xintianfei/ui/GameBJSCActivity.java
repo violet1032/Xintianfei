@@ -202,7 +202,7 @@ public class GameBJSCActivity extends BaseActivity {
 //        if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
 //            btnZS.setVisibility(View.GONE);
 //        } else {
-//            getAnimateUrl();
+            getAnimateUrl();
 //        }
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);

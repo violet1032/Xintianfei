@@ -19,12 +19,14 @@ import com.zp.xintianfei.bean.GambleSimpleTodayHistory;
 import com.zp.xintianfei.bean.GambleSimpleTodayHistoryList;
 import com.zp.xintianfei.ui.common.BaseFragment;
 import com.zp.xintianfei.utils.JsonUtils;
+import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 import com.zp.xintianfei.widget.ListviewScroll;
 
 import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -96,9 +98,9 @@ public class GameJLFragment extends BaseFragment {
         calendar.add(Calendar.DAY_OF_MONTH, -1);
         String time1 = sdf.format(calendar.getTime());
 
-        btn1.setText(time1);
+        btn3.setText(time1);
         btn2.setText(time2);
-        btn3.setText(time3);
+        btn1.setText(time3);
 
         btns[0] = btn1;
         btns[1] = btn2;
@@ -112,7 +114,7 @@ public class GameJLFragment extends BaseFragment {
     protected void initData() {
         super.initData();
 
-        getRecord(1);
+        getRecordToday();
     }
 
     @Override
@@ -121,9 +123,9 @@ public class GameJLFragment extends BaseFragment {
 
         switch (v.getId()) {
             case R.id.fg_game_jl_btn_1:
-                // 前天
+                // 今天
                 setPosition(0);
-                getRecord(1);
+                getRecordToday();
                 break;
             case R.id.fg_game_jl_btn_2:
                 // 昨天
@@ -131,9 +133,9 @@ public class GameJLFragment extends BaseFragment {
                 getRecord(0);
                 break;
             case R.id.fg_game_jl_btn_3:
-                // 今天
+                // 前天
                 setPosition(2);
-                getRecordToday();
+                getRecord(1);
                 break;
             case R.id.fg_game_jl_btn_4:
                 // 历史
@@ -171,9 +173,18 @@ public class GameJLFragment extends BaseFragment {
                     String betAmountToday = jsonUtils.getString("betAmountToday");
                     String zjAmountToday = jsonUtils.getString("zjAmountToday");
                     String ykAmountToday = jsonUtils.getString("ykAmountToday");
-                    tvLS.setText(betAmountToday);
-                    tvJS.setText(zjAmountToday);
-                    tvYK.setText(ykAmountToday);
+                    BigDecimal bigDecimal1 = new BigDecimal(0);
+                    BigDecimal bigDecimal2 = new BigDecimal(0);
+                    BigDecimal bigDecimal3 = new BigDecimal(0);
+                    if(!StringUtils.isEmpty(betAmountToday))
+                        bigDecimal1 = new BigDecimal(betAmountToday).divide(new BigDecimal(100));
+                    if(!StringUtils.isEmpty(zjAmountToday))
+                        bigDecimal2 = new BigDecimal(zjAmountToday).divide(new BigDecimal(100));
+                    if(!StringUtils.isEmpty(ykAmountToday))
+                        bigDecimal3 = new BigDecimal(ykAmountToday).divide(new BigDecimal(100));
+                    tvLS.setText(bigDecimal1.toString());
+                    tvJS.setText(bigDecimal2.toString());
+                    tvYK.setText(bigDecimal3.toString());
 
                     gambleSimpleTodayHistoryList.getList().clear();
 
@@ -234,9 +245,18 @@ public class GameJLFragment extends BaseFragment {
                             ykAmountToday = jsonUtils.getString("ykAmountAll");
                             break;
                     }
-                    tvLS.setText(betAmountToday);
-                    tvJS.setText(zjAmountToday);
-                    tvYK.setText(ykAmountToday);
+                    BigDecimal bigDecimal1 = new BigDecimal(0);
+                    BigDecimal bigDecimal2 = new BigDecimal(0);
+                    BigDecimal bigDecimal3 = new BigDecimal(0);
+                    if(!StringUtils.isEmpty(betAmountToday))
+                        bigDecimal1 = new BigDecimal(betAmountToday).divide(new BigDecimal(100));
+                    if(!StringUtils.isEmpty(zjAmountToday))
+                        bigDecimal2 = new BigDecimal(zjAmountToday).divide(new BigDecimal(100));
+                    if(!StringUtils.isEmpty(ykAmountToday))
+                        bigDecimal3 = new BigDecimal(ykAmountToday).divide(new BigDecimal(100));
+                    tvLS.setText(bigDecimal1.toString());
+                    tvJS.setText(bigDecimal2.toString());
+                    tvYK.setText(bigDecimal3.toString());
 
                     gambleSimpleHistoryList.getList().clear();
 
