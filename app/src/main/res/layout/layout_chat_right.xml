@@ -6,7 +6,7 @@
     android:padding="@dimen/space_5">
 
     <ImageView
-        android:id="@+id/lout_chat_left_img_head"
+        android:id="@+id/lout_chat_right_img_head"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/space_10"
-        android:layout_toLeftOf="@+id/lout_chat_left_img_head"
+        android:layout_toLeftOf="@+id/lout_chat_right_img_head"
         android:gravity="right"
         android:orientation="vertical">
 
@@ -27,7 +27,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/lout_chat_left_tv_time"
+                android:id="@+id/lout_chat_right_tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/space_10"
@@ -35,7 +35,7 @@
                 android:textSize="@dimen/text_size_13" />
 
             <TextView
-                android:id="@+id/lout_chat_left_tv_name"
+                android:id="@+id/lout_chat_right_tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_default"
@@ -43,12 +43,17 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lay_chat_right_lay_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_chat_white"
-            android:padding="@dimen/space_10">
+            android:background="@drawable/bg_chat_yellow_arrow"
+            android:paddingBottom="@dimen/space_4"
+            android:paddingLeft="@dimen/space_14"
+            android:paddingRight="@dimen/space_14"
+            android:paddingTop="@dimen/space_4">
 
             <TextView
+                android:id="@+id/lout_chat_right_tv_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_default"

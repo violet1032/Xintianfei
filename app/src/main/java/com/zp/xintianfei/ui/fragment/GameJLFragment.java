@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.adapter.GambleSimpleAdapter;
 import com.zp.xintianfei.adapter.GambleSimpleTodayAdapter;
@@ -38,12 +37,12 @@ import java.util.Map;
  */
 public class GameJLFragment extends BaseFragment {
 
-    @BindView(id = R.id.fg_game_jl_tv_name)
-    private TextView tvName;
-    @BindView(id = R.id.fg_game_jl_tv_agent)
-    private TextView tvAgent;
-    @BindView(id = R.id.fg_game_jl_tv_id)
-    private TextView tvId;
+//    @BindView(id = R.id.fg_game_jl_tv_name)
+//    private TextView tvName;
+//    @BindView(id = R.id.fg_game_jl_tv_agent)
+//    private TextView tvAgent;
+//    @BindView(id = R.id.fg_game_jl_tv_id)
+//    private TextView tvId;
 
     @BindView(id = R.id.fg_game_jl_btn_1, click = true)
     private Button btn1;
@@ -85,9 +84,9 @@ public class GameJLFragment extends BaseFragment {
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
 
-        tvName.setText(AppContext.user.getNickname());
-        tvAgent.setText(AppContext.user.getTid() + "");
-        tvId.setText(AppContext.user.getUid() + "");
+//        tvName.setText(AppContext.user.getNickname());
+//        tvAgent.setText(AppContext.user.getTid() + "");
+//        tvId.setText(AppContext.user.getUid() + "");
 
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd", Locale.getDefault());

@@ -1,5 +1,7 @@
 package com.zp.xintianfei.ui.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.zp.xintianfei.AppConfig;
 import com.zp.xintianfei.AppContext;
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.api.ApiCommon;
@@ -57,6 +60,13 @@ public class MainFragment extends BaseFragment {
     private LinearLayout layJND28;
     @BindView(id = R.id.fg_main_lay_9, click = true)
     private LinearLayout layJSKS;
+
+    @BindView(id = R.id.fg_main_lay_10, click = true)
+    private LinearLayout layMainReal;
+    @BindView(id = R.id.fg_main_lay_13, click = true)
+    private LinearLayout layMainAdnroid;
+    @BindView(id = R.id.fg_main_lay_12, click = true)
+    private LinearLayout layMainIOS;
 
     @BindView(id = R.id.fg_tx_nickname)
     private TextView tvNickname;
@@ -297,6 +307,30 @@ public class MainFragment extends BaseFragment {
                 }else{
                     GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
                 }
+                break;
+            case R.id.fg_main_lay_10:
+                // 真人娱乐
+                Intent intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                Uri content_url = Uri.parse(AppConfig.getInstance().getGameList(11));
+                intent.setData(content_url);
+                startActivity(intent);
+                break;
+            case R.id.fg_main_lay_13:
+                // 安卓下载
+                intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                content_url = Uri.parse(AppConfig.getInstance().getmPre().getString("android_update_url",""));
+                intent.setData(content_url);
+                startActivity(intent);
+                break;
+            case R.id.fg_main_lay_12:
+                // IOS下载
+                intent = new Intent();
+                intent.setAction("android.intent.action.VIEW");
+                content_url = Uri.parse(AppConfig.getInstance().getmPre().getString("ios_update_url",""));
+                intent.setData(content_url);
+                startActivity(intent);
                 break;
         }
     }

@@ -19,6 +19,9 @@
     <!-- 标题栏高度 -->
     <dimen name="banner_height">42dp</dimen>
 
+    <dimen name="small_window_height_1">40dp</dimen>
+    <dimen name="small_window_height_2">100dp</dimen>
+
     <dimen name="size_16">12sp</dimen>
 
     <dimen name="game_flash_height">240dp</dimen>

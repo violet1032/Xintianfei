@@ -199,13 +199,11 @@ public class GameBJSCActivity extends BaseActivity {
         webSettings.setLoadWithOverviewMode(true);
 
         // 获取动画路径,只有qq两分彩和六合彩没有动画
-        if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
-//            btnWindow.setVisibility(View.GONE);
-//            webView.setVisibility(View.GONE);
-            btnZS.setVisibility(View.GONE);
-        } else {
-            getAnimateUrl();
-        }
+//        if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
+//            btnZS.setVisibility(View.GONE);
+//        } else {
+//            getAnimateUrl();
+//        }
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
 
@@ -324,16 +322,16 @@ public class GameBJSCActivity extends BaseActivity {
 //                TrendsActivity.startActivity(this, cate);
                 if (isTrends) {
                     isTrends = false;
-                    if (!StringUtils.isEmpty(animateUrl)) {
-                        btnZS.setText("走势");
-                        webView.loadUrl(animateUrl);
-                    }
+//                    if (!StringUtils.isEmpty(animateUrl)) {
+                    btnZS.setText("走势");
+                    webView.loadUrl(animateUrl);
+//                    }
                 } else {
                     isTrends = true;
-                    if (!StringUtils.isEmpty(trendsUrl)) {
-                        btnZS.setText("动画");
-                        webView.loadUrl(trendsUrl);
-                    }
+//                    if (!StringUtils.isEmpty(trendsUrl)) {
+                    btnZS.setText("动画");
+                    webView.loadUrl(trendsUrl);
+//                    }
                 }
                 break;
             case R.id.act_game_bjsc_btn_gz:
@@ -374,13 +372,18 @@ public class GameBJSCActivity extends BaseActivity {
                 if (smallWindow) {
                     smallWindow = false;
                     ViewGroup.LayoutParams layoutParams = webView.getLayoutParams();
+                    // 不同的彩种，小窗高度不一样
                     layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.game_flash_height);
                     webView.setLayoutParams(layoutParams);
                     btnWindow.setText("小窗");
                 } else {
                     smallWindow = true;
                     ViewGroup.LayoutParams layoutParams = webView.getLayoutParams();
-                    layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.banner_height);
+                    // 不同的彩种，小窗高度不一样
+                    if (cate == E_LOTTERY_TYPE.bjsc.value || cate == E_LOTTERY_TYPE.xyft.value || cate == E_LOTTERY_TYPE.xgsm.value)
+                        layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.small_window_height_1);
+                    else
+                        layoutParams.height = getResources().getDimensionPixelOffset(R.dimen.small_window_height_2);
                     webView.setLayoutParams(layoutParams);
                     btnWindow.setText("大窗");
                 }
@@ -634,8 +637,8 @@ public class GameBJSCActivity extends BaseActivity {
                         JsonUtils jsonUtils = new JsonUtils(str);
                         trendsUrl = jsonUtils.getString("info");
 
-                        if (cate == E_LOTTERY_TYPE.qqlfc.value)
-                            webView.loadUrl(trendsUrl);
+//                        if (cate == E_LOTTERY_TYPE.qqlfc.value)
+//                            webView.loadUrl(trendsUrl);
                     } catch (JSONException e) {
                         e.printStackTrace();
                         UIHelper.ToastMessage("数据解析错误");

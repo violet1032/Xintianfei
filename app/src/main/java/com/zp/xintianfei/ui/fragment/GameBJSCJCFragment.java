@@ -290,6 +290,25 @@ public class GameBJSCJCFragment extends BaseFragment {
     public void addChatHistory(Chat chat) {
         if (chat.is_admin()) {
             // 管理员，添加右边
+            RelativeLayout relativeLayout = (RelativeLayout) inflater.inflate(R.layout.layout_chat_right, viewGroup, false);
+            ImageView imgHead = relativeLayout.findViewById(R.id.lout_chat_right_img_head);
+            TextView name = relativeLayout.findViewById(R.id.lout_chat_right_tv_name);
+            TextView time = relativeLayout.findViewById(R.id.lout_chat_right_tv_time);
+            TextView content = relativeLayout.findViewById(R.id.lout_chat_right_tv_content);
+            LinearLayout layContent = relativeLayout.findViewById(R.id.lay_chat_right_lay_content);
+
+            if(chat.getKind().equals("tip_fp_before") || chat.getKind().equals("tip_fp") ||chat.getKind().equals("tip_kp"))
+                layContent.setBackgroundResource(R.drawable.bg_chat_yellow_arrow);
+            else
+                layContent.setBackgroundResource(R.drawable.bg_chat_pink_arrow);
+
+            ApiCommon.getNetBitmap(chat.getHead(), imgHead, false);
+            name.setText(chat.getUser_name());
+            time.setText(chat.getTimestr());
+            content.setText(chat.getContent());
+
+            // 加在第一个
+            layChatContent.addView(relativeLayout,0);
         } else {
             // 添加左边
             RelativeLayout relativeLayout = (RelativeLayout) inflater.inflate(R.layout.layout_chat_left, viewGroup, false);
