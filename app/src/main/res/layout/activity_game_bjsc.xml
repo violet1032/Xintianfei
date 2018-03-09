@@ -190,6 +190,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/act_game_bjsc_lay_menu"
                 android:orientation="vertical"
                 android:padding="@dimen/space_5">
 
@@ -288,35 +289,36 @@
         android:background="@color/black_3" />
 
     <include
+        android:id="@+id/act_game_bjsc_lay_keyboard_jsks"
         layout="@layout/layout_keyboard_jsks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/act_game_bjsc_lay_keyboard_jsks"
-        android:visibility="gone"
-        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+        android:layout_above="@+id/act_game_bjsc_lay_bottom"
+        android:visibility="gone" />
 
     <include
+        android:id="@+id/act_game_bjsc_lay_keyboard_pcdd"
         layout="@layout/layout_keyboard_pcdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/act_game_bjsc_lay_keyboard_pcdd"
-        android:visibility="gone"
-        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+        android:layout_above="@+id/act_game_bjsc_lay_bottom"
+        android:visibility="gone" />
 
     <include
+        android:id="@+id/act_game_bjsc_lay_keyboard_qqlfc"
         layout="@layout/layout_keyboard_qqlfc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/act_game_bjsc_lay_keyboard_qqlfc"
-        android:visibility="gone"
-        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+        android:layout_above="@+id/act_game_bjsc_lay_bottom"
+        android:visibility="gone" />
+
     <include
+        android:id="@+id/act_game_bjsc_lay_keyboard_bjsc"
         layout="@layout/layout_keyboard_bjsc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/act_game_bjsc_lay_keyboard_bjsc"
-        android:visibility="gone"
-        android:layout_above="@+id/act_game_bjsc_lay_bottom" />
+        android:layout_above="@+id/act_game_bjsc_lay_bottom"
+        android:visibility="gone" />
 
 
     <RelativeLayout
@@ -360,7 +362,7 @@
                 android:layout_alignParentRight="true"
                 android:background="@drawable/shape_rounded_h_orange_6">
 
-                <!--<TextView
+                <TextView
                     android:id="@+id/act_game_bjsc_btn_quick"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -374,7 +376,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="@dimen/space_5"
                     android:layout_marginTop="@dimen/space_5"
-                    android:background="@color/orange_4" />-->
+                    android:background="@color/orange_4" />
 
                 <TextView
                     android:id="@+id/act_game_bjsc_btn_gamble"
@@ -391,76 +393,36 @@
             android:id="@+id/act_game_bjscq_lay_bottom_quick"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/act_game_bjsc_lay_bottom_normal"
+            android:layout_alignTop="@+id/act_game_bjsc_lay_bottom_normal"
             android:background="@drawable/bg_line_2"
-            android:padding="@dimen/space_8"
             android:visibility="gone">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+            <EditText
+                android:layout_width="140dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:layout_margin="@dimen/space_4"
+                android:background="@drawable/shape_rounded_h_white"
+                android:hint="下注金额"
+                android:padding="@dimen/space_5"
+                android:textSize="@dimen/text_size_12" />
 
-                <Button
-                    android:id="@+id/act_game_bjsc_btn_keybord_quick"
-                    android:layout_width="35dp"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/icon_bord" />
-            </LinearLayout>
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/act_game_bjsc_quick_lay_clear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/click_btn_red"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/space_10">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/game_bjsc_quick_text_57"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_14" />
-
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:src="@drawable/close_white" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="@drawable/bg_btn_black_shade">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/space_10">
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:text="@string/game_bjsc_quick_text_58"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_15" />
@@ -469,56 +431,54 @@
                         android:id="@+id/act_game_bjsc_quick_tv_total"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
                         android:text="@string/text_default"
-                        android:textColor="@color/white"
+                        android:textColor="@color/red"
                         android:textSize="@dimen/text_size_15" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-
                         android:text="@string/game_bjsc_quick_text_59"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_15" />
 
                 </LinearLayout>
-            </LinearLayout>
+            </RelativeLayout>
 
-            <LinearLayout
+
+            <RelativeLayout
+                android:id="@+id/act_game_bjsc_quick_lay_sure"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:orientation="vertical">
+                android:background="@drawable/bg_btn_black_shade">
 
-                <LinearLayout
-                    android:id="@+id/act_game_bjsc_quick_lay_sure"
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:background="@drawable/click_btn_red"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/space_10">
+                    android:layout_centerInParent="true"
+                    android:text="@string/game_bjsc_quick_text_60"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_14" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/game_bjsc_quick_text_60"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_14" />
+            </RelativeLayout>
 
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/space_5"
-                        android:src="@drawable/icon_duihao" />
-                </LinearLayout>
-            </LinearLayout>
+            <RelativeLayout
+                android:id="@+id/act_game_bjsc_quick_lay_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_black_shade">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/main_back"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_14" />
+
+            </RelativeLayout>
         </LinearLayout>
-
     </RelativeLayout>
 </RelativeLayout>

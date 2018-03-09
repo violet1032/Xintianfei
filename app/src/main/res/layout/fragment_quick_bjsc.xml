@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_line_2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_btn_black_shade"
+                android:gravity="center"
+                android:padding="@dimen/space_7"
+                android:text="@string/quick_text_1"
+                android:textColor="@color/orange_2"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/fg_quick_bjsc_tv_game_1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_btn_black_shade"
+                android:gravity="center"
+                android:padding="@dimen/space_7"
+                android:text="@string/quick_text_2"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/fg_quick_bjsc_tv_game_2"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_btn_black_shade"
+                android:gravity="center"
+                android:padding="@dimen/space_7"
+                android:text="@string/quick_text_3"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/fg_quick_bjsc_tv_game_3"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_btn_black_shade"
+                android:gravity="center"
+                android:padding="@dimen/space_7"
+                android:text="@string/quick_text_4"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/fg_quick_bjsc_tv_game_4"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_btn_black_shade"
+                android:gravity="center"
+                android:padding="@dimen/space_7"
+                android:text="@string/quick_text_5"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_13" />
+
+            <TextView
+                android:id="@+id/fg_quick_bjsc_tv_game_5"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/bg_btn_black_shade"
+                android:gravity="center"
+                android:padding="@dimen/space_7"
+                android:text="@string/quick_text_6"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_13"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/fg_quick_bjsc_lay_dwd"
+            layout="@layout/layout_game_bjsc_quick_dwd"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_quick_bjsc_lay_lmp"
+            layout="@layout/layout_game_bjsc_quick_lmp"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_quick_bjsc_lay_gyh"
+            layout="@layout/layout_game_bjsc_quick_gyh"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_quick_bjsc_lay_gyzx"
+            layout="@layout/layout_game_bjsc_quick_gyzx"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/fg_quick_bjsc_lay_lh"
+            layout="@layout/layout_game_bjsc_quick_lh"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

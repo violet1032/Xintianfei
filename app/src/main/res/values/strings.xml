@@ -315,9 +315,12 @@
     <string name="game_bjsc_quick_text_57">清空所选</string>
     <string name="game_bjsc_quick_text_58">共</string>
     <string name="game_bjsc_quick_text_59">注</string>
-    <string name="game_bjsc_quick_text_60">确定下注</string>
+    <string name="game_bjsc_quick_text_60">确认</string>
     <string name="game_bjsc_quick_text_61">第五名PK第八名</string>
-    
+    <string name="game_bjsc_quick_text_62">第一名</string>
+    <string name="game_bjsc_quick_text_63">第二名</string>
+    <string name="game_bjsc_quick_text_64">第三名</string>
+
     <item type="id" name="tag_cate"></item>
     <item type="id" name="tag_gamble_select"></item>
     <string name="title_activity_gamble">GambleActivity</string>
@@ -414,5 +417,12 @@
     <string name="keyboard_text_37">半</string>
     <string name="keyboard_text_38">庄</string>
     <string name="keyboard_text_39">闲</string>
+
+    <string name="quick_text_1">玩法</string>
+    <string name="quick_text_2">定位胆</string>
+    <string name="quick_text_3">两面盘</string>
+    <string name="quick_text_4">冠亚和</string>
+    <string name="quick_text_5">冠亚庄闲</string>
+    <string name="quick_text_6">龙虎</string>
 
 </resources>

@@ -82,56 +82,56 @@ public class GameBJSCJCFragment extends BaseFragment {
     @Override
     protected void initWidget(View parentView) {
         super.initWidget(parentView);
-        inflater = LayoutInflater.from(getContext());
+        inflater = LayoutInflater.from(parentView.getContext());
         viewGroup = parentView.findViewById(R.id.fg_game_chat_lay_content);
 
-        laysContentNumber[0] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_chjc);
-        laysContentNumber[1] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_dxds);
-        laysContentNumber[2] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_tmjc);
-        laysContentNumber[3] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_gyzx);
-        laysContentNumber[4] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_lhjc);
-        laysContentNumber[5] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_gyhdxds);
-        laysContentNumber[6] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_zhdxds);
-
-        btnsContentNumber[0] = btnCHJC;
-        btnsContentNumber[1] = btnDXDS;
-        btnsContentNumber[2] = btnTMJC;
-        btnsContentNumber[3] = btnMore;
-        btnsContentNumber[4] = btnGYZX;
-        btnsContentNumber[5] = btnLHJC;
-        btnsContentNumber[6] = btnGYHDXDS;
-        btnsContentNumber[7] = btnZHDXDS;
-
-        for (int i = 0; i < laysGambleCHJC.length; i++) {
-            laysGambleCHJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_chjc_lay_1 + i);
-            laysGambleCHJC[i].setOnClickListener(new layGambleOnclick());
-        }
-        for (int i = 0; i < laysGambleDXDS.length; i++) {
-            laysGambleDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_dxds_lay_1 + i);
-            laysGambleDXDS[i].setOnClickListener(new layGambleOnclick());
-        }
-        for (int i = 0; i < laysGambleGYHDXDS.length; i++) {
-            laysGambleGYHDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_gyhdxds_lay_1 + i);
-            laysGambleGYHDXDS[i].setOnClickListener(new layGambleOnclick());
-        }
-        for (int i = 0; i < laysGambleGYZX.length; i++) {
-            laysGambleGYZX[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_gyzx_lay_1 + i);
-            laysGambleGYZX[i].setOnClickListener(new layGambleOnclick());
-        }
-        for (int i = 0; i < laysGambleLHJC.length; i++) {
-            laysGambleLHJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_lhjc_lay_1 + i);
-            laysGambleLHJC[i].setOnClickListener(new layGambleOnclick());
-        }
-        for (int i = 0; i < laysGambleTMJC.length; i++) {
-            laysGambleTMJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_tmjc_lay_1 + i);
-            laysGambleTMJC[i].setOnClickListener(new layGambleOnclick());
-        }
-        for (int i = 0; i < laysGambleZHDXDS.length; i++) {
-            laysGambleZHDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_zhdxds_lay_1 + i);
-            laysGambleZHDXDS[i].setOnClickListener(new layGambleOnclick());
-        }
-
-        showContentnumber(0);
+//        laysContentNumber[0] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_chjc);
+//        laysContentNumber[1] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_dxds);
+//        laysContentNumber[2] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_tmjc);
+//        laysContentNumber[3] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_gyzx);
+//        laysContentNumber[4] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_lhjc);
+//        laysContentNumber[5] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_gyhdxds);
+//        laysContentNumber[6] = parentView.findViewById(R.id.act_game_bjsc_quick_lay_content_number_zhdxds);
+//
+//        btnsContentNumber[0] = btnCHJC;
+//        btnsContentNumber[1] = btnDXDS;
+//        btnsContentNumber[2] = btnTMJC;
+//        btnsContentNumber[3] = btnMore;
+//        btnsContentNumber[4] = btnGYZX;
+//        btnsContentNumber[5] = btnLHJC;
+//        btnsContentNumber[6] = btnGYHDXDS;
+//        btnsContentNumber[7] = btnZHDXDS;
+//
+//        for (int i = 0; i < laysGambleCHJC.length; i++) {
+//            laysGambleCHJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_chjc_lay_1 + i);
+//            laysGambleCHJC[i].setOnClickListener(new layGambleOnclick());
+//        }
+//        for (int i = 0; i < laysGambleDXDS.length; i++) {
+//            laysGambleDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_dxds_lay_1 + i);
+//            laysGambleDXDS[i].setOnClickListener(new layGambleOnclick());
+//        }
+//        for (int i = 0; i < laysGambleGYHDXDS.length; i++) {
+//            laysGambleGYHDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_gyhdxds_lay_1 + i);
+//            laysGambleGYHDXDS[i].setOnClickListener(new layGambleOnclick());
+//        }
+//        for (int i = 0; i < laysGambleGYZX.length; i++) {
+//            laysGambleGYZX[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_gyzx_lay_1 + i);
+//            laysGambleGYZX[i].setOnClickListener(new layGambleOnclick());
+//        }
+//        for (int i = 0; i < laysGambleLHJC.length; i++) {
+//            laysGambleLHJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_lhjc_lay_1 + i);
+//            laysGambleLHJC[i].setOnClickListener(new layGambleOnclick());
+//        }
+//        for (int i = 0; i < laysGambleTMJC.length; i++) {
+//            laysGambleTMJC[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_tmjc_lay_1 + i);
+//            laysGambleTMJC[i].setOnClickListener(new layGambleOnclick());
+//        }
+//        for (int i = 0; i < laysGambleZHDXDS.length; i++) {
+//            laysGambleZHDXDS[i] = parentView.findViewById(R.id.layout_game_bjsc_quick_zhdxds_lay_1 + i);
+//            laysGambleZHDXDS[i].setOnClickListener(new layGambleOnclick());
+//        }
+//
+//        showContentnumber(0);
     }
 
     @Override
@@ -143,47 +143,47 @@ public class GameBJSCJCFragment extends BaseFragment {
     protected void widgetClick(View v) {
         super.widgetClick(v);
         switch (v.getId()) {
-            case R.id.act_game_bjsc_quick_btn_chjc:
-                showContentnumber(0);
-                break;
-            case R.id.act_game_bjsc_quick_btn_dxds:
-                showContentnumber(1);
-                break;
-            case R.id.act_game_bjsc_quick_btn_tmjc:
-                showContentnumber(2);
-                break;
-            case R.id.act_game_bjsc_quick_btn_gyzx:
-                showContentnumber(3);
-                layMore.setVisibility(View.GONE);
-                break;
-            case R.id.act_game_bjsc_quick_btn_lhjc:
-                showContentnumber(4);
-                layMore.setVisibility(View.GONE);
-                break;
-            case R.id.act_game_bjsc_quick_btn_gyhdxds:
-                showContentnumber(5);
-                layMore.setVisibility(View.GONE);
-                break;
-            case R.id.act_game_bjsc_quick_btn_zhdxds:
-                showContentnumber(6);
-                layMore.setVisibility(View.GONE);
-                break;
-            case R.id.act_game_bjsc_quick_btn_more:
-                if (layMore.getVisibility() == View.VISIBLE)
-                    layMore.setVisibility(View.GONE);
-                else if (layMore.getVisibility() == View.GONE)
-                    layMore.setVisibility(View.VISIBLE);
-                break;
-            case R.id.act_game_bjsc_quick_btn_more_close:
-                layMore.setVisibility(View.GONE);
-                break;
-            case R.id.act_game_bjsc_quick_btn_content_close:
-                layContentNumber.setVisibility(View.GONE);
-                btnsContentNumber[0].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-                btnsContentNumber[1].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-                btnsContentNumber[2].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-                btnsContentNumber[3].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-                break;
+//            case R.id.act_game_bjsc_quick_btn_chjc:
+//                showContentnumber(0);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_dxds:
+//                showContentnumber(1);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_tmjc:
+//                showContentnumber(2);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_gyzx:
+//                showContentnumber(3);
+//                layMore.setVisibility(View.GONE);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_lhjc:
+//                showContentnumber(4);
+//                layMore.setVisibility(View.GONE);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_gyhdxds:
+//                showContentnumber(5);
+//                layMore.setVisibility(View.GONE);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_zhdxds:
+//                showContentnumber(6);
+//                layMore.setVisibility(View.GONE);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_more:
+//                if (layMore.getVisibility() == View.VISIBLE)
+//                    layMore.setVisibility(View.GONE);
+//                else if (layMore.getVisibility() == View.GONE)
+//                    layMore.setVisibility(View.VISIBLE);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_more_close:
+//                layMore.setVisibility(View.GONE);
+//                break;
+//            case R.id.act_game_bjsc_quick_btn_content_close:
+//                layContentNumber.setVisibility(View.GONE);
+//                btnsContentNumber[0].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//                btnsContentNumber[1].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//                btnsContentNumber[2].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//                btnsContentNumber[3].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//                break;
         }
     }
 
@@ -192,100 +192,100 @@ public class GameBJSCJCFragment extends BaseFragment {
         super.onClick(v);
     }
 
-    private void showContentnumber(int position) {
-        layContentNumber.setVisibility(View.VISIBLE);
+//    private void showContentnumber(int position) {
+//        layContentNumber.setVisibility(View.VISIBLE);
+//
+//
+//        switch (position) {
+//            case 0:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_1);
+//                break;
+//            case 1:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_2);
+//                break;
+//            case 2:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_3);
+//                break;
+//            case 3:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_5);
+//                break;
+//            case 4:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_6);
+//                break;
+//            case 5:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_7);
+//                break;
+//            case 6:
+//                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_8);
+//                break;
+//        }
+//
+//        for (LinearLayout lay : laysContentNumber) {
+//            lay.setVisibility(View.GONE);
+//        }
+//        laysContentNumber[position].setVisibility(View.VISIBLE);
+//
+//        btnsContentNumber[0].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//        btnsContentNumber[1].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//        btnsContentNumber[2].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//        btnsContentNumber[3].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
+//
+//        if (position < 3) {
+//            btnsContentNumber[position].setBackgroundResource(R.drawable.shape_rounded_h_orange_3);
+//        } else {
+//            btnsContentNumber[3].setBackgroundResource(R.drawable.shape_rounded_h_orange_3);
+//        }
+//    }
 
+//    public boolean quickLay() {
+//        if (layQuick.getVisibility() == View.VISIBLE) {
+//            layQuick.setVisibility(View.GONE);
+//            return false;
+//        } else if (layQuick.getVisibility() == View.GONE) {
+//            layQuick.setVisibility(View.VISIBLE);
+//            return true;
+//        }
+//        return false;
+//    }
 
-        switch (position) {
-            case 0:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_1);
-                break;
-            case 1:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_2);
-                break;
-            case 2:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_3);
-                break;
-            case 3:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_5);
-                break;
-            case 4:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_6);
-                break;
-            case 5:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_7);
-                break;
-            case 6:
-                tvContentNumberTitle.setText(R.string.game_bjsc_quick_text_8);
-                break;
-        }
+//    private class layGambleOnclick implements View.OnClickListener {
+//
+//        @Override
+//        public void onClick(View view) {
+//            if (view.getTag(R.id.tag_gamble_select) == null || (boolean) view.getTag(R.id.tag_gamble_select) == false) {
+//                // 没有选择
+//                view.setBackgroundResource(R.drawable.btn_bg_stroke_red);
+//                view.setTag(R.id.tag_gamble_select, true);
+//            } else {
+//                view.setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//                view.setTag(R.id.tag_gamble_select, false);
+//            }
+//        }
+//    }
 
-        for (LinearLayout lay : laysContentNumber) {
-            lay.setVisibility(View.GONE);
-        }
-        laysContentNumber[position].setVisibility(View.VISIBLE);
-
-        btnsContentNumber[0].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-        btnsContentNumber[1].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-        btnsContentNumber[2].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-        btnsContentNumber[3].setBackgroundResource(R.drawable.shape_rounded_h_black_3);
-
-        if (position < 3) {
-            btnsContentNumber[position].setBackgroundResource(R.drawable.shape_rounded_h_orange_3);
-        } else {
-            btnsContentNumber[3].setBackgroundResource(R.drawable.shape_rounded_h_orange_3);
-        }
-    }
-
-    public boolean quickLay() {
-        if (layQuick.getVisibility() == View.VISIBLE) {
-            layQuick.setVisibility(View.GONE);
-            return false;
-        } else if (layQuick.getVisibility() == View.GONE) {
-            layQuick.setVisibility(View.VISIBLE);
-            return true;
-        }
-        return false;
-    }
-
-    private class layGambleOnclick implements View.OnClickListener {
-
-        @Override
-        public void onClick(View view) {
-            if (view.getTag(R.id.tag_gamble_select) == null || (boolean) view.getTag(R.id.tag_gamble_select) == false) {
-                // 没有选择
-                view.setBackgroundResource(R.drawable.btn_bg_stroke_red);
-                view.setTag(R.id.tag_gamble_select, true);
-            } else {
-                view.setBackgroundResource(R.drawable.btn_bg_stroke_black);
-                view.setTag(R.id.tag_gamble_select, false);
-            }
-        }
-    }
-
-    public void clearGamble() {
-        for (int i = 0; i < laysGambleCHJC.length; i++) {
-            laysGambleCHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-        for (int i = 0; i < laysGambleDXDS.length; i++) {
-            laysGambleDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-        for (int i = 0; i < laysGambleGYHDXDS.length; i++) {
-            laysGambleGYHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-        for (int i = 0; i < laysGambleGYZX.length; i++) {
-            laysGambleGYZX[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-        for (int i = 0; i < laysGambleLHJC.length; i++) {
-            laysGambleLHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-        for (int i = 0; i < laysGambleTMJC.length; i++) {
-            laysGambleTMJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-        for (int i = 0; i < laysGambleZHDXDS.length; i++) {
-            laysGambleZHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
-        }
-    }
+//    public void clearGamble() {
+//        for (int i = 0; i < laysGambleCHJC.length; i++) {
+//            laysGambleCHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//        for (int i = 0; i < laysGambleDXDS.length; i++) {
+//            laysGambleDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//        for (int i = 0; i < laysGambleGYHDXDS.length; i++) {
+//            laysGambleGYHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//        for (int i = 0; i < laysGambleGYZX.length; i++) {
+//            laysGambleGYZX[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//        for (int i = 0; i < laysGambleLHJC.length; i++) {
+//            laysGambleLHJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//        for (int i = 0; i < laysGambleTMJC.length; i++) {
+//            laysGambleTMJC[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//        for (int i = 0; i < laysGambleZHDXDS.length; i++) {
+//            laysGambleZHDXDS[i].setBackgroundResource(R.drawable.btn_bg_stroke_black);
+//        }
+//    }
 
     public void addChatHistory(Chat chat) {
         if (chat.is_admin()) {

@@ -27,7 +27,9 @@
     <dimen name="game_flash_height">240dp</dimen>
     <dimen name="game_head_size">40dp</dimen>
 
-    <dimen name="game_content_number_text_size">11sp</dimen>
+    <dimen name="game_content_number_text_size">13sp</dimen>
+    <dimen name="game_content_number_text_size_odds">11sp</dimen>
+    <dimen name="game_content_number_odds_margin_left">3dp</dimen>
 
     <!-- Splash -->
     <dimen name="splash_head_width">65.0dp</dimen>

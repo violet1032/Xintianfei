@@ -129,8 +129,8 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
         } else {
             final GambleSimpleTodayHistory item = list.get(position);
 
-            holder.layOpretion.setVisibility(View.VISIBLE);
-            holder.opretion.setVisibility(View.GONE);
+//            holder.layOpretion.setVisibility(View.VISIBLE);
+//            holder.opretion.setVisibility(View.GONE);
 
             holder.img1.setVisibility(View.GONE);
             holder.img2.setVisibility(View.GONE);
@@ -145,8 +145,8 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
             holder.game.setText(item.getGameType());
             holder.gamble.setText(item.getNumber());
             holder.sum.setText(item.getMoney().toString());
-            holder.result.setText(item.getStrResult());
-            holder.opretion.setText("操作");
+//            holder.result.setText(item.getStrResult());
+//            holder.opretion.setText("操作");
 
             holder.stage.setTextColor(black);
             holder.game.setTextColor(black);
@@ -169,6 +169,32 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
                     withdraw(item.getId());
                 }
             });
+
+
+            if (item.getStatus() == 0)
+                holder.result.setText("未结算");
+            else if (item.getStatus() == -1)
+                holder.result.setText("0");
+            else if (item.getStatus() == 1)
+                holder.result.setText(item.getWin().toString());
+
+            if (item.getStatus() == 0) {
+                holder.layOpretion.setVisibility(View.VISIBLE);
+                holder.opretion.setVisibility(View.GONE);
+            } else if (item.getStatus() == -1) {
+                holder.layOpretion.setVisibility(View.GONE);
+                holder.opretion.setVisibility(View.VISIBLE);
+                holder.opretion.setText("已撤单");
+            } else if (item.getStatus() == 1) {
+                holder.layOpretion.setVisibility(View.GONE);
+                holder.opretion.setVisibility(View.VISIBLE);
+
+                if (item.getCode() == 0)
+                    holder.opretion.setText("未中奖");
+                else
+                    holder.opretion.setText("中奖");
+            }
+
         }
         return view;
     }
@@ -193,16 +219,16 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
         private ImageView img9;
     }
 
-    private void withdraw(int id){
-        FHttpCallBack callBack = new FHttpCallBack(){
+    private void withdraw(int id) {
+        FHttpCallBack callBack = new FHttpCallBack() {
             @Override
             public void onSuccess(Map<String, String> headers, byte[] t) {
                 super.onSuccess(headers, t);
                 String str = new String(t);
                 Result result = new Result().parse(str);
-                if(result.isOk()){
+                if (result.isOk()) {
                     UIHelper.ToastMessage("撤单成功");
-                }else
+                } else
                     UIHelper.ToastMessage(result.getMsg());
             }
 
@@ -216,6 +242,6 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
                 super.onFinish();
             }
         };
-        ApiLottery.withdraw(id,callBack);
+        ApiLottery.withdraw(id, callBack);
     }
 }

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/act_game_bjsc_quick_tv_content_title"
+    android:layout_margin="@dimen/space_5"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:tag="w-1"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_9"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_10"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_11"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_12"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_13"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3">
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_14"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_15"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_16"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_17"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_3"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_18"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+                </LinearLayout>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_6">
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_30"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_31"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3">
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_32"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_33"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3">
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_34"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_35"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_3">
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_36"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_game_bjsc_quick_lmp_lay_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_20"
+                    android:layout_marginRight="@dimen/space_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn_quick_black"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/space_7">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/game_bjsc_quick_text_37"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/game_content_number_odds_margin_left"
+                        android:text="@string/text_default"
+                        android:textColor="@color/orange_2"
+                        android:textSize="@dimen/game_content_number_text_size_odds" />
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_game_bjsc_quick_lmp_lay_19"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/space_3"
+            android:background="@drawable/bg_btn_black_box"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/space_7">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/keyboard_text_13"
+                android:textColor="@color/orange_2"
+                android:textSize="@dimen/game_content_number_text_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

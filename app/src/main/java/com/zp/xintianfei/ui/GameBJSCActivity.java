@@ -36,6 +36,7 @@ import com.zp.xintianfei.ui.fragment.GameCZFragment;
 import com.zp.xintianfei.ui.fragment.GameGZFragment;
 import com.zp.xintianfei.ui.fragment.GameJLFragment;
 import com.zp.xintianfei.ui.fragment.GameZSFragment;
+import com.zp.xintianfei.ui.fragment.QuickBJSCFragment;
 import com.zp.xintianfei.utils.JsonUtils;
 import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
@@ -66,6 +67,7 @@ public class GameBJSCActivity extends BaseActivity {
     private GameJLFragment gameJLFragment = new GameJLFragment();
     private GameZSFragment gameZSFragment = new GameZSFragment();
     private GameGZFragment gameGZFragment = new GameGZFragment();
+    private QuickBJSCFragment quickBJSCFragment = new QuickBJSCFragment();
 
     @BindView(id = R.id.act_game_bjsc_lay_back, click = true)
     private LinearLayout btnBack;
@@ -89,8 +91,8 @@ public class GameBJSCActivity extends BaseActivity {
     @BindView(id = R.id.act_game_bjsc_lay_keyboard_bjsc)
     private LinearLayout layKeyboardBJSC;
 
-//    @BindView(id = R.id.act_game_bjsc_btn_quick, click = true)
-//    private TextView tvQuick;
+    @BindView(id = R.id.act_game_bjsc_btn_quick, click = true)
+    private TextView tvQuick;
 
     @BindView(id = R.id.act_game_bjsc_webview)
     private WebView webView;
@@ -108,11 +110,16 @@ public class GameBJSCActivity extends BaseActivity {
     private RelativeLayout layBottomNormal;
     @BindView(id = R.id.act_game_bjscq_lay_bottom_quick)
     private LinearLayout layBottomQuick;
+    @BindView(id = R.id.act_game_bjsc_quick_lay_back,click = true)
+    private RelativeLayout layQuickBack;
+
+    @BindView(id=R.id.act_game_bjsc_lay_menu)
+    private LinearLayout layMenu;
 
     private int cate;
 
-    @BindView(id = R.id.act_game_bjsc_btn_keybord_quick, click = true)
-    private Button btnKeybordQuick;
+//    @BindView(id = R.id.act_game_bjsc_btn_keybord_quick, click = true)
+//    private Button btnKeybordQuick;
 
     private String animateUrl;
 
@@ -180,6 +187,7 @@ public class GameBJSCActivity extends BaseActivity {
 
         gameJLFragment.setCate(cate);
         gameGZFragment.setCate(cate);
+        quickBJSCFragment.setCate(cate);
 
         changeFragment(R.id.act_game_bjsc_lay_content, gameBJSCJCFragment);
 
@@ -202,7 +210,7 @@ public class GameBJSCActivity extends BaseActivity {
 //        if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
 //            btnZS.setVisibility(View.GONE);
 //        } else {
-            getAnimateUrl();
+        getAnimateUrl();
 //        }
 
         ApiCommon.getNetBitmap(AppContext.user.getAvatar(), imgHead, false);
@@ -236,13 +244,13 @@ public class GameBJSCActivity extends BaseActivity {
                     getOnlineNum();
                     // 更新余额
                     handler.sendEmptyMessage(2);
+                    // 获取下一期信息
+                    getNext();
                 }
             };
             timer.schedule(timerTask, 0, 3000);
         }
 
-        // 获取下一期的投注信息
-        getNext();
 
         getTrendsURL();
 
@@ -344,17 +352,22 @@ public class GameBJSCActivity extends BaseActivity {
 //                getChatMsgs();
 //                getNext();
                 break;
-//            case R.id.act_game_bjsc_btn_quick:
-//                // 快速下注
-//                boolean b = gameBJSCJCFragment.quickLay();
-//                if (b) {
-//                    layBottomQuick.setVisibility(View.VISIBLE);
-//                    layBottomNormal.setVisibility(View.GONE);
-//                } else {
-//                    layBottomQuick.setVisibility(View.GONE);
-//                    layBottomNormal.setVisibility(View.VISIBLE);
-//                }
-//                break;
+            case R.id.act_game_bjsc_btn_quick:
+                // 快速下注
+                layBottomQuick.setVisibility(View.VISIBLE);
+                layBottomNormal.setVisibility(View.GONE);
+
+                layMenu.setVisibility(View.GONE);
+
+                changeFragment(R.id.act_game_bjsc_lay_content,quickBJSCFragment);
+                break;
+            case R.id.act_game_bjsc_quick_lay_back:
+                // 关闭快速下注
+                layBottomQuick.setVisibility(View.GONE);
+                layBottomNormal.setVisibility(View.VISIBLE);
+                layMenu.setVisibility(View.VISIBLE);
+                changeFragment(R.id.act_game_bjsc_lay_content, gameBJSCJCFragment);
+                break;
             case R.id.act_game_bjsc_lay_back:
                 setResult(4);
                 finish();
@@ -402,9 +415,9 @@ public class GameBJSCActivity extends BaseActivity {
 //                    layBottomNormal.setVisibility(View.VISIBLE);
 //                }
 //                break;
-            case R.id.act_game_bjsc_quick_lay_clear:
-                gameBJSCJCFragment.clearGamble();
-                break;
+//            case R.id.act_game_bjsc_quick_lay_clear:
+//                gameBJSCJCFragment.clearGamble();
+//                break;
             case R.id.act_game_bjsc_btn_gamble:
                 // 下注
                 gamble();
