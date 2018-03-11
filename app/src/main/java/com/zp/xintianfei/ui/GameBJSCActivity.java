@@ -1,17 +1,23 @@
 package com.zp.xintianfei.ui;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -110,10 +116,10 @@ public class GameBJSCActivity extends BaseActivity {
     private RelativeLayout layBottomNormal;
     @BindView(id = R.id.act_game_bjscq_lay_bottom_quick)
     private LinearLayout layBottomQuick;
-    @BindView(id = R.id.act_game_bjsc_quick_lay_back,click = true)
+    @BindView(id = R.id.act_game_bjsc_quick_lay_back, click = true)
     private RelativeLayout layQuickBack;
 
-    @BindView(id=R.id.act_game_bjsc_lay_menu)
+    @BindView(id = R.id.act_game_bjsc_lay_menu)
     private LinearLayout layMenu;
 
     private int cate;
@@ -146,6 +152,12 @@ public class GameBJSCActivity extends BaseActivity {
     private boolean isTrends = false;
     private boolean smallWindow = false;
     private String trendsUrl;
+
+    @BindView(id = R.id.act_game_bjsc_webview_quick)
+    private WebView webViewQuick;
+    private String quickUrl;
+    @BindView(id = R.id.act_game_bjsc_lay_content)
+    private FrameLayout frameLayout;
 
     public static void startActivity(Activity context, int cate) {
         Intent intent = new Intent();
@@ -206,6 +218,17 @@ public class GameBJSCActivity extends BaseActivity {
         webView.setWebViewClient(new webviewClient());
         webSettings.setLoadWithOverviewMode(true);
 
+        WebSettings webSettings2 = webViewQuick.getSettings();
+        webSettings2.setSupportZoom(false);
+        webSettings2.setDefaultTextEncodingName("gbk");
+        webSettings2.setJavaScriptCanOpenWindowsAutomatically(true);
+        webSettings2.setJavaScriptEnabled(true);
+        webSettings2.setUseWideViewPort(true);//关键点
+        webSettings2.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+        webSettings2.setDisplayZoomControls(false);
+        webViewQuick.setWebViewClient(new webviewClient());
+        webSettings2.setLoadWithOverviewMode(true);
+
         // 获取动画路径,只有qq两分彩和六合彩没有动画
 //        if (cate == E_LOTTERY_TYPE.qqlfc.value || cate == E_LOTTERY_TYPE.lhc.value) {
 //            btnZS.setVisibility(View.GONE);
@@ -256,6 +279,8 @@ public class GameBJSCActivity extends BaseActivity {
 
         // 绑定键盘
         keyboardOnclick();
+
+        quickBetUrl();
     }
 
     private void keyboardOnclick() {
@@ -359,7 +384,8 @@ public class GameBJSCActivity extends BaseActivity {
 
                 layMenu.setVisibility(View.GONE);
 
-                changeFragment(R.id.act_game_bjsc_lay_content,quickBJSCFragment);
+                frameLayout.setVisibility(View.GONE);
+                webViewQuick.setVisibility(View.VISIBLE);
                 break;
             case R.id.act_game_bjsc_quick_lay_back:
                 // 关闭快速下注
@@ -367,6 +393,9 @@ public class GameBJSCActivity extends BaseActivity {
                 layBottomNormal.setVisibility(View.VISIBLE);
                 layMenu.setVisibility(View.VISIBLE);
                 changeFragment(R.id.act_game_bjsc_lay_content, gameBJSCJCFragment);
+
+                frameLayout.setVisibility(View.VISIBLE);
+                webViewQuick.setVisibility(View.GONE);
                 break;
             case R.id.act_game_bjsc_lay_back:
                 setResult(4);
@@ -718,5 +747,50 @@ public class GameBJSCActivity extends BaseActivity {
                 }
             }
         }
+    }
+
+    private void quickBetUrl() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils jsonUtils = new JsonUtils(str);
+                        quickUrl = jsonUtils.getString("info");
+
+                        synchronousWebCookies(GameBJSCActivity.this,quickUrl,AppContext.user.getToken());
+
+                        webViewQuick.loadUrl(quickUrl);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        ApiLottery.quickBetUrl(cate, callBack);
+    }
+
+    public void synchronousWebCookies(Context context,String url,String cookies){
+        if ( !TextUtils.isEmpty(url) )
+            if (!TextUtils.isEmpty(cookies) ) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP){
+                    CookieSyncManager.createInstance(context);
+                }
+                CookieManager cookieManager = CookieManager.getInstance();
+                cookieManager.setAcceptCookie( true );
+                cookieManager.removeSessionCookie();// 移除
+                cookieManager.removeAllCookie();
+                StringBuilder sbCookie = new StringBuilder();//创建一个拼接cookie的容器,为什么这么拼接，大家查阅一下http头Cookie的结构
+                sbCookie.append(cookies);//拼接sessionId
+//                 sbCookie.append(String.format(";domain=%s", ""));
+//                 sbCookie.append(String.format(";path=%s", ""));
+                String cookieValue = sbCookie.toString();
+                cookieManager.setCookie(url, cookieValue);//为url设置cookie
+                CookieSyncManager.getInstance().sync();//同步cookie
+                String newCookie = cookieManager.getCookie(url);
+            }
     }
 }

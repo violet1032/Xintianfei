@@ -222,6 +222,16 @@ public class ApiLottery {
         String url = URLs.getOdds;
         AppContext.http.get(url, params, callBack, false, false);
     }
+    public static void quickBetUrl(int cate, FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("uid", AppContext.user.getUid());
+        params.put("token", AppContext.user.getOpenid());
+        params.put("cate", cate);
+        // 地址
+        String url = URLs.quickBetUrl;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
     public static void gameBetSix(int cate,String stage,int type,BigDecimal money,String number,int wei, FHttpCallBack callBack) {
         // 参数设置
         Map<String, Object> params = new HashMap<>();

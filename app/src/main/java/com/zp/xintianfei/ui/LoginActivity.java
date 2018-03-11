@@ -18,7 +18,6 @@ import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
 import com.zp.xintianfei.ui.dialog.VersionUpdateDialog;
 import com.zp.xintianfei.utils.JsonUtils;
-import com.zp.xintianfei.utils.LogUtil;
 import com.zp.xintianfei.utils.UIHelper;
 
 import org.json.JSONException;
@@ -190,7 +189,7 @@ public class LoginActivity extends BaseActivity {
                 result.parse(str);
                 if (result.isOk()) {
                     // 登录成功
-                    AppContext.user.parse(str);
+                    AppContext.user.parse(str,true);
 
                     // 缓存信息
                     AppConfig.getInstance().setLoginWxHeadimgurl(AppContext.user.getAvatar());
@@ -198,7 +197,6 @@ public class LoginActivity extends BaseActivity {
                     AppConfig.getInstance().setLoginWxOpenid(AppContext.user.getOpenid());
                     AppConfig.getInstance().setLoginWxNickname(AppContext.user.getNickname());
 
-                    LogUtil.logError(LoginActivity.class, "3");
                     MainActivity.startActivity(LoginActivity.this);
                     finish();
                 } else {

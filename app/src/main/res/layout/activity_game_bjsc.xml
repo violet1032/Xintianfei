@@ -276,9 +276,18 @@
             <FrameLayout
                 android:id="@+id/act_game_bjsc_lay_content"
                 android:layout_width="match_parent"
+                android:visibility="visible"
                 android:layout_height="match_parent">
 
             </FrameLayout>
+
+            <WebView
+                android:layout_width="match_parent"
+                android:id="@+id/act_game_bjsc_webview_quick"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+
+            </WebView>
         </LinearLayout>
     </LinearLayout>
 
@@ -398,7 +407,7 @@
             android:background="@drawable/bg_line_2"
             android:visibility="gone">
 
-            <EditText
+            <!--<EditText
                 android:layout_width="140dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -461,7 +470,7 @@
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_14" />
 
-            </RelativeLayout>
+            </RelativeLayout>-->
 
             <RelativeLayout
                 android:id="@+id/act_game_bjsc_quick_lay_back"

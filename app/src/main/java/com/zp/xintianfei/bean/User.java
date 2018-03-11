@@ -9,13 +9,13 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
- * <p>
+ * <p/>
  * 描述:
- * <p>
+ * <p/>
  * 作者:Administrator
- * <p>
+ * <p/>
  * 时间:2016/7/5 17:04
- * <p>
+ * <p/>
  * 版本:
  */
 public class User implements Serializable {
@@ -32,7 +32,7 @@ public class User implements Serializable {
     private E_GENDER_TYPE genderType;
     private String token;
 
-    public User parse(String jsonData) {
+    public User parse(String jsonData, boolean getToken) {
         try {
             JsonUtils jsonUtils = new JsonUtils(jsonData);
             JsonUtils jsonUtils1 = jsonUtils.getJSONUtils("info");
@@ -46,7 +46,8 @@ public class User implements Serializable {
             setFanshui(jsonUtils1.getBigDecimal("fanshui").divide(new BigDecimal(100)));
             setYongjin(jsonUtils1.getBigDecimal("yongjin").divide(new BigDecimal(100)));
             setFs_rate(jsonUtils1.getString("fs_rate"));
-            setToken(jsonUtils1.getString("token"));
+            if (getToken)
+                setToken(jsonUtils1.getString("token"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -119,7 +120,7 @@ public class User implements Serializable {
     }
 
     public BigDecimal getMoney() {
-        if(money == null)
+        if (money == null)
             return new BigDecimal(0);
         return money;
     }
