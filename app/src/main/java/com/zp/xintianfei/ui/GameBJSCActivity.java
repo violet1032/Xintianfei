@@ -290,19 +290,26 @@ public class GameBJSCActivity extends BaseActivity {
             case bjsc:
             case xgsm:
             case xyft:
+            case jssc:
+            case amsg:
                 lay = layKeyboardBJSC;
                 break;
             case cqssc:
             case qqlfc:
+            case amsfc:
+            case txwfc:
                 lay = layKeyboardQQLFC;
                 break;
             case lhc:
                 break;
             case jnd28:
             case pcdd:
+            case xjpdd:
                 lay = layKeyboardPCDD;
                 break;
             case jsks:
+            case jlks:
+            case jisks:
                 lay = layKeyboardJSKS;
                 break;
         }
@@ -458,6 +465,8 @@ public class GameBJSCActivity extends BaseActivity {
                     case bjsc:
                     case xgsm:
                     case xyft:
+                    case jssc:
+                    case amsg:
                         if (layKeyboardBJSC.getVisibility() == View.GONE)
                             layKeyboardBJSC.setVisibility(View.VISIBLE);
                         else
@@ -465,6 +474,8 @@ public class GameBJSCActivity extends BaseActivity {
                         break;
                     case cqssc:
                     case qqlfc:
+                    case amsfc:
+                    case txwfc:
                         if (layKeyboardQQLFC.getVisibility() == View.GONE)
                             layKeyboardQQLFC.setVisibility(View.VISIBLE);
                         else
@@ -474,12 +485,15 @@ public class GameBJSCActivity extends BaseActivity {
                         break;
                     case jnd28:
                     case pcdd:
+                    case xjpdd:
                         if (layKeyboardPCDD.getVisibility() == View.GONE)
                             layKeyboardPCDD.setVisibility(View.VISIBLE);
                         else
                             layKeyboardPCDD.setVisibility(View.GONE);
                         break;
                     case jsks:
+                    case jlks:
+                    case jisks:
                         if (layKeyboardJSKS.getVisibility() == View.GONE)
                             layKeyboardJSKS.setVisibility(View.VISIBLE);
                         else

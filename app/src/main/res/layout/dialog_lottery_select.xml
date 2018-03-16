@@ -24,164 +24,144 @@
                 android:background="@drawable/icon_close" />
         </LinearLayout>
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/space_10">
+                android:layout_marginTop="@dimen/space_10">
 
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_1"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_02" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/bjsc" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_2"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_10"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_05" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/xgsm" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_3"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_10"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_13" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/xyft" />
-                </LinearLayout>
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/cate_12" />
 
-            <LinearLayout
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/space_10">
+                android:layout_marginTop="@dimen/space_10">
 
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_4"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_03" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/cqssc" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_5"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_10"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_01" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/qqlfc" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_6"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_10"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_09" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/xglhc" />
-                </LinearLayout>
-            </LinearLayout>
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/cate_14" />
+            </TableRow>
 
-            <LinearLayout
+            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingTop="@dimen/space_10">
+                android:layout_marginTop="@dimen/space_10">
 
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_7"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_15" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/pcdd" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_8"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_10"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_04" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/jnd28" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/dialog_lottery_select_lay_9"
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/space_10"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical">
+                    android:src="@drawable/cate_08" />
 
-                    <ImageView
-                        android:layout_width="@dimen/main_icon_size"
-                        android:layout_height="@dimen/main_icon_size"
-                        android:src="@drawable/jsks" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/cate_18" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_10">
+
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cate_06" />
+
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/cate_16" />
+
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/cate_17" />
+
+                <ImageView
+                    android:id="@+id/dialog_lottery_img_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_10"
+                    android:src="@drawable/cate_10" />
+            </TableRow>
+        </TableLayout>
+
     </LinearLayout>
 
 </LinearLayout>
