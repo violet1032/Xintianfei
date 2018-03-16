@@ -66,6 +66,7 @@ public class URLs {
     public final static String gameBetSix = APP_STORE_HOST + "gameBetSix"; // 六合彩下注
     public final static String getNotice = APP_STORE_HOST + "getNotice"; // 获取公告
     public final static String quickBetUrl = APP_STORE_HOST + "quickBetUrl"; // 获取急速下注url
+    public final static String getGameState = APP_STORE_HOST + "getGameState"; // 获取彩种状态
 
 
     //-----部分暂未发出来的接口-----

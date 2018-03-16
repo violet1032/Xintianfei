@@ -35,6 +35,8 @@ public class PersonFragment extends BaseFragment {
     private TextView title;
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
+    @BindView(id = R.id.umeng_banner_tv_right, click = true)
+    private TextView tvRight;
 
     @BindView(id = R.id.fg_person_lay_9, click = true)
     private RelativeLayout layTransfer;
@@ -88,6 +90,8 @@ public class PersonFragment extends BaseFragment {
 
         title.setText("个人中心");
         imgBack.setVisibility(View.INVISIBLE);
+        tvRight.setVisibility(View.VISIBLE);
+        tvRight.setText("退出");
 
         tvNickname.setText(AppContext.user.getNickname());
         tvID.setText(AppContext.user.getUid() + "");
@@ -179,6 +183,9 @@ public class PersonFragment extends BaseFragment {
                 intent.setData(content_url);
                 startActivity(intent);
                 break;
+            case R.id.umeng_banner_tv_right:
+                System.exit(0);
+                break;
         }
     }
 
@@ -187,7 +194,7 @@ public class PersonFragment extends BaseFragment {
         super.onClick(v);
     }
 
-    public void changeSum(){
+    public void changeSum() {
         tvSum.setText(AppContext.user.getMoney().toString());
         tvSumFanshui.setText(AppContext.user.getFanshui().toString());
         tvSumYongjin.setText(AppContext.user.getYongjin().toString());

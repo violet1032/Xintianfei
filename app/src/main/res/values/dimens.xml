@@ -57,6 +57,8 @@
     <dimen name="icon_size_xm">65dip</dimen>
     <dimen name="icon_size_h">80dip</dimen>
     <dimen name="icon_size_xh">120dip</dimen>
+    <dimen name="main_cate_img_width">80dp</dimen>
+    <dimen name="main_cate_img_height">30dp</dimen>
 
     <!-- 圆角大小 -->
     <dimen name="radius_l">4dip</dimen>
