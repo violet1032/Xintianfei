@@ -20,132 +20,221 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/fg_rule_banner"
         android:orientation="vertical"
-        android:padding="@dimen/space_10">
+        android:padding="@dimen/space_7">
 
-        <LinearLayout
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/fg_rule_btn_1"
+            <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_orange_5"
-                android:padding="@dimen/space_10"
-                android:text="  北京赛车  "
-                android:textColor="@color/white"
-                android:textSize="@dimen/text_size_15" />
+                android:layout_marginTop="@dimen/text_size_10">
 
-            <Button
-                android:id="@+id/fg_rule_btn_2"
+                <Button
+                    android:id="@+id/fg_rule_btn_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_orange_5"
+                    android:padding="@dimen/space_7"
+                    android:text="北京赛车"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="香港赛马"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="澳门赛狗"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="极速赛车"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+            </TableRow>
+            <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="  香港赛马  "
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
+                android:layout_marginTop="@dimen/text_size_10">
 
-            <Button
-                android:id="@+id/fg_rule_btn_3"
+                <Button
+                    android:id="@+id/fg_rule_btn_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="幸运飞艇"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="重庆时时彩"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="QQ两分彩"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="台湾三分彩"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+            </TableRow>
+            <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="  幸运飞艇  "
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
-        </LinearLayout>
+                android:layout_marginTop="@dimen/text_size_10">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_5"
-            android:orientation="horizontal">
+                <Button
+                    android:id="@+id/fg_rule_btn_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="腾讯五分彩"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
 
-            <Button
-                android:id="@+id/fg_rule_btn_4"
+                <Button
+                    android:id="@+id/fg_rule_btn_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="PC蛋蛋"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="加拿大28"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+
+                <Button
+                    android:id="@+id/fg_rule_btn_12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="新加坡蛋蛋"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+            </TableRow>
+            <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="@string/fragment_rule_text_4"
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
+                android:layout_marginTop="@dimen/text_size_10">
 
-            <Button
-                android:id="@+id/fg_rule_btn_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="@string/fragment_rule_text_5"
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
+                <Button
+                    android:id="@+id/fg_rule_btn_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="江苏快三"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
 
-            <Button
-                android:id="@+id/fg_rule_btn_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="  江苏快三  "
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/fg_rule_btn_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="吉林快三"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_5"
-            android:orientation="horizontal">
+                <Button
+                    android:id="@+id/fg_rule_btn_15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="极速快三"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
 
-            <Button
-                android:id="@+id/fg_rule_btn_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="  PC蛋蛋   "
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
-
-            <Button
-                android:id="@+id/fg_rule_btn_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="加拿大28 "
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
-
-            <Button
-                android:id="@+id/fg_rule_btn_9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/space_10"
-                android:layout_weight="1"
-                android:background="@drawable/shape_rounded_h_gray_2"
-                android:padding="@dimen/space_10"
-                android:text="@string/fragment_rule_text_9"
-                android:textColor="@color/black_3"
-                android:textSize="@dimen/text_size_15" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/fg_rule_btn_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_7"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_h_gray_4"
+                    android:padding="@dimen/space_7"
+                    android:text="香港六合彩"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_13" />
+            </TableRow>
+        </TableLayout>
 
 
         <ScrollView
@@ -164,8 +253,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_15"
-                    android:scrollbars="none"
-                    android:background="@color/transparent" />
+                    android:background="@color/transparent"
+                    android:scrollbars="none" />
 
             </LinearLayout>
         </ScrollView>

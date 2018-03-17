@@ -22,7 +22,6 @@ import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 import com.zp.xintianfei.utils.ImageUtils;
-import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -83,8 +82,8 @@ public class RechargeFragment extends BaseFragment {
 
     private int bankId;
 
-    @BindView(id = R.id.fg_recharge_edt_id)
-    private EditText edtName;
+//    @BindView(id = R.id.fg_recharge_edt_id)
+//    private EditText edtName;
     @BindView(id = R.id.fg_recharge_edt_sum)
     private EditText edtMoney;
 
@@ -271,7 +270,7 @@ public class RechargeFragment extends BaseFragment {
     }
 
     private void recharge() {
-        String name = edtName.getText().toString().trim();
+        String name = "";
         BigDecimal bigDecimal = null;
         try {
             bigDecimal = new BigDecimal(edtMoney.getText().toString().trim());
@@ -280,10 +279,6 @@ public class RechargeFragment extends BaseFragment {
             return;
         }
 
-        if (StringUtils.isEmpty(name)) {
-            UIHelper.ToastMessage("请输入转账昵称");
-            return;
-        }
         if (bigDecimal == null) {
             UIHelper.ToastMessage("请输入正确的金额");
             return;
@@ -298,7 +293,6 @@ public class RechargeFragment extends BaseFragment {
                 if (result.isOk()) {
                     UIHelper.ToastMessage(result.getMsg());
                     edtMoney.setText("");
-                    edtName.setText("");
                 } else
                     UIHelper.ToastMessage(result.getMsg());
             }

@@ -32,6 +32,7 @@ import com.zp.xintianfei.widget.MarqueeTextView;
 import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -99,6 +100,8 @@ public class MainFragment extends BaseFragment {
     @BindView(id = R.id.fg_main_img_18, click = true)
     private ImageView img18;
 
+    private Map<Integer,ImageView> map = new HashMap<>();
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_main, null);
@@ -118,6 +121,28 @@ public class MainFragment extends BaseFragment {
 //        for (int i = 0; i < 9; i++) {
 //            tvStatus[i] = parentView.findViewById(R.id.fg_main_tx_1 + i * 2);
 //        }
+
+        map.put(1,img6);
+        map.put(2,img1);
+        map.put(3,img5);
+        map.put(4,img10);
+        map.put(5,img2);
+        map.put(6,img13);
+        map.put(8,img11);
+        map.put(1,img7);
+        map.put(1,img18);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
+        map.put(1,img1);
 
         Glide.with(getActivity()).load(R.drawable.cate_02_gif)
                 .diskCacheStrategy(DiskCacheStrategy.ALL).into(img1);
@@ -236,6 +261,27 @@ public class MainFragment extends BaseFragment {
             }
         };
         timer1.schedule(timerTask1, 1000, 1000);
+
+        if (timer == null)
+            timer = new Timer();
+        if (timerTask == null) {
+            timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    getAllGameState();
+                }
+            };
+            timer.schedule(timerTask, 0, 5000);
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (timer != null)
+            timer.cancel();
+        if (timerTask != null)
+            timerTask.cancel();
     }
 
     @Override
@@ -311,106 +357,6 @@ public class MainFragment extends BaseFragment {
                 getGameStatus(10);
                 break;
         }
-
-//        switch (v.getId()) {
-//            case R.id.fg_main_lay_1:
-//                String tv = ((TextView) layBJSC.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.bjsc.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_2:
-//                tv = ((TextView) layXGSM.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xgsm.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_3:
-//                tv = ((TextView) layXYFT.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.xyft.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_4:
-//                tv = ((TextView) layCQSSC.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.cqssc.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_5:
-//                tv = ((TextView) layQQLFC.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.qqlfc.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_6:
-//                tv = ((TextView) layXGLHC.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameXGLHCActivity.startActivity(getActivity(), handler);
-//                }
-////                GameXGLHCActivity.startActivity(getActivity(), handler);
-//                break;
-//            case R.id.fg_main_lay_7:
-//                tv = ((TextView) layPCDD.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.pcdd.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_8:
-//                tv = ((TextView) layJND28.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jnd28.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_9:
-//                tv = ((TextView) layJSKS.getChildAt(1)).getText().toString().trim();
-//                if (tv.equals("已关盘")) {
-//                    UIHelper.ToastMessage("彩种已关盘");
-//                } else {
-//                    GameBJSCActivity.startActivity(getActivity(), E_LOTTERY_TYPE.jsks.value);
-//                }
-//                break;
-//            case R.id.fg_main_lay_10:
-//                // 真人娱乐
-//                Intent intent = new Intent();
-//                intent.setAction("android.intent.action.VIEW");
-//                Uri content_url = Uri.parse(AppConfig.getInstance().getGameList(11));
-//                intent.setData(content_url);
-//                startActivity(intent);
-//                break;
-//            case R.id.fg_main_lay_13:
-//                // 安卓下载
-//                intent = new Intent();
-//                intent.setAction("android.intent.action.VIEW");
-//                content_url = Uri.parse(AppConfig.getInstance().getmPre().getString("android_update_url", ""));
-//                intent.setData(content_url);
-//                startActivity(intent);
-//                break;
-//            case R.id.fg_main_lay_12:
-//                // IOS下载
-//                intent = new Intent();
-//                intent.setAction("android.intent.action.VIEW");
-//                content_url = Uri.parse(AppConfig.getInstance().getmPre().getString("ios_update_url", ""));
-//                intent.setData(content_url);
-//                startActivity(intent);
-//                break;
-//        }
     }
 
     @Override
@@ -479,5 +425,127 @@ public class MainFragment extends BaseFragment {
             }
         };
         ApiUser.getNotice(callBack);
+    }
+
+    public void getAllGameState() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        JsonUtils j = new JsonUtils(str);
+                        JsonUtils jsonUtils = j.getJSONUtils("info");
+
+                        if(jsonUtils.getString("1").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_01_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img6);
+                        else
+                            img6.setImageResource(R.drawable.cate_01_gray);
+
+                        if(jsonUtils.getString("2").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_02_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img1);
+                        else
+                            img1.setImageResource(R.drawable.cate_02_gray);
+
+                        if(jsonUtils.getString("3").equals("1"))
+                            img5.setImageResource(R.drawable.cate_03);
+                        else
+                            img5.setImageResource(R.drawable.cate_03_gray);
+
+                        if(jsonUtils.getString("4").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_04_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img10);
+                        else
+                            img10.setImageResource(R.drawable.cate_04_gray);
+
+                        if(jsonUtils.getString("5").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_05_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img2);
+                        else
+                            img2.setImageResource(R.drawable.cate_05_gray);
+
+                        if(jsonUtils.getString("6").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_06_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img13);
+                        else
+                            img13.setImageResource(R.drawable.cate_06_gray);
+
+                        if(jsonUtils.getString("8").equals("1"))
+                            img11.setImageResource(R.drawable.cate_08);
+                        else
+                            img11.setImageResource(R.drawable.cate_08_gray);
+
+                        if(jsonUtils.getString("9").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_09_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img7);
+                        else
+                            img7.setImageResource(R.drawable.cate_09_gray);
+
+                        if(jsonUtils.getString("10").equals("1"))
+                            img18.setImageResource(R.drawable.cate_10);
+                        else
+                            img18.setImageResource(R.drawable.cate_10_gray);
+
+                        if(jsonUtils.getString("11").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_11_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img16);
+                        else
+                            img16.setImageResource(R.drawable.cate_11_gray);
+
+                        if(jsonUtils.getString("12").equals("1"))
+                            img4.setImageResource(R.drawable.cate_12);
+                        else
+                            img4.setImageResource(R.drawable.cate_12_gray);
+
+                        if(jsonUtils.getString("13").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_13_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img3);
+                        else
+                            img3.setImageResource(R.drawable.cate_13_gray);
+
+                        if(jsonUtils.getString("14").equals("1"))
+                            img8.setImageResource(R.drawable.cate_14);
+                        else
+                            img8.setImageResource(R.drawable.cate_14_gray);
+
+                        if(jsonUtils.getString("15").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_15_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img9);
+                        else
+                            img9.setImageResource(R.drawable.cate_15_gray);
+
+                        if(jsonUtils.getString("16").equals("1"))
+                            img14.setImageResource(R.drawable.cate_16);
+                        else
+                            img14.setImageResource(R.drawable.cate_16_gray);
+
+                        if(jsonUtils.getString("17").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_17_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img15);
+                        else
+                            img15.setImageResource(R.drawable.cate_17_gray);
+
+                        if(jsonUtils.getString("18").equals("1"))
+                            Glide.with(getActivity()).load(R.drawable.cate_18_gif)
+                                    .diskCacheStrategy(DiskCacheStrategy.ALL).into(img12);
+                        else
+                            img12.setImageResource(R.drawable.cate_18_gray);
+
+                        if(jsonUtils.getString("19").equals("1"))
+                            img17.setImageResource(R.drawable.cate_19);
+                        else
+                            img17.setImageResource(R.drawable.cate_19_gray);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        };
+        ApiLottery.getAllGameState(callBack);
     }
 }

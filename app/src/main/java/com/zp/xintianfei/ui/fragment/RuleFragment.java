@@ -21,6 +21,7 @@ import com.zp.xintianfei.utils.UIHelper;
 import org.kymjs.kjframe.ui.BindView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -32,7 +33,7 @@ public class RuleFragment extends BaseFragment {
     private int lastSelected = 1; // 底部之前选中
     private int currSelected = 1; // 底部当前选中
 
-    private Button[] layBtn = new Button[9];
+    private Button[] layBtn = new Button[16];
 
 //    private ScrollView[] views = new ScrollView[9];
 
@@ -45,6 +46,8 @@ public class RuleFragment extends BaseFragment {
     private WebView tvRuleContent;
 
     private List<Rules> listRules = new ArrayList<>();
+
+    private Map<Integer,Integer> map = new HashMap<>();
 
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
@@ -59,21 +62,62 @@ public class RuleFragment extends BaseFragment {
         title.setText("规则");
         imgBack.setVisibility(View.INVISIBLE);
 
-        layBtn[0] = parentView.findViewById(R.id.fg_rule_btn_4);
-        layBtn[1] = parentView.findViewById(R.id.fg_rule_btn_1);
+//        layBtn[0] = parentView.findViewById(R.id.fg_rule_btn_6);
+//        layBtn[1] = parentView.findViewById(R.id.fg_rule_btn_1);
+//        layBtn[2] = parentView.findViewById(R.id.fg_rule_btn_5);
+//        layBtn[3] = parentView.findViewById(R.id.fg_rule_btn_10);
+//        layBtn[4] = parentView.findViewById(R.id.fg_rule_btn_2);
+//        layBtn[5] = parentView.findViewById(R.id.fg_rule_btn_13);
+//        layBtn[6] = parentView.findViewById(R.id.fg_rule_btn_9);
+//        layBtn[7] = parentView.findViewById(R.id.fg_rule_btn_11);
+//        layBtn[8] = parentView.findViewById(R.id.fg_rule_btn_7);
+//        layBtn[9] = parentView.findViewById(R.id.fg_rule_btn_16);
+//        layBtn[10] = parentView.findViewById(R.id.fg_rule_btn_3);
+//        layBtn[11] = parentView.findViewById(R.id.fg_rule_btn_8);
+//        layBtn[12] = parentView.findViewById(R.id.fg_rule_btn_9);
+//        layBtn[13] = parentView.findViewById(R.id.fg_rule_btn_7);
+//        layBtn[14] = parentView.findViewById(R.id.fg_rule_btn_7);
+//        layBtn[15] = parentView.findViewById(R.id.fg_rule_btn_7);
+
+        layBtn[0] = parentView.findViewById(R.id.fg_rule_btn_1);
+        layBtn[1] = parentView.findViewById(R.id.fg_rule_btn_2);
         layBtn[2] = parentView.findViewById(R.id.fg_rule_btn_3);
-        layBtn[3] = parentView.findViewById(R.id.fg_rule_btn_7);
-        layBtn[4] = parentView.findViewById(R.id.fg_rule_btn_2);
+        layBtn[3] = parentView.findViewById(R.id.fg_rule_btn_4);
+        layBtn[4] = parentView.findViewById(R.id.fg_rule_btn_5);
         layBtn[5] = parentView.findViewById(R.id.fg_rule_btn_6);
-        layBtn[6] = parentView.findViewById(R.id.fg_rule_btn_5);
+        layBtn[6] = parentView.findViewById(R.id.fg_rule_btn_7);
         layBtn[7] = parentView.findViewById(R.id.fg_rule_btn_8);
         layBtn[8] = parentView.findViewById(R.id.fg_rule_btn_9);
+        layBtn[9] = parentView.findViewById(R.id.fg_rule_btn_10);
+        layBtn[10] = parentView.findViewById(R.id.fg_rule_btn_11);
+        layBtn[11] = parentView.findViewById(R.id.fg_rule_btn_12);
+        layBtn[12] = parentView.findViewById(R.id.fg_rule_btn_13);
+        layBtn[13] = parentView.findViewById(R.id.fg_rule_btn_14);
+        layBtn[14] = parentView.findViewById(R.id.fg_rule_btn_15);
+        layBtn[15] = parentView.findViewById(R.id.fg_rule_btn_16);
+
+        map.put(0,2);
+        map.put(1,5);
+        map.put(2,13);
+        map.put(3,12);
+        map.put(4,3);
+        map.put(5,1);
+        map.put(6,9);
+        map.put(7,14);
+        map.put(8,15);
+        map.put(9,4);
+        map.put(10,8);
+        map.put(11,18);
+        map.put(12,6);
+        map.put(13,16);
+        map.put(14,17);
+        map.put(15,10);
 
         for (int i = 0; i < layBtn.length; i++) {
             layBtn[i].setOnClickListener(new onclick_bottom(i));
         }
 
-        setPosition(1);
+        setPosition(0);
 
         WebSettings webSettings = tvRuleContent.getSettings();
         webSettings.setSupportZoom(false);
@@ -82,13 +126,13 @@ public class RuleFragment extends BaseFragment {
         webSettings.setJavaScriptEnabled(true);
         tvRuleContent.setBackgroundColor(0);
         tvRuleContent.getBackground().setAlpha(0);
+
+        getRules();
     }
 
     @Override
     protected void initData() {
         super.initData();
-
-        getRules();
     }
 
     @Override
@@ -115,13 +159,14 @@ public class RuleFragment extends BaseFragment {
     }
 
     private void setPosition(int curr) {
+        int cate = map.get(curr);
         if (currSelected != curr) {
             currSelected = curr;
 
             boolean has = false;
             for (Rules rules :
                     listRules) {
-                if (rules.getCate() == curr + 1) {
+                if (rules.getCate() == cate) {
                     tvRuleContent.loadDataWithBaseURL(null, UIHelper.WEB_STYLE + rules.getContent(), "text/html", "utf-8", null);
                     has = true;
                 }
@@ -130,11 +175,9 @@ public class RuleFragment extends BaseFragment {
                 tvRuleContent.loadDataWithBaseURL(null, "<div class=\"mui-content rule_xs1\" style=\"margin: 10px 10px;color: #ffffff\"><h3>暂无玩法介绍</h3></div>", "text/html", "utf-8", null);
             }
 
-            layBtn[curr].setTextColor(getResources().getColor(R.color.white));
             layBtn[curr].setBackgroundResource(R.drawable.shape_rounded_h_orange_5);
             if (lastSelected >= 0) {
-                layBtn[lastSelected].setTextColor(getResources().getColor(R.color.black_3));
-                layBtn[lastSelected].setBackgroundResource(R.drawable.shape_rounded_h_gray_2);
+                layBtn[lastSelected].setBackgroundResource(R.drawable.shape_rounded_h_gray_4);
             }
 
             lastSelected = currSelected;
@@ -142,7 +185,7 @@ public class RuleFragment extends BaseFragment {
     }
 
     private void getRules() {
-        for (int i = 1; i <= 9; i++) {
+        for (int i = 0; i < 16; i++) {
             FHttpCallBack callBack = new FHttpCallBack() {
                 @Override
                 public void onSuccess(Map<String, String> headers, byte[] t) {
@@ -175,7 +218,7 @@ public class RuleFragment extends BaseFragment {
                     UIHelper.showLoadingDialog(getActivity());
                 }
             };
-            ApiLottery.getGameRule(i, callBack);
+            ApiLottery.getGameRule(map.get(i), callBack);
         }
     }
 }
