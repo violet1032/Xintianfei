@@ -8,8 +8,8 @@ android {
         applicationId "com.zp.xintianfei"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 17
-        versionName "1.9.2"
+        versionCode 18
+        versionName "1.9.3"
     }
     buildTypes {
         release {

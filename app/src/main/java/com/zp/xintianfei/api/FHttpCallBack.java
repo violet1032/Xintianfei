@@ -7,7 +7,6 @@ import com.zp.xintianfei.AppConfig;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.utils.JsonUtils;
 import com.zp.xintianfei.utils.StringUtils;
-import com.zp.xintianfei.utils.UIHelper;
 
 import org.json.JSONException;
 import org.kymjs.kjframe.http.HttpCallBack;
@@ -28,7 +27,7 @@ public class FHttpCallBack extends HttpCallBack {
         if (AppConfig.DEBUG) {
             Log.e(TAG, "errorNo:" + errorNo);
             Log.e(TAG, "strMsg:" + strMsg);
-            UIHelper.ToastMessage("请求失败 errorNo:" + errorNo + " strMsg:" + strMsg);
+//            UIHelper.ToastMessage("请求失败 errorNo:" + errorNo + " strMsg:" + strMsg);
             Log.e("onFailure", "请求失败 errorNo:" + errorNo + " strMsg:" + strMsg);
 
         }

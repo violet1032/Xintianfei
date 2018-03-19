@@ -49,6 +49,7 @@ public class UIHelper {
             + "<link rel=\"stylesheet\" type=\"text/css\" href=\"file:///android_asset/shCore.css\">"
             + "<script type=\"text/javascript\">SyntaxHighlighter.all();</script>";
     public final static String WEB_STYLE = "<style>* {color:#ddd} </style>";
+    public final static String WEB_STYLE2 = "<style>* {color:#666} </style>";
 
 
     /**

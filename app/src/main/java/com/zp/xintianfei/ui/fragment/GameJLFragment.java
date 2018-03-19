@@ -118,6 +118,18 @@ public class GameJLFragment extends BaseFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onChange() {
+        super.onChange();
+        setPosition(0);
+        getRecordToday();
+    }
+
+    @Override
     protected void widgetClick(View v) {
         super.widgetClick(v);
 

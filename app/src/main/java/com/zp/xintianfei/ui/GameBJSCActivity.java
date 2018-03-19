@@ -105,8 +105,8 @@ public class GameBJSCActivity extends BaseActivity {
 
     @BindView(id = R.id.act_game_bjsc_tv_code)
     private TextView tvId;
-    @BindView(id = R.id.act_game_bjsc_tv_nickname)
-    private TextView tvNickname;
+//    @BindView(id = R.id.act_game_bjsc_tv_nickname)
+//    private TextView tvNickname;
     @BindView(id = R.id.act_game_bjsc_tv_sum)
     private TextView tvSum;
     @BindView(id = R.id.act_game_bjsc_tv_online)
@@ -204,7 +204,7 @@ public class GameBJSCActivity extends BaseActivity {
         changeFragment(R.id.act_game_bjsc_lay_content, gameBJSCJCFragment);
 
         tvId.setText(AppContext.user.getUid() + "");
-        tvNickname.setText(AppContext.user.getNickname());
+//        tvNickname.setText(AppContext.user.getNickname());
         tvSum.setText(AppContext.user.getMoney().toString());
 
         WebSettings webSettings = webView.getSettings();

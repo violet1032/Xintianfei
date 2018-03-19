@@ -88,7 +88,7 @@ public class GameGZFragment extends BaseFragment {
                         listRules.add(rules);
 
                         if (rules.getCate() == cate) {
-                            webView.loadDataWithBaseURL(null, UIHelper.WEB_STYLE + rules.getContent(), "text/html", "utf-8", null);
+                            webView.loadDataWithBaseURL(null, UIHelper.WEB_STYLE2 + rules.getContent(), "text/html", "utf-8", null);
                         }
                     } else {
                         UIHelper.ToastMessage(result.getMsg());
