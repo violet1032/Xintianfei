@@ -1,6 +1,8 @@
 package com.zp.xintianfei.ui.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,6 +78,9 @@ public class GameJLFragment extends BaseFragment {
     @BindView(id = R.id.fg_game_jl_tv_yk)
     private TextView tvYK;
 
+    private Handler handler;
+    private int curr;
+
     @Override
     protected View inflaterView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = View.inflate(getActivity(), R.layout.fragment_game_jl, null);
@@ -113,6 +118,30 @@ public class GameJLFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
+
+        handler = new Handler(new Handler.Callback() {
+            @Override
+            public boolean handleMessage(Message message) {
+                if (message.what == 102) {
+                    // 重新获取记录
+                    switch (curr) {
+                        case 0:
+                            getRecordToday();
+                            break;
+                        case 1:
+                            getRecord(0);
+                            break;
+                        case 2:
+                            getRecord(1);
+                            break;
+                        case 3:
+                            getRecord(2);
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
 
         getRecordToday();
     }
@@ -163,6 +192,7 @@ public class GameJLFragment extends BaseFragment {
     }
 
     private void setPosition(int curr) {
+        this.curr = curr;
         btn1.setBackgroundResource(R.drawable.btn_round_black);
         btn2.setBackgroundResource(R.drawable.btn_round_black);
         btn3.setBackgroundResource(R.drawable.btn_round_black);
@@ -188,11 +218,11 @@ public class GameJLFragment extends BaseFragment {
                     BigDecimal bigDecimal1 = new BigDecimal(0);
                     BigDecimal bigDecimal2 = new BigDecimal(0);
                     BigDecimal bigDecimal3 = new BigDecimal(0);
-                    if(!StringUtils.isEmpty(betAmountToday))
+                    if (!StringUtils.isEmpty(betAmountToday))
                         bigDecimal1 = new BigDecimal(betAmountToday).divide(new BigDecimal(100));
-                    if(!StringUtils.isEmpty(zjAmountToday))
+                    if (!StringUtils.isEmpty(zjAmountToday))
                         bigDecimal2 = new BigDecimal(zjAmountToday).divide(new BigDecimal(100));
-                    if(!StringUtils.isEmpty(ykAmountToday))
+                    if (!StringUtils.isEmpty(ykAmountToday))
                         bigDecimal3 = new BigDecimal(ykAmountToday).divide(new BigDecimal(100));
                     tvLS.setText(bigDecimal1.toString());
                     tvJS.setText(bigDecimal2.toString());
@@ -206,7 +236,7 @@ public class GameJLFragment extends BaseFragment {
                     list.add(new GambleSimpleTodayHistory());
                     list.addAll(gambleSimpleTodayHistoryList.getList());
 
-                    gambleSimpleTodayAdapter = new GambleSimpleTodayAdapter(lvRecord, list);
+                    gambleSimpleTodayAdapter = new GambleSimpleTodayAdapter(lvRecord, list, handler);
                     lvRecord.setAdapter(gambleSimpleTodayAdapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -260,11 +290,11 @@ public class GameJLFragment extends BaseFragment {
                     BigDecimal bigDecimal1 = new BigDecimal(0);
                     BigDecimal bigDecimal2 = new BigDecimal(0);
                     BigDecimal bigDecimal3 = new BigDecimal(0);
-                    if(!StringUtils.isEmpty(betAmountToday))
+                    if (!StringUtils.isEmpty(betAmountToday))
                         bigDecimal1 = new BigDecimal(betAmountToday).divide(new BigDecimal(100));
-                    if(!StringUtils.isEmpty(zjAmountToday))
+                    if (!StringUtils.isEmpty(zjAmountToday))
                         bigDecimal2 = new BigDecimal(zjAmountToday).divide(new BigDecimal(100));
-                    if(!StringUtils.isEmpty(ykAmountToday))
+                    if (!StringUtils.isEmpty(ykAmountToday))
                         bigDecimal3 = new BigDecimal(ykAmountToday).divide(new BigDecimal(100));
                     tvLS.setText(bigDecimal1.toString());
                     tvJS.setText(bigDecimal2.toString());
@@ -278,7 +308,7 @@ public class GameJLFragment extends BaseFragment {
                     list.add(new GambleSimpleHistory());
                     list.addAll(gambleSimpleHistoryList.getList());
 
-                    gambleSimpleAdapter = new GambleSimpleAdapter(lvRecord, list);
+                    gambleSimpleAdapter = new GambleSimpleAdapter(lvRecord, list, handler);
                     lvRecord.setAdapter(gambleSimpleAdapter);
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -2,6 +2,8 @@ package com.zp.xintianfei.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,6 +16,7 @@ import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.utils.StringUtils;
 import com.zp.xintianfei.utils.UIHelper;
 
 import org.kymjs.kjframe.ui.BindView;
@@ -26,8 +29,10 @@ public class AgentFeeActivity extends BaseActivity {
     @BindView(id = R.id.umeng_banner_img_left, click = true)
     private ImageView imgBack;
 
-    @BindView(id = R.id.act_agent_fee_edt)
-    private EditText edtFee;
+    @BindView(id = R.id.act_agent_fee_edt_fanshui)
+    private EditText edtFeeFanshui;
+    @BindView(id = R.id.act_agent_fee_edt_yongjin)
+    private EditText edtFeeYongjin;
 
     @BindView(id = R.id.act_agent_fee_btn, click = true)
     private Button btnSure;
@@ -55,7 +60,39 @@ public class AgentFeeActivity extends BaseActivity {
 
         title.setText(R.string.agent_fee_text_1);
 
-        edtFee.setText(AppContext.user.getFs_rate());
+        edtFeeFanshui.setText((int) (50 * (Float.parseFloat(AppContext.user.getFs_rate()) / 100f)) + "");
+        edtFeeFanshui.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if (StringUtils.isEmpty(charSequence.toString())) {
+                    edtFeeYongjin.setText(50 + "");
+                    return;
+                }
+                int fanshui = 0;
+                try {
+                    fanshui = Integer.parseInt(charSequence.toString());
+                    if (fanshui <= 50) {
+                        edtFeeYongjin.setText((50 - fanshui) + "");
+                    } else
+                        UIHelper.ToastMessage("请正确输入50以内的整数值，可包括50");
+                } catch (Exception e) {
+                    UIHelper.ToastMessage("请正确输入50以内的整数值，可包括50");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        edtFeeYongjin.setEnabled(false);
+        edtFeeYongjin.setText((int) (50 - 50 * (Float.parseFloat(AppContext.user.getFs_rate()) / 100f)) + "");
     }
 
     @Override
@@ -74,9 +111,13 @@ public class AgentFeeActivity extends BaseActivity {
     public void setFee() {
         final int value;
         try {
-            value = Integer.parseInt(edtFee.getText().toString().trim());
+            value = Integer.parseInt(edtFeeFanshui.getText().toString().trim());
+            if (value > 50) {
+                UIHelper.ToastMessage("请正确输入50以内的整数值，可包括50");
+                return;
+            }
         } catch (Exception e) {
-            UIHelper.ToastMessage("请输入正确的返水比例");
+            UIHelper.ToastMessage("请正确输入50以内的整数值，可包括50");
             return;
         }
 
@@ -88,7 +129,7 @@ public class AgentFeeActivity extends BaseActivity {
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
                     UIHelper.ToastMessage(result.getMsg());
-                    AppContext.user.setFs_rate(value+"");
+                    AppContext.user.setFs_rate(value + "");
                     finish();
                 } else
                     UIHelper.ToastMessage(result.getMsg());
@@ -106,6 +147,6 @@ public class AgentFeeActivity extends BaseActivity {
                 UIHelper.stopLoadingDialog();
             }
         };
-        ApiUser.setFsRate(value, callBack);
+        ApiUser.setFsRate((int) ((float) value / 50f * 100), callBack);
     }
 }

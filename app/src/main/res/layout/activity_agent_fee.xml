@@ -16,29 +16,91 @@
         android:text="@string/agent_fee_text_2"
         android:textSize="@dimen/text_size_18" />
 
-    <EditText
-        android:id="@+id/act_agent_fee_edt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/space_50"
-        android:layout_marginRight="@dimen/space_50"
-        android:layout_marginTop="@dimen/space_20"
-        android:background="@drawable/shape_round_stroke_h_trnsparent"
-        android:padding="@dimen/space_10"
-        android:textSize="@dimen/space_18" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/space_20"
-        android:text="@string/agent_fee_text_3"
-        android:textSize="@dimen/text_size_18" />
+        android:text="@string/agent_fee_text_4"
+        android:textColor="@color/black_3"
+        android:textSize="@dimen/text_size_14" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/agent_fee_text_5"
+            android:textSize="@dimen/text_size_15" />
+
+        <EditText
+            android:id="@+id/act_agent_fee_edt_fanshui"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_round_stroke_h_trnsparent"
+            android:minWidth="50dp"
+            android:paddingBottom="@dimen/space_5"
+            android:paddingLeft="@dimen/space_10"
+            android:paddingRight="@dimen/space_10"
+            android:textColor="@color/black_3"
+            android:paddingTop="@dimen/space_5"
+            android:textSize="@dimen/space_15" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/space_5"
+            android:text="@string/agent_fee_text_7"
+            android:textSize="@dimen/text_size_15" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/space_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/agent_fee_text_6"
+            android:textSize="@dimen/text_size_15" />
+
+        <EditText
+            android:id="@+id/act_agent_fee_edt_yongjin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_3"
+            android:background="@drawable/shape_round_stroke_h_trnsparent"
+            android:minWidth="50dp"
+            android:paddingBottom="@dimen/space_5"
+            android:paddingLeft="@dimen/space_10"
+            android:paddingRight="@dimen/space_10"
+            android:paddingTop="@dimen/space_5"
+            android:textSize="@dimen/space_15" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/space_5"
+            android:text="@string/agent_fee_text_7"
+            android:textSize="@dimen/text_size_15" />
+    </LinearLayout>
 
     <Button
+        android:id="@+id/act_agent_fee_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/act_agent_fee_btn"
         android:layout_marginLeft="@dimen/space_50"
         android:layout_marginRight="@dimen/space_50"
         android:layout_marginTop="@dimen/space_20"

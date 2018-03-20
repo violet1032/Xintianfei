@@ -1,5 +1,6 @@
 package com.zp.xintianfei.adapter;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,11 +36,13 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
     private ListView lv;
     private List<GambleSimpleTodayHistory> list;
     private LayoutInflater inflater;
+    private Handler handler;
 
-    public GambleSimpleTodayAdapter(ListView lv, List<GambleSimpleTodayHistory> list) {
+    public GambleSimpleTodayAdapter(ListView lv, List<GambleSimpleTodayHistory> list,Handler handler) {
         this.lv = lv;
         this.list = list;
         inflater = LayoutInflater.from(AppContext.appContext);
+        this.handler = handler;
     }
 
     @Override
@@ -228,6 +231,7 @@ public class GambleSimpleTodayAdapter extends BaseAdapter {
                 Result result = new Result().parse(str);
                 if (result.isOk()) {
                     UIHelper.ToastMessage("撤单成功");
+                    handler.sendEmptyMessage(102);
                 } else
                     UIHelper.ToastMessage(result.getMsg());
             }

@@ -1,5 +1,6 @@
 package com.zp.xintianfei.adapter;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,11 +37,13 @@ public class GambleSimpleAdapter extends BaseAdapter {
     private ListView lv;
     private List<GambleSimpleHistory> list;
     private LayoutInflater inflater;
+    private Handler handler;
 
-    public GambleSimpleAdapter(ListView lv, List<GambleSimpleHistory> list) {
+    public GambleSimpleAdapter(ListView lv, List<GambleSimpleHistory> list, Handler handler) {
         this.lv = lv;
         this.list = list;
         inflater = LayoutInflater.from(AppContext.appContext);
+        this.handler = handler;
     }
 
     @Override
@@ -220,16 +223,17 @@ public class GambleSimpleAdapter extends BaseAdapter {
         private ImageView img9;
     }
 
-    private void withdraw(int id){
-        FHttpCallBack callBack = new FHttpCallBack(){
+    private void withdraw(int id) {
+        FHttpCallBack callBack = new FHttpCallBack() {
             @Override
             public void onSuccess(Map<String, String> headers, byte[] t) {
                 super.onSuccess(headers, t);
                 String str = new String(t);
                 Result result = new Result().parse(str);
-                if(result.isOk()){
+                if (result.isOk()) {
                     UIHelper.ToastMessage("撤单成功");
-                }else
+                    handler.sendEmptyMessage(102);
+                } else
                     UIHelper.ToastMessage(result.getMsg());
             }
 

@@ -2,6 +2,7 @@ package com.zp.xintianfei.bean;
 
 
 import com.zp.xintianfei.utils.JsonUtils;
+import com.zp.xintianfei.utils.StringUtils;
 
 import org.json.JSONException;
 
@@ -45,7 +46,10 @@ public class User implements Serializable {
             setMoney(jsonUtils1.getBigDecimal("money").divide(new BigDecimal(100)));
             setFanshui(jsonUtils1.getBigDecimal("fanshui").divide(new BigDecimal(100)));
             setYongjin(jsonUtils1.getBigDecimal("yongjin").divide(new BigDecimal(100)));
-            setFs_rate(jsonUtils1.getString("fs_rate"));
+            String str = jsonUtils1.getString("fs_rate");
+            if(StringUtils.isEmpty(str))
+                str = "0";
+            setFs_rate(str);
             if (getToken)
                 setToken(jsonUtils1.getString("token"));
         } catch (JSONException e) {

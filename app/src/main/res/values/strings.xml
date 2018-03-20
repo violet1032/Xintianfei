@@ -228,6 +228,10 @@
     <string name="agent_fee_text_1">下级玩家返水</string>
     <string name="agent_fee_text_2">下级玩家返水比例设置</string>
     <string name="agent_fee_text_3">返水比例范围：0-100(%)</string>
+    <string name="agent_fee_text_4">10000元流水共返佣金50元</string>
+    <string name="agent_fee_text_5">下级玩家返水：</string>
+    <string name="agent_fee_text_6">自己所得佣金：</string>
+    <string name="agent_fee_text_7">元</string>
 
     <string name="bandding_text_1">绑定银行卡</string>
     <string name="bandding_text_2">请选择开户银行</string>
