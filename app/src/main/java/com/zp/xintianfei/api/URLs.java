@@ -68,6 +68,7 @@ public class URLs {
     public final static String quickBetUrl = APP_STORE_HOST + "quickBetUrl"; // 获取急速下注url
     public final static String getGameState = APP_STORE_HOST + "getGameState"; // 获取彩种状态
     public final static String getAllGameState = APP_STORE_HOST + "getAllGameState"; // 获取所有彩种状态
+    public final static String getRealGameList = APP_STORE_HOST + "getRealGameList"; // 获取所有彩种状态
 
 
     //-----部分暂未发出来的接口-----

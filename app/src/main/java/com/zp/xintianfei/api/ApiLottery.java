@@ -261,4 +261,12 @@ public class ApiLottery {
         String url = URLs.getAllGameState;
         AppContext.http.get(url, params, callBack, false, false);
     }
+    public static void getRealGameList(int cate,FHttpCallBack callBack) {
+        // 参数设置
+        Map<String, Object> params = new HashMap<>();
+        params.put("cate",cate);
+        // 地址
+        String url = URLs.getRealGameList;
+        AppContext.http.get(url, params, callBack, false, false);
+    }
 }

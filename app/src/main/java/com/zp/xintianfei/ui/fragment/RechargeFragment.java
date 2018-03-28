@@ -20,6 +20,7 @@ import com.zp.xintianfei.api.ApiUser;
 import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.ExchangeActivity;
+import com.zp.xintianfei.ui.MainActivity;
 import com.zp.xintianfei.ui.common.BaseFragment;
 import com.zp.xintianfei.utils.ImageUtils;
 import com.zp.xintianfei.utils.UIHelper;
@@ -60,6 +61,8 @@ public class RechargeFragment extends BaseFragment {
     private Button btnExchange1;
     @BindView(id = R.id.fg_recharge_btn_2, click = true)
     private Button btnExchange2;
+    @BindView(id = R.id.fg_person_btn_3, click = true)
+    private Button btnScan;
 
     @BindView(id = R.id.fg_tx_nickname)
     private TextView tvNickname;
@@ -260,6 +263,10 @@ public class RechargeFragment extends BaseFragment {
             case R.id.fg_recharge_btn_sure:
                 // 充值
                 recharge();
+                break;
+            case R.id.fg_person_btn_3:
+                // 账户总览
+                ((MainActivity) getActivity()).setPosition(16);
                 break;
         }
     }

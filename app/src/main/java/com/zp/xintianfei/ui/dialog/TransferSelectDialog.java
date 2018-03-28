@@ -9,10 +9,17 @@ import android.widget.ListView;
 
 import com.zp.xintianfei.R;
 import com.zp.xintianfei.adapter.MemberMoneykListAdapter;
+import com.zp.xintianfei.api.ApiUser;
+import com.zp.xintianfei.api.FHttpCallBack;
 import com.zp.xintianfei.bean.MemberMoneyList;
+import com.zp.xintianfei.bean.Result;
 import com.zp.xintianfei.ui.common.BaseActivity;
+import com.zp.xintianfei.utils.UIHelper;
 
+import org.json.JSONException;
 import org.kymjs.kjframe.ui.BindView;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -32,12 +39,11 @@ public class TransferSelectDialog extends BaseActivity {
 
     private static Handler transferHandler;
     private Handler handler;
-    private MemberMoneyList memberMoneyList;
+    private MemberMoneyList memberMoneyList = new MemberMoneyList();
 
-    public static void startActivity(Activity activity, Handler handler, MemberMoneyList memberMoneyList) {
+    public static void startActivity(Activity activity, Handler handler) {
         Intent intent = new Intent();
         intent.setClass(activity, TransferSelectDialog.class);
-        intent.putExtra("memberMoneyList",memberMoneyList);
         activity.startActivityForResult(intent, 0);
         transferHandler = handler;
     }
@@ -51,8 +57,6 @@ public class TransferSelectDialog extends BaseActivity {
     @Override
     public void initData() {
         super.initData();
-
-        memberMoneyList = (MemberMoneyList)getIntent().getSerializableExtra("memberMoneyList");
 
         handler = new Handler(new Handler.Callback() {
             @Override
@@ -68,8 +72,7 @@ public class TransferSelectDialog extends BaseActivity {
             }
         });
 
-        memberMoneykListAdapter = new MemberMoneykListAdapter(lvTransferSelect,memberMoneyList.getList(),handler);
-        lvTransferSelect.setAdapter(memberMoneykListAdapter);
+        getMemberMoney();
     }
 
     @Override
@@ -80,5 +83,41 @@ public class TransferSelectDialog extends BaseActivity {
     @Override
     public void widgetClick(View v) {
         super.widgetClick(v);
+    }
+
+    public void getMemberMoney() {
+        FHttpCallBack callBack = new FHttpCallBack() {
+            @Override
+            public void onSuccess(Map<String, String> headers, byte[] t) {
+                super.onSuccess(headers, t);
+                String str = new String(t);
+                Result result = new Result().parse(str);
+                if (result.isOk()) {
+                    try {
+                        memberMoneyList.parse(str);
+
+                        memberMoneykListAdapter = new MemberMoneykListAdapter(lvTransferSelect,memberMoneyList.getList(),handler);
+                        lvTransferSelect.setAdapter(memberMoneykListAdapter);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                        UIHelper.ToastMessage("解析出错");
+                    }
+                } else
+                    UIHelper.ToastMessage(result.getMsg());
+            }
+
+            @Override
+            public void onPreStart() {
+                super.onPreStart();
+                UIHelper.showLoadingDialog(TransferSelectDialog.this);
+            }
+
+            @Override
+            public void onFinish() {
+                super.onFinish();
+                UIHelper.stopLoadingDialog();
+            }
+        };
+        ApiUser.getMemberMoney(callBack);
     }
 }

@@ -85,7 +85,7 @@
                         android:textSize="@dimen/text_size_14" />
                 </RelativeLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/space_3"
@@ -94,6 +94,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/fg_person_tx_5"
                         android:text="@string/fragment_withdraw_text_2"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
@@ -103,9 +104,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/text_default"
+                        android:layout_toRightOf="@+id/fg_person_tx_5"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
-                </LinearLayout>
+
+                    <Button
+                        android:id="@+id/fg_person_btn_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="@dimen/space_20"
+                        android:layout_marginRight="@dimen/space_20"
+                        android:background="@drawable/click_btn_round_orange_1"
+                        android:paddingBottom="@dimen/space_3"
+                        android:paddingLeft="@dimen/space_8"
+                        android:paddingRight="@dimen/space_8"
+                        android:paddingTop="@dimen/space_3"
+                        android:text="@string/fragment_withdraw_text_15" />
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -141,7 +157,7 @@
                         android:paddingLeft="@dimen/space_8"
                         android:paddingRight="@dimen/space_8"
                         android:paddingTop="@dimen/space_3"
-                        android:text="@string/fragment_withdraw_text_5" />
+                        android:text="兑        换" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -178,7 +194,7 @@
                         android:paddingLeft="@dimen/space_8"
                         android:paddingRight="@dimen/space_8"
                         android:paddingTop="@dimen/space_3"
-                        android:text="@string/fragment_withdraw_text_5" />
+                        android:text="兑        换" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>

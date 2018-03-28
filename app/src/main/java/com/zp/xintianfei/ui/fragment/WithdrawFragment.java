@@ -49,6 +49,8 @@ public class WithdrawFragment extends BaseFragment {
     private Button btnExchange1;
     @BindView(id = R.id.fg_withdraw_btn_2, click = true)
     private Button btnExchange2;
+    @BindView(id = R.id.fg_person_btn_3, click = true)
+    private Button btnScan;
 
     @BindView(id = R.id.fg_withdraw_btn_bading, click = true)
     private LinearLayout layBadding;
@@ -188,6 +190,10 @@ public class WithdrawFragment extends BaseFragment {
                 break;
             case R.id.fg_withdraw_select_type:
                 SelectWithdrawTypeDialog.startActivity(getActivity(), handler);
+                break;
+            case R.id.fg_person_btn_3:
+                // 账户总览
+                ((MainActivity) getActivity()).setPosition(16);
                 break;
         }
     }

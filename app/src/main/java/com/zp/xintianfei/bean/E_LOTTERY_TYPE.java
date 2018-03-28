@@ -29,7 +29,16 @@ public enum E_LOTTERY_TYPE {
     jlks(16, "吉林快三"),
     jisks(17, "极速快三"),
     xjpdd(18, "新加坡蛋蛋"),
-    bbin(19, "BBIN");
+    bbin(19, "BBIN"),
+    zrsx(20, "真人视讯"),
+    tyss(21, "体育赛事"),
+    dzyy(22, "电子游艺"),
+    bydr(23, "捕鱼达人"),
+    bg(26, "BG"),
+    mg(27, "MG"),
+    ss(28, "皇冠"),
+    pt(29, "PT"),
+    sunbet(30, "申博");
 
     public int value;
     public String name;

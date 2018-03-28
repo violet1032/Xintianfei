@@ -27,6 +27,7 @@ import com.zp.xintianfei.ui.fragment.PersonFragment;
 import com.zp.xintianfei.ui.fragment.RechargeFragment;
 import com.zp.xintianfei.ui.fragment.RechargeHistoryFragment;
 import com.zp.xintianfei.ui.fragment.RuleFragment;
+import com.zp.xintianfei.ui.fragment.ScanFragment;
 import com.zp.xintianfei.ui.fragment.TransferFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawFragment;
 import com.zp.xintianfei.ui.fragment.WithdrawHistoryFragment;
@@ -63,6 +64,7 @@ public class MainActivity extends BaseActivity {
     private BanddingWeixinFragment banddingWeixinFragment = new BanddingWeixinFragment();
     private BanddingAlipayFragment banddingAlipayFragment = new BanddingAlipayFragment();
     private TransferFragment transferFragment = new TransferFragment();
+    private ScanFragment scanFragment = new ScanFragment();
 
     private LinearLayout[] layBottoms = new LinearLayout[5];
     private LinearLayout[] layBottomsSelect = new LinearLayout[5];
@@ -187,6 +189,7 @@ public class MainActivity extends BaseActivity {
                 case 2:
                     // 大厅
                     changeFragment(R.id.act_main_content, mainFragment);
+                    mainFragment.showMain();
                     break;
                 case 3:
                     // 规则
@@ -240,9 +243,14 @@ public class MainActivity extends BaseActivity {
                     // 转账
                     changeFragment(R.id.act_main_content, transferFragment);
                     break;
+                case 16:
+                    // 账户总览
+                    changeFragment(R.id.act_main_content, scanFragment);
+                    break;
             }
-
             lastSelected = currSelected;
+        }else if (currSelected == 2){
+            mainFragment.showMain();
         }
     }
 

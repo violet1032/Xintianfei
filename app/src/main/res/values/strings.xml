@@ -54,6 +54,7 @@
     <string name="fragment_withdraw_text_12">绑定银行卡</string>
     <string name="fragment_withdraw_text_13">绑定支付宝</string>
     <string name="fragment_withdraw_text_14">绑定微信</string>
+    <string name="fragment_withdraw_text_15">账户总览</string>
     <string name="sure">确定</string>
 
     <!-- main fragment rule -->

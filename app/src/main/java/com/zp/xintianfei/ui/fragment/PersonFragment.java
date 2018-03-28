@@ -61,6 +61,8 @@ public class PersonFragment extends BaseFragment {
     private Button btnExchange1;
     @BindView(id = R.id.fg_person_btn_2, click = true)
     private Button btnExchange2;
+    @BindView(id = R.id.fg_person_btn_3, click = true)
+    private Button btnScan;
 
     @BindView(id = R.id.fg_tx_nickname)
     private TextView tvNickname;
@@ -185,6 +187,10 @@ public class PersonFragment extends BaseFragment {
                 break;
             case R.id.umeng_banner_tv_right:
                 System.exit(0);
+                break;
+            case R.id.fg_person_btn_3:
+                // 账户总览
+                ((MainActivity) getActivity()).setPosition(16);
                 break;
         }
     }

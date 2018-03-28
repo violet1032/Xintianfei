@@ -4,21 +4,21 @@
     android:layout_height="match_parent">
 
     <include
-        android:id="@+id/fg_withdraw_banner"
+        android:id="@+id/fg_person_banner"
         layout="@layout/common_banner" />
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/fg_withdraw_lay_1"
+        android:layout_below="@+id/fg_person_lay_1"
         android:scaleType="centerCrop"
         android:src="@drawable/bg_pic_3" />
 
     <LinearLayout
-        android:id="@+id/fg_withdraw_lay_1"
+        android:id="@+id/fg_person_lay_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/fg_withdraw_banner"
+        android:layout_below="@+id/fg_person_banner"
         android:orientation="vertical">
 
         <LinearLayout
@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/fg_withdraw_tx_3"
+                        android:id="@+id/fg_person_tx_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fragment_main_text_1"
@@ -57,15 +57,15 @@
                         android:id="@+id/fg_tx_nickname"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/fg_person_tx_4"
+                        android:layout_toRightOf="@+id/fg_person_tx_3"
                         android:singleLine="true"
-                        android:layout_toLeftOf="@+id/fg_withdraw_tx_4"
-                        android:layout_toRightOf="@+id/fg_withdraw_tx_3"
                         android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_15" />
 
                     <TextView
-                        android:id="@+id/fg_withdraw_tx_4"
+                        android:id="@+id/fg_person_tx_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/space_10"
@@ -92,9 +92,9 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/fg_person_tx_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/fg_person_tx_5"
                         android:text="@string/fragment_withdraw_text_2"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
@@ -103,8 +103,8 @@
                         android:id="@+id/fg_tx_sum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/text_default"
                         android:layout_toRightOf="@+id/fg_person_tx_5"
+                        android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
 
@@ -129,7 +129,7 @@
                     android:layout_marginTop="@dimen/space_3">
 
                     <TextView
-                        android:id="@+id/fg_withdraw_tx_1"
+                        android:id="@+id/fg_person_tx_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fragment_withdraw_text_3"
@@ -140,13 +140,13 @@
                         android:id="@+id/fg_tx_fanshui_sum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/fg_withdraw_tx_1"
+                        android:layout_toRightOf="@+id/fg_person_tx_1"
                         android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
 
                     <Button
-                        android:id="@+id/fg_withdraw_btn_1"
+                        android:id="@+id/fg_person_btn_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -166,7 +166,7 @@
                     android:layout_marginTop="@dimen/space_3">
 
                     <TextView
-                        android:id="@+id/fg_withdraw_tx_2"
+                        android:id="@+id/fg_person_tx_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/fragment_withdraw_text_4"
@@ -177,13 +177,13 @@
                         android:id="@+id/fg_tx_yongjin_sum"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@+id/fg_withdraw_tx_2"
+                        android:layout_toRightOf="@+id/fg_person_tx_2"
                         android:text="@string/text_default"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_14" />
 
                     <Button
-                        android:id="@+id/fg_withdraw_btn_2"
+                        android:id="@+id/fg_person_btn_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -200,87 +200,124 @@
         </LinearLayout>
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/fg_withdraw_lay_1"
-        android:orientation="vertical"
-        android:padding="@dimen/space_30">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/fg_person_lay_1"
+        android:layout_marginTop="@dimen/space_30"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/transfer_text_2"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_15" />
-
-        <LinearLayout
-            android:id="@+id/fg_transfer_lay_out"
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:background="@drawable/shape_rounded_h_white"
-            android:paddingBottom="@dimen/space_6"
-            android:paddingLeft="@dimen/space_15"
-            android:paddingRight="@dimen/space_15"
-            android:paddingTop="@dimen/space_6">
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/transfer_text_5"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/text_size_16" />
-        </LinearLayout>
+            <TableRow>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:text="@string/transfer_text_3"
-            android:textColor="@color/gray"
-            android:textSize="@dimen/text_size_15" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="平台余额："
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
 
-        <LinearLayout
-            android:id="@+id/fg_transfer_lay_in"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:background="@drawable/shape_rounded_h_white"
-            android:paddingBottom="@dimen/space_6"
-            android:paddingLeft="@dimen/space_15"
-            android:paddingRight="@dimen/space_15"
-            android:paddingTop="@dimen/space_6">
+                <TextView
+                    android:id="@+id/fg_scan_tv_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_50"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+            </TableRow>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/transfer_text_5"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/text_size_16" />
-        </LinearLayout>
+            <TableRow android:layout_marginTop="@dimen/space_30">
 
-        <EditText
-            android:id="@+id/fg_transfer_edt_sum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_10"
-            android:background="@drawable/shape_round_stroke_h_black_white"
-            android:hint="@string/transfer_text_4"
-            android:padding="@dimen/space_10"
-            android:textColor="@color/white"
-            android:textSize="@dimen/space_15" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="AG余额："
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
 
-        <Button
-            android:id="@+id/fg_transfer_btn_sure"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_15"
-            android:background="@drawable/click_btn_round_green_1"
-            android:padding="@dimen/space_10"
-            android:text="@string/sure"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_15" />
+                <TextView
+                    android:id="@+id/fg_scan_tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_50"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+            </TableRow>
+            <TableRow android:layout_marginTop="@dimen/space_30">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="BBIN余额："
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/fg_scan_tv_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_50"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+            </TableRow>
+            <TableRow android:layout_marginTop="@dimen/space_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="BG余额："
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/fg_scan_tv_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_50"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+            </TableRow>
+            <TableRow android:layout_marginTop="@dimen/space_30">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="皇冠余额："
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+
+                <TextView
+                    android:id="@+id/fg_scan_tv_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/space_50"
+                    android:layout_weight="1"
+                    android:text="0"
+                    android:textColor="@color/orange_2"
+                    android:textSize="@dimen/text_size_18" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </RelativeLayout>
