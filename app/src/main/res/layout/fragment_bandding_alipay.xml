@@ -246,7 +246,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:layout_toLeftOf="@+id/fg_bandding_alipay_btn_upload"
                     android:background="@drawable/shape_round_stroke_h_black_white">
 
                     <TextView
