@@ -20,15 +20,18 @@ public class MemberMoney implements Serializable {
 
     private int id;
     private String name;
-    private int value;
+    private float value;
     private String info;
 
     public MemberMoney parse(String json,int id) throws JSONException {
         JsonUtils jsonUtils = new JsonUtils(json);
         setId(id);
         setName(jsonUtils.getString("name"));
+        if(name.equals("system"))
+            setValue((float)(jsonUtils.getDouble("value")) / 100f);
+        else
+            setValue((float)(jsonUtils.getDouble("value")));
         setInfo(jsonUtils.getString("info"));
-        setValue(jsonUtils.getInt("value"));
         return this;
     }
 
@@ -48,11 +51,11 @@ public class MemberMoney implements Serializable {
         this.name = name;
     }
 
-    public int getValue() {
+    public float getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(float value) {
         this.value = value;
     }
 
